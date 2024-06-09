@@ -1,0 +1,44 @@
+site_name: One-KVM中文文档
+site_description: One-KVM，基于PiKVM的开源IP KVM项目。
+site_author: SilentWind
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.expand
+    - toc.integrate
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+repo_url: https://github.com/mofeng-git/One-KVM
+repo_name: mofeng-git/One-KVM
+
+copyright: Copyright &copy; 2023 - 2024 SilentWind
+
+nav:
+    - "介绍": index.md
+    - "设备指南":
+        - "玩客云套装": onecloud_guide.md
+        - "玩客云DIY安装": onecloud_install.md
+        - "X86主机安装": x64_install.md
+        - "Docker安装": docker_install.md
+    - "快速开始": first_steps.md
+    - "MSD虚拟存储驱动器": msd.md
+    - "VNC连接": vnc.md
+    - "WOL网络唤醒": wol.md
+    - "网页终端": webterm.md
+    - "H.264视频": h264.md
+    - "KVM一控多": onecloud_kvm.md
+    - "ATX开关机控制": onecloud_atx.md
+    - "HDMI环出": loop_out.md
+    - "常见问题": faq.md
+    - "感谢": thanks.md
