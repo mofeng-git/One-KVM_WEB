@@ -1,6 +1,7 @@
 site_name: One-KVM中文文档
 site_description: One-KVM，基于PiKVM的开源IP KVM项目。
 site_author: SilentWind
+site_url: https://one-kvm.mofeng.run/
 
 theme:
   name: material
@@ -36,6 +37,7 @@ nav:
     - "VNC连接": vnc.md
     - "WOL网络唤醒": wol.md
     - "网页终端": webterm.md
+    - "2FA双重身份验证": 2fa.md
     - "H.264视频": h264.md
     - "KVM一控多": onecloud_kvm.md
     - "ATX开关机控制": onecloud_atx.md
