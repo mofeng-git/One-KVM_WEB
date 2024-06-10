@@ -44,5 +44,6 @@ nav:
     - "KVM一控多": onecloud_kvm.md
     - "ATX开关机控制": onecloud_atx.md
     - "HDMI环出": loop_out.md
+    - "开发知识库": develop.md
     - "常见问题": faq.md
     - "感谢": thanks.md
