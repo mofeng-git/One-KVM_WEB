@@ -28,7 +28,7 @@ repo_name: mofeng-git/One-KVM
 copyright: Copyright &copy; 2023 - 2024 SilentWind
 
 extra_javascript:
-    - js/baidu-tongji.js
+    - 'js/baidu-tongji.js'
 
 nav:
     - "介绍": index.md
