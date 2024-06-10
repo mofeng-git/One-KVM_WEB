@@ -3,6 +3,8 @@ site_description: One-KVM，基于PiKVM的开源IP KVM项目。
 site_author: SilentWind
 site_url: https://one-kvm.mofeng.run/
 
+docs_dir: docs
+
 theme:
   name: material
   language: zh
