@@ -38,6 +38,7 @@ nav:
         - "X86主机安装": x64_install.md
         - "Docker安装": docker_install.md
     - "快速开始": first_steps.md
+    - "功能对比": compare.md
     - "MSD虚拟存储驱动器": msd.md
     - "VNC连接": vnc.md
     - "WOL网络唤醒": wol.md
