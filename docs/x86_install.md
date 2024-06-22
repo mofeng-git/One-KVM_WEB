@@ -1,3 +1,5 @@
+最初仅在 Arch 系 Linux 系统上做安装教程，因为这非常简单，只需要处理几个依赖项即可。后续发现  Arch 系 Linux 系统不适合做服务器系统，便基于 srepac/kvmd-armbian 项目的安装脚本对本项目进行了重构，使之能够在 Armbian Jammy 和 Ubuntu Jmamy 系统上进行 PiKVM 的安装。
+
 ### 硬件清单
 
 所需硬件：X86主机、USB采集卡、USB HID（CH340+CH9329）
@@ -11,17 +13,17 @@
 一键脚本，适用于Ubuntu Jammy系统。演示站即使用此脚本安装。
 
 ```Bash
-git clone https://github.com/mofeng-git/One-KVM.git
+git clone --depth=1 https://github.com/mofeng-git/One-KVM.git
 cd One-KVM
-bash install-x86.sh
+sudo bash install-x86.sh
 #第一阶段安装完成需要重启，再进行第二阶段安装
-bash install-x86.sh
+sudo bash install-x86.sh
 
 #可选功能：H.264 视频编码
-bash kvmd_h264_install.sh
-#可选功能：HDMI 环出
-bash kvmd_display_install.sh
+sudo bash kvmd_h264_install.sh
 ```
+
+![PixPin_2024-06-22_23-34-45](./img/PixPin_2024-06-22_23-34-45.png)
 
 ### 实机演示
 
