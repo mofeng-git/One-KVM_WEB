@@ -10,7 +10,7 @@
 
 ### Windows
 
-对于 Windows，可以使用 UVNC 和T igerVNC，可在网盘下载（位置：/玩客云/PiKVM相关软件/）。下面是 UVNC 的使用示例。
+对于 Windows，可以使用 UVNC 和 TigerVNC，可在网盘下载（位置：/玩客云/PiKVM相关软件/）。下面是 UVNC 的使用示例。
 
 ![img](./img/1717946873827-42.png)
 

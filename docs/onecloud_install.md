@@ -56,6 +56,13 @@ Amlogic USB Burning Tool 建议使用 v2.1.3 及以下版本，不要使用高�
 ```Bash
 git clone https://github.com/mofeng-git/One-KVM.git
 cd One-KVM
-bash ll.sh
+bash install.sh
+#第一阶段安装完成需要重启，再进行第二阶段安装
+bash install.sh
+
+#可选功能：H.264 视频编码
+bash kvmd_h264_install.sh
+#可选功能：HDMI 环出
+bash kvmd_display_install.sh
 ```
 
