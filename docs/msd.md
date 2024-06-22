@@ -60,7 +60,7 @@ nano /etc/kvmd/override.yaml
 systemctl restart kvmd-otg kvmd
 ```
 
-#### 使用IMG镜像（实验性功能）
+#### 使用IMG镜像
 
 此方法通过已测试，可以使用。
 

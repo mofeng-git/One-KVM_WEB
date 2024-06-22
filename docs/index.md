@@ -5,10 +5,12 @@ One-KVM是基于廉价计算机硬件（目前为玩客云和X64兼容机）和P
 # 运行效果
 
 !!! note
-    演示网站运行在X86云服务器上，请临时无视风险信任自签SSL证书，实际效果因软硬件配置而异。
+    演示网站运行在X64云服务器上，实际效果因软硬件配置而异。
 
 演示网站：[PiKVM X64 DEMO](https://1.12.77.48/)<br>
 账号/密码：admin/admin
+
+![image-20240622153423448](./img/image-20240622153423448.png)
 
 
 !!! note
@@ -22,8 +24,9 @@ One-KVM是基于廉价计算机硬件（目前为玩客云和X64兼容机）和P
 
 ### 其他
 
-文档目录（可在此查阅其他文档）：[https://p1b237lu9xm.feishu.cn/drive/folder/IsOifWmMKlzYpRdWfcocI7jdnQA](https://p1b237lu9xm.feishu.cn/drive/folder/IsOifWmMKlzYpRdWfcocI7jdnQA)
-
 Github地址：[https://github.com/mofeng-git/One-KVM](https://github.com/mofeng-git/One-KVM) （欢迎点个Star）
 
 QQ交流群：569514148 （One-KVM交流群）
+
+为爱发电：[https://afdian.net/a/silentwind](https://afdian.net/a/silentwind)
+

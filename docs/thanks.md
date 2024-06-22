@@ -4,11 +4,11 @@
 
 ### **感谢**
 
-- 浩龙的电子嵌入式之路（赞助）
-- Tsuki（赞助）
-- 跃/mg子：）（赞助）
-- Doo（赞助）
-- 孵化熊（赞助）
+- 浩龙的电子嵌入式之路
+- Tsuki
+- 跃/mg子：
+- Doo
+- 孵化熊
 - H_xiaoming
 - 0蓝蓝0
 - fairybl
@@ -16,10 +16,13 @@
 - 自.知
 - 观棋不语٩ ི۶
 - 浩龙的电子嵌入式之路
-- 以及各位讨论交流的网友
+- a57a4
+- 2c769
+- ......
 
 **本项目使用了下下列开源项目**
 
 1. [GitHub - pikvm/pikvm: Open and inexpensive DIY IP-KVM based on Raspberry Pi](https://github.com/pikvm/pikvm)
 2. [GitHub - hzyitc/armbian-onecloud: Armbian for onecloud. 玩客云用armbian](https://github.com/hzyitc/armbian-onecloud/)
-3. [GitHub - jacobbar/fruity-pikvm: Install Pi-KVM on debian SBCs such as Orange Pi, Banana Pi, Mango Pi debian SBCs such as Orange Pi, Banana Pi, Mango Pi, etc (github.com)](https://github.com/jacobbar/fruity-pikvm)
+3. [GitHub - jacobbar/fruity-pikvm: Install Pi-KVM on debian SBCs such as Orange Pi, Banana Pi, Mango Pi debian SBCs such as Orange Pi, Banana Pi, Mango Pi, etc](https://github.com/jacobbar/fruity-pikvm)
+4.  [kvmd-armbian/install.sh at master · srepac/kvmd-armbian](https://github.com/srepac/kvmd-armbian/blob/master/install.sh)
