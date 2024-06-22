@@ -4,7 +4,7 @@
 
 ### 使用
 
-最新包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。 `kvmd-display` 服务默认为关闭状态（网页表现如下），避免影响其他服务运行。如需要可执行如下命令可手动开启。
+最新包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。 `kvmd-display` 服务默认为关闭状态，避免影响其他服务运行。如需要可执行如下命令可手动开启。
 
 ```bash
 #取消注释“#forever: true”选项并应用

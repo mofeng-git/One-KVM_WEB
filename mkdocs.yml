@@ -34,20 +34,20 @@ nav:
     - "介绍": index.md
     - "设备指南":
         - "玩客云套装": onecloud_guide.md
-        - "玩客云DIY安装": onecloud_install.md
-        - "X86主机安装": x64_install.md
-        - "Docker安装": docker_install.md
+        - "玩客云 DIY 安装": onecloud_install.md
+        - "X86 主机安装": x86_install.md
+        - "Docker 安装": docker_install.md
     - "快速开始": first_steps.md
     - "功能对比": compare.md
-    - "MSD虚拟存储驱动器": msd.md
-    - "VNC连接": vnc.md
-    - "WOL网络唤醒": wol.md
-    - "网页终端": webterm.md
-    - "2FA双重身份验证": 2fa.md
-    - "H.264视频": h264.md
-    - "KVM一控多": onecloud_kvm.md
-    - "ATX开关机控制": onecloud_atx.md
-    - "HDMI环出": loop_out.md
+    - "MSD 虚拟存储驱动器": msd.md
+    - "VNC 连接": vnc.md
+    - "WOL 网络唤醒": wol.md
+    - "Webterm 网页终端": webterm.md
+    - "2FA 双重身份验证": 2fa.md
+    - "H.264 视频": h264.md
+    - "KVM 一控多": onecloud_kvm.md
+    - "ATX 电源控制": onecloud_atx.md
+    - "HDMI 环出": loop_out.md
     - "开发知识库": develop.md
     - "常见问题": faq.md
     - "感谢": thanks.md

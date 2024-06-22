@@ -26,7 +26,6 @@ One-KVM是基于廉价计算机硬件（目前为玩客云和X64兼容机）和P
 
 Github地址：[https://github.com/mofeng-git/One-KVM](https://github.com/mofeng-git/One-KVM) （欢迎点个Star）
 
-QQ交流群：569514148 （One-KVM交流群）
-
 为爱发电：[https://afdian.net/a/silentwind](https://afdian.net/a/silentwind)
 
+QQ交流群：569514148 （One-KVM交流群）

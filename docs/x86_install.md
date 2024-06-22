@@ -1,6 +1,6 @@
 ### 硬件清单
 
-所需硬件：X64主机、USB采集卡、USB HID（CH340+CH9329）
+所需硬件：X86主机、USB采集卡、USB HID（CH340+CH9329）
 
 宿主机系统：Ubuntu Jammy
 
@@ -26,7 +26,7 @@ bash kvmd_display_install.sh
 ### 实机演示
 
 !!! note
-    此为软件运行在X64云服务器设备上，实际效果因软硬件配置而异。
+    运行在云服务器上，实际效果因软硬件配置而异。
 
 演示网站：[PiKVM X64 DEMO](https://1.12.77.48/)<br>
 账号/密码：admin/admin
