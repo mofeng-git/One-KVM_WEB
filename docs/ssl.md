@@ -1,0 +1,1 @@
+如果需要使用自己的证书，请替换 /etc/kvmd/nginx/ssl中的密钥，必要时编辑 /etc/kvmd/nginx/ssl.conf并重新启动kvmd-nginx服务。

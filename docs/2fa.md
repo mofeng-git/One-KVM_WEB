@@ -20,7 +20,7 @@ kvmd-totp del
 
 ![image-20240610104228226](./img/image-20240610104228226.png)
 
-对于安卓移动设备，可以使用您喜欢的2FA程序，如 [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)，基本功能大同小异，这里以 Authing 令牌为例说明2FA使用方法。首先扫描二维码或手动输入添加密钥，然后再登入PiKVM网页时多输入一项6位数的一次性密码。
+对于安卓移动设备，可以使用您喜欢的2FA程序，如 [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)，基本功能大同小异，这里以 Authing 令牌为例说明2FA使用方法。首先扫描二维码或手动输入添加密钥，然后再登入PiKVM 网页时多输入一项6位数的一次性密码。
 
 ![IMG_20240610_104719](./img/IMG_20240610_104719.png)
 

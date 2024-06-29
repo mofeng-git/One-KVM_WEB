@@ -8,7 +8,7 @@
     使用mjpeg格式，使用720p60帧或1080p30帧，右上角sysytem调整至最大帧率。720p可以点击网页视频右上角的“•”自动缩放画面与原画面分辨率相同。演示图为3终端720p60fps演示效果：
     ![img](./img/1717950485856-4.png)
 
-1. **如何在****公网****中访问局域网的One-KVM？**
+1. **如何在公网中访问局域网的One-KVM？**
 
      如果路由器有公网IP地址，可以使用端口映射转发443端口。在其他情况下，可以使用内网穿透服务（如Tailscale和FRP），只需几个简单的命令即可在One-KVM上配置。
 
@@ -32,7 +32,7 @@
     systemctl restart kvmd kvmd-nginx
     ```
 
-1. **如何给玩客云设置静态****IP****？**
+1. **如何给玩客云设置静态IP？**
 
     使用终端图形化工具`armbian-config` 或`nmtui`，可能没有预装需手动安装 `apt install armbian-config` 。
 
@@ -72,10 +72,6 @@
     不建议，可以在触屏设备浏览器上观看视频画面，但WEB界面可能无法正确响应部分触屏点击事件。
     推荐使用VNC应用程序，注意不要使用RealVNC（不兼容）。
 
-1. **如何添加自己的SSL证书？**
-
-    如果需要使用自己的证书，请替换 /etc/kvmd/nginx/ssl中的密钥，必要时编辑 /etc/kvmd/nginx/ssl.conf并重新启动kvmd-nginx服务。
-
 1. **访问 One-KVM 主页时，提示 500 错误?**
 
     可能原因：错误的 YAML 语法或者硬件外设不满足。可执行 `systemctl status kvmd kvmd-otg` 或是 `kvmd --run` 查看详细报错信息。
@@ -102,7 +98,6 @@
     ![img](./img/1717950485857-10.png)
     ![img](./img/1717950485859-11.png)
     
-   
 1. **如何给Armbian更换APT源？**
 
     ```bash
