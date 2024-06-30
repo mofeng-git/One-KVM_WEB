@@ -9,6 +9,8 @@ theme:
   name: material
   language: zh
   features:
+    - navigation.expand
+    - navigation.top
 
   font:
     text: Roboto
