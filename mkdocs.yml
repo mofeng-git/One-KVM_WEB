@@ -42,50 +42,50 @@ nav:
       - "Docker 安装": docker_install.md
 
     - "快速开始": first_steps.md
-    - "身份认证": auth.md
+    #- "身份认证": auth.md
     - "常见问题": faq.md
 
     - "联网":
       - "端口转发": port_forwarding.md
       - "FRP 端口映射": frp.md
-      - "Tailscale 异地组网": tailscale.md
-      - "Cloudflare 隧道": cloudflared.md
-      - "WIFI 连接": wifi.md
+      #- "Tailscale 异地组网": tailscale.md
+      #- "Cloudflare 隧道": cloudflared.md
+      #- "WIFI 连接": wifi.md
       - "SSL 加密连接": ssl.md
 
     - "视频":
       - "H.264 / WebRTC": h264.md
-      - "录制视频": video.md
-      - "音频": audio.md
+      #- "录制视频": video.md
+      #- "音频": audio.md
 
     - "外围设备":
-      - "键盘和鼠标":
-        - "鼠标模式": mouse.md
-        - "鼠标抖动器": mouse_jiggler.md
-        - "CH9329 HID": ch9329_hid.md
-        - "蓝牙 HID": bluetooth_hid.md
+      #- "键盘和鼠标":
+        #- "鼠标模式": mouse.md
+        #- "鼠标抖动器": mouse_jiggler.md
+        #- "CH9329 HID": ch9329_hid.md
+        #- "蓝牙 HID": bluetooth_hid.md
       - "大容量存储驱动器": msd.md
-      - "USB 以太网": usb_ethernet.md
-      - "USB 串口": usb_serial.md
-      - "动态 USB 配置": usb_dynamic.md
+      #- "USB 以太网": usb_ethernet.md
+      #- "USB 串口": usb_serial.md
+      #- "动态 USB 配置": usb_dynamic.md
       - "GPIO":
         - "ATX 电源控制": onecloud_atx.md
-        - "GPIO 通用配置": gpio.md
+        #- "GPIO 通用配置": gpio.md
         #- "USB 转 GPIO 配置": usb2gpio.md
 
     - "高级用法":
-      - "启动时配置": on_start_config.md
+      #- "启动时配置": on_start_config.md
       - "VNC 连接": vnc.md
       - "KVM 一控多": onecloud_kvm.md
       - "WOL 网络唤醒": wol.md
       - "Webterm 网页终端": webterm.md
       - "2FA 双重身份验证": 2fa.md
-      - "IPMI 和 Redfish 集成": ipmi.md
+      #- "IPMI 和 Redfish 集成": ipmi.md
       - "HDMI 环出": loop_out.md
 
     - "开发":
-      - "HTTP API 参考": api.md
-      - "构建 One-KVM 系统": building_os.md
+      #- "HTTP API 参考": api.md
+      #- "构建 One-KVM 系统": building_os.md
       - "周边套件": parts_library.md
       - "知识库": develop.md
 
