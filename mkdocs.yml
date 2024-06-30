@@ -76,7 +76,7 @@ nav:
         #- "USB 转 GPIO 配置": usb2gpio.md
 
     - "高级用法":
-      #- "启动时配置": on_start_config.md
+      - "启动时配置": on_start_config.md
       - "VNC 连接": vnc.md
       - "KVM 一控多": onecloud_kvm.md
       - "WOL 网络唤醒": wol.md
