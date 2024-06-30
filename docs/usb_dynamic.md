@@ -6,7 +6,7 @@ One-KVM 模拟许多 USB 设备以确保正常运行：键盘、鼠标和大容�
 
 该命令可以实时查看和修改 USB 配置，它需要root权限才能运行：`kvmd-otgconf`
 
-```
+```bash
 #查看配置
 root@onecloud:~#  kvmd-otgconf
 + ecm.usb0  # Ethernet
@@ -17,7 +17,7 @@ root@onecloud:~#  kvmd-otgconf
 
 每行代表一个设备（功能），行首是加号或减号（表示设备打开或关闭），然后是设备的名称及其描述。
 
-```
+```bash
 #禁用设备和启用设备
 root@onecloud:~# kvmd-otgconf --disable-function ecm.usb0
 - ecm.usb0  # Ethernet
@@ -37,7 +37,7 @@ root@onecloud:~# kvmd-otgconf --enable-function ecm.usb0
 
 要设置伪 GPIO 驱动程序菜单，可以使用 `kvmd-otgconf --make-gpio-config` 生成配置，并将其合并到  `/etc/kvmd/override.yaml`。
 
-```
+```yaml
 root@onecloud:~# kvmd-otgconf --make-gpio-config
 kvmd:
     gpio:

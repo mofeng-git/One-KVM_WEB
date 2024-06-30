@@ -1,8 +1,10 @@
 **MSD**（Mass Storage Drive），即大容量储存设备，可以实现远程上传文件，挂载镜像等功能。由于Linux限制，CD-ROM格式大小最大为2.2G，FALSH格式大小无限制。
 
-!!! info 最大 CD-ROM 镜像文件大小为 2.2 GB，这是 Linux 内核限制。
+!!! info 
+      最大 CD-ROM 镜像文件大小为 2.2 GB，这是 Linux 内核限制。
 
-!!! warning 对于玩客云 请不要在USB双公线（OTG线）与被控机断开或被控机关机时使用解除镜像挂载功能（ 断开连接），否则会因USB OTG 端口操作不可用致使内核疯狂持续报错，日志服务占用CPU 100%，系统稳定性下降。这时除非USB OTG连接恢复正常，MSD功能会一直保持不可用状态。
+!!! warning 
+      对于玩客云 请不要在USB双公线（OTG线）与被控机断开或被控机关机时使用解除镜像挂载功能（ 断开连接），否则会因USB OTG 端口操作不可用致使内核疯狂持续报错，日志服务占用CPU 100%，系统稳定性下降。这时除非USB OTG连接恢复正常，MSD功能会一直保持不可用状态。
 
 -----
 
@@ -112,13 +114,11 @@ sudo kvmd-helper-otgmsd-remount ro
 这是一个示例，创建了一个 FAT32 文件系统的镜像文件。
 
 1. 手动将内部存储重新挂载到读写模式：
-
    ```bash
    kvmd-helper-otgmsd-remount rw
    ```
 
 2. 创建一个空的镜像文件 所需大小（本例中为 512MB）并将其格式化为 FAT32：`/var/lib/kvmd/msd`
-
    ```bash
    dd if=/dev/zero of=/var/lib/kvmd/msd/flash.img bs=1M count=512 status=progress
    loop=$(losetup -f)
@@ -130,7 +130,6 @@ sudo kvmd-helper-otgmsd-remount ro
    ```
 
 3. 将内部存储重新挂载回安全只读模式：
-
    ```bash
    kvmd-helper-otgmsd-remount ro
    ```

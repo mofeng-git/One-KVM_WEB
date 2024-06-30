@@ -67,7 +67,7 @@ nav:
         #- "CH9329 HID": ch9329_hid.md
         #- "蓝牙 HID": bluetooth_hid.md
       - "大容量存储驱动器": msd.md
-      #- "USB 以太网": usb_ethernet.md
+      - "USB 以太网": usb_ethernet.md
       #- "USB 串口": usb_serial.md
       - "动态 USB 配置": usb_dynamic.md
       - "GPIO":
