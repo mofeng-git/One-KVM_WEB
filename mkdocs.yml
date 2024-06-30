@@ -49,9 +49,9 @@ nav:
 
     - "联网":
       - "端口转发": port_forwarding.md
-      - "FRP 端口映射": frp.md
-      #- "Tailscale 异地组网": tailscale.md
-      #- "Cloudflare 隧道": cloudflared.md
+      - "Frp 端口映射": frp.md
+      - "Tailscale 异地组网": tailscale.md
+      - "Cloudflare 隧道": cloudflared.md
       #- "WIFI 连接": wifi.md
       - "SSL 加密连接": ssl.md
 
