@@ -2,6 +2,12 @@
 
 这个项目基于众多开源项目二次开发，作者为此花费了大量的时间和精力进行测试和维护。若此项目对您有用，您可以考虑通过 **[为爱发电](https://afdian.net/a/silentwind)** 赞助一笔小钱支持作者。作者将能够购买新的硬件（玩客云和周边设备）来测试和维护 One-KVM 的各种配置，并在项目上投入更多的时间。
 
+Github地址：[https://github.com/mofeng-git/One-KVM](https://github.com/mofeng-git/One-KVM) （欢迎点个Star）
+
+为爱发电：[https://afdian.net/a/silentwind](https://afdian.net/a/silentwind)
+
+QQ交流群：569514148 （One-KVM交流群）
+
 ### **感谢**
 
 - 浩龙的电子嵌入式之路
@@ -18,6 +24,7 @@
 - 浩龙的电子嵌入式之路
 - a57a4
 - 2c769
+- 霜序
 - ......
 
 **本项目使用了下下列开源项目**

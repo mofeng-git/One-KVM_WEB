@@ -9,8 +9,13 @@ theme:
   name: material
   language: zh
   features:
-    - navigation.expand
     - navigation.top
+    - navigation.indexes
+    - navigation.sections
+    #- navigation.expand
+    - search.highlight
+    - search.share
+    - search.suggest
 
   font:
     text: Roboto
@@ -30,28 +35,29 @@ extra_javascript:
     - 'js/baidu-tongji.js'
 
 plugins:
+  - search:
+        lang: en
+        lang: zh
   - mkdocs-video:
-      is_video: True
-      video_muted: True
-      video_controls: True
 
 nav:
-    - "介绍": index.md
-    - "设备指南":
-      - "玩客云套装": onecloud_guide.md
-      - "玩客云 DIY 安装": onecloud_install.md
-      - "X86 主机安装": x86_install.md
-      - "Docker 安装": docker_install.md
+    - "开始":
+      - "介绍": index.md
+      - "设备指南":
+        - "玩客云套装": onecloud_guide.md
+        - "玩客云 DIY 安装": onecloud_install.md
+        - "X86 主机安装": x86_install.md
+        - "Docker 安装": docker_install.md
+        - "快速开始": first_steps.md
+      #- "身份认证": auth.md
+      - "常见问题": faq.md
 
-    - "快速开始": first_steps.md
-    #- "身份认证": auth.md
-    - "常见问题": faq.md
-
-    - "联网":
-      - "端口转发": port_forwarding.md
-      - "Frp 端口映射": frp.md
-      - "Tailscale 异地组网": tailscale.md
-      - "Cloudflare 隧道": cloudflared.md
+    - "网络":
+      - "互联网访问":
+        - "端口转发": port_forwarding.md
+        - "Frp 端口映射": frp.md
+        - "Tailscale 异地组网": tailscale.md
+        - "Cloudflare 隧道": cloudflared.md
       #- "WIFI 连接": wifi.md
       - "SSL 加密连接": ssl.md
 
