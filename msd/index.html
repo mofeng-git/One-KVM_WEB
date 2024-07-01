@@ -984,7 +984,7 @@
           <li class="md-nav__item">
   <a href="#img" class="md-nav__link">
     <span class="md-ellipsis">
-      使用IMG镜像
+      使用 IMG 镜像
     </span>
   </a>
   
@@ -1565,7 +1565,7 @@
           <li class="md-nav__item">
   <a href="#img" class="md-nav__link">
     <span class="md-ellipsis">
-      使用IMG镜像
+      使用 IMG 镜像
     </span>
   </a>
   
@@ -1625,6 +1625,7 @@
 </div>
 <hr>
 <h3 id="msd-msd">新建 MSD 分区并启用 MSD</h3>
+<p>下面三种方式任选其一即可，对于新手第三种方法更为推荐，使用 IMG 镜像做 MSD 分区，无需对物理磁盘进行分区，操作更加安全和简单。</p>
 <h4 id="emmc"><strong>使用玩客云EMMC空间</strong></h4>
 <p>作者在安装篇的网盘的链接中提供了包含此软件的系统镜像（网盘路径：/PiKVM相关软件/gparted_on_armbain_usbdisk.zip），刷入U盘后将U盘插到玩客云网口旁的USB口插电启动，连接ssh（root/1234）输入<code>gparted</code>即可启动磁盘分区软件。</p>
 <p>如果没有打开如图所示的Gparted软件界面请检查你的ssh终端是否支持X11转发功能。</p>
@@ -1667,9 +1668,9 @@ mount<span class="w"> </span>/dev/sdx
 nano<span class="w"> </span>/etc/kvmd/override.yaml
 systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd-otg<span class="w"> </span>kvmd
 </code></pre></div>
-<h4 id="img">使用IMG镜像</h4>
+<h4 id="img">使用 IMG 镜像</h4>
 <p>此方法通过已测试，可以使用。</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#虚拟磁盘创建示例代码</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#虚拟磁盘创建示例代码，512单位为 M，这个数字可以替换成你所需要的容量</span>
 dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/root/diska.img<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">512</span>
 mkfs.ext4<span class="w"> </span>/root/diska.img
 
