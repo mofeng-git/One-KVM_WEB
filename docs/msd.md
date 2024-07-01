@@ -31,9 +31,10 @@
 df -h
 
 #在文件末尾添加如下挂载，如为/dev/mmcblk0需自行替换
+#挂载虚拟磁盘文件不同于挂载分区，一定要以 "rw" 方式挂载
 nano /etc/fstab
 
-/dev/mmcblk0p3 /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,ro,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
+/dev/mmcblk0p3 /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,rw,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
 
 #如果挂载操作报错请检查并修正错误
 mount /dev/mmcblk0p3
