@@ -33,10 +33,9 @@
 df -h
 
 #在文件末尾添加如下挂载，如为/dev/mmcblk0需自行替换
-#挂载虚拟磁盘文件不同于挂载分区，一定要以 "rw" 方式挂载
 nano /etc/fstab
 
-/dev/mmcblk0p3 /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,rw,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
+/dev/mmcblk0p3 /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,ro,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
 
 #如果挂载操作报错请检查并修正错误
 mount /dev/mmcblk0p3
@@ -79,7 +78,8 @@ mkfs.ext4 /root/diska.img
 
 nano /etc/fstab
 #在文件末尾添加如下挂载（将/root/diska.img替换为你的虚拟磁盘路径）
-/root/diska.img /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,ro,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
+#挂载虚拟磁盘文件不同于挂载分区，一定要以 "rw" 方式挂载
+/root/diska.img /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,rw,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
 
 #挂载分区（将/root/diska.img替换为你的虚拟磁盘路径），如失败报错请检查设备地址和挂载内容是否出错
 mount /root/diska.img
