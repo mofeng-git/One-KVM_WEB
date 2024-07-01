@@ -10,6 +10,8 @@
 
 ### 新建 MSD 分区并启用 MSD
 
+下面三种方式任选其一即可，对于新手第三种方法更为推荐，使用 IMG 镜像做 MSD 分区，无需对物理磁盘进行分区，操作更加安全和简单。
+
 #### **使用玩客云EMMC空间**
 
 作者在安装篇的网盘的链接中提供了包含此软件的系统镜像（网盘路径：/PiKVM相关软件/gparted_on_armbain_usbdisk.zip），刷入U盘后将U盘插到玩客云网口旁的USB口插电启动，连接ssh（root/1234）输入`gparted`即可启动磁盘分区软件。
@@ -66,12 +68,12 @@ nano /etc/kvmd/override.yaml
 systemctl restart kvmd-otg kvmd
 ```
 
-#### 使用IMG镜像
+#### 使用 IMG 镜像
 
 此方法通过已测试，可以使用。
 
 ```bash
-#虚拟磁盘创建示例代码
+#虚拟磁盘创建示例代码，512单位为 M，这个数字可以替换成你所需要的容量
 dd if=/dev/zero of=/root/diska.img bs=1M count=512
 mkfs.ext4 /root/diska.img
 
