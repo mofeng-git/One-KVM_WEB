@@ -45,7 +45,9 @@ plugins:
   - mkdocs-video:
   - git-revision-date-localized:
       enable_creation_date: true
-      type: timeago
+      timezone: Asia/Shanghai
+      type: date
+      locale: zh
 
 nav:
     - "开始":
