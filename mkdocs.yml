@@ -12,11 +12,10 @@ theme:
     - navigation.top
     - navigation.indexes
     - navigation.sections
-    #- navigation.expand
+    - navigation.footer
     - search.highlight
     - search.share
     - search.suggest
-
   font:
     text: Roboto
     code: Roboto Mono
@@ -25,6 +24,12 @@ markdown_extensions:
   - admonition
   - pymdownx.superfences
   - pymdownx.highlight
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 repo_url: https://github.com/mofeng-git/One-KVM
 repo_name: mofeng-git/One-KVM
@@ -36,9 +41,11 @@ extra_javascript:
 
 plugins:
   - search:
-        lang: en
         lang: zh
   - mkdocs-video:
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: iso_date
 
 nav:
     - "开始":
@@ -48,7 +55,7 @@ nav:
         - "玩客云 DIY 安装": onecloud_install.md
         - "X86 主机安装": x86_install.md
         - "Docker 安装": docker_install.md
-        - "快速开始": first_steps.md
+      - "快速开始": first_steps.md
       #- "身份认证": auth.md
       - "常见问题": faq.md
 
@@ -57,7 +64,7 @@ nav:
         - "端口转发": port_forwarding.md
         - "Frp 端口映射": frp.md
         - "Tailscale 异地组网": tailscale.md
-        - "Cloudflare 隧道": cloudflared.md
+        - "Cloudflared 隧道": cloudflared.md
       #- "WIFI 连接": wifi.md
       - "SSL 加密连接": ssl.md
 

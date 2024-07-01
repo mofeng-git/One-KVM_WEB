@@ -35,6 +35,9 @@ sudo systemctl restart frpc
 
 ### Frpc 访问
 
-在 Frps 正确运行后，在浏览器访问服务商提供的带端口的域名（或自建 Frps 服务器地址）即可打开One-KVM 网页。这里有一点需要注意，远程访问 One-KVM 网页时需要手动在网址栏添加"https://"协议头，否则默认的”http://“协议头会返回错误”400 Bad RequestThe plain HTTP request was sent to HTTPS port"。
+在 Frps 正确运行后，在浏览器访问服务商提供的带端口的域名（或自建 Frps 服务器地址）即可打开One-KVM 网页。
 
-![PixPin_2024-06-30_16-37-59](./img/PixPin_2024-06-30_16-37-59.png)
+??? note "网页远程访问需要使用"https://"协议头"
+    注意，远程访问 One-KVM 网页时需要手动在网址栏添加"https://"协议头，否则默认的"http://"协议头会返回错误"400 Bad Request The plain HTTP request was sent to HTTPS port"。
+
+    ![PixPin_2024-06-30_16-37-59](./img/PixPin_2024-06-30_16-37-59.png)

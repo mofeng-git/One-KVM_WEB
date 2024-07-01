@@ -33,3 +33,8 @@ sudo dpkg --add-architecture arm
 最后就可以看到正在运行的 Cloudflare Tunnel 了。
 
 ![PixPin_2024-06-30_18-29-44](./img/PixPin_2024-06-30_18-29-44.png)
+
+??? note "网页远程访问需要使用"https://"协议头"
+    注意，远程访问 One-KVM 网页时需要手动在网址栏添加"https://"协议头，否则默认的"http://"协议头会返回错误"400 Bad Request The plain HTTP request was sent to HTTPS port"。
+
+    ![PixPin_2024-06-30_16-37-59](./img/PixPin_2024-06-30_16-37-59.png)

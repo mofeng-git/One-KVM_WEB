@@ -13,4 +13,4 @@ tailscale up
 
 ![PixPin_2024-06-30_17-41-12](./img/PixPin_2024-06-30_17-41-12.png)
 
-可以看到 Tailscale 已经出现新设备了，多端互访、异地组网等更详细的内容可以参考 Tailscale 官方文档 [Docs · Tailscale Docs](https://tailscale.com/kb)。
+可以看到 Tailscale 网页管理后台已经出现新设备了，多端互访、异地组网等更详细的内容可以参考 Tailscale 官方文档 [Docs · Tailscale Docs](https://tailscale.com/kb)。

@@ -11,3 +11,8 @@ Web UI 的监听端口为 (HTTP 80) 和 (HTTPS 443)，默认情况下，80端口
 这是在小米路由器管理后台新建端口转发的简单示例。
 
 ![PixPin_2024-06-30_17-01-25](./img/PixPin_2024-06-30_17-01-25.png)
+
+??? note "网页远程访问需要使用"https://"协议头"
+    注意，远程访问 One-KVM 网页时需要手动在网址栏添加"https://"协议头，否则默认的"http://"协议头会返回错误"400 Bad Request The plain HTTP request was sent to HTTPS port"。
+
+    ![PixPin_2024-06-30_16-37-59](./img/PixPin_2024-06-30_16-37-59.png)
