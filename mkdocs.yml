@@ -45,7 +45,7 @@ plugins:
   - mkdocs-video:
   - git-revision-date-localized:
       enable_creation_date: true
-      type: iso_date
+      type: timeago
 
 nav:
     - "开始":
