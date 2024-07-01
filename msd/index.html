@@ -1638,10 +1638,9 @@
 df<span class="w"> </span>-h
 
 <span class="c1">#在文件末尾添加如下挂载，如为/dev/mmcblk0需自行替换</span>
-<span class="c1">#挂载虚拟磁盘文件不同于挂载分区，一定要以 "rw" 方式挂载</span>
 nano<span class="w"> </span>/etc/fstab
 
-/dev/mmcblk0p3<span class="w"> </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,rw,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+/dev/mmcblk0p3<span class="w"> </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,ro,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
 
 <span class="c1">#如果挂载操作报错请检查并修正错误</span>
 mount<span class="w"> </span>/dev/mmcblk0p3
@@ -1676,7 +1675,8 @@ mkfs.ext4<span class="w"> </span>/root/diska.img
 
 nano<span class="w"> </span>/etc/fstab
 <span class="c1">#在文件末尾添加如下挂载（将/root/diska.img替换为你的虚拟磁盘路径）</span>
-/root/diska.img<span class="w"> </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,ro,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+<span class="c1">#挂载虚拟磁盘文件不同于挂载分区，一定要以 "rw" 方式挂载</span>
+/root/diska.img<span class="w"> </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,rw,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
 
 <span class="c1">#挂载分区（将/root/diska.img替换为你的虚拟磁盘路径），如失败报错请检查设备地址和挂载内容是否出错</span>
 mount<span class="w"> </span>/root/diska.img
