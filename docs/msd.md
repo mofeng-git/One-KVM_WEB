@@ -72,7 +72,7 @@ systemctl restart kvmd-otg kvmd
 此方法通过已测试，可以使用。
 
 ```bash
-#虚拟磁盘创建示例代码，512单位为 M，这个数字可以替换成你所需要的容量
+#虚拟磁盘创建示例代码，512单位为 1M 的倍数，这个数字可以替换成你所需要的容量
 dd if=/dev/zero of=/root/diska.img bs=1M count=512
 mkfs.ext4 /root/diska.img
 
