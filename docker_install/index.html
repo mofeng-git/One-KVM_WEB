@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://one-kvm.mofeng.run/docker_install/">
       
       
-        <link rel="prev" href="../x86_install/">
+        <link rel="prev" href="../onecloud_install/">
       
       
         <link rel="next" href="../first_steps/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Docker 安装 - One-KVM文档</title>
+        <title>Docker 部署 - One-KVM文档</title>
       
     
     
@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker 安装
+              Docker 部署
             
           </span>
         </div>
@@ -297,8 +302,6 @@
       
         
       
-        
-      
     
     
       
@@ -315,7 +318,7 @@
             
   
   <span class="md-ellipsis">
-    设备指南
+    软件安装
   </span>
   
 
@@ -325,7 +328,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
-            设备指南
+            软件安装
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -375,27 +378,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../x86_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    X86 主机安装
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -406,15 +388,79 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Docker 部署
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Docker 安装
+    Docker 部署
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件清单
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker 部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      演示截图
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -440,7 +486,7 @@
         
   
   <span class="md-ellipsis">
-    快速开始
+    开始配置
   </span>
   
 
@@ -1621,6 +1667,50 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件清单
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker 部署
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      参数说明
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      演示截图
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1637,12 +1727,46 @@
   
 
 
-  <h1>Docker 安装</h1>
+  <h1>Docker 部署</h1>
 
-<div><p>目前支持仅有pikvm-ch9329_amd64，后续将支持更多控制方式和处理器架构。使用示例：</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span>-p443:443<span class="w"> </span>-p80:80<span class="w"> </span>--name<span class="w"> </span>pikvm-docker<span class="w"> </span>--device<span class="o">=</span>/dev/ttyUSB0:/dev/kvmd-hid<span class="w"> </span>--device<span class="o">=</span>/dev/video0:/dev/kvmd-video<span class="w"> </span>pikvm-ch9329:0.61
+<div><h3 id="_1">硬件清单</h3>
+<p>所需外设：USB采集卡、USB HID（CH340+CH9329）</p>
+<p>宿主机系统：Linux</p>
+<h3 id="docker">Docker 部署</h3>
+<p>目前 Docker 版只能使用 CH9329 作为虚拟 HID ，支持 amd64、arm64、armv7 架构的 Linux 系统安装。</p>
+<p>当前只有dev分支，尚未发布稳定版本，演示网站（账号密码：admin/admin）：https://kvmd-demo.mofeng.run/</p>
+<p>部署命令：
+</p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>/dev/video0:/dev/kvmd-video<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>/dev/ttyUSB0:/dev/kvmd-hid<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd:dev
 </code></pre></div>
-<p><img alt="img" src="../img/1717950439628-1.png"></p></div>
+<p>部署完成访问 http://IP:8080 即可开始使用，默认密码：admin/admin。
+如无法访问可以使用 <code>sudo docker logs kvmd</code> 命令查看日志尝试修复、提交 issue 或在 QQ 群内寻求帮助。</p>
+<p>如果暂时相关没有 USB 设备或只想要查看新版特性，可以使用以下命令启动一个无 USB 硬件的应用（演示模式）：
+</p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--device<span class="w"> </span>/dev/tty10:/dev/kvmd-hid<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd:dev
+</code></pre></div>
+<h3 id="_2">参数说明</h3>
+<p><code>-device /dev/video0:/dev/kvmd-video</code> 将主机上的 <code>/dev/video0</code> 设备映射到容器内的 <code>/dev/kvmd-video</code> ，支持USB UVC 设备，用于采集卡视频输入。</p>
+<p><code>--device /dev/ttyUSB0:/dev/kvmd-hid</code> 将主机上的 <code>/dev/ttyUSB0</code> 设备映射到容器内的 <code>/dev/kvmd-hid</code> ，支持串口设备，推荐使用 CH9329+CH340 一体线，用于虚拟键盘鼠标。</p>
+<p><code>-p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623</code> 将容器的端口映射到主机，用于向外暴露下列服务端口：<br>
+ WEB 网页：8080、4430<br>
+ VNC 控制台：5900<br>
+ IPMI 控制：623</p>
+<p><code>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd:dev</code> 为阿里云个人镜像托管服务地址，实例位于杭州，拉取速度较快。目前只有dev分支，尚未发布稳定版本。</p>
+<h3 id="_3">演示截图</h3>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>演示网站运行在云服务器上，实际效果因软硬件配置而异。</p>
+<p>演示网站：<a href="https://kvmd-demo.mofeng.run">https://kvmd-demo.mofeng.run</a><br>
+账号/密码：admin/admin</p>
+</details>
+<p><img alt="image-20240906193341839" src="../img/image-20240906193341839.png"></p>
+<p><img alt="image-20240906193401576" src="../img/image-20240906193401576.png"></p></div>
 
 
 
@@ -1665,7 +1789,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年6月10日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月6日</span>
   </span>
 
     
@@ -1710,7 +1834,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../x86_install/" class="md-footer__link md-footer__link--prev" aria-label="上一页: X86 主机安装">
+          <a href="../onecloud_install/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 玩客云 DIY 安装">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1720,20 +1844,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                X86 主机安装
+                玩客云 DIY 安装
               </div>
             </div>
           </a>
         
         
           
-          <a href="../first_steps/" class="md-footer__link md-footer__link--next" aria-label="下一页: 快速开始">
+          <a href="../first_steps/" class="md-footer__link md-footer__link--next" aria-label="下一页: 开始配置">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                快速开始
+                开始配置
               </div>
             </div>
             <div class="md-footer__button md-icon">
