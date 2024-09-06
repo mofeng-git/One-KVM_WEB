@@ -31,7 +31,7 @@ One-KVM是基于廉价计算机硬件（目前为玩客云和X64兼容机）和P
 
 ### 软件安装
 
-推荐使用 Docker 安装部署 One-KVM，具体步骤请参考 [Docker 部署](/docker_install)。
+推荐使用 Docker 安装部署 One-KVM，具体步骤请参考 [Docker 部署](https://one-kvm.mofeng.run/docker_install/)。
 
 ### 运行效果
 
