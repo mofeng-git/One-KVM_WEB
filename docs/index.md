@@ -7,7 +7,7 @@ One-KVM是基于廉价计算机硬件（目前为玩客云和X64兼容机）和P
 
     ---
 
-    使用打包好的镜像或一键脚本，数分钟即可安装完成，开始使用
+    使用打包好的镜像，数分钟即可完成部署，开始使用
 
 -   :material-camera-control:{ .lg .middle } __非侵入式控制__
 
@@ -21,7 +21,7 @@ One-KVM是基于廉价计算机硬件（目前为玩客云和X64兼容机）和P
 
     已实现 KVM 远程控制、ATX 电源管理、 USB 虚拟外设、VNC、H.264/WebRTC 等
 
--   :material-open-source-initiative:{ .lg .middle } __GPLv3 开源__
+-   :material-open-source-initiative:{ .lg .middle } __开源免费__
 
     ---
 
@@ -29,30 +29,32 @@ One-KVM是基于廉价计算机硬件（目前为玩客云和X64兼容机）和P
 
 </div>
 
+### 软件安装
+
+推荐使用 Docker 安装部署 One-KVM，具体步骤请参考 [Docker 部署](/docker_install)。
+
 ### 运行效果
 
 ???+ note
-    演示网站运行在X64云服务器上，实际效果因软硬件配置而异。
+    演示网站运行在云服务器上，实际效果因软硬件配置而异。
 
-    演示网站：[PiKVM X64 DEMO](https://1.12.77.48/)<br>
+    演示网站：[https://kvmd-demo.mofeng.run](https://kvmd-demo.mofeng.run)<br>
     账号/密码：admin/admin
-
-    ![image-20240622153423448](./img/image-20240622153423448.png)
 
 
 ???+ note
     此为在玩客云设备上的演示效果，实际效果因软硬件配置而异。
 
     <div class="grid cards" markdown>
-
+    
     ![PixPin_2024-07-01_10-50-18](./img/PixPin_2024-07-01_10-50-18.png)
-
+    
     ![15560030-996a-4a9a-a132-7ad072c7569c](./img/15560030-996a-4a9a-a132-7ad072c7569c.png)
-
+    
     ![09348dd5-3e3a-4384-ad6d-9c3723682755](./img/09348dd5-3e3a-4384-ad6d-9c3723682755.png)
-
+    
     ![PixPin_2024-07-01_10-48-45](./img/PixPin_2024-07-01_10-48-45.png)
-
+    
     </div>
 
 ### 其他
