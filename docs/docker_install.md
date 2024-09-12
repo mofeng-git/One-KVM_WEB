@@ -41,16 +41,3 @@ sudo docker run --name kvmd -itd \
  IPMI 控制：623
 
 `registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd:dev` 为阿里云个人镜像托管服务地址，实例位于杭州，拉取速度较快。目前只有dev分支，尚未发布稳定版本。
-
-### 演示截图
-
-???+ note
-    演示网站运行在云服务器上，实际效果因软硬件配置而异。
-
-    演示网站：[https://kvmd-demo.mofeng.run](https://kvmd-demo.mofeng.run)<br>
-    账号/密码：admin/admin
-
-
-![image-20240906193341839](./img/image-20240906193341839.png)
-
-![image-20240906193401576](./img/image-20240906193401576.png)

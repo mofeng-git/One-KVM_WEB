@@ -16,9 +16,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-  font:
-    text: Roboto
-    code: Roboto Mono
+  font: false
 
 markdown_extensions:
   - admonition
@@ -30,6 +28,11 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      
 
 repo_url: https://github.com/mofeng-git/One-KVM
 repo_name: mofeng-git/One-KVM
@@ -51,7 +54,8 @@ plugins:
 
 nav:
     - "开始":
-      - "介绍": index.md
+      - "简介": index.md
+      - "写在前面": prepare.md
       - "软件安装":
         - "玩客云套装": onecloud_guide.md
         - "玩客云 DIY 安装": onecloud_install.md
