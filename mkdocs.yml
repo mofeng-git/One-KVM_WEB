@@ -16,6 +16,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
+    - navigation.expand
   font: false
 
 markdown_extensions:
