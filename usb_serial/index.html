@@ -41,12 +41,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -240,6 +234,8 @@
       
         
       
+        
+      
     
     
       
@@ -289,6 +285,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -307,10 +324,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -321,8 +338,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             软件安装
           </label>
@@ -1678,39 +1695,48 @@
 <ol>
 <li>
 <p>编辑 <code>/etc/kvmd/override.yaml</code> 添加如下串口配置。
-   </p><div class="highlight"><pre><span></span><code><span class="nt">otg</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">devices</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">serial</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
+   </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">otg</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nt">devices</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nt">serial</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>运行以下命令：
-   </p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>ttyGS0<span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/securetty
-</code></pre></div>
+   </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>ttyGS0<span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/securetty
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>创建目录 <code>/etc/systemd/system/getty@ttyGS0.service.d</code> ，然后在此目录中编辑文件 <code>override.conf</code> ，将其下面的内容复制到此文件。
-   </p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/systemd/system/getty@ttyGS0.service.d
-sudo<span class="w"> </span>nano<span class="w"> </span>/etc/systemd/system/getty@ttyGS0.service.d/override.conf
-</code></pre></div>
-   <div class="highlight"><pre><span></span><code>[Service]
-TTYReset=no
-TTYVHangup=no
-TTYVTDisallocate=no
-</code></pre></div>
+   </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/systemd/system/getty@ttyGS0.service.d
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/systemd/system/getty@ttyGS0.service.d/override.conf
+</code></pre></div></td></tr></table></div>
+   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>[Service]
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>TTYReset=no
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>TTYVHangup=no
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>TTYVTDisallocate=no
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>运行以下命令：
-   </p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>getty@ttyGS0.service
-sudo<span class="w"> </span>reboot
-</code></pre></div>
+   </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>getty@ttyGS0.service
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>sudo<span class="w"> </span>reboot
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>重新启动 PiKVM 后，就可以访问 USB 所连接的服务器上的虚拟串行端口，可以使用 screen、putty 或类似的程序从服务器访问 PiKVM ，该端口设备名可能为 <code>/dev/ttyAMA0</code> 或 <code>/dev/ttyACM0</code>。
-   </p><div class="highlight"><pre><span></span><code><span class="c1">#串口连接示例</span>
-sudo<span class="w"> </span>screen<span class="w"> </span>/dev/ttyACM0<span class="w"> </span><span class="m">115200</span>
-</code></pre></div>
+   </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">#串口连接示例</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>sudo<span class="w"> </span>screen<span class="w"> </span>/dev/ttyACM0<span class="w"> </span><span class="m">115200</span>
+</code></pre></div></td></tr></table></div>
    <img alt="PixPin_2024-06-30_22-29-20" src="../img/PixPin_2024-06-30_22-29-20.png">
 </li>
 </ol></div>

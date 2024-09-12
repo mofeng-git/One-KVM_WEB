@@ -41,12 +41,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -240,6 +234,8 @@
       
         
       
+        
+      
     
     
       
@@ -289,6 +285,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -307,10 +324,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -321,8 +338,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             软件安装
           </label>
@@ -1679,11 +1696,14 @@
 <p>Tailscale 是一种虚拟专用网服务，可让您在世界任何地方都能安全、轻松地访问您拥有的设备和应用程序。它使用开源的 WireGuard 协议实现加密的点对点连接，这意味着只有在你的专用网络上的设备才能相互通信。</p>
 </blockquote>
 <h3 id="tailscale">Tailscale 客户端安装</h3>
-<div class="highlight"><pre><span></span><code><span class="c1">#Tailscale 客户端一键安装脚本</span>
-curl<span class="w"> </span>-fsSL<span class="w"> </span>https://tailscale.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
-<span class="c1">#启动 Tailscale</span>
-tailscale<span class="w"> </span>up
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#Tailscale 客户端一键安装脚本</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://tailscale.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#启动 Tailscale</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>tailscale<span class="w"> </span>up
+</code></pre></div></td></tr></table></div>
 <p><img alt="PixPin_2024-06-30_17-39-00" src="../img/PixPin_2024-06-30_17-39-00.png"></p>
 <p><img alt="PixPin_2024-06-30_17-41-12" src="../img/PixPin_2024-06-30_17-41-12.png"></p>
 <p>可以看到 Tailscale 网页管理后台已经出现新设备了，多端互访、异地组网等更详细的内容可以参考 Tailscale 官方文档 <a href="https://tailscale.com/kb">Docs · Tailscale Docs</a>。</p></div>

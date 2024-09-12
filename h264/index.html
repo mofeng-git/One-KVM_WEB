@@ -41,12 +41,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -240,6 +234,8 @@
       
         
       
+        
+      
     
     
       
@@ -289,6 +285,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -307,10 +324,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -321,8 +338,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             软件安装
           </label>
@@ -1720,23 +1737,33 @@
 <p>最新包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。由于玩客云 CPU 性能较差，所以 <code>kvmd-ffmpeg</code> 服务默认为关闭状态（网页表现如下），避免影响其他服务的流畅性。</p>
 <p><img alt="image-20240622152523786" src="../img/image-20240622152523786.png"></p>
 <p>如需要可执行如下命令可手动开启。</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#启动 kvmd-ffmpeg 服务</span>
-sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>kvmd-ffmpeg
-<span class="c1">#设置 kvmd-ffmpeg 服务开机自启</span>
-sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kvmd-ffmpeg
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#启动 kvmd-ffmpeg 服务</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>kvmd-ffmpeg
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#设置 kvmd-ffmpeg 服务开机自启</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kvmd-ffmpeg
+</code></pre></div></td></tr></table></div>
 <p>在玩客云上，H.264 视频非常卡顿，使用体验较差。</p>
 <p><img alt="image-20240610154409422" src="../img/image-20240610154409422.png"></p>
 <h3 id="_2">安装</h3>
-<div class="highlight"><pre><span></span><code><span class="c1">#此功能默认未安装，开启需要执行 kvmd_h264_install.sh 脚本</span>
-git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/mofeng-git/One-KVM.git
-<span class="nb">cd</span><span class="w"> </span>One-KVM<span class="w"> </span>
-sudo<span class="w"> </span>bash<span class="w"> </span>kvmd_h264_install.sh
-
-<span class="c1">#停止 kvmd-ffmpeg 服务</span>
-sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>kvmd-ffmpeg
-sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>kvmd-ffmpeg
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#此功能默认未安装，开启需要执行 kvmd_h264_install.sh 脚本</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/mofeng-git/One-KVM.git
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>One-KVM<span class="w"> </span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>sudo<span class="w"> </span>bash<span class="w"> </span>kvmd_h264_install.sh
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#停止 kvmd-ffmpeg 服务</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>kvmd-ffmpeg
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>kvmd-ffmpeg
+</code></pre></div></td></tr></table></div>
 <h3 id="_3">视频演示</h3>
 <p><div class="video-container"><iframe src="../video/%E7%8E%A9%E5%AE%A2%E4%BA%91WebRTC%E9%9F%B3%E8%A7%86%E9%A2%91%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA_x264.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p></div>
 

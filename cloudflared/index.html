@@ -41,12 +41,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -240,6 +234,8 @@
       
         
       
+        
+      
     
     
       
@@ -289,6 +285,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -307,10 +324,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -321,8 +338,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             软件安装
           </label>
@@ -1687,8 +1704,8 @@
 <p><img alt="PixPin_2024-06-30_18-06-42" src="../img/PixPin_2024-06-30_18-06-42.png"></p>
 <p>之后可以看到这个安装命令，选择对应的系统和架构，点击命令栏可以复制命令。</p>
 <p>注意，如果你是在 armhf 架构上的设备（如玩客云）上，由于 Cloudflared arm32-bit 软件包为 arm 架构，需要在执行 Cloudflare 网页所给命令前，执行如下命令添加此架构软件包的安装支持。</p>
-<div class="highlight"><pre><span></span><code>sudo dpkg --add-architecture arm
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo dpkg --add-architecture arm
+</code></pre></div></td></tr></table></div>
 <p><img alt="PixPin_2024-06-30_18-28-34" src="../img/PixPin_2024-06-30_18-28-34.png"></p>
 <p><img alt="PixPin_2024-06-30_18-09-10" src="../img/PixPin_2024-06-30_18-09-10.png"></p>
 <p>点击 Public Hostnames 的 tab，点击 Add a public hostname，之后选择 TCP 协议填入 One-KVM 的内网 IP 和端口，填写完成后点击 Save tunnel 保存配置。主域名只能使用已经添加到 Cloudflare 的域名。</p>

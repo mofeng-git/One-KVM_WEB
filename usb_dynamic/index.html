@@ -41,12 +41,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -240,6 +234,8 @@
       
         
       
+        
+      
     
     
       
@@ -289,6 +285,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -307,10 +324,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -321,8 +338,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             软件安装
           </label>
@@ -1695,63 +1712,110 @@
 <p>One-KVM 模拟许多 USB 设备以确保正常运行：键盘、鼠标和大容量存储驱动器。 此外，还可能存在额外的相对鼠标， 或用户配置的 USB 以太网或串行端口。</p>
 <p>在极少数情况下，被控机 BIOS/UEFI 可能无法识别单个 USB 端口上如此多的模拟设备， 因此其中一些可能需要禁用。USB 重新配置一般需要重新启动，但使用此命令临时禁用已配置的现有模拟设备说可以无需重新冷启动。</p>
 <p>该命令可以实时查看和修改 USB 配置，它需要root权限才能运行：<code>kvmd-otgconf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">#查看配置</span>
-root@onecloud:~#<span class="w">  </span>kvmd-otgconf
-+<span class="w"> </span>ecm.usb0<span class="w">  </span><span class="c1"># Ethernet</span>
-+<span class="w"> </span>hid.usb0<span class="w">  </span><span class="c1"># Keyboard</span>
-+<span class="w"> </span>hid.usb1<span class="w">  </span><span class="c1"># Absolute Mouse</span>
-+<span class="w"> </span>hid.usb2<span class="w">  </span><span class="c1"># Relative Mouse</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#查看配置</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>root@onecloud:~#<span class="w">  </span>kvmd-otgconf
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>+<span class="w"> </span>ecm.usb0<span class="w">  </span><span class="c1"># Ethernet</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>+<span class="w"> </span>hid.usb0<span class="w">  </span><span class="c1"># Keyboard</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>+<span class="w"> </span>hid.usb1<span class="w">  </span><span class="c1"># Absolute Mouse</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>+<span class="w"> </span>hid.usb2<span class="w">  </span><span class="c1"># Relative Mouse</span>
+</code></pre></div></td></tr></table></div>
 <p>每行代表一个设备（功能），行首是加号或减号（表示设备打开或关闭），然后是设备的名称及其描述。</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#禁用设备和启用设备</span>
-root@onecloud:~#<span class="w"> </span>kvmd-otgconf<span class="w"> </span>--disable-function<span class="w"> </span>ecm.usb0
--<span class="w"> </span>ecm.usb0<span class="w">  </span><span class="c1"># Ethernet</span>
-+<span class="w"> </span>hid.usb0<span class="w">  </span><span class="c1"># Keyboard</span>
-+<span class="w"> </span>hid.usb1<span class="w">  </span><span class="c1"># Absolute Mouse</span>
-+<span class="w"> </span>hid.usb2<span class="w">  </span><span class="c1"># Relative Mous</span>
-root@onecloud:~#<span class="w"> </span>kvmd-otgconf<span class="w"> </span>--enable-function<span class="w"> </span>ecm.usb0
-+<span class="w"> </span>ecm.usb0<span class="w">  </span><span class="c1"># Ethernet</span>
-+<span class="w"> </span>hid.usb0<span class="w">  </span><span class="c1"># Keyboard</span>
-+<span class="w"> </span>hid.usb1<span class="w">  </span><span class="c1"># Absolute Mouse</span>
-+<span class="w"> </span>hid.usb2<span class="w">  </span><span class="c1"># Relative Mouse</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#禁用设备和启用设备</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>root@onecloud:~#<span class="w"> </span>kvmd-otgconf<span class="w"> </span>--disable-function<span class="w"> </span>ecm.usb0
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>-<span class="w"> </span>ecm.usb0<span class="w">  </span><span class="c1"># Ethernet</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>+<span class="w"> </span>hid.usb0<span class="w">  </span><span class="c1"># Keyboard</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>+<span class="w"> </span>hid.usb1<span class="w">  </span><span class="c1"># Absolute Mouse</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>+<span class="w"> </span>hid.usb2<span class="w">  </span><span class="c1"># Relative Mous</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>root@onecloud:~#<span class="w"> </span>kvmd-otgconf<span class="w"> </span>--enable-function<span class="w"> </span>ecm.usb0
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>+<span class="w"> </span>ecm.usb0<span class="w">  </span><span class="c1"># Ethernet</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>+<span class="w"> </span>hid.usb0<span class="w">  </span><span class="c1"># Keyboard</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>+<span class="w"> </span>hid.usb1<span class="w">  </span><span class="c1"># Absolute Mouse</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>+<span class="w"> </span>hid.usb2<span class="w">  </span><span class="c1"># Relative Mouse</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="_1">网页菜单</h3>
 <p>你还可以通过网页界面中的菜单控制伪 GPIO 驱动程序。</p>
 <p>要设置伪 GPIO 驱动程序菜单，可以使用 <code>kvmd-otgconf --make-gpio-config</code> 生成配置，并将其合并到  <code>/etc/kvmd/override.yaml</code>。</p>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">root@onecloud:~# kvmd-otgconf --make-gpio-config</span>
-<span class="l l-Scalar l-Scalar-Plain">kvmd</span><span class="p p-Indicator">:</span>
-<span class="w">    </span><span class="nt">gpio</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">drivers</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">otgconf</span><span class="p">:</span>
-<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
-<span class="w">        </span><span class="nt">scheme</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">ecm.usb0</span><span class="p">:</span>
-<span class="w">                </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
-<span class="w">                </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
-<span class="w">                </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ecm.usb0</span>
-<span class="w">                </span><span class="nt">pulse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">            </span><span class="nt">hid.usb0</span><span class="p">:</span>
-<span class="w">                </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
-<span class="w">                </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
-<span class="w">                </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hid.usb0</span>
-<span class="w">                </span><span class="nt">pulse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">            </span><span class="nt">hid.usb1</span><span class="p">:</span>
-<span class="w">                </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
-<span class="w">                </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
-<span class="w">                </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hid.usb1</span>
-<span class="w">                </span><span class="nt">pulse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">            </span><span class="nt">hid.usb2</span><span class="p">:</span>
-<span class="w">                </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
-<span class="w">                </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
-<span class="w">                </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hid.usb2</span>
-<span class="w">                </span><span class="nt">pulse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">        </span><span class="nt">view</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">table</span><span class="p">:</span>
-<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'#Ethernet'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'#ecm.usb0'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ecm.usb0</span><span class="p p-Indicator">]</span>
-<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'#Keyboard'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'#hid.usb0'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">hid.usb0</span><span class="p p-Indicator">]</span>
-<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'#Absolute</span><span class="nv"> </span><span class="s">Mouse'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'#hid.usb1'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">hid.usb1</span><span class="p p-Indicator">]</span>
-<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'#Relative</span><span class="nv"> </span><span class="s">Mouse'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'#hid.usb2'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">hid.usb2</span><span class="p p-Indicator">]</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="l l-Scalar l-Scalar-Plain">root@onecloud:~# kvmd-otgconf --make-gpio-config</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="l l-Scalar l-Scalar-Plain">kvmd</span><span class="p p-Indicator">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nt">gpio</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="nt">drivers</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">            </span><span class="nt">otgconf</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">        </span><span class="nt">scheme</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">            </span><span class="nt">ecm.usb0</span><span class="p">:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">                </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">                </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">                </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ecm.usb0</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">                </span><span class="nt">pulse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">            </span><span class="nt">hid.usb0</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">                </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">                </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">                </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hid.usb0</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">                </span><span class="nt">pulse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">            </span><span class="nt">hid.usb1</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">                </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">                </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">                </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hid.usb1</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">                </span><span class="nt">pulse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">            </span><span class="nt">hid.usb2</span><span class="p">:</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">                </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otgconf</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">                </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">                </span><span class="nt">pin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hid.usb2</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">                </span><span class="nt">pulse</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">        </span><span class="nt">view</span><span class="p">:</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w">            </span><span class="nt">table</span><span class="p">:</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'#Ethernet'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'#ecm.usb0'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ecm.usb0</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'#Keyboard'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'#hid.usb0'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">hid.usb0</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'#Absolute</span><span class="nv"> </span><span class="s">Mouse'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'#hid.usb1'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">hid.usb1</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'#Relative</span><span class="nv"> </span><span class="s">Mouse'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">'#hid.usb2'</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">hid.usb2</span><span class="p p-Indicator">]</span>
+</code></pre></div></td></tr></table></div>
 <p><img alt="PixPin_2024-06-30_20-34-03" src="../img/PixPin_2024-06-30_20-34-03.png"></p></div>
 
 

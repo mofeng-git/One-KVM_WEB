@@ -41,12 +41,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -240,6 +234,8 @@
       
         
       
+        
+      
     
     
       
@@ -289,6 +285,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -307,10 +324,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -321,8 +338,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             软件安装
           </label>
@@ -1624,18 +1641,28 @@
 <div><h1 id="2fa">开启2FA验证</h1>
 <p>双重身份验证 2FA 是登录网站或应用时使用的额外保护层。启用 2FA 时，必须使用您的用户名和密码登录，并提供基于时间的一次性密码 TOTP。</p>
 <p>首先登录 One-KVM 终端并切换至由 root 账户，执行命令 <code>kvmd-totp init</code> 生成 TOTP 密钥。</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#查看PiKVM 2FA命令帮助</span>
-kvmd-totp<span class="w"> </span>-h
-
-<span class="c1">#生成2FA密钥并开启2FA验证</span>
-kvmd-totp<span class="w"> </span>init
-
-<span class="c1">#展示已有密钥</span>
-kvmd-totp<span class="w"> </span>show
-
-<span class="c1">#删除所有密钥并关闭2FA验证</span>
-kvmd-totp<span class="w"> </span>del
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#查看PiKVM 2FA命令帮助</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>kvmd-totp<span class="w"> </span>-h
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#生成2FA密钥并开启2FA验证</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>kvmd-totp<span class="w"> </span>init
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">#展示已有密钥</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>kvmd-totp<span class="w"> </span>show
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#删除所有密钥并关闭2FA验证</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>kvmd-totp<span class="w"> </span>del
+</code></pre></div></td></tr></table></div>
 <p><img alt="image-20240610104228226" src="../img/image-20240610104228226.png"></p>
 <p>对于安卓移动设备，可以使用您喜欢的2FA程序，如 <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a>，基本功能大同小异，这里以 Authing 令牌为例说明 2FA 使用方法：首先扫描二维码或手动输入添加密钥，然后再登入 PiKVM 网页时多输入一项6位数的一次性密码。</p>
 <p><img alt="image-20240610105349638" src="../img/image-20240610105349638.png"></p></div>

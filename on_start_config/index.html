@@ -41,12 +41,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -240,6 +234,8 @@
       
         
       
+        
+      
     
     
       
@@ -289,6 +285,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -307,10 +324,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -321,8 +338,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             软件安装
           </label>
@@ -1675,28 +1692,48 @@
 
 <div><h3 id="_1">开机运行脚本</h3>
 <p>这是玩客云的开机自启脚本，文件在 <code>/etc/rc.local</code>。</p>
-<div class="highlight"><pre><span></span><code>root@onecloud:~#<span class="w"> </span>cat<span class="w"> </span>/etc/rc.local
-<span class="c1">#!/bin/bash</span>
-
-<span class="c1">#设置玩客云前面板 LED 灯为绿色</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"default-on"</span><span class="w"> </span>&gt;/sys/class/leds/onecloud<span class="se">\:</span>green<span class="se">\:</span>alive/trigger
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"none"</span><span class="w"> </span>&gt;/sys/class/leds/onecloud<span class="se">\:</span>red<span class="se">\:</span>alive/trigger
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"none"</span><span class="w"> </span>&gt;/sys/class/leds/onecloud<span class="se">\:</span>blue<span class="se">\:</span>alive/trigger
-
-<span class="c1">#锁定 CPU 频率，避免动态 CPU 频率带来的 ustreamer 视频帧画面乱序致使网页随机频繁黑屏</span>
-<span class="c1">#若有需要，可根据 cpufreq-info 命令返回信息提升频率或超频</span>
-cpufreq-set<span class="w"> </span>-d<span class="w"> </span>1200MHz<span class="w"> </span>-u<span class="w"> </span>1200MHz
-
-<span class="c1">#在频率锁定后启动 kvmd 服务，使所有服务进程运行在静态 CPU 频率上</span>
-systemctl<span class="w"> </span>disable<span class="w"> </span>kvmd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>kvmd
-systemctl<span class="w"> </span>start<span class="w"> </span>kvmd
-
-<span class="c1">#设置 OTG 口为从设备模式</span>
-<span class="nb">echo</span><span class="w"> </span>device<span class="w"> </span>&gt;<span class="w"> </span>/sys/class/usb_role/c9040000.usb-role-switch/role
-
-<span class="c1">#退出脚本</span>
-<span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
-</code></pre></div></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>root@onecloud:~#<span class="w"> </span>cat<span class="w"> </span>/etc/rc.local
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#!/bin/bash</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#设置玩客云前面板 LED 灯为绿色</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"default-on"</span><span class="w"> </span>&gt;/sys/class/leds/onecloud<span class="se">\:</span>green<span class="se">\:</span>alive/trigger
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"none"</span><span class="w"> </span>&gt;/sys/class/leds/onecloud<span class="se">\:</span>red<span class="se">\:</span>alive/trigger
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"none"</span><span class="w"> </span>&gt;/sys/class/leds/onecloud<span class="se">\:</span>blue<span class="se">\:</span>alive/trigger
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#锁定 CPU 频率，避免动态 CPU 频率带来的 ustreamer 视频帧画面乱序致使网页随机频繁黑屏</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#若有需要，可根据 cpufreq-info 命令返回信息提升频率或超频</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>cpufreq-set<span class="w"> </span>-d<span class="w"> </span>1200MHz<span class="w"> </span>-u<span class="w"> </span>1200MHz
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="c1">#在频率锁定后启动 kvmd 服务，使所有服务进程运行在静态 CPU 频率上</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>systemctl<span class="w"> </span>disable<span class="w"> </span>kvmd<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>kvmd
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>systemctl<span class="w"> </span>start<span class="w"> </span>kvmd
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="c1">#设置 OTG 口为从设备模式</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="nb">echo</span><span class="w"> </span>device<span class="w"> </span>&gt;<span class="w"> </span>/sys/class/usb_role/c9040000.usb-role-switch/role
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="c1">#退出脚本</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+</code></pre></div></td></tr></table></div></div>
 
 
 

@@ -41,12 +41,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -240,6 +234,8 @@
       
         
       
+        
+      
     
     
       
@@ -289,6 +285,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -307,10 +324,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -321,8 +338,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
             <span class="md-nav__icon md-icon"></span>
             软件安装
           </label>
@@ -1697,9 +1714,10 @@
 <p class="admonition-title">Tip</p>
 <p>提示：对于DIY玩家，也可以使用尝试PiKVM自带的GPIO驱动方式进行控制（作者采用的调用bash脚本），作者使用的引脚对于系统位置是gpio-420，对于PiKVM位置是gpiochip1 pin7，PiKVM源代码默认为gpiochip0需要手动修改kvmd/plugins/ugpio/gpio.py中的设备路径。<br>也可以使用其他GPIO引脚，替换命令示例：</p>
 </div>
-<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">"s/420/602/g"</span><span class="w"> </span>/usr/bin/long_press_gpio420
-sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">"s/420/602/g"</span><span class="w"> </span>/usr/bin/short_press_gpio420
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">"s/420/602/g"</span><span class="w"> </span>/usr/bin/long_press_gpio420
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">"s/420/602/g"</span><span class="w"> </span>/usr/bin/short_press_gpio420
+</code></pre></div></td></tr></table></div>
 <p><img alt="img" src="../img/1717947165712-63.png"></p>
 <p><img alt="img" src="../img/1717947165713-64.jpeg"></p></div>
 
