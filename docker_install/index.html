@@ -1795,6 +1795,7 @@
  WEB 网页：8080、4430<br>
  VNC 控制台：5900<br>
  IPMI 控制：623</p>
+<p><code>-v ./kvmd_config:/etc/kvmd</code> 可挂载容器内配置文件目录，用于持久化配置文件，便于使用者手动修改配置文件。</p>
 <p>默认从 <code>silentwind0/kvmd</code> 拉取镜像，若网络不畅无法连接可以替换为<code>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd</code>，此地址为阿里云个人镜像托管服务杭州实例，拉取速度更快。</p>
 <h3 id="_3">环境变量</h3>
 <p><code>-e USERNAME=admin</code> 设置用户账号为 admin ，默认为 admin</p>
@@ -1805,7 +1806,8 @@
 <p><code>-e NOWEBTERMWRITE=1</code> 禁用 WEB 终端输入，设置为只读模式，默认为启用</p>
 <p><code>-e NOWEBTERM=1</code> 禁用 WEB 终端，默认为启用</p>
 <p><code>-e NOVNC=1</code> 禁用 VNC，默认为启用</p>
-<p><code>-e NOIPMI=1</code> 禁用 IPMI，默认为启用</p></div>
+<p><code>-e NOIPMI=1</code> 禁用 IPMI，默认为启用</p>
+<p><code>-e VIDEONUM=1</code> 设置 USB 采集卡地址编号，如 /dev/video1</p></div>
 
 
 
