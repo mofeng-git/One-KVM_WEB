@@ -49,20 +49,3 @@ Amlogic USB Burning Tool 建议使用 v2.1.3 及以下版本，不要使用高�
 
 ![img](./img/1717947165711-52.png)
 
-### 方式二：**脚本安装**
-
-一键脚本，对于非玩客云设备安装未作测试，适用于玩客云Armbian Jammy系统。
-
-```Bash
-git clone --depth=1 https://github.com/mofeng-git/One-KVM.git
-cd One-KVM
-sudo bash install.sh
-#第一阶段安装完成需要重启，再进行第二阶段安装
-sudo bash install.sh
-
-#可选功能：H.264 视频编码
-sudo bash kvmd_h264_install.sh
-#可选功能：HDMI 环出
-sudo bash kvmd_display_install.sh
-```
-

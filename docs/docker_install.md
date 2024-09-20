@@ -39,6 +39,8 @@ sudo docker run --name kvmd -itd \
  VNC 控制台：5900<br>
  IPMI 控制：623
 
+`-v ./kvmd_config:/etc/kvmd` 可挂载容器内配置文件目录，用于持久化配置文件，便于使用者手动修改配置文件。
+
  默认从 `silentwind0/kvmd` 拉取镜像，若网络不畅无法连接可以替换为`registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd`，此地址为阿里云个人镜像托管服务杭州实例，拉取速度更快。
 
 ### 环境变量
@@ -61,3 +63,4 @@ sudo docker run --name kvmd -itd \
 
 `-e NOIPMI=1` 禁用 IPMI，默认为启用
 
+`-e VIDEONUM=1` 设置 USB 采集卡地址编号，如 /dev/video1
