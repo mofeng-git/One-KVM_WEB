@@ -22,8 +22,8 @@ sudo docker run --name kvmd -itd --privileged=true \
 如果使用 CH9329，可以使用如下部署命令：
 ```bash
 sudo docker run --name kvmd -itd \
-    --device /dev/video0:/dev/kvmd-video \
-    --device /dev/ttyUSB0:/dev/kvmd-hid \
+    --device /dev/video0:/dev/video0 \
+    --device /dev/ttyUSB0:/dev/ttyUSB0 \
     -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
     silentwind0/kvmd
 ```
