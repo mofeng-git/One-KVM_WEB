@@ -41,7 +41,7 @@ sudo docker run --name kvmd -itd \
 
 `-v ./kvmd_config:/etc/kvmd` 可挂载容器内配置文件目录，用于持久化配置文件，便于使用者手动修改配置文件。
 
- 默认从 `silentwind0/kvmd` 拉取镜像，若网络不畅无法连接可以替换为`registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd`，此地址为阿里云个人镜像托管服务杭州实例，拉取速度更快。
+ 默认从 Docker Hub 拉取镜像，若网络不畅无法连接可以替换为`registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd`，此地址为阿里云个人镜像托管服务杭州实例，拉取速度更快。
 
 ### 环境变量
 
