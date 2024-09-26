@@ -16,7 +16,7 @@
 - 平台：Docker、Ubuntu/Debian
 - 硬件：USB UVC 采集卡、CH9329+CH340 或 OTG 端口
 
-特别适配的设备：玩客云、群晖 x86_64（待发布）
+适配的设备：玩客云、私家云二代、群晖 x86_64
 
 **玩客云**
 
@@ -32,12 +32,20 @@
 
 </div>
 
-**群晖 x86_64（待发布）**
+**群晖 x86_64**
 
 <div class="grid cards" markdown>
 
 ![群晖 x86_641](./img/image2.png)
 
 ![KVM 主页](./img/image.png)
+
+</div>
+
+**私家云二代**
+
+<div class="grid cards" markdown>
+
+![image-20240926220156381](./img/image-20240926220156381.png)
 
 </div>

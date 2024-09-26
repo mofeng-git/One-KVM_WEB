@@ -58,10 +58,12 @@ nav:
       - "简介": index.md
       - "写在前面": prepare.md
       - "软件安装":
-        - "玩客云套装": onecloud_guide.md
-        - "玩客云 DIY 安装": onecloud_install.md
-        #- "X86 主机安装": x86_install.md
         - "Docker 部署": docker_install.md
+        - "玩客云套装": onecloud_guide.md
+        - "玩客云 DIY": onecloud_install.md
+        #- "X86 主机安装": x86_install.md
+        - "私家云二代": cumebox2_install.md
+        - "群晖 NAS": synology_install.md
       - "开始配置": first_steps.md
       #- "身份认证": auth.md
       - "常见问题": faq.md

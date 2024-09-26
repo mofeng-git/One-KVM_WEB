@@ -30,10 +30,7 @@ One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级�
 
 ## 在线体验
 
-演示网站：[https://kvmd-demo.mofeng.run](https://kvmd-demo.mofeng.run)<br>
-账号/密码：身份认证已禁用，无需登录
-
-演示网站部署在云服务器上，故没有视频画面。
+演示网站：[https://kvmd-demo.mofeng.run](https://kvmd-demo.mofeng.run)
 
 ![KVM 主页](./img/image.png)
 
@@ -46,7 +43,7 @@ sudo docker run --name kvmd -itd \
     -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
     silentwind0/kvmd
 ```
-以上仅作为体验使用，详细部署文档请查阅： [Docker 部署](https://one-kvm.mofeng.run/docker_install/)。
+以上仅作为体验使用，详细部署文档请查阅： [Docker 部署](docker_install.md)。
 
 ## 社区
 
