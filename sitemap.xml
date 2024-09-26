@@ -37,6 +37,10 @@
          <lastmod>2024-09-26</lastmod>
     </url>
     <url>
+         <loc>https://one-kvm.mofeng.run/cumebox2_install/</loc>
+         <lastmod>2024-09-26</lastmod>
+    </url>
+    <url>
          <loc>https://one-kvm.mofeng.run/develop/</loc>
          <lastmod>2024-09-26</lastmod>
     </url>
@@ -118,6 +122,14 @@
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/ssl/</loc>
+         <lastmod>2024-09-26</lastmod>
+    </url>
+    <url>
+         <loc>https://one-kvm.mofeng.run/synology_install/</loc>
+         <lastmod>2024-09-26</lastmod>
+    </url>
+    <url>
+         <loc>https://one-kvm.mofeng.run/synology_ko/</loc>
          <lastmod>2024-09-26</lastmod>
     </url>
     <url>
