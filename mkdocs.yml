@@ -100,7 +100,7 @@ nav:
     - "高级用法":
       - "启动时配置": on_start_config.md
       - "VNC 连接": vnc.md
-      - "KVM 一控多": onecloud_kvm.md
+      - "KVM 一控多": kvm_switch.md
       - "WOL 网络唤醒": wol.md
       - "Webterm 网页终端": webterm.md
       - "2FA 双重身份验证": 2fa.md
