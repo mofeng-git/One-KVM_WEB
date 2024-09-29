@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#h264" class="md-skip">
+        <a href="#libx264" class="md-skip">
           跳转至
         </a>
       
@@ -795,8 +795,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -825,8 +823,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -835,27 +831,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#libx264" class="md-nav__link">
     <span class="md-ellipsis">
-      使用
+      Libx264
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#ffmpeg" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      视频演示
+      FFmpeg
     </span>
   </a>
   
@@ -1740,8 +1727,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1750,27 +1735,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#libx264" class="md-nav__link">
     <span class="md-ellipsis">
-      使用
+      Libx264
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#ffmpeg" class="md-nav__link">
     <span class="md-ellipsis">
-      安装
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      视频演示
+      FFmpeg
     </span>
   </a>
   
@@ -1794,10 +1770,21 @@
   
 
 
-<div><h1 id="h264">H.264视频</h1>
-<p>H.264 视频相较 MJPEG 视频拥有完整音频和低码率的特点，可以在更低的带宽下运行。</p>
-<p>由于 PiKVM 官方的H.264视频功能仅适配树莓派 GPU，所以在其它设备上使用H.264功能无法硬编码（对于玩客云设备，Armbian 系统也没有可用的 VPU 驱动）。此功能由群友 自.知 设计，使用 ffmpeg 进行软编码。由于为 CPU 软件编码，在玩客云设备上此功能效果较差。</p>
-<h3 id="_1">使用</h3>
+  <h1>H.264 / WebRTC</h1>
+
+<div><p>H.264，也被称为 MPEG-4 AVC（Advanced Video Coding），是一种广泛使用的视频压缩标准，尤其适用于需要高效压缩比的应用场景，比如互联网流媒体传输、蓝光光盘视频等。</p>
+<p>H.264 视频相较 MJPEG 视频拥有完整音频和低码率的特点，可以在更低的带宽下运行。由于 PiKVM 官方的H.264视频功能仅适配树莓派 GPU，所以在其它设备上使用H.264功能暂时无法硬编码（对于玩客云设备，Armbian 系统也没有可用的 VPU 驱动）。下面是 One-KVM 项目中关于 H.264 视频的两种解决方案：libx264、ffmpeg。</p>
+<h3 id="libx264">Libx264</h3>
+<p>Libx264 是一个用于编码 H.264 视频的开源库，是由 VideoLAN 和其他贡献者开发的，并且由于其高效的编码质量和速度，在很多视频处理软件中都有使用。</p>
+<p>作者已将其与 ustreamer 集成，在 Docker 版容器中默认启用此功能，相比后面的 ffmpeg 方案性能更好使用更加方便。此 ustreamer 分支可查看 <a href="https://github.com/mofeng-git/ustreamer">https://github.com/mofeng-git/ustreamer</a>。</p>
+<p>H.264/WebRTC 网页视频需要额外映射 20000-40000 UDP 端口。</p>
+<h3 id="ffmpeg">FFmpeg</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>此方法已停止维护，仅做归档使用，不保证可用。</p>
+</div>
+<p>此功能由群友 自.知 设计，使用 ffmpeg 进行软编码。由于为 CPU 软件编码，在玩客云设备上此功能效果较差。</p>
+<p><strong>使用</strong></p>
 <p>最新包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。由于玩客云 CPU 性能较差，所以 <code>kvmd-ffmpeg</code> 服务默认为关闭状态（网页表现如下），避免影响其他服务的流畅性。</p>
 <p><img alt="image-20240622152523786" src="../img/image-20240622152523786.png"></p>
 <p>如需要可执行如下命令可手动开启。</p>
@@ -1811,7 +1798,7 @@
 </code></pre></div></td></tr></table></div>
 <p>在玩客云上，H.264 视频非常卡顿，使用体验较差。</p>
 <p><img alt="image-20240610154409422" src="../img/image-20240610154409422.png"></p>
-<h3 id="_2">安装</h3>
+<p><strong>安装</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -1828,7 +1815,7 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>kvmd-ffmpeg
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>kvmd-ffmpeg
 </code></pre></div></td></tr></table></div>
-<h3 id="_3">视频演示</h3>
+<p><strong>视频演示</strong></p>
 <p><div class="video-container"><iframe src="../video/%E7%8E%A9%E5%AE%A2%E4%BA%91WebRTC%E9%9F%B3%E8%A7%86%E9%A2%91%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA_x264.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p></div>
 
 
@@ -1852,7 +1839,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年6月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月29日</span>
   </span>
 
     
@@ -1961,7 +1948,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
       
         <script src="../js/baidu-tongji.js"></script>
       
