@@ -1,10 +1,8 @@
 这个盒子名称很多，私家云二代、比特米盒、CumeBox2。配置如下：
 
-- s905x，1G + 8G
-- 100M 网口，双频 WiFi
-- 2个 USB 2.0 A 口 ， 1个 TypeC OTG，2个 SATA 接口
+![私家云二代配置](img/c9ab7f618a59539cf998cf00a5f8ee26.png)
 
-相比玩客云，CPU 为 arm64 架构，多了一个 USB 口和板载双频 WIFI 。
+相比玩客云，CPU 为 arm64 架构，多了一个 USB 口、两个 SATA 接口和板载双频 WIFI 。
 
 ### 刷机
 
@@ -33,6 +31,7 @@ apt install apparmor-utils docker.io -y
 
 ```bash
 #运行 docker 命令，使用 OTG HID
+#系统 /dev/video0 设备已经存在，所以新插入的 USB 采集卡从 /dev/video1 开始
 docker run --name kvmd -itd --privileged=true \
     -v /dev:/dev -v /sys/kernel/config:/sys/kernel/config \
     -v /lib/modules:/lib/modules:ro \
