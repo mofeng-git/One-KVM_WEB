@@ -1,5 +1,5 @@
-site_name: One-KVM文档
-site_description: One-KVM，基于PiKVM的开源IP KVM项目。
+site_name: One-KVM 文档
+site_description: One-KVM，基于 PiKVM 的开源 IP KVM 项目。
 site_author: SilentWind
 site_url: https://one-kvm.mofeng.run/
 
@@ -92,10 +92,11 @@ nav:
       - "USB 以太网": usb_ethernet.md
       - "USB 串口": usb_serial.md
       - "动态 USB 配置": usb_dynamic.md
-      - "GPIO":
-        - "ATX 电源控制": onecloud_atx.md
-        - "GPIO 通用配置": gpio.md
-        - "USB 转 GPIO 配置": usb2gpio.md
+      - "ATX 电源控制":
+        - "玩客云 GPIO": onecloud_atx.md
+        #- "GPIO 通用配置": gpio.md
+        - "USB 继电器": usb_relay.md
+        #- "USB 转 GPIO 配置": usb2gpio.md
 
     - "高级用法":
       - "启动时配置": on_start_config.md
