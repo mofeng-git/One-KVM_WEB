@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
       
 
@@ -1674,25 +1674,21 @@
 
 <ol>
 <li>
-<p><strong>PiKVM官方的功能说明文档在哪？</strong></p>
-<p>如果您需要对功能进行高级配置，非常建议查阅官方文档，官方项目文档的的FAQ和功能配置讲解非常详细，包含示例易于上手。官方文档（英文）：<a href="https://docs.pikvm.org/">PiKVM Handbook</a>。</p>
-</li>
-<li>
-<p><strong>为什么网页视频感觉非常卡顿？</strong></p>
-<p><strong>提升使用体验的方法</strong>：
-使用mjpeg格式，使用720p60帧或1080p30帧，右上角sysytem调整至最大帧率。720p可以点击网页视频右上角的“•”自动缩放画面与原画面分辨率相同。演示图为3终端720p60fps演示效果：
-<img alt="img" src="../img/1717950485856-4.png"></p>
+<p><strong>One-KVM 与 PiKVM 有什么不同？</strong></p>
+<p>One-KVM 基于 PiKVM 二次开发，在 PiKVM 的基础上进行了本地化，增加了更多扩展功能，支持更多的硬件设备和平台。</p>
+<p>如果您需要对功能进行高级配置，也可以查阅 <a href="https://docs.pikvm.org/">PiKVM 文档</a>，该项目文档关于高级功能配置的说明比较详细。</p>
 </li>
 <li>
 <p><strong>如何在公网中访问局域网的One-KVM？</strong></p>
-<p>如果路由器有公网IP地址，可以使用端口映射转发443端口。在其他情况下，可以使用内网穿透服务（如Tailscale和FRP），只需几个简单的命令即可在One-KVM上配置。</p>
+<p>如果路由器有公网IP地址，可以使用端口映射转发443端口（对于整合包）或4430端口（对于 Docker）。在其他情况下，可以使用内网穿透或异地组网服务（如Tailscale和FRP）。</p>
 </li>
 <li>
 <p><strong>如何修改软件端口和账户密码？</strong></p>
 <p>修改端口可以编辑 /etc/kvmd/nginx/目录下的conf后缀文件将相关端口修改所需端口（443是网页运行的端口），然后运行systemctl restart kvmd kvmd-nginx 生效。</p>
-<p><strong>注意</strong>：HDMI终端和SSH终端可以直接以root用户登录。但PiKVM网页终端的默认登入用户是kvmd-webterm低权限账户（无密码），没有root权限且无法使用<code>sudo</code>提权，若需要执行特权命令请先在终端执行<code>su root</code>命令并输入密码切换为root账户。
-修改账号密码示例：
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<p><strong>注意</strong>：对于整合包用户，HDMI终端和SSH终端可以直接以root用户登录。但PiKVM网页终端的默认登入用户是kvmd-webterm低权限账户（无密码），没有root权限且无法使用<code>sudo</code>提权，若需要执行特权命令请先在终端执行<code>su root</code>命令并输入密码切换为root账户。</p>
+<details class="修改账号密码示例">
+<summary>修改账号密码示例</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1711,57 +1707,63 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a>kvmd-htpasswd<span class="w"> </span>del<span class="w"> </span>admin
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#列出所有用户</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>kvmd-htpasswd<span class="w"> </span>list
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#重启服务，使修改立刻生效</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#重启服务，使修改生效</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd<span class="w"> </span>kvmd-nginx
 </code></pre></div></td></tr></table></div>
+</details>
 </li>
 <li>
 <p><strong>如何给玩客云设置静态IP？</strong></p>
-<p>使用终端图形化工具<code>armbian-config</code> 或<code>nmtui</code>，可能没有预装需手动安装 <code>apt install armbian-config</code> 。</p>
-<p>示例：<code>armbian-config</code> 依次选中进入Network--&gt;IP--&gt;eth0--&gt;Static修改网络设置。
-<img alt="img" src="../img/1717950485857-5.png"></p>
+<p>使用终端图形化工具<code>armbian-config</code> 或<code>nmtui</code>。</p>
 </li>
 <li>
 <p><strong>如何给玩客云更换MAC地址（更换动态IP）?</strong></p>
-<p>可以修改/etc/network/interfaces配置文件中的MAC地址。
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<p>非玩客云设备可以使用终端图形化工具<code>nmtui</code>修改 mac 地址。</p>
+<p>玩客云由于其特殊性不能直接使用使用终端图形化工具<code>nmtui</code>修改 mac 地址，会修改 mac 无法获取ip问题，不同版本修改 mac 地址的方法见下表。</p>
+<details class="240118版本及以后">
+<summary>240118版本及以后</summary>
+<p>需要修改 mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。</p>
+</details>
+<details class="240138到240104版本">
+<summary>240138到240104版本</summary>
+<p></p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#快捷命令，依次执行如下命令即可</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nv">MAC</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>2a:01:<span class="sb">`</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/\(..\)/\1:/g; s/.$//'</span><span class="sb">`</span><span class="k">)</span><span class="s2">"</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$MAC</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">#此配置文件替换命令仅首次执行有效，多次需要手动替换MAC地址</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>sed<span class="w"> </span>-ie<span class="w"> </span><span class="s2">"s/#hwaddress ether/hwaddress ether </span><span class="nv">$MAC</span><span class="s2">/g"</span><span class="w"> </span>/etc/network/interfaces
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>reboot
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#由 systemd-networkd 替换 NetworkManager 接管网络</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">#避免修改 mac 无法获取ip问题</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#执行下面四句命令即可（mac地址按需修改）</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">'[Match]\nName=eth0\n\n[Network]\nDHCP=yes\n\n[Link]\nMACAddress=2a:01:3d:ef:b8:e1'</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/systemd/network/99-eth0.network
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>systemctl<span class="w"> </span>mask<span class="w"> </span>NetworkManager
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>systemctl<span class="w"> </span>unmask<span class="w"> </span>systemd-networkd
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>systemd-networkd<span class="w"> </span>systemd-resolved
 </code></pre></div></td></tr></table></div>
+ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
+</details>
+<details class="更早到240121版本">
+<summary>更早到240121版本</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#快捷命令，依次执行如下命令即可</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nv">MAC</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>2a:01:<span class="sb">`</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/\(..\)/\1:/g; s/.$//'</span><span class="sb">`</span><span class="k">)</span><span class="s2">"</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$MAC</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#此配置文件替换命令仅首次执行有效，多次需要手动替换MAC地址</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>sed<span class="w"> </span>-ie<span class="w"> </span><span class="s2">"s/#hwaddress ether/hwaddress ether </span><span class="nv">$MAC</span><span class="s2">/g"</span><span class="w"> </span>/etc/network/interfaces
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>reboot
+</code></pre></div></td></tr></table></div>
+</details>
 </li>
 <li>
 <p><strong>如何使用USB无线网卡连接WIFI？</strong></p>
 <p>作者和hzytic大佬编译发布的镜像都已包含常见无线网卡驱动，USB无线网卡即插即用。
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#开启WiFi功能，armbian-config--&gt;NetWork--&gt;Advanced，取消注释wlan0网卡</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>armbian-config
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>nmtui
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>nmtui
 </code></pre></div></td></tr></table></div>
-<img alt="img" src="../img/1717950485857-6.png">
 <img alt="img" src="../img/1717950485857-7.png">
-</li>
-<li>
-<p><strong>可以使用One-KVM进行游戏或是看剧吗？</strong></p>
-<p>不能，受限于USB2.0端口HDMI-USB采集卡采集的是有损压缩视频，画面质量最高为1080p30fps，且没有音频，无法提供高质量且流畅的视频体验。
-若有此类需求，建议尝试串流软件。</p>
-</li>
-<li>
-<p><strong>可以在触屏设备上使用One-KVM上吗？</strong></p>
-<p>不建议，可以在触屏设备浏览器上观看视频画面，但WEB界面可能无法正确响应部分触屏点击事件。
-推荐使用VNC应用程序，注意不要使用RealVNC（不兼容）。</p>
-</li>
-<li>
-<p><strong>访问 One-KVM 主页时，提示 500 错误?</strong></p>
-<p>可能原因：错误的 YAML 语法或者硬件外设不满足。可执行 <code>systemctl status kvmd kvmd-otg</code> 或是 <code>kvmd --run</code> 查看详细报错信息。</p>
 </li>
 <li>
 <p><strong>为什么网页视频会有无法消除的黑边？</strong></p>
@@ -1769,46 +1771,14 @@
 <img alt="img" src="../img/1717950485857-8.jpeg"></p>
 </li>
 <li>
-<p><strong>如何启用免拆机USB线刷功能?</strong></p>
-<p>最新版使用了由蓝蓝定制的UBoot，会在系统启动时检测重置按钮（电源口和网口之间的小孔）是否被按下，只需按住重置键的同时插入电源即可自动进入刷机过程。</p>
-<p>对于其他系统（如5.9内核版本），可以刷蓝蓝最新Uboot（网盘路径：/玩客云/PiKVM相关软件/UBoot.eMMC.burn.img）。单独刷写UBoot时需要取消勾选“擦除falsh”，以便保留Linux系统数据。
-<img alt="img" src="../img/1717950485857-9.png"></p>
-</li>
-<li>
-<p><strong>如何通过One-KVM控制VMare虚拟机？</strong></p>
-<p>难点是VMware直接使用主机USB HID的方法：
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">#在虚拟机的配置文件.vmx里增加下面一行</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="l l-Scalar l-Scalar-Plain">usb.generic.allowHID = "TRUE"</span>
-</code></pre></div></td></tr></table></div>
-<img alt="img" src="../img/1717950485857-10.png">
-<img alt="img" src="../img/1717950485859-11.png">
-</li>
-<li>
-<p><strong>如何给Armbian更换APT源？</strong></p>
-<p></p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>bash<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirrors.sh<span class="o">)</span><span class="w"> </span>--source<span class="w"> </span>mirrors.tuna.tsinghua.edu.cn<span class="w"> </span>--updata-software<span class="w"> </span><span class="nb">false</span><span class="w"> </span>--web-protocol<span class="w"> </span>http
-</code></pre></div></td></tr></table></div>
-<img alt="img" src="../img/1717950485860-12.png">
-</li>
-<li>
-<p><strong>如何启用One-KVM中的IPMI 2.0接口？</strong></p>
-<p>此服务默认关闭，如需要可手动开启。启动方法：
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>pip<span class="w"> </span>intsall<span class="w"> </span>pyghmi
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>systemctl<span class="w"> </span>start<span class="w"> </span>kvmd-ipmi
-</code></pre></div></td></tr></table></div>
-<img alt="img" src="../img/1717950485860-13.png">
-<img alt="img" src="../img/1717950485861-14.png">
-</li>
-<li>
 <p><strong>如何改变玩客云前面板LED灯颜色？</strong></p>
-<p>对于5.9内核系统，有<code>green_on</code>,<code>red_on</code>,<code>bule_on</code>,<code>green_off</code>,<code>red_off</code>,<code>bule_off</code>命令可用。</p>
+<p>对于5.9内核系统有<code>green_on</code>,<code>red_on</code>,<code>bule_on</code>,<code>green_off</code>,<code>red_off</code>,<code>bule_off</code>命令可用。</p>
 <p>对于6.x高内核的系统，可以使用如下命令控制LED的亮灭。
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:red:alive/brightness
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:blue:alive/brightness
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:green:alive/brightness
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:red:alive/brightness
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:blue:alive/brightness
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:green:alive/brightness
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -1834,7 +1804,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年6月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月20日</span>
   </span>
 
     
@@ -1943,7 +1913,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../js/baidu-tongji.js"></script>
       
