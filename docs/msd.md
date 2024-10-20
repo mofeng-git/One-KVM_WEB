@@ -10,32 +10,56 @@
 
 ### 新建 MSD 分区并启用 MSD
 
-下面三种方式任选其一即可，对于新手第三种方法更为推荐，使用 IMG 镜像做 MSD 分区，无需对物理磁盘进行分区，操作更加安全和简单。
+!!! tip 
+      整合包 201004 版本以后，MSD功能默认启用（使用 /var/lib/kvmd/msd 目录），无需新建分区。若仍然挂载，需要在 MSD 文件系统挂载后执行 `chown kvmd -R /var/lib/kvmd/msd/` 命令使 MSD 文件系统具有正确的权限。
 
-#### **使用玩客云EMMC空间**
+下面三种方式任选其一即可，对于新手第三种方法更为推荐，使用虚拟磁盘文件做 MSD 分区，无需对物理磁盘进行分区，操作更加安全和简单。
 
-作者在安装篇的网盘的链接中提供了包含此软件的系统镜像（网盘路径：/PiKVM相关软件/gparted_on_armbain_usbdisk.zip），刷入U盘后将U盘插到玩客云网口旁的USB口插电启动，连接ssh（root/1234）输入`gparted`即可启动磁盘分区软件。
+??? 使用玩客云EMMC空间
+    作者在安装篇的网盘的链接中提供了包含此软件的系统镜像（网盘路径：/One-KVM 相关/gparted_on_armbain_usbdisk.zip），刷入U盘后将U盘插到玩客云网口旁的USB口插电启动，连接ssh（root/1234）输入`gparted`即可启动磁盘分区软件。
 
-如果没有打开如图所示的Gparted软件界面请检查你的ssh终端是否支持X11转发功能。
+    如果没有打开如图所示的Gparted软件界面请检查你的ssh终端是否支持X11转发功能。
 
-在打开的Gparted界面右键 /dev/mmcblp1p2 选择 Resize/Move 来调整分区，在Free space following框中输入新建分区的大小（可输入4096），再将分出来的空闲空间格式化为ext4格式，最后点击主界面选项卡下的“√”应用刚才的选择即可。
+    在打开的Gparted界面右键 /dev/mmcblp1p2 选择 Resize/Move 来调整分区，在Free space following框中输入新建分区的大小（可输入4096），再将分出来的空闲空间格式化为ext4格式，最后点击主界面选项卡下的“√”应用刚才的选择即可。
 
-![img](./img/1717947165712-55.png)
+    ![img](./img/1717947165712-55.png)
 
-![img](./img/1717947165712-56.png)
+    ![img](./img/1717947165712-56.png)
+
+
+??? 使用SD卡
+
+    建议不要使用杂牌储存卡（部分杂牌储存卡反应为Windows正常、Linux能识别但无法访问和读写）。
+
+    ```bash
+    #查看TF卡位置
+    fdisk -l
+    #将其格式化为ext4文件格式（将sdx替换为你的设备地址）
+    mkfs.ext4 /dev/sdx
+    ```
+
+??? 使用虚拟磁盘文件
+
+    通过新建一个新的 img 文件用作 MSD 文件系统，此方法通过已测试。
+
+    ```bash
+    #虚拟磁盘创建示例代码，512单位为 1M 的倍数，这个数字可以替换成你所需要的容量
+    dd if=/dev/zero of=/root/diska.img bs=1M count=512
+    mkfs.ext4 /root/diska.img
+    ```
+
 
 **挂载分区**
 
-请注意EMMC系统分区是/dev/mmcblk1还是/dev/mmcblk0，这里以/dev/mmcblk0为例
-
-```Bash
+请确认要挂载的分区路径，不要出错（如/dev/mmcblk1、/dev/mmcblk0p3、/root/diska.img） ，这里以 /dev/mmcblk0 为例。
+```bash
 #查看系统所有分区
 df -h
 
 #在文件末尾添加如下挂载，如为/dev/mmcblk0需自行替换
 nano /etc/fstab
 
-/dev/mmcblk0p3 /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,ro,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
+/dev/mmcblk0p3 /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,rw,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
 
 #如果挂载操作报错请检查并修正错误
 mount /dev/mmcblk0p3
@@ -45,56 +69,12 @@ nano /etc/kvmd/override.yaml
 systemctl restart kvmd-otg kvmd
 ```
 
-#### 使用TF卡（SD卡）
-
-建议不要使用杂牌储存卡（部分杂牌储存卡反应为Windows正常、Linux能识别但无法访问和读写）。
-
-```bash
-#查看TF卡位置
-fdisk -l
-#将其格式化为ext4文件格式（将sdx替换为你的设备地址）
-mkfs.ext4 /dev/sdx
-
-nano /etc/fstab
-#在文件末尾添加如下挂载（将sdx替换为你的设备地址）
-/dev/sdx  /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,ro,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
-
-#挂载分区（将sdx替换为你的设备地址），如失败报错请检查设备地址和挂载内容是否出错
-mount /dev/sdx
-
-#开启MSD功能，到/etc/kvmd/override.yaml修改msd选项为otg
-nano /etc/kvmd/override.yaml
-systemctl restart kvmd-otg kvmd
-```
-
-#### 使用 IMG 镜像
-
-此方法通过已测试，可以使用。
-
-```bash
-#虚拟磁盘创建示例代码，512单位为 1M 的倍数，这个数字可以替换成你所需要的容量
-dd if=/dev/zero of=/root/diska.img bs=1M count=512
-mkfs.ext4 /root/diska.img
-
-nano /etc/fstab
-#在文件末尾添加如下挂载（将/root/diska.img替换为你的虚拟磁盘路径）
-#挂载虚拟磁盘文件不同于挂载分区，一定要以 "rw" 方式挂载
-/root/diska.img /var/lib/kvmd/msd  ext4  nofail,nodev,nosuid,noexec,rw,errors=remount-ro,data=journal,X-kvmd.otgmsd-root=/var/lib/kvmd/msd,X-kvmd.otgmsd-user=kvmd  0 0
-
-#挂载分区（将/root/diska.img替换为你的虚拟磁盘路径），如失败报错请检查设备地址和挂载内容是否出错
-mount /root/diska.img
-
-#开启MSD功能，到/etc/kvmd/override.yaml修改msd选项为otg
-nano /etc/kvmd/override.yaml
-
-systemctl restart kvmd-otg kvmd
-```
-
+   
 -----
 
 ### 手动上传镜像
 
-One-KVM  将镜像文件存储在一个特殊的分区中，该分区挂载在 `/var/lib/kvmd/msd` 目录。该分区默认是只读的，如果启用了 MSD 功能，或要上传新的映像，则会自动重新挂载以允许写入，这样做可以在突然断电时保护数据不受损害。
+One-KVM  将镜像文件存储在一个特殊的分区中，该分区挂载在 `/var/lib/kvmd/msd` 目录。如果该分区无法写入说明该分区是只读的，可执行下列命令。
 
 ```bash
 #使 MSD 分区可写
