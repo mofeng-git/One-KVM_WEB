@@ -1536,7 +1536,7 @@
 
 <ol>
 <li>
-<p><strong>One-KVM 与 PiKVM 有什么不同？</strong></p>
+<p><strong>One-KVM 与 PiKVM 的不同之处？</strong></p>
 <p>One-KVM 基于 PiKVM 二次开发，在 PiKVM 的基础上进行了本地化，增加了更多扩展功能，支持更多的硬件设备和平台。</p>
 <p>如果您需要对功能进行高级配置，也可以查阅 <a href="https://docs.pikvm.org/">PiKVM 文档</a>，该项目文档关于高级功能配置的说明比较详细。</p>
 </li>
@@ -1554,7 +1554,7 @@
 </div>
 </li>
 <li>
-<p><strong>如何在公网中访问局域网的One-KVM？</strong></p>
+<p><strong>如何在公网中访问局域网的 One-KVM？</strong></p>
 <p>如果路由器有公网IP地址，可以使用端口映射转发443端口（对于整合包）或4430端口（对于 Docker）。在其他情况下，可以使用内网穿透或异地组网服务（如Tailscale和FRP）。</p>
 </li>
 <li>
@@ -1588,11 +1588,11 @@
 </details>
 </li>
 <li>
-<p><strong>如何给玩客云设置静态IP？</strong></p>
-<p>使用终端图形化工具<code>armbian-config</code> 或<code>nmtui</code>。</p>
+<p><strong>如何给设置静态 IP？</strong></p>
+<p>使用终端图形化工具<code>nmtui</code>或<code>armbian-config</code>。</p>
 </li>
 <li>
-<p><strong>如何给玩客云更换MAC地址（更换动态IP）?</strong></p>
+<p><strong>如何修改 MAC 地址？</strong></p>
 <p>非玩客云设备可以使用终端图形化工具<code>nmtui</code>修改 mac 地址。</p>
 <p>玩客云由于其特殊性不能直接使用使用终端图形化工具<code>nmtui</code>修改 mac 地址，会修改 mac 无法获取ip问题，不同版本修改 mac 地址的方法见下表。</p>
 <details class="240118版本及以后">
@@ -1634,8 +1634,8 @@
 </details>
 </li>
 <li>
-<p><strong>如何使用USB无线网卡连接WIFI？</strong></p>
-<p>作者和hzytic大佬编译发布的镜像都已包含常见无线网卡驱动，USB无线网卡即插即用。
+<p><strong>如何使用 USB 无线网卡连接 WIFI？</strong></p>
+<p>对于玩客云，作者和 hzytic 大佬编译发布的镜像都已包含常见无线网卡驱动，USB无线网卡即插即用。其他硬件系统需自行测试是否能够驱动 USB 无线网卡。
 </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>nmtui
 </code></pre></div></td></tr></table></div>
 <img alt="img" src="../img/1717950485857-7.png">
@@ -1646,7 +1646,7 @@
 <img alt="img" src="../img/1717950485857-8.jpeg"></p>
 </li>
 <li>
-<p><strong>如何改变玩客云前面板LED灯颜色？</strong></p>
+<p><strong>如何改变玩客云前面板 LED 灯颜色？</strong></p>
 <p>对于5.9内核系统有<code>green_on</code>,<code>red_on</code>,<code>bule_on</code>,<code>green_off</code>,<code>red_off</code>,<code>bule_off</code>命令可用。</p>
 <p>对于6.x高内核的系统，可以使用如下命令控制LED的亮灭。
 </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>

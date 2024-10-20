@@ -1618,13 +1618,11 @@
 <p>作者已将其与 ustreamer 集成，在 Docker 版容器中默认启用此功能，相比后面的 ffmpeg 方案性能更好使用更加方便。此 ustreamer 分支可查看 <a href="https://github.com/mofeng-git/ustreamer">https://github.com/mofeng-git/ustreamer</a>。</p>
 <p>H.264/WebRTC 网页视频需要额外映射 20000-40000 UDP 端口。</p>
 <h3 id="ffmpeg">FFmpeg</h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>此方法已停止维护，仅做归档使用，不保证可用。</p>
-</div>
+<details class="此方法已停止维护仅做归档使用">
+<summary>此方法已停止维护仅做归档使用</summary>
 <p>此功能由群友 自.知 设计，使用 ffmpeg 进行软编码。由于为 CPU 软件编码，在玩客云设备上此功能效果较差。</p>
 <p><strong>使用</strong></p>
-<p>最新包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。由于玩客云 CPU 性能较差，所以 <code>kvmd-ffmpeg</code> 服务默认为关闭状态（网页表现如下），避免影响其他服务的流畅性。</p>
+<p>整合包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。由于玩客云 CPU 性能较差，所以 <code>kvmd-ffmpeg</code> 服务默认为关闭状态（网页表现如下），避免影响其他服务的流畅性。</p>
 <p><img alt="image-20240622152523786" src="../img/image-20240622152523786.png"></p>
 <p>如需要可执行如下命令可手动开启。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -1646,7 +1644,7 @@
 <span class="normal"><a href="#__codelineno-1-6">6</a></span>
 <span class="normal"><a href="#__codelineno-1-7">7</a></span>
 <span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#此功能默认未安装，开启需要执行 kvmd_h264_install.sh 脚本</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/mofeng-git/One-KVM.git
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w">  </span>--branch<span class="w"> </span>9b97e01b340484fb1c75916531b2c63aea3e8046<span class="w"> </span>https://github.com/mofeng-git/One-KVM.git
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>One-KVM<span class="w"> </span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>sudo<span class="w"> </span>bash<span class="w"> </span>kvmd_h264_install.sh
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a>
@@ -1655,7 +1653,8 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>kvmd-ffmpeg
 </code></pre></div></td></tr></table></div>
 <p><strong>视频演示</strong></p>
-<p><div class="video-container"><iframe src="../video/%E7%8E%A9%E5%AE%A2%E4%BA%91WebRTC%E9%9F%B3%E8%A7%86%E9%A2%91%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA_x264.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p></div>
+<p><div class="video-container"><iframe src="../video/%E7%8E%A9%E5%AE%A2%E4%BA%91WebRTC%E9%9F%B3%E8%A7%86%E9%A2%91%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA_x264.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+</details></div>
 
 
 
@@ -1678,7 +1677,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月20日</span>
   </span>
 
     

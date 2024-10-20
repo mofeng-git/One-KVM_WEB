@@ -1035,39 +1035,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="新建 MSD 分区并启用 MSD">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#emmc" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用玩客云EMMC空间
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tfsd" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用TF卡（SD卡）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#img" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用 IMG 镜像
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1622,39 +1589,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="新建 MSD 分区并启用 MSD">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#emmc" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用玩客云EMMC空间
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tfsd" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用TF卡（SD卡）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#img" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用 IMG 镜像
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1706,78 +1640,44 @@
 </div>
 <hr>
 <h3 id="msd-msd">新建 MSD 分区并启用 MSD</h3>
-<p>下面三种方式任选其一即可，对于新手第三种方法更为推荐，使用 IMG 镜像做 MSD 分区，无需对物理磁盘进行分区，操作更加安全和简单。</p>
-<h4 id="emmc"><strong>使用玩客云EMMC空间</strong></h4>
-<p>作者在安装篇的网盘的链接中提供了包含此软件的系统镜像（网盘路径：/PiKVM相关软件/gparted_on_armbain_usbdisk.zip），刷入U盘后将U盘插到玩客云网口旁的USB口插电启动，连接ssh（root/1234）输入<code>gparted</code>即可启动磁盘分区软件。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>整合包 201004 版本以后，MSD功能默认启用（使用 /var/lib/kvmd/msd 目录），无需新建分区。若仍然挂载，需要在 MSD 文件系统挂载后执行 <code>chown kvmd -R /var/lib/kvmd/msd/</code> 命令使 MSD 文件系统具有正确的权限。</p>
+</div>
+<p>下面三种方式任选其一即可，对于新手第三种方法更为推荐，使用虚拟磁盘文件做 MSD 分区，无需对物理磁盘进行分区，操作更加安全和简单。</p>
+<details class="使用玩客云emmc空间">
+<summary>使用玩客云emmc空间</summary>
+<p>作者在安装篇的网盘的链接中提供了包含此软件的系统镜像（网盘路径：/One-KVM 相关/gparted_on_armbain_usbdisk.zip），刷入U盘后将U盘插到玩客云网口旁的USB口插电启动，连接ssh（root/1234）输入<code>gparted</code>即可启动磁盘分区软件。</p>
 <p>如果没有打开如图所示的Gparted软件界面请检查你的ssh终端是否支持X11转发功能。</p>
 <p>在打开的Gparted界面右键 /dev/mmcblp1p2 选择 Resize/Move 来调整分区，在Free space following框中输入新建分区的大小（可输入4096），再将分出来的空闲空间格式化为ext4格式，最后点击主界面选项卡下的“√”应用刚才的选择即可。</p>
 <p><img alt="img" src="../img/1717947165712-55.png"></p>
 <p><img alt="img" src="../img/1717947165712-56.png"></p>
-<p><strong>挂载分区</strong></p>
-<p>请注意EMMC系统分区是/dev/mmcblk1还是/dev/mmcblk0，这里以/dev/mmcblk0为例</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#查看系统所有分区</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>df<span class="w"> </span>-h
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#在文件末尾添加如下挂载，如为/dev/mmcblk0需自行替换</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>nano<span class="w"> </span>/etc/fstab
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>/dev/mmcblk0p3<span class="w"> </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,ro,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#如果挂载操作报错请检查并修正错误</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>mount<span class="w"> </span>/dev/mmcblk0p3
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1">#开启MSD功能，到/etc/kvmd/override.yaml修改msd选项为otg</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>nano<span class="w"> </span>/etc/kvmd/override.yaml
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd-otg<span class="w"> </span>kvmd
-</code></pre></div></td></tr></table></div>
-<h4 id="tfsd">使用TF卡（SD卡）</h4>
+</details>
+<details class="使用sd卡">
+<summary>使用sd卡</summary>
 <p>建议不要使用杂牌储存卡（部分杂牌储存卡反应为Windows正常、Linux能识别但无法访问和读写）。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#查看TF卡位置</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>fdisk<span class="w"> </span>-l
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#将其格式化为ext4文件格式（将sdx替换为你的设备地址）</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>mkfs.ext4<span class="w"> </span>/dev/sdx
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>nano<span class="w"> </span>/etc/fstab
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1">#在文件末尾添加如下挂载（将sdx替换为你的设备地址）</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>/dev/sdx<span class="w">  </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,ro,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1">#挂载分区（将sdx替换为你的设备地址），如失败报错请检查设备地址和挂载内容是否出错</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>mount<span class="w"> </span>/dev/sdx
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="c1">#开启MSD功能，到/etc/kvmd/override.yaml修改msd选项为otg</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>nano<span class="w"> </span>/etc/kvmd/override.yaml
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd-otg<span class="w"> </span>kvmd
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#查看TF卡位置</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>fdisk<span class="w"> </span>-l
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#将其格式化为ext4文件格式（将sdx替换为你的设备地址）</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>mkfs.ext4<span class="w"> </span>/dev/sdx
 </code></pre></div></td></tr></table></div>
-<h4 id="img">使用 IMG 镜像</h4>
-<p>此方法通过已测试，可以使用。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+</details>
+<details class="使用虚拟磁盘文件">
+<summary>使用虚拟磁盘文件</summary>
+<p>通过新建一个新的 img 文件用作 MSD 文件系统，此方法通过已测试。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#虚拟磁盘创建示例代码，512单位为 1M 的倍数，这个数字可以替换成你所需要的容量</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/root/diska.img<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">512</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>mkfs.ext4<span class="w"> </span>/root/diska.img
+</code></pre></div></td></tr></table></div>
+</details>
+<p><strong>挂载分区</strong></p>
+<p>请确认要挂载的分区路径，不要出错（如/dev/mmcblk1、/dev/mmcblk0p3、/root/diska.img） ，这里以 /dev/mmcblk0 为例。
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -1790,28 +1690,24 @@
 <span class="normal"><a href="#__codelineno-2-11">11</a></span>
 <span class="normal"><a href="#__codelineno-2-12">12</a></span>
 <span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#虚拟磁盘创建示例代码，512单位为 1M 的倍数，这个数字可以替换成你所需要的容量</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/root/diska.img<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">512</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>mkfs.ext4<span class="w"> </span>/root/diska.img
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#查看系统所有分区</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>df<span class="w"> </span>-h
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#在文件末尾添加如下挂载，如为/dev/mmcblk0需自行替换</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>nano<span class="w"> </span>/etc/fstab
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">#在文件末尾添加如下挂载（将/root/diska.img替换为你的虚拟磁盘路径）</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1">#挂载虚拟磁盘文件不同于挂载分区，一定要以 "rw" 方式挂载</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>/root/diska.img<span class="w"> </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,rw,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1">#挂载分区（将/root/diska.img替换为你的虚拟磁盘路径），如失败报错请检查设备地址和挂载内容是否出错</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>mount<span class="w"> </span>/root/diska.img
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1">#开启MSD功能，到/etc/kvmd/override.yaml修改msd选项为otg</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>nano<span class="w"> </span>/etc/kvmd/override.yaml
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd-otg<span class="w"> </span>kvmd
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>/dev/mmcblk0p3<span class="w"> </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,rw,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">#如果挂载操作报错请检查并修正错误</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>mount<span class="w"> </span>/dev/mmcblk0p3
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">#开启MSD功能，到/etc/kvmd/override.yaml修改msd选项为otg</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>nano<span class="w"> </span>/etc/kvmd/override.yaml
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd-otg<span class="w"> </span>kvmd
 </code></pre></div></td></tr></table></div>
 <hr>
 <h3 id="_1">手动上传镜像</h3>
-<p>One-KVM  将镜像文件存储在一个特殊的分区中，该分区挂载在 <code>/var/lib/kvmd/msd</code> 目录。该分区默认是只读的，如果启用了 MSD 功能，或要上传新的映像，则会自动重新挂载以允许写入，这样做可以在突然断电时保护数据不受损害。</p>
+<p>One-KVM  将镜像文件存储在一个特殊的分区中，该分区挂载在 <code>/var/lib/kvmd/msd</code> 目录。如果该分区无法写入说明该分区是只读的，可执行下列命令。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -1882,7 +1778,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年7月2日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月20日</span>
   </span>
 
     
