@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://one-kvm.mofeng.run/faq/">
       
       
-        <link rel="prev" href="../first_steps/">
+        <link rel="prev" href="../onecloud_guide/">
       
       
         <link rel="next" href="../port_forwarding/">
@@ -231,8 +231,6 @@
       
         
       
-        
-      
     
     
       
@@ -380,7 +378,7 @@
         
   
   <span class="md-ellipsis">
-    玩客云 DIY
+    玩客云
   </span>
   
 
@@ -456,27 +454,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../first_steps/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    开始配置
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -746,10 +723,6 @@
       
         
       
-        
-      
-        
-      
     
     
       
@@ -797,48 +770,6 @@
   
   <span class="md-ellipsis">
     H.264 / WebRTC
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../video/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    录制视频
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../audio/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    音频
   </span>
   
 
@@ -1610,6 +1541,19 @@
 <p>如果您需要对功能进行高级配置，也可以查阅 <a href="https://docs.pikvm.org/">PiKVM 文档</a>，该项目文档关于高级功能配置的说明比较详细。</p>
 </li>
 <li>
+<p><strong>One-KVM 运行端口</strong></p>
+<p>整合包软件默认运行在 443 端口，访问 80 端口会自动跳转到 443 端口。Docker 版本默认运行在 4430 端口，访问 8080 端口会自动跳转到 4430 端口。</p>
+<p>由于软件 SSL 证书为自签证书，不被浏览器信任是正常情况，请无视风险继续访问，若有需要可自行更换 Nginx SSL 证书。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>初始 WEB 和 VN C账号密码都为admin/admin，root用户密码通常为用户自行设置，若未设置可尝试 1234。<br>ssh 默认端口：22<br>vnc 默认端口：5900<br>janus ws 端口：20000-40000</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>排障指南：<br>网页视频黑屏提示无 No Singal，请检查硬件是否正确连接或松动；<br>网页端黑屏无任何画面或彩色竖条，请检查是否有被控机 HDMI 信号输入；<br>进系统画面显示正常， BIOS 界面黑屏或渲染异常，请尝试在 BIOS 界面开启 CMS 兼容模式；<br>虚拟鼠标错位或移动范围异常可尝试在网页右上角切换鼠标相对模式；<br>画面显示片刻黑屏，刷新网页重复此现象，可以尝试使用火狐浏览器；<br>如果以上情况都不符合请尝试重启系统自动复位，仍旧无法解决可在 Github 提交 issue 或加入 One-KVM 交流群反馈。</p>
+</div>
+</li>
+<li>
 <p><strong>如何在公网中访问局域网的One-KVM？</strong></p>
 <p>如果路由器有公网IP地址，可以使用端口映射转发443端口（对于整合包）或4430端口（对于 Docker）。在其他情况下，可以使用内网穿透或异地组网服务（如Tailscale和FRP）。</p>
 </li>
@@ -1780,7 +1724,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../first_steps/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 开始配置">
+          <a href="../onecloud_guide/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 玩客云套装（停止维护）">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1790,7 +1734,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                开始配置
+                玩客云套装（停止维护）
               </div>
             </div>
           </a>
