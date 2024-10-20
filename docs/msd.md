@@ -11,7 +11,10 @@
 ### 新建 MSD 分区并启用 MSD
 
 !!! tip 
-      整合包 201004 版本以后，MSD功能默认启用（使用 /var/lib/kvmd/msd 目录），无需新建分区。若仍然挂载，需要在 MSD 文件系统挂载后执行 `chown kvmd -R /var/lib/kvmd/msd/` 命令使 MSD 文件系统具有正确的权限。
+      整合包 201004 版本以后，MSD功能默认启用（使用 /var/lib/kvmd/msd 目录），可任意指定目录（若无权限可执行 `chown kvmd -R /var/lib/kvmd/msd/` 使自定义目录可写），无需新建分区。
+
+      若仍然新建分区挂载，需在 `/etc/kvmd/override.yaml` 中注释 msd 的子选项 `remount_cmd: /bin/true` 为 `#remount_cmd: /bin/true`，使 MSD 分区具有正确的权限。
+      
 
 下面三种方式任选其一即可，对于新手第三种方法更为推荐，使用虚拟磁盘文件做 MSD 分区，无需对物理磁盘进行分区，操作更加安全和简单。
 
