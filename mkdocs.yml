@@ -59,12 +59,11 @@ nav:
       - "写在前面": prepare.md
       - "软件安装":
         - "Docker 部署": docker_install.md
-        - "玩客云 DIY": onecloud_install.md
+        - "玩客云": onecloud_install.md
         #- "X86 主机安装": x86_install.md
         - "私家云二代": cumebox2_install.md
         - "群晖 NAS": synology_install.md
         - "玩客云套装（停止维护）": onecloud_guide.md
-      - "开始配置": first_steps.md
       #- "身份认证": auth.md
       - "常见问题": faq.md
 
@@ -79,8 +78,8 @@ nav:
 
     - "视频":
       - "H.264 / WebRTC": h264.md
-      - "录制视频": video.md
-      - "音频": audio.md
+      #- "录制视频": video.md
+      #- "音频": audio.md
 
     - "外围设备":
       - "键盘和鼠标":
