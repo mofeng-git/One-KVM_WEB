@@ -857,8 +857,6 @@
       
         
       
-        
-      
     
     
       
@@ -945,27 +943,6 @@
   
   <span class="md-ellipsis">
     CH9329 HID
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bluetooth_hid/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    蓝牙 HID
   </span>
   
 
@@ -1350,8 +1327,6 @@
       
         
       
-        
-      
     
     
       
@@ -1399,27 +1374,6 @@
   
   <span class="md-ellipsis">
     HTTP API
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../building_os/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    构建 One-KVM 系统
   </span>
   
 
@@ -1568,9 +1522,8 @@
 <summary><strong>如何修改软件端口和账户密码？</strong></summary>
 <p>修改端口可以编辑 /etc/kvmd/nginx/目录下的conf后缀文件将相关端口修改所需端口（443是网页运行的端口），然后运行systemctl restart kvmd kvmd-nginx 生效。</p>
 <p><strong>注意</strong>：对于整合包用户，HDMI终端和SSH终端可以直接以root用户登录。但PiKVM网页终端的默认登入用户是kvmd-webterm低权限账户（无密码），没有root权限且无法使用<code>sudo</code>提权，若需要执行特权命令请先在终端执行<code>su root</code>命令并输入密码切换为root账户。</p>
-<details class="修改账号密码示例">
-<summary>修改账号密码示例</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<p><strong>修改账号密码示例</strong>
+    </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1593,7 +1546,6 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd<span class="w"> </span>kvmd-nginx
 </code></pre></div></td></tr></table></div>
 </details>
-</details>
 </li>
 <li>
 <details>
@@ -1606,11 +1558,11 @@
 <summary><strong>如何修改 MAC 地址？</strong></summary>
 <p>非玩客云设备可以使用终端图形化工具<code>nmtui</code>修改 mac 地址。</p>
 <p>玩客云由于其特殊性不能直接使用使用终端图形化工具<code>nmtui</code>修改 mac 地址，会修改 mac 无法获取ip问题，不同版本修改 mac 地址的方法见下表。</p>
-<details>
+<details open="open">
 <summary>240118 版本及以后</summary>
 <p>需要修改 mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。</p>
 </details>
-<details>
+<details open="open">
 <summary>240138 到 240104 版本</summary>
 <p></p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1628,7 +1580,7 @@
 </code></pre></div></td></tr></table></div>
 mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 </details>
-<details>
+<details open="open">
 <summary>更早到 240121 版本</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
