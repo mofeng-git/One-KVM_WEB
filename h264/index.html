@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#libx264" class="md-skip">
+        <a href="#h264" class="md-skip">
           跳转至
         </a>
       
@@ -804,18 +804,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#libx264" class="md-nav__link">
+  <a href="#h264" class="md-nav__link">
     <span class="md-ellipsis">
-      Libx264
+      H.264 介绍
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ffmpeg" class="md-nav__link">
+  <a href="#h264webrtc" class="md-nav__link">
     <span class="md-ellipsis">
-      FFmpeg
+      H.264/WebRTC 异地使用
     </span>
   </a>
   
@@ -1574,18 +1574,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#libx264" class="md-nav__link">
+  <a href="#h264" class="md-nav__link">
     <span class="md-ellipsis">
-      Libx264
+      H.264 介绍
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ffmpeg" class="md-nav__link">
+  <a href="#h264webrtc" class="md-nav__link">
     <span class="md-ellipsis">
-      FFmpeg
+      H.264/WebRTC 异地使用
     </span>
   </a>
   
@@ -1611,15 +1611,19 @@
 
   <h1>H.264 / WebRTC</h1>
 
-<div><p>H.264，也被称为 MPEG-4 AVC（Advanced Video Coding），是一种广泛使用的视频压缩标准，尤其适用于需要高效压缩比的应用场景，比如互联网流媒体传输、蓝光光盘视频等。</p>
-<p>H.264 视频相较 MJPEG 视频拥有完整音频和低码率的特点，可以在更低的带宽下运行。由于 PiKVM 官方的H.264视频功能仅适配树莓派 GPU，所以在其它设备上使用H.264功能暂时无法硬编码（对于玩客云设备，Armbian 系统也没有可用的 VPU 驱动）。下面是 One-KVM 项目中关于 H.264 视频的两种解决方案：libx264、ffmpeg。</p>
-<h3 id="libx264">Libx264</h3>
+<div><h3 id="h264">H.264 介绍</h3>
+<p>H.264，也被称为 MPEG-4 AVC（Advanced Video Coding），是一种广泛使用的视频压缩标准，尤其适用于需要高效压缩比的应用场景，比如互联网流媒体传输、蓝光光盘视频等。</p>
+<p>H.264 视频相较 MJPEG 视频拥有完整音频和低码率的特点，可以在更低的带宽下运行。由于 PiKVM 官方的H.264视频功能仅适配树莓派 GPU，所以在其它设备上使用H.264功能暂时无法硬编码（对于玩客云设备，Armbian 系统也没有可用的 VPU 驱动）。</p>
+<p>下面是 One-KVM 项目中关于 H.264 视频的两种解决方案：libx264、ffmpeg。</p>
+<details class="libx264">
+<summary>Libx264</summary>
 <p>Libx264 是一个用于编码 H.264 视频的开源库，是由 VideoLAN 和其他贡献者开发的，并且由于其高效的编码质量和速度，在很多视频处理软件中都有使用。</p>
 <p>作者已将其与 ustreamer 集成，在 Docker 版容器中默认启用此功能，相比后面的 ffmpeg 方案性能更好使用更加方便。此 ustreamer 分支可查看 <a href="https://github.com/mofeng-git/ustreamer">https://github.com/mofeng-git/ustreamer</a>。</p>
-<p>H.264/WebRTC 网页视频需要额外映射 20000-40000 UDP 端口。</p>
-<h3 id="ffmpeg">FFmpeg</h3>
-<details class="此方法已停止维护仅做归档使用">
-<summary>此方法已停止维护仅做归档使用</summary>
+<p>H.264/WebRTC 网页视频可能需要额外映射 20000-40000 UDP 端口。</p>
+</details>
+<details class="ffmpeg">
+<summary>Ffmpeg</summary>
+<p><strong>此方法已停止维护仅做归档使用</strong></p>
 <p>此功能由群友 自.知 设计，使用 ffmpeg 进行软编码。由于为 CPU 软件编码，在玩客云设备上此功能效果较差。</p>
 <p><strong>使用</strong></p>
 <p>整合包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。由于玩客云 CPU 性能较差，所以 <code>kvmd-ffmpeg</code> 服务默认为关闭状态（网页表现如下），避免影响其他服务的流畅性。</p>
@@ -1654,7 +1658,43 @@
 </code></pre></div></td></tr></table></div>
 <p><strong>视频演示</strong></p>
 <p><div class="video-container"><iframe src="../video/%E7%8E%A9%E5%AE%A2%E4%BA%91WebRTC%E9%9F%B3%E8%A7%86%E9%A2%91%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA_x264.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
-</details></div>
+</details>
+<h3 id="h264webrtc">H.264/WebRTC 异地使用</h3>
+<p>端口映射、异地组网两种方式任选其一即可，推荐使用异地组网方式。</p>
+<p><strong>端口映射</strong></p>
+<p>在防火墙映射 20000-40000 udp 端口，演示站就是使用的这个方法。</p>
+<p>此方法局限性较大，需要映射太多端口，不推荐使用。</p>
+<p><img alt="image-20241021132357799" src="../img/image-20241021132357799.png"></p>
+<p><strong>异地组网</strong></p>
+<p>这里以 Tailscale 异地组网为例，首先安装客户端：<a href="https://tailscale.com/download/linux">Download · Tailscale</a>，这里可以直接在 One-KVM 主机上安装 Tailscale，安装命令如下。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>curl -fsSL https://tailscale.com/install.sh | sh
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>#登录同一 Tailscale 账号
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>tailscale up
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>#一些工具命令
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>#查看虚拟局域网设备列表
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>tailscale status
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>#查看网络状态和中继服务器状态
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>tailscale netcheck
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>#查看当前设备虚拟局域网 IP
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>tailscale ip
+</code></pre></div></td></tr></table></div>
+<p>然后进行多设备组网，下图是一个实例。</p>
+<p><img alt="image-20241021142837222" src="../img/image-20241021142837222.png"></p>
+<p>然后使用虚拟局域网 IP 访问即可使用 One-KVM 的 H.264/WebRTC 功能。</p>
+<p><img alt="image-20241021143310563" src="../img/image-20241021143310563.png"></p>
+<p>由于 Tailscale 官方中继服务器位于境外，网络联通性比较差，推荐使用自建中键服务器，可以参考这篇文章： <a href="https://anubis.cafe/6fdf334e">自建 Tailscale 中继服务器 | Anubis的小窝</a></p>
+<p><img alt="image-20241021144135937" src="../img/image-20241021144135937.png"></p></div>
 
 
 
@@ -1677,7 +1717,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月20日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月21日</span>
   </span>
 
     
