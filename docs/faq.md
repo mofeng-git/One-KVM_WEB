@@ -27,7 +27,7 @@
 
         **注意**：对于整合包用户，HDMI终端和SSH终端可以直接以root用户登录。但PiKVM网页终端的默认登入用户是kvmd-webterm低权限账户（无密码），没有root权限且无法使用`sudo`提权，若需要执行特权命令请先在终端执行`su root`命令并输入密码切换为root账户。
 
-        ??? 修改账号密码示例
+        **修改账号密码示例**
             ```bash
             #切换为root账户
             su root
@@ -52,10 +52,10 @@
 
         玩客云由于其特殊性不能直接使用使用终端图形化工具`nmtui`修改 mac 地址，会修改 mac 无法获取ip问题，不同版本修改 mac 地址的方法见下表。
 
-        ??? "240118 版本及以后"
+        ???+ "240118 版本及以后"
             需要修改 mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 
-        ??? "240138 到 240104 版本"
+        ???+ "240138 到 240104 版本"
             ```bash
             #由 systemd-networkd 替换 NetworkManager 接管网络
             #避免修改 mac 无法获取ip问题
@@ -67,7 +67,7 @@
             ```
             mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 
-        ??? "更早到 240121 版本"
+        ???+ "更早到 240121 版本"
             ```bash
             #快捷命令，依次执行如下命令即可
             MAC="$(echo 2a:01:`openssl rand -hex 4 | sed 's/\(..\)/\1:/g; s/.$//'`)"

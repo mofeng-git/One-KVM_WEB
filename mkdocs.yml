@@ -86,7 +86,7 @@ nav:
         - "鼠标模式": mouse.md
         - "鼠标抖动器": mouse_jiggler.md
         - "CH9329 HID": ch9329_hid.md
-        - "蓝牙 HID": bluetooth_hid.md
+        # "蓝牙 HID": bluetooth_hid.md
       - "大容量存储驱动器": msd.md
       - "USB 以太网": usb_ethernet.md
       - "USB 串口": usb_serial.md
@@ -109,7 +109,7 @@ nav:
 
     - "开发":
       - "HTTP API": api.md
-      - "构建 One-KVM 系统": building_os.md
+      #- "构建 One-KVM 系统": building_os.md
       - "周边套件": parts_library.md
       - "知识库": develop.md
 
