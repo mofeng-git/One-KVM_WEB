@@ -10,6 +10,10 @@
 
 Docker 可以使用 OTG 或 CH9329 作为虚拟 HID ，支持 amd64、arm64、armv7 架构的 Linux 系统安装。
 
+???+ tip "OTG 与 CH9329 说明"
+    OTG HID：现在大量的 ARM CPU 芯片都可以支持 USB OTG2.0/3.0 接口，该接口可能工作为 USB Host 模式用于连接USB设备。不过该接口也可以在 Linux 下作为 USB 从设备工作，此时可以将 ARM 板本身配置为键盘、鼠标、U 盘，从而将 OTG 接口作为虚拟 HID 设备使用。
+
+    CH9329 HID： CH9329 是一款串口转标准 USB HID 设备(键盘、鼠标、自定义 HID)芯片， 在电脑上可被识别为标准的 USB 键盘设备、USB 鼠标设备或自定义 HID 类设备。可用作 One-KVM 的虚拟 HID 设备。
 
 如果使用 OTG 作为虚拟 HID，可以使用如下部署命令：
 ```bash
@@ -20,7 +24,7 @@ sudo docker run --name kvmd -itd --privileged=true \
     silentwind0/kvmd
 ```
 
-如果使用 CH9329，可以使用如下部署命令：
+如果使用 CH9329 作为虚拟 HID，可以使用如下部署命令：
 ```bash
 sudo docker run --name kvmd -itd \
     --device /dev/video0:/dev/video0 \
@@ -64,4 +68,8 @@ sudo docker run --name kvmd -itd \
 
 `-e NOIPMI=1` 禁用 IPMI，默认为启用
 
-`-e VIDEONUM=1` 设置 USB 采集卡地址编号，如 /dev/video1
+`-e VIDEONUM=1` 设置 USB 采集卡地址编号，默认为 0，如 1 则代表 /dev/video1
+
+`-e NOMSD=1` 禁用 MSD，默认在 ARM 主机上启用
+
+`-e ATX=USBRELAY_HID` 使用 USB HID 继电器设备作为电源控制设备
