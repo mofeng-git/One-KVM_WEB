@@ -1536,12 +1536,15 @@
 
 <ol>
 <li>
-<p><strong>One-KVM 与 PiKVM 的不同之处？</strong></p>
+<details>
+<summary><strong>One-KVM 与 PiKVM 的不同之处？</strong></summary>
 <p>One-KVM 基于 PiKVM 二次开发，在 PiKVM 的基础上进行了本地化，增加了更多扩展功能，支持更多的硬件设备和平台。</p>
 <p>如果您需要对功能进行高级配置，也可以查阅 <a href="https://docs.pikvm.org/">PiKVM 文档</a>，该项目文档关于高级功能配置的说明比较详细。</p>
+</details>
 </li>
 <li>
-<p><strong>One-KVM 运行端口</strong></p>
+<details>
+<summary><strong>One-KVM 运行端口</strong></summary>
 <p>整合包软件默认运行在 443 端口，访问 80 端口会自动跳转到 443 端口。Docker 版本默认运行在 4430 端口，访问 8080 端口会自动跳转到 4430 端口。</p>
 <p>由于软件 SSL 证书为自签证书，不被浏览器信任是正常情况，请无视风险继续访问，若有需要可自行更换 Nginx SSL 证书。</p>
 <div class="admonition tip">
@@ -1552,13 +1555,17 @@
 <p class="admonition-title">Tip</p>
 <p>排障指南：<br>网页视频黑屏提示无 No Singal，请检查硬件是否正确连接或松动；<br>网页端黑屏无任何画面或彩色竖条，请检查是否有被控机 HDMI 信号输入；<br>进系统画面显示正常， BIOS 界面黑屏或渲染异常，请尝试在 BIOS 界面开启 CMS 兼容模式；<br>虚拟鼠标错位或移动范围异常可尝试在网页右上角切换鼠标相对模式；<br>画面显示片刻黑屏，刷新网页重复此现象，可以尝试使用火狐浏览器；<br>如果以上情况都不符合请尝试重启系统自动复位，仍旧无法解决可在 Github 提交 issue 或加入 One-KVM 交流群反馈。</p>
 </div>
+</details>
 </li>
 <li>
-<p><strong>如何在公网中访问局域网的 One-KVM？</strong></p>
+<details>
+<summary><strong>如何在公网中访问局域网的 One-KVM？</strong></summary>
 <p>如果路由器有公网IP地址，可以使用端口映射转发443端口（对于整合包）或4430端口（对于 Docker）。在其他情况下，可以使用内网穿透或异地组网服务（如Tailscale和FRP）。</p>
+</details>
 </li>
 <li>
-<p><strong>如何修改软件端口和账户密码？</strong></p>
+<details>
+<summary><strong>如何修改软件端口和账户密码？</strong></summary>
 <p>修改端口可以编辑 /etc/kvmd/nginx/目录下的conf后缀文件将相关端口修改所需端口（443是网页运行的端口），然后运行systemctl restart kvmd kvmd-nginx 生效。</p>
 <p><strong>注意</strong>：对于整合包用户，HDMI终端和SSH终端可以直接以root用户登录。但PiKVM网页终端的默认登入用户是kvmd-webterm低权限账户（无密码），没有root权限且无法使用<code>sudo</code>提权，若需要执行特权命令请先在终端执行<code>su root</code>命令并输入密码切换为root账户。</p>
 <details class="修改账号密码示例">
@@ -1586,21 +1593,25 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd<span class="w"> </span>kvmd-nginx
 </code></pre></div></td></tr></table></div>
 </details>
+</details>
 </li>
 <li>
-<p><strong>如何给设置静态 IP？</strong></p>
+<details>
+<summary><strong>如何给设置静态 IP？</strong></summary>
 <p>使用终端图形化工具<code>nmtui</code>或<code>armbian-config</code>。</p>
+</details>
 </li>
 <li>
-<p><strong>如何修改 MAC 地址？</strong></p>
+<details>
+<summary><strong>如何修改 MAC 地址？</strong></summary>
 <p>非玩客云设备可以使用终端图形化工具<code>nmtui</code>修改 mac 地址。</p>
 <p>玩客云由于其特殊性不能直接使用使用终端图形化工具<code>nmtui</code>修改 mac 地址，会修改 mac 无法获取ip问题，不同版本修改 mac 地址的方法见下表。</p>
-<details class="240118版本及以后">
-<summary>240118版本及以后</summary>
+<details>
+<summary>240118 版本及以后</summary>
 <p>需要修改 mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。</p>
 </details>
-<details class="240138到240104版本">
-<summary>240138到240104版本</summary>
+<details>
+<summary>240138 到 240104 版本</summary>
 <p></p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -1615,10 +1626,10 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a>systemctl<span class="w"> </span>unmask<span class="w"> </span>systemd-networkd
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>systemd-networkd<span class="w"> </span>systemd-resolved
 </code></pre></div></td></tr></table></div>
- mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
+mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 </details>
-<details class="更早到240121版本">
-<summary>更早到240121版本</summary>
+<details>
+<summary>更早到 240121 版本</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -1632,21 +1643,27 @@
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a>reboot
 </code></pre></div></td></tr></table></div>
 </details>
+</details>
 </li>
 <li>
-<p><strong>如何使用 USB 无线网卡连接 WIFI？</strong></p>
+<details>
+<summary><strong>如何使用 USB 无线网卡连接 WIFI？</strong></summary>
 <p>对于玩客云，作者和 hzytic 大佬编译发布的镜像都已包含常见无线网卡驱动，USB无线网卡即插即用。其他硬件系统需自行测试是否能够驱动 USB 无线网卡。
 </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>nmtui
 </code></pre></div></td></tr></table></div>
 <img alt="img" src="../img/1717950485857-7.png">
+</details>
 </li>
 <li>
-<p><strong>为什么网页视频会有无法消除的黑边？</strong></p>
+<details>
+<summary><strong>为什么网页视频会有无法消除的黑边？</strong></summary>
 <p>请检查你的被控机系统设置。调整被控机分辨率与网页匹配可能会有帮助。
 <img alt="img" src="../img/1717950485857-8.jpeg"></p>
+</details>
 </li>
 <li>
-<p><strong>如何改变玩客云前面板 LED 灯颜色？</strong></p>
+<details>
+<summary><strong>如何改变玩客云前面板 LED 灯颜色？</strong></summary>
 <p>对于5.9内核系统有<code>green_on</code>,<code>red_on</code>,<code>bule_on</code>,<code>green_off</code>,<code>red_off</code>,<code>bule_off</code>命令可用。</p>
 <p>对于6.x高内核的系统，可以使用如下命令控制LED的亮灭。
 </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
@@ -1655,15 +1672,18 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:blue:alive/brightness
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:green:alive/brightness
 </code></pre></div></td></tr></table></div>
+</details>
 </li>
 <li>
-<p><strong><code>apt update</code> 无法更新？</strong></p>
+<details>
+<summary><strong><code>apt update</code> 无法更新？</strong></summary>
 <p>首先检查网络连接和源是否正常，然后尝试更换源。</p>
 <p>如果遇到 <code>E: Release file for xxx is not valid yet (invalid for another 4d 3h 56min 24s). Updates for this repository will not be applied.</code> 错误可以执行以下命令。
 </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ntp<span class="w"> </span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>sudo<span class="w"> </span>service<span class="w"> </span>ntp<span class="w"> </span>restart<span class="w"> </span>
 </code></pre></div></td></tr></table></div>
+</details>
 </li>
 </ol>
 
