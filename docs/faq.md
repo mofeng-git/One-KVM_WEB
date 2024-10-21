@@ -102,3 +102,13 @@
     echo 0 > /sys/class/leds/onecloud:blue:alive/brightness
     echo 0 > /sys/class/leds/onecloud:green:alive/brightness
     ```
+
+1. **`apt update` 无法更新？**
+
+    首先检查网络连接和源是否正常，然后尝试更换源。
+
+    如果遇到 `E: Release file for xxx is not valid yet (invalid for another 4d 3h 56min 24s). Updates for this repository will not be applied.` 错误可以执行以下命令。
+    ```bash
+    sudo apt install ntp 
+    sudo service ntp restart 
+    ```
