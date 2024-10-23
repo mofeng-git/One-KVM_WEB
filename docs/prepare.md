@@ -25,27 +25,25 @@
 |              腾飞 TFDGK05              |    USB2.0    |       √        |       ×        |      /       |
 |            迈拓矩阵 MT-UH02            |    USB2.0    |       ×        |       ×        |      /       |
 
-由于整合包由于花费了作者大量精力和成本进行开发和适配，所以部分平台整合包收费。详见下表，免费平台的整合包可直接解压，收费平台的整合包有解压密码。若不想付费可以使用 One-KVM  Docker 版（支持全平台）。
 
-| 固件型号 | 是否免费 | 固件代号 | 硬件情况 |
-| :-------------: | :------------: | :-------------: | :-------------: |
-| 玩客云 | 免费 | Onecloud | USB 采集卡、OTG |
-| s905l3a  通用包 | 免费 | E900v22c | USB 采集卡、OTG |
-| 私家云二代 | 付费 | Cumebox2 | USB 采集卡、OTG |
-| 我家云 | 付费 | Chainedbox | USB 采集卡、OTG |
-| Vmare | 付费 | Vmare-uefi | USB 采集卡、CH9329+CH340 |
-| Virtualbox | 付费 | Virtualbox-uefi | USB 采集卡、CH9329+CH340 |
+整合包花费了作者大量精力和成本进行开发和测试，与 ONe-KVM 与硬件深度适配，开箱即用。若没有所需要的平台整合包，可以提交适配或者使用 One-KVM  Docker 版（支持全平台）。
 
-??? 使用说明
-    1. 带 burn.img 后缀的整合包为线刷固件，不带 burn 后缀的 img 后缀整合包为 dd 写入固件。
-    2. s905l3a 通用包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试，支持 E900V22C/D, CM311-1a-YST, M401A, M411A, UNT403A, UNT413A, ZTE-B863AV3.2-M, CM311-1a-CH, IP112H, B863AV3.1-M2 平台。
 
-??? 付费方式
-    捐赠或支付20元以上即可获取所需平台的付费整合包（提供压缩包密码）和相关技术支持。
+| 固件型号 | 固件代号 | 硬件情况 |
+| :-------------: | :-------------: | :-------------: |
+| 玩客云 | Onecloud | USB 采集卡、OTG |
+| s905l3a  通用包 | E900v22c | USB 采集卡、OTG |
+| 私家云二代 | Cumebox2 | USB 采集卡、OTG |
+| 我家云 | Chainedbox | USB 采集卡、OTG |
+| Vmare | Vmare-uefi | USB 采集卡、CH9329+CH340 |
+| Virtualbox | Virtualbox-uefi | USB 采集卡、CH9329+CH340 |
 
-    - 为爱发电：https://ifdian.net/a/silentwind
+说明：
 
-    - 闲鱼用户名：默风SilentWind
+1. 带 burn.img 后缀的整合包为线刷固件，不带 burn 后缀的 img 后缀整合包为 dd 写入固件。
+
+2. s905l3a 通用包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试，支持 E900V22C/D, CM311-1a-YST, M401A, M411A, UNT403A, UNT413A, ZTE-B863AV3.2-M, CM311-1a-CH, IP112H, B863AV3.1-M2 平台。
+
 
 **镜像及工具文件**
 
