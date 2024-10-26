@@ -1579,7 +1579,7 @@
 <p>系统基于 loongix 预装 One-KVM 开箱即用，打包方式为系统 rootfs 压缩包，启动后访问 https://IP:443 即可。</p>
 </li>
 <li>
-<p>受限于内存大小，包含 1g swap，文件位于/swap.img。比One-KVM 其他系统整合包少了 H.264/WebRTC 和网页终端功能。</p>
+<p>受限于内存大小，包含 1g swap（文件位于/swap.img），系统原始文件总大小约为4.8G，对于久久派 TF 版本建议使用大于8G（含）的高速 TF 卡。</p>
 </li>
 <li>
 <p>由于 OTG 功能需要按照官方文档进行硬改，所以这里使用 CH9329+CH340 一体线。内核已经加入了 OTG 模块并且 usb gadget 新建正常，如有需要高阶玩家可自行测试 OTG。</p>
@@ -1600,18 +1600,20 @@
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>fdisk<span class="w"> </span>-l
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>fdisk<span class="w"> </span>-l
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#假定 TF 卡路径为 /dev/sdc1</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>sudo<span class="w"> </span>mkfs.ext4<span class="w"> </span>/dev/sdc1
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>mkdir<span class="w"> </span>/mnt/sdc1
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sdc1<span class="w"> </span>/mnt/sdc1
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-zvxf<span class="w"> </span>One-KVM_by-SilentWind_2k0300_241025.tar.gz<span class="w"> </span>-C<span class="w"> </span>/mnt/sdc1<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sync
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>sudo<span class="w"> </span>nano<span class="w"> </span>boot.cfg
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>sudo<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/mnt/sdc1/boot
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#按需重命名成 vmlinuz，修改boot.cfg</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>cp<span class="w"> </span>vmlinuz-tf<span class="w"> </span>vmlinuz
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>sudo<span class="w"> </span>nano<span class="w"> </span>boot.cfg
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>sudo<span class="w"> </span>umount<span class="w"> </span>/dev/sdc1
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">#注意 --strip-components=2 参数去掉外面两层文件夹</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-zvxf<span class="w"> </span>One-KVM_by-SilentWind_2k0300_241025.tar.gz<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">2</span><span class="w"> </span>-C<span class="w"> </span>/mnt/sdc1<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sync
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>sudo<span class="w"> </span>nano<span class="w"> </span>boot.cfg
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>sudo<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/mnt/sdc1/boot
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#按需重命名成 vmlinuz，修改boot.cfg</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>cp<span class="w"> </span>vmlinuz-tf<span class="w"> </span>vmlinuz
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>sudo<span class="w"> </span>nano<span class="w"> </span>boot.cfg
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>sudo<span class="w"> </span>umount<span class="w"> </span>/dev/sdc1
 </code></pre></div></td></tr></table></div>
 <h3 id="_1">使用实例</h3>
 <p><img alt="2k0300 1" src="../img/PixPin_2024-10-25_21-58-47.png"></p>
@@ -1638,7 +1640,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月25日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月26日</span>
   </span>
 
     
