@@ -15,6 +15,9 @@ Docker 可以使用 OTG 或 CH9329 作为虚拟 HID ，支持 amd64、arm64、ar
 
     CH9329 HID： CH9329 是一款串口转标准 USB HID 设备(键盘、鼠标、自定义 HID)芯片， 在电脑上可被识别为标准的 USB 键盘设备、USB 鼠标设备或自定义 HID 类设备。可用作 One-KVM 的虚拟 HID 设备。
 
+!!! warning "提醒"
+    虚拟存储驱动器（MSD）、虚拟 USB 网卡等虚拟USB设备等功能仅使用 OTG 端口模式时可用，请注意**使用 CH9329 HID 时不支持这些虚拟 USB 设备扩展功能**。
+
 如果使用 OTG 作为虚拟 HID，可以使用如下部署命令：
 ```bash
 sudo docker run --name kvmd -itd --privileged=true \

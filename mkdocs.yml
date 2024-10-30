@@ -110,7 +110,7 @@ nav:
 
     - "开发":
       - "HTTP API": api.md
-      #- "构建 One-KVM 系统": building_os.md
+      - "构建 One-KVM 系统": building_os.md
       - "周边套件": parts_library.md
       - "知识库": develop.md
 
