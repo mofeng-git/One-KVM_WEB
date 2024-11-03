@@ -12,21 +12,21 @@
         <meta name="author" content="SilentWind">
       
       
-        <link rel="canonical" href="https://one-kvm.mofeng.run/2k0300/">
+        <link rel="canonical" href="https://one-kvm.mofeng.run/s905l3a_install/">
       
       
-        <link rel="prev" href="../synology_install/">
+        <link rel="prev" href="../2k0300_install/">
       
       
-        <link rel="next" href="../onecloud_guide/">
+        <link rel="next" href="../virtualmachine_install/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
-        <title>龙芯久久派 - One-KVM 文档</title>
+        <title>s905l3a 盒子 - One-KVM 文档</title>
       
     
     
@@ -61,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              龙芯久久派
+              s905l3a 盒子
             
           </span>
         </div>
@@ -323,6 +318,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -441,6 +440,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../2k0300_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    龙芯久久派
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -451,53 +471,37 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    龙芯久久派
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    龙芯久久派
+    s905l3a 盒子
   </span>
   
 
       </a>
       
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+              
+            
+              
+                
   
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用实例
-    </span>
-  </a>
+    <li class="md-nav__item">
+      <a href="../virtualmachine_install/" class="md-nav__link">
+        
   
-</li>
-      
-    </ul>
+  <span class="md-ellipsis">
+    虚拟机部署
+  </span>
   
-</nav>
-      
+
+      </a>
     </li>
   
 
@@ -1558,23 +1562,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用实例
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1591,32 +1578,11 @@
   
 
 
-  <h1>龙芯久久派</h1>
+  <h1>s905l3a 盒子</h1>
 
-<div><p>龙芯派 2K0300 久久派采用龙芯 2K0300 处理器，自主 LoongArch 架构，主频 1GHz，支持低功耗，支持触屏输入、力积 DDR4，提供千兆网口和多功能接口，采用标准 Type-C 接口供电。</p>
-<p>龙芯久久派 One-KVM 整合包基于 loongnix 系统（旧世界）打包而成。</p>
-<p>需要硬件：龙芯久久派、USB HDMI 采集卡、CH9329+CH340 一体线</p>
-<p><strong>整合包说明</strong></p>
-<div class="admonition warning">
-<p class="admonition-title">提醒</p>
-<p>虚拟存储驱动器（MSD）、虚拟 USB 网卡等虚拟USB设备等功能仅使用 OTG 端口模式时可用，请注意<strong>使用 CH9329 HID 时不支持这些虚拟 USB 设备扩展功能</strong>。</p>
-</div>
-<ul>
-<li>
-<p>系统基于 loongix 预装 One-KVM 开箱即用，打包方式为系统 rootfs 压缩包，启动后访问 https://IP:443 即可。</p>
-</li>
-<li>
-<p>受限于内存大小，包含 1g swap（文件位于/swap.img），系统原始文件总大小约为4.8G，对于久久派 TF 版本建议使用大于8G（含）的高速 TF 卡。</p>
-</li>
-<li>
-<p>由于 OTG 功能需要按照官方文档进行硬改，所以这里使用 CH9329+CH340 一体线。内核已经加入了 OTG 模块并且 usb gadget 新建正常，如有需要高阶玩家可自行测试 OTG。</p>
-</li>
-<li>
-<p>如果是久久派 TF 卡版本，理论上不用修改文件。如果是久久派 WIFI 卡版本，压缩包 /boot/ 目录下包含 vmlinuz-tf 和 vmlinuz-wifi，使用时按需重命名为 vmlinuz，再编辑 boot.cfg 设置启动项即可。</p>
-</li>
-</ul>
-<p>命令实例：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div><p>s905l3a One-KVM 通用包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试，理论上支持 E900V22C/D, CM311-1a-YST, M401A, M411A, UNT403A, UNT413A, ZTE-B863AV3.2-M, CM311-1a-CH, IP112H, B863AV3.1-M2 平台。</p>
+<p><code>armbian-install</code> 安装可选型号：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1626,25 +1592,32 @@
 <span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>fdisk<span class="w"> </span>-l
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#假定 TF 卡路径为 /dev/sdc1</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>sudo<span class="w"> </span>mkfs.ext4<span class="w"> </span>/dev/sdc1
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>mkdir<span class="w"> </span>/mnt/sdc1
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sdc1<span class="w"> </span>/mnt/sdc1
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">#注意 --strip-components=2 参数去掉外面两层文件夹</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-zvxf<span class="w"> </span>One-KVM_by-SilentWind_2k0300_241025.tar.gz<span class="w"> </span>--strip-components<span class="o">=</span><span class="m">2</span><span class="w"> </span>-C<span class="w"> </span>/mnt/sdc1<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sync
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>sudo<span class="w"> </span>nano<span class="w"> </span>boot.cfg
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>sudo<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/mnt/sdc1/boot
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#按需重命名成 vmlinuz，修改boot.cfg</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>cp<span class="w"> </span>vmlinuz-tf<span class="w"> </span>vmlinuz
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>sudo<span class="w"> </span>nano<span class="w"> </span>boot.cfg
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>sudo<span class="w"> </span>umount<span class="w"> </span>/dev/sdc1
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>--------------------------------------------------------------------------------------
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>ID    SOC        MODEL                               DTB                                               
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>--------------------------------------------------------------------------------------
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>301   s905x2     X96-Max-4GB,Tx5-Max                 meson-g12a-x96-max.dtb                            
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>302   s905x2     X96-Max-2GB,A95X-F2                 meson-g12a-x96-max-rmii.dtb                       
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>303   s905x2     MECOOL-KM3-4G                       meson-g12a-sei510.dtb                             
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>304   s905l3a    E900V22C-D,CM311-1a-CH,IP112H       meson-g12a-s905l3a-e900v22c.dtb                   
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>305   s905l3a    CM311-1a-YST                        meson-g12a-s905l3a-cm311.dtb                      
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>306   s905l3a    M401A,UNT403A,B863AV3.2-M           meson-g12a-s905l3a-m401a.dtb                      
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>0     Other      Customize                           Enter-custom-dtb-name                             
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>--------------------------------------------------------------------------------------
 </code></pre></div></td></tr></table></div>
-<h3 id="_1">使用实例</h3>
-<p><img alt="2k0300 1" src="../img/PixPin_2024-10-25_21-58-47.png"></p>
-<p><img alt="2k0300 1" src="../img/1729864881297-tuya.jpg"></p></div>
+<p>大致流程：</p>
+<ul>
+<li>
+<p>通电开机进入 android tv，ROOT 后安装 apk 切换到外部（U 盘/TF 卡）引导</p>
+</li>
+<li>
+<p>将整合包写入 U 盘/TF 卡上，盒子重启开机后进入 U 盘/TF 卡上的 armbian 系统</p>
+</li>
+<li>
+<p>用 <code>armbian-install</code> 命令选择对应型号把 One-KVM 的固件 img 写入 emmc</p>
+</li>
+</ul>
+<p>安装示例：
+<img alt="install" src="../img/PixPin_2024-10-16_22-49-59.png"></p></div>
 
 
 
@@ -1667,7 +1640,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月30日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月3日</span>
   </span>
 
     
@@ -1677,7 +1650,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月25日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月3日</span>
   </span>
 
     
@@ -1712,7 +1685,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../synology_install/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 群晖 NAS">
+          <a href="../2k0300_install/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 龙芯久久派">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1722,20 +1695,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                群晖 NAS
+                龙芯久久派
               </div>
             </div>
           </a>
         
         
           
-          <a href="../onecloud_guide/" class="md-footer__link md-footer__link--next" aria-label="下一页: 玩客云套装（停止维护）">
+          <a href="../virtualmachine_install/" class="md-footer__link md-footer__link--next" aria-label="下一页: 虚拟机部署">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                玩客云套装（停止维护）
+                虚拟机部署
               </div>
             </div>
             <div class="md-footer__button md-icon">
