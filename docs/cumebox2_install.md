@@ -13,11 +13,15 @@
 - 重启开机后进入U 盘/TF 卡上的 armbian 系统
 - 用 dd 命令把 khadas-vim1 的固件 img 写入 emmc 
 
-使用 khadas-vim1 固件，盒子的网口灯不会亮但网口可正常使用，WIFI 可用。详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
+刷机详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
 
 ??? example "固件写入示例"
 
     ![image-20240926221132648](./img/image-20240926221132648.png)
+
+
+**整合包底包使用 khadas-vim1 固件修改 dtb 而来，进行了特别适配，网口、oled 小屏幕、WIFI 、OTG 都正常可用。**
+
 
 ### 部署 One-KVM
 
@@ -51,6 +55,13 @@ docker update --restart=always kvmd
 **硬件连接**
 
 ![image-20240926220219805](./img/image-20240926220219805.png)
+
+**OLED 显示屏**
+
+前面板的小 OLED 显示屏会循环显示欢迎语、温度和 IP 地址。
+
+![oled](./img/1730628391056.png)
+
 
 **WIFI 连接**
 
