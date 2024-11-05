@@ -426,7 +426,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      参数说明
+      设备映射说明
     </span>
   </a>
   
@@ -861,6 +861,8 @@
       
         
       
+        
+      
     
     
       
@@ -882,7 +884,7 @@
             
   
   <span class="md-ellipsis">
-    视频
+    音视频
   </span>
   
 
@@ -892,7 +894,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            视频
+            音视频
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -908,6 +910,27 @@
   
   <span class="md-ellipsis">
     H.264 / WebRTC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    H.264 音频
   </span>
   
 
@@ -1658,7 +1681,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      参数说明
+      设备映射说明
     </span>
   </a>
   
@@ -1724,15 +1747,19 @@
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>--device<span class="w"> </span>/dev/video0:/dev/video0<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span>--device<span class="w"> </span>/dev/ttyUSB0:/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>silentwind0/kvmd
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>--device<span class="w"> </span>/dev/snd:/dev/snd<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
 <p>部署完成访问 https://IP:4430 ,点击信任自签证书，即可开始使用，默认账号密码：admin/admin。</p>
 <p>如无法访问可以使用 <code>sudo docker logs kvmd</code> 命令查看日志尝试修复、提交 issue 或在 QQ 群内寻求帮助。</p>
-<h3 id="_2">参数说明</h3>
+<h3 id="_2">设备映射说明</h3>
+<p><code>--device /dev/snd:/dev/snd</code> 映射系统声卡设备，需要与 <code>-e AUDIONUM=0</code> 环境变量配合使用。</p>
+<p><code>--device /dev/video0:/dev/video0</code> 映射系统视频设备。若是 OTG 模式映射所有设备时，可能需要与 <code>-e VIDEONUM=0</code> 环境量配合使用。</p>
 <p><code>-p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623</code> 将容器的端口映射到主机，用于向外暴露下列服务端口：<br>
  WEB 网页：8080、4430<br>
  VNC 控制台：5900<br>
@@ -1740,18 +1767,36 @@
 <p><code>-v ./kvmd_config:/etc/kvmd</code> 可挂载容器内配置文件目录，用于持久化配置文件，便于使用者手动修改配置文件。</p>
 <p>默认从 Docker Hub 拉取镜像，若网络不畅无法连接可以替换为<code>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd</code>，此地址为阿里云个人镜像托管服务杭州实例，拉取速度更快。</p>
 <h3 id="_3">环境变量</h3>
-<p><code>-e USERNAME=admin</code> 设置用户账号为 admin ，默认为 admin</p>
-<p><code>-e PASSWORD=admin</code> 设置用户密码为 admin，默认为 admin</p>
-<p><code>-e NOSSL=1</code> 禁用 HTTPS，启用 HTTP，在 8080 端口提供 WEB 服务</p>
-<p><code>-e OTG=1</code> 启用 OTG 模式，默认为禁用</p>
-<p><code>-e NOAUTH=1</code> 禁用身份认证，默认为启用</p>
-<p><code>-e NOWEBTERMWRITE=1</code> 禁用 WEB 终端输入，设置为只读模式，默认为启用</p>
-<p><code>-e NOWEBTERM=1</code> 禁用 WEB 终端，默认为启用</p>
-<p><code>-e NOVNC=1</code> 禁用 VNC，默认为启用</p>
-<p><code>-e NOIPMI=1</code> 禁用 IPMI，默认为启用</p>
-<p><code>-e VIDEONUM=1</code> 设置 USB 采集卡地址编号，默认为 0，如 1 则代表 /dev/video1</p>
-<p><code>-e NOMSD=1</code> 禁用 MSD，默认在 ARM 主机上启用</p>
-<p><code>-e ATX=USBRELAY_HID</code> 使用 USB HID 继电器设备作为电源控制设备</p></div>
+<p>通过这些环境变量可以控制大部分功能的开启关闭。</p>
+<p><code>-e USERNAME=admin</code> 设置用户账号为 admin ，默认为 admin。</p>
+<p><code>-e PASSWORD=admin</code> 设置用户密码为 admin，默认为 admin。</p>
+<p><code>-e NOSSL=1</code> 禁用 HTTPS，启用 HTTP，在 8080 端口提供 WEB 服务。</p>
+<p><code>-e OTG=1</code> 启用 OTG 模式，默认为禁用。</p>
+<p><code>-e NOAUTH=1</code> 禁用身份认证，默认为启用。</p>
+<p><code>-e NOWEBTERMWRITE=1</code> 禁用 WEB 终端输入，设置为只读模式，默认为启用。</p>
+<p><code>-e NOWEBTERM=1</code> 禁用 WEB 终端，默认为启用。</p>
+<p><code>-e NOVNC=1</code> 禁用 VNC，默认为启用。</p>
+<p><code>-e NOIPMI=1</code> 禁用 IPMI，默认为启用。</p>
+<p><code>-e VIDEONUM=1</code> 设置 USB 采集卡地址编号，拼接方式为 "/dev/video"（此部分无需写入） + 环境变量值。默认为0代表 /dev/video0，如为1则代表 /dev/video1。</p>
+<p><code>-e AUDIONUM=0</code> 设置音频输入设备编号，拼接方式为 "hw:"（此部分无需写入） + 环境变量值。默认为0代表 hw:0，如为 CARD=MS2109 则代表 hw:CARD=MS2109。</p>
+<details class="tip">
+<summary>音频输入设备编号说明</summary>
+<p>Linux 系统音频设备可通过 <code>arecord -L</code> 或 <code>arecord -l</code> 命令查看。</p>
+<ol>
+<li>
+<p>使用声卡编号，例如：hw:0</p>
+</li>
+<li>
+<p>使用声卡名，例如：hw:CARD=MS2109</p>
+</li>
+<li>
+<p>使用设备文件，例如：hw:/dev/snd/controlC0</p>
+</li>
+</ol>
+<p>从三种方式中任选其一设置环境变量即可在网页使用 H.264 音频。</p>
+</details>
+<p><code>-e NOMSD=1</code> 禁用 MSD，默认在 ARM 主机上启用。</p>
+<p><code>-e ATX=USBRELAY_HID</code> 使用 USB HID 继电器设备作为电源控制设备。</p></div>
 
 
 
@@ -1774,7 +1819,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月30日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月5日</span>
   </span>
 
     
