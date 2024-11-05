@@ -85,8 +85,8 @@ nav:
 
     - "音视频":
       - "H.264 / WebRTC": h264.md
-      #- "录制视频": video_record.md
       - "H.264 音频": audio.md
+      - "视频录制": video_record.md
 
     - "外围设备":
       - "键盘和鼠标":
