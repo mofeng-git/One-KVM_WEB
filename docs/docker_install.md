@@ -32,6 +32,7 @@ sudo docker run --name kvmd -itd --privileged=true \
 sudo docker run --name kvmd -itd \
     --device /dev/video0:/dev/video0 \
     --device /dev/ttyUSB0:/dev/ttyUSB0 \
+    --device /dev/snd:/dev/snd \
     -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
     silentwind0/kvmd
 ```
@@ -40,7 +41,10 @@ sudo docker run --name kvmd -itd \
 
 如无法访问可以使用 `sudo docker logs kvmd` 命令查看日志尝试修复、提交 issue 或在 QQ 群内寻求帮助。
 
-### 参数说明
+### 设备映射说明
+`--device /dev/snd:/dev/snd` 映射系统声卡设备，需要与 `-e AUDIONUM=0` 环境变量配合使用。
+
+`--device /dev/video0:/dev/video0` 映射系统视频设备。若是 OTG 模式映射所有设备时，可能需要与 `-e VIDEONUM=0` 环境量配合使用。
 
 `-p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623` 将容器的端口映射到主机，用于向外暴露下列服务端口：<br>
  WEB 网页：8080、4430<br>
@@ -53,26 +57,42 @@ sudo docker run --name kvmd -itd \
 
 ### 环境变量
 
-`-e USERNAME=admin` 设置用户账号为 admin ，默认为 admin
+通过这些环境变量可以控制大部分功能的开启关闭。
 
-`-e PASSWORD=admin` 设置用户密码为 admin，默认为 admin
+`-e USERNAME=admin` 设置用户账号为 admin ，默认为 admin。
 
-`-e NOSSL=1` 禁用 HTTPS，启用 HTTP，在 8080 端口提供 WEB 服务
+`-e PASSWORD=admin` 设置用户密码为 admin，默认为 admin。
 
-`-e OTG=1` 启用 OTG 模式，默认为禁用
+`-e NOSSL=1` 禁用 HTTPS，启用 HTTP，在 8080 端口提供 WEB 服务。
 
-`-e NOAUTH=1` 禁用身份认证，默认为启用
+`-e OTG=1` 启用 OTG 模式，默认为禁用。
 
-`-e NOWEBTERMWRITE=1` 禁用 WEB 终端输入，设置为只读模式，默认为启用
+`-e NOAUTH=1` 禁用身份认证，默认为启用。
 
-`-e NOWEBTERM=1` 禁用 WEB 终端，默认为启用
+`-e NOWEBTERMWRITE=1` 禁用 WEB 终端输入，设置为只读模式，默认为启用。
 
-`-e NOVNC=1` 禁用 VNC，默认为启用
+`-e NOWEBTERM=1` 禁用 WEB 终端，默认为启用。
 
-`-e NOIPMI=1` 禁用 IPMI，默认为启用
+`-e NOVNC=1` 禁用 VNC，默认为启用。
 
-`-e VIDEONUM=1` 设置 USB 采集卡地址编号，默认为 0，如 1 则代表 /dev/video1
+`-e NOIPMI=1` 禁用 IPMI，默认为启用。
 
-`-e NOMSD=1` 禁用 MSD，默认在 ARM 主机上启用
+`-e VIDEONUM=1` 设置 USB 采集卡地址编号，拼接方式为 "/dev/video"（此部分无需写入） + 环境变量值。默认为0代表 /dev/video0，如为1则代表 /dev/video1。
+ 
+`-e AUDIONUM=0` 设置音频输入设备编号，拼接方式为 "hw:"（此部分无需写入） + 环境变量值。默认为0代表 hw:0，如为 CARD=MS2109 则代表 hw:CARD=MS2109。
 
-`-e ATX=USBRELAY_HID` 使用 USB HID 继电器设备作为电源控制设备
+??? tip "音频输入设备编号说明"
+
+    Linux 系统音频设备可通过 `arecord -L` 或 `arecord -l` 命令查看。
+
+    1. 使用声卡编号，例如：hw:0
+
+    2. 使用声卡名，例如：hw:CARD=MS2109
+
+    3. 使用设备文件，例如：hw:/dev/snd/controlC0
+
+    从三种方式中任选其一设置环境变量即可在网页使用 H.264 音频。
+
+`-e NOMSD=1` 禁用 MSD，默认在 ARM 主机上启用。
+
+`-e ATX=USBRELAY_HID` 使用 USB HID 继电器设备作为电源控制设备。

@@ -40,6 +40,7 @@ One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级�
 sudo docker run --name kvmd -itd \
     --device /dev/video0:/dev/video0 \
     --device /dev/ttyUSB0:/dev/ttyUSB0 \
+    --device /dev/snd:/dev/snd \
     -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
     silentwind0/kvmd
 ```
