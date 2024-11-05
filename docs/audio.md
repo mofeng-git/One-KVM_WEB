@@ -4,7 +4,7 @@ HDMI 音频采集使用 Linux ALSA 声卡驱动，由 ustreamer janus 采集 HDM
 
 ### 使用
 
-Docker 部署时可通过 `-e AUDIONUM=0` 环境变量指定。
+Docker 部署时可通过 `-e AUDIONUM=0` [环境变量](docker_install.md#_3) 指定。
 
 音频设备配置文件为 `/etc/kvmd/janus/janus.plugin.ustreamer.jcfg`
 
