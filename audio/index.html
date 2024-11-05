@@ -1706,7 +1706,7 @@
 <div><p>现 Docker 版 H.264/WebRTC 支持实时的流畅音频，音质足够听音乐。</p>
 <p>HDMI 音频采集使用 Linux ALSA 声卡驱动，由 ustreamer janus 采集 HDMI 采集卡的音频并转码为 opus 实时音频格式，通过 H.264/WebRTC 在浏览器端播放。</p>
 <h3 id="_1">使用</h3>
-<p>Docker 部署时可通过 <code>-e AUDIONUM=0</code> 环境变量指定。</p>
+<p>Docker 部署时可通过 <code>-e AUDIONUM=0</code> <a href="../docker_install/#_3">环境变量</a> 指定。</p>
 <p>音频设备配置文件为 <code>/etc/kvmd/janus/janus.plugin.ustreamer.jcfg</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
