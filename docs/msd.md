@@ -93,29 +93,28 @@ sudo kvmd-helper-otgmsd-remount ro
 
 ### 可写闪存驱动器
 
-在 PiKVM 上模拟闪存驱动器（flash）时，您可以允许目标主机将文件写入镜像。，停止驱动器后，可以在本地主机上下载并打开此映像。 如果您需要从目标主机获取一些文件，这将非常有用。
+在 PiKVM 上模拟闪存驱动器（flash）时，您可以允许目标主机将文件写入镜像。停止驱动器后，可以在本地主机上下载并打开此映像。 如果您需要从目标主机获取一些文件，这也可以实现。
 
 使用此功能必须提前准备好虚拟闪存驱动器的文件系统镜像，这可以在本地主机或网页终端中完成。
 
-这是一个示例，创建了一个 FAT32 文件系统的镜像文件。
+#### 制作 ventoy 可引导镜像
 
-1. 手动将内部存储重新挂载到读写模式：
-   ```bash
-   kvmd-helper-otgmsd-remount rw
-   ```
+对于 20241004 （不包含）以下版本，操作目录时需要先执行 `kvmd-helper-otgmsd-remount rw` 手动将内部存储重新挂载为读写模式。
 
-2. 创建一个空的镜像文件 所需大小（本例中为 512MB）并将其格式化为 FAT32：`/var/lib/kvmd/msd`
-   ```bash
-   dd if=/dev/zero of=/var/lib/kvmd/msd/flash.img bs=1M count=512 status=progress
-   loop=$(losetup -f)
-   echo -e 'o\nn\np\n1\n\n\nt\nc\nw\n' | fdisk /var/lib/kvmd/msd/flash.img
-   losetup -P $loop /var/lib/kvmd/msd/flash.img
-   mkfs.vfat ${loop}p1
-   losetup -d $loop
-   chmod 666 /var/lib/kvmd/msd/flash.img
-   ```
+1. 在 `/var/lib/kvmd/msd` 目录创建一个空的镜像文件，大小按需设置。本例中文件名为flash.img，大小为 4096MB。
 
-3. 将内部存储重新挂载回安全只读模式：
    ```bash
-   kvmd-helper-otgmsd-remount ro
+   dd if=/dev/zero of=/var/lib/kvmd/msd/flash.img bs=1M count=4096 status=progress
    ```
+2. 网页菜单选择驱动器 --> 镜像 --> flash.img，并将驱动模式由 cd-rom 切换为 flash，单击连接 MSD 至主机。
+
+3. 被控机打开 ventoy ，选择虚拟的磁盘安装软件。
+    ![ventoy](img/image-202411061233.png)
+
+4. 将系统镜像放入 ventoy 分区文件夹。
+![ventoy iso](img/image-202411061235.png)
+
+结束后此 flash 镜像制作完成，在需要的时候挂载引导即可。
+
+![ventoy 0](img/image-a7b96b94541ed44744db758ae774a58c.png)
+![ventoy 1](img/image-38e54e47eb0de7894fdb6dc9c7fb9a51.png)
