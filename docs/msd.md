@@ -118,3 +118,23 @@ sudo kvmd-helper-otgmsd-remount ro
 
 ![ventoy 0](img/image-a7b96b94541ed44744db758ae774a58c.png)
 ![ventoy 1](img/image-38e54e47eb0de7894fdb6dc9c7fb9a51.png)
+
+### 修改 MSD 路径
+
+!!! warning "提醒" 
+      此方法仅适合整合包 201004 及版本以后，MSD功能默认启用（使用 /var/lib/kvmd/msd 目录），由挂载分区变化为z直接使用目录。
+
+
+MSD 目录的定义此文件中，在 `/usr/local/lib/python3.11/dist-packages/kvmd-4.3-py3.11.egg/kvmd/fstab.py`，将文件中 `/var/lib/kvmd/msd/` 替换为自定义目录。
+
+命令示例：
+```bash
+#以 /home/msd/ 目录为例
+mkdir -p /mnt/msd/{images,meta}
+chown kvmd -R /mnt/msd/
+#目录中的 "/" 前需要添加 "\" 进行转义
+sed -i 's/\/var\/lib\/kvmd\/msd/\/mnt\/msd/g'  /usr/local/lib/python3.11/dist-packages/kvmd-4.3-py3.11.egg/kvmd/fstab.py
+systemctl restart kvmd kvmd-otg
+```
+
+![msd](img/image-202411082232.png)
