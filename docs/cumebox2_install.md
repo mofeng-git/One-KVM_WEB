@@ -15,15 +15,25 @@
 
 刷机详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
 
+
+
+
+****
+
+
+### 部署 One-KVM
+
+**整合包版**
+
+整合包底包使用 khadas-vim1 固件修改 dtb 而来，进行了特别适配，网口、oled 小屏幕、WIFI 、OTG 都正常可用。
+
+用 dd 命令把 One-KVM 的固件 img 写入 emmc 即可开始使用。
+
 ??? example "固件写入示例"
 
     ![image-20240926221132648](./img/image-20240926221132648.png)
 
-
-**整合包底包使用 khadas-vim1 固件修改 dtb 而来，进行了特别适配，网口、oled 小屏幕、WIFI 、OTG 都正常可用。**
-
-
-### 部署 One-KVM
+**Docker 版**
 
 ```bash
 #换国内软件源

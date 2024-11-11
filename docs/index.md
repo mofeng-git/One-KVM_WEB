@@ -1,3 +1,5 @@
+### 简介
+
 One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级远程控制项目。可以实现远程管理服务器或工作站，无需在被控机安装软件调整设置，实现无侵入式控制，适用范围广泛。
 
 <div class="grid cards" markdown>
@@ -28,39 +30,25 @@ One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级�
 
 </div>
 
-## 在线体验
+### 在线体验
 
 演示网站：[https://kvmd-demo.mofeng.run](https://kvmd-demo.mofeng.run)
 
 ![KVM 主页](./img/image.png)
 
-## 快速开始
-
-```bash
-sudo docker run --name kvmd -itd \
-    --device /dev/video0:/dev/video0 \
-    --device /dev/ttyUSB0:/dev/ttyUSB0 \
-    --device /dev/snd:/dev/snd \
-    -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
-    silentwind0/kvmd
-```
-以上仅作为体验使用，详细部署文档请查阅： [Docker 部署](docker_install.md)。
-
-## 社区
+### 社区
 
 - Github Issue：[https://github.com/mofeng-git/One-KVM/issues](https://github.com/mofeng-git/One-KVM/issues)
 
 - QQ 交流群：569514148
 
-## 赞助
+### 赞助
 
 如果 One-KVM 对你有帮助，欢迎赞助作者，以支持作者继续开发和维护此项目。
 
 [为爱发电](https://afdian.com/a/silentwind){ .md-button }
 
-##
-
-## 状态
+### 状态
 
 [![Star History Chart](https://api.star-history.com/svg?repos=mofeng-git/One-KVM&type=Date)](https://star-history.com/#mofeng-git/One-KVM&Date)
 

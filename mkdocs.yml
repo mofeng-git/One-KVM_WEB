@@ -58,7 +58,7 @@ plugins:
 
 nav:
     - "开始":
-      - "简介": index.md
+      - "介绍": index.md
       - "写在前面": prepare.md
       - "软件安装":
         - "Docker 部署": docker_install.md
