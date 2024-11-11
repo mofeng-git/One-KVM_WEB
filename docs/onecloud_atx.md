@@ -1,6 +1,31 @@
-这里将介绍适用于玩客云的 ATX 电源管理方案。
+### 玩客云 GPIO 引脚介绍
+玩客云 WIFI 焊盘计数规则，从左下角开始逆时针增加。图片转载自恩山无线论坛 tage。
 
-#### **GPIO直连**
+![WIFI 焊盘计数](img/image-20241112113.png)
+
+引脚编号对照关系如下表。
+
+```
+GPIO-430 默认in 1 可用 连接焊盘19脚
+GPIO-431 默认in 1 可用 连接焊盘14脚
+GPIO-432 默认in 1 可用 连接焊盘15脚
+GPIO-433 默认in 1 可用 连接焊盘27脚
+GPIO-434 默认in 1 可用 连接焊盘25脚
+GPIO-435 默认in 1 可用 连接焊盘28脚
+GPIO-436 默认in 1 可用 连接焊盘26脚
+GPIO-437 默认in 1 可用 连接焊盘17脚
+GPIO-438 默认in 1 可用 连接焊盘16脚
+GPIO-440 默认in 1 可用 连接焊盘12脚
+GPIO-441 默认in 1 可用 连接焊盘43脚 TXD
+GPIO-442 默认in 1 可用 连接焊盘42脚 RXD
+GPIO-443 默认in 1 可用 连接焊盘41脚 RTX_N
+GPIO-444 默认in 1 可用 连接焊盘44脚 CTS_N
+GPIO-446 默认in 1 可用 连接焊盘13脚
+```
+
+实例：以26号焊盘为例，由物理焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521，再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。
+
+### GPIO直连
 
 !!! warning
     可能不适于非标准定义的ATX电源管理设备。<br><br>
@@ -16,19 +41,11 @@
 
 ![img](./img/1717947165712-60.jpeg)
 
-![img](./img/1717947165712-61.jpeg)
-
 ![img](./img/1717947165712-62.png)
 
-!!! tip
-    提示：对于DIY玩家，也可以使用尝试PiKVM自带的GPIO驱动方式进行控制（作者采用的调用bash脚本），作者使用的引脚对于系统位置是gpio-420，对于PiKVM位置是gpiochip1 pin7，PiKVM源代码默认为gpiochip0需要手动修改kvmd/plugins/ugpio/gpio.py中的设备路径。<br>也可以使用其他GPIO引脚，替换命令示例：
+<!--![img](./img/1717947165712-61.jpeg)无用内容，等待清理-->
 
-```bash
-sed -i "s/420/602/g" /usr/bin/long_press_gpio420
-sed -i "s/420/602/g" /usr/bin/short_press_gpio420
-```
-
-
+### 光耦开机小板
 
 ![img](./img/1717947165712-63.png)
 
