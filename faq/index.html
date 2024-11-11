@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -542,6 +547,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    常见问题
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -551,6 +567,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      软件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1608,6 +1659,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      软件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1626,7 +1703,7 @@
 
   <h1>常见问题</h1>
 
-<ol>
+<div><ol>
 <li>
 <details>
 <summary><strong>One-KVM 与 PiKVM 的不同之处？</strong></summary>
@@ -1634,6 +1711,9 @@
 <p>如果您需要对功能进行高级配置，也可以查阅 <a href="https://docs.pikvm.org/">PiKVM 文档</a>，该项目文档关于高级功能配置的说明比较详细。</p>
 </details>
 </li>
+</ol>
+<h3 id="_1">软件</h3>
+<ol>
 <li>
 <details>
 <summary><strong>One-KVM 运行端口</strong></summary>
@@ -1652,14 +1732,14 @@
 <li>
 <details>
 <summary><strong>如何在公网中访问局域网的 One-KVM？</strong></summary>
-<p>如果路由器有公网IP地址，可以使用端口映射转发443端口（对于整合包）或4430端口（对于 Docker）。在其他情况下，可以使用内网穿透或异地组网服务（如Tailscale和FRP）。</p>
+<p>如果路由器有公网 IP 地址，可以使用端口映射转发443端口（对于整合包）或4430端口（对于 Docker）。在其他情况下，可以使用内网穿透或异地组网服务（如 Tailscale 和 FRP ）。</p>
 </details>
 </li>
 <li>
 <details>
 <summary><strong>如何修改软件端口和账户密码？</strong></summary>
-<p>修改端口可以编辑 /etc/kvmd/nginx/目录下的conf后缀文件将相关端口修改所需端口（443是网页运行的端口），然后运行systemctl restart kvmd kvmd-nginx 生效。</p>
-<p><strong>注意</strong>：对于整合包用户，HDMI终端和SSH终端可以直接以root用户登录。但PiKVM网页终端的默认登入用户是kvmd-webterm低权限账户（无密码），没有root权限且无法使用<code>sudo</code>提权，若需要执行特权命令请先在终端执行<code>su root</code>命令并输入密码切换为root账户。</p>
+<p>修改端口可以编辑 <code>/etc/kvmd/nginx/ 目录下的</code>conf<code>后缀文件将相关端口修改所需端口（443是网页运行的端口），然后运行</code>systemctl restart kvmd kvmd-nginx` 生效。</p>
+<p><strong>注意</strong>：对于整合包用户，HDMI 终端和 SSH 终端可以直接以root用户登录。但PiKVM网页终端的默认登入用户是kvmd-webterm低权限账户（无密码），没有 root 权限且无法使用 <code>sudo</code> 提权，若需要执行特权命令请先在终端执行 <code>su root</code> 命令并输入密码切换为root账户。</p>
 <p><strong>修改账号密码示例</strong>
     </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -1671,9 +1751,9 @@
 <span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#切换为root账户</span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#切换为 root 账户</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>su<span class="w"> </span>root
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#添加用户 请将silentwind替换为你的用户名</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#添加用户 请将 silentwind 替换为你的用户名</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>kvmd-htpasswd<span class="w"> </span><span class="nb">set</span><span class="w"> </span>silentwind
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#输入密码</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">#删除用户</span>
@@ -1687,15 +1767,25 @@
 </li>
 <li>
 <details>
+<summary><strong>为什么网页视频会有无法消除的黑边？</strong></summary>
+<p>请检查你的被控机系统设置。调整被控机分辨率与网页匹配可能会有帮助。
+<img alt="img" src="../img/1717950485857-8.jpeg"></p>
+</details>
+</li>
+</ol>
+<h3 id="_2">系统</h3>
+<ol>
+<li>
+<details>
 <summary><strong>如何给设置静态 IP？</strong></summary>
-<p>使用终端图形化工具<code>nmtui</code>或<code>armbian-config</code>。</p>
+<p>使用终端图形化工具  <code>nmtui</code>或 <code>armbian-config</code>。</p>
 </details>
 </li>
 <li>
 <details>
 <summary><strong>如何修改 MAC 地址？</strong></summary>
-<p>非玩客云设备可以使用终端图形化工具<code>nmtui</code>修改 mac 地址。</p>
-<p>玩客云由于其特殊性不能直接使用使用终端图形化工具<code>nmtui</code>修改 mac 地址，会修改 mac 无法获取ip问题，不同版本修改 mac 地址的方法见下表。</p>
+<p>非玩客云设备可以使用终端图形化工具 <code>nmtui</code> 修改 mac 地址。</p>
+<p>玩客云由于其特殊性不能直接使用使用终端图形化工具 <code>nmtui</code> 修改 mac 地址，会修改 mac 无法获取 ip 问题，不同版本修改 mac 地址的方法见下表。</p>
 <details open="open">
 <summary>240118 版本及以后</summary>
 <p>需要修改 mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。</p>
@@ -1709,8 +1799,8 @@
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
 <span class="normal"><a href="#__codelineno-1-6">6</a></span>
 <span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#由 systemd-networkd 替换 NetworkManager 接管网络</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">#避免修改 mac 无法获取ip问题</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#执行下面四句命令即可（mac地址按需修改）</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">#避免修改 mac 无法获取 ip 问题</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#执行下面四句命令即可（mac 地址按需修改）</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">'[Match]\nName=eth0\n\n[Network]\nDHCP=yes\n\n[Link]\nMACAddress=2a:01:3d:ef:b8:e1'</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/systemd/network/99-eth0.network
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a>systemctl<span class="w"> </span>mask<span class="w"> </span>NetworkManager
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a>systemctl<span class="w"> </span>unmask<span class="w"> </span>systemd-networkd
@@ -1728,7 +1818,7 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 <span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#快捷命令，依次执行如下命令即可</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nv">MAC</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>2a:01:<span class="sb">`</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/\(..\)/\1:/g; s/.$//'</span><span class="sb">`</span><span class="k">)</span><span class="s2">"</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$MAC</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#此配置文件替换命令仅首次执行有效，多次需要手动替换MAC地址</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#此配置文件替换命令仅首次执行有效，多次需要手动替换 mac 地址</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>sed<span class="w"> </span>-ie<span class="w"> </span><span class="s2">"s/#hwaddress ether/hwaddress ether </span><span class="nv">$MAC</span><span class="s2">/g"</span><span class="w"> </span>/etc/network/interfaces
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a>reboot
 </code></pre></div></td></tr></table></div>
@@ -1738,7 +1828,7 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 <li>
 <details>
 <summary><strong>如何使用 USB 无线网卡连接 WIFI？</strong></summary>
-<p>对于玩客云，作者和 hzytic 大佬编译发布的镜像都已包含常见无线网卡驱动，USB无线网卡即插即用。其他硬件系统需自行测试是否能够驱动 USB 无线网卡。
+<p>对于玩客云，作者和 hzytic 大佬编译发布的镜像都已包含常见无线网卡驱动，USB 无线网卡即插即用。其他硬件系统需自行测试是否能够驱动 USB 无线网卡。
 </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>nmtui
 </code></pre></div></td></tr></table></div>
 <img alt="img" src="../img/1717950485857-7.png">
@@ -1746,16 +1836,9 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 </li>
 <li>
 <details>
-<summary><strong>为什么网页视频会有无法消除的黑边？</strong></summary>
-<p>请检查你的被控机系统设置。调整被控机分辨率与网页匹配可能会有帮助。
-<img alt="img" src="../img/1717950485857-8.jpeg"></p>
-</details>
-</li>
-<li>
-<details>
 <summary><strong>如何改变玩客云前面板 LED 灯颜色？</strong></summary>
 <p>对于5.9内核系统有<code>green_on</code>,<code>red_on</code>,<code>bule_on</code>,<code>green_off</code>,<code>red_off</code>,<code>bule_off</code>命令可用。</p>
-<p>对于6.x高内核的系统，可以使用如下命令控制LED的亮灭。
+<p>对于6.x高内核的系统，可以使用如下命令控制LED的亮灭，0为灭，1为亮。
 </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/onecloud:red:alive/brightness
@@ -1766,16 +1849,56 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 </li>
 <li>
 <details>
-<summary><strong><code>apt update</code> 无法更新？</strong></summary>
-<p>首先检查网络连接和源是否正常，然后尝试更换源。</p>
-<p>如果遇到 <code>E: Release file for xxx is not valid yet (invalid for another 4d 3h 56min 24s). Updates for this repository will not be applied.</code> 错误可以执行以下命令。
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ntp<span class="w"> </span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>sudo<span class="w"> </span>service<span class="w"> </span>ntp<span class="w"> </span>restart<span class="w"> </span>
+<summary><strong>如何改变私家云二代前面板 LED 灯颜色？</strong></summary>
+<p>可以使用如下命令控制LED的亮灭，0为灭，1为亮。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/red/brightness
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/blue/brightness
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/leds/green/brightness
 </code></pre></div></td></tr></table></div>
 </details>
 </li>
-</ol>
+<li>
+<details>
+<summary><strong>玩客云刷入整合包后局域网访问响应非常缓慢，延时高度达秒，如何解决？</strong></summary>
+<p>此外极少数玩客云系统适配问题，发生频率约为2%，作者测试可通过修改玩客云 dtb 网卡模式 "rgmii-id" 为 "rgmii-rxid" 的方法解决。
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>dtc<span class="w"> </span>-I<span class="w"> </span>dtb<span class="w"> </span>-O<span class="w"> </span>dts<span class="w"> </span>/boot/dtb/meson8b-onecloud.dtb<span class="w"> </span>-o<span class="w"> </span>meson8b-onecloud.dts
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>nano<span class="w"> </span>meson8b-onecloud.dts
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>dtc<span class="w"> </span>-I<span class="w"> </span>dts<span class="w"> </span>-O<span class="w"> </span>dtb<span class="w"> </span>meson8b-onecloud.dts<span class="w"> </span>-o<span class="w"> </span>/boot/dtb/meson8b-onecloud.dtb
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span>
+<span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>    pinctrl-names = "default";
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>    phy-handle = &lt;&amp;eth_phy&gt;;
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>-   phy-mode = "rgmii-id";
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>+   phy-mode = "rgmii-rxid";
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>    mdio {
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>        compatible = "snps,dwmac-mdio";
+</code></pre></div></td></tr></table></div>
+</details>
+</li>
+<li>
+<details>
+<summary><strong>apt update 报错无法更新？</strong></summary>
+<p>首先检查网络连接和源是否正常，然后尝试更换源。</p>
+<p>如果遇到 <code>E: Release file for xxx is not valid yet (invalid for another 4d 3h 56min 24s). Updates for this repository will not be applied.</code> 错误可以执行以下命令。
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ntp<span class="w"> </span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>sudo<span class="w"> </span>service<span class="w"> </span>ntp<span class="w"> </span>restart<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+</details>
+</li>
+</ol></div>
 
 
 
@@ -1798,7 +1921,7 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年10月21日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月11日</span>
   </span>
 
     

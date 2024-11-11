@@ -24,7 +24,7 @@
     
     
       
-        <title>简介 - One-KVM 文档</title>
+        <title>介绍 - One-KVM 文档</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              简介
+              介绍
             
           </span>
         </div>
@@ -1612,7 +1612,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      在线体验
+      简介
     </span>
   </a>
   
@@ -1621,7 +1621,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      快速开始
+      在线体验
     </span>
   </a>
   
@@ -1648,15 +1648,6 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
       状态
     </span>
   </a>
@@ -1681,9 +1672,10 @@
   
 
 
-  <h1>简介</h1>
+  <h1>介绍</h1>
 
-<div><p>One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级远程控制项目。可以实现远程管理服务器或工作站，无需在被控机安装软件调整设置，实现无侵入式控制，适用范围广泛。</p>
+<div><h3 id="_1">简介</h3>
+<p>One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级远程控制项目。可以实现远程管理服务器或工作站，无需在被控机安装软件调整设置，实现无侵入式控制，适用范围广泛。</p>
 <div class="grid cards">
 <ul>
 <li>
@@ -1708,24 +1700,10 @@
 </li>
 </ul>
 </div>
-<h2 id="_1">在线体验</h2>
+<h3 id="_2">在线体验</h3>
 <p>演示网站：<a href="https://kvmd-demo.mofeng.run">https://kvmd-demo.mofeng.run</a></p>
 <p><img alt="KVM 主页" src="img/image.png"></p>
-<h2 id="_2">快速开始</h2>
-<p></p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span>--device<span class="w"> </span>/dev/video0:/dev/video0<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span>--device<span class="w"> </span>/dev/ttyUSB0:/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>--device<span class="w"> </span>/dev/snd:/dev/snd<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span>silentwind0/kvmd
-</code></pre></div></td></tr></table></div>
-以上仅作为体验使用，详细部署文档请查阅： <a href="docker_install/">Docker 部署</a>。
-<h2 id="_3">社区</h2>
+<h3 id="_3">社区</h3>
 <ul>
 <li>
 <p>Github Issue：<a href="https://github.com/mofeng-git/One-KVM/issues">https://github.com/mofeng-git/One-KVM/issues</a></p>
@@ -1734,11 +1712,10 @@
 <p>QQ 交流群：569514148</p>
 </li>
 </ul>
-<h2 id="_4">赞助</h2>
+<h3 id="_4">赞助</h3>
 <p>如果 One-KVM 对你有帮助，欢迎赞助作者，以支持作者继续开发和维护此项目。</p>
 <p><a class="md-button" href="https://afdian.com/a/silentwind">为爱发电</a></p>
-<h2 id="_5"></h2>
-<h2 id="_6">状态</h2>
+<h3 id="_5">状态</h3>
 <p><a href="https://star-history.com/#mofeng-git/One-KVM&amp;Date"><img alt="Star History Chart" src="https://api.star-history.com/svg?repos=mofeng-git/One-KVM&amp;type=Date"></a></p>
 <p><img alt="Github" src="https://repobeats.axiom.co/api/embed/7cfaab47e31073107771a7179078aa2a6c3f1108.svg" title="Repobeats analytics image"></p></div>
 
@@ -1763,7 +1740,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月5日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月11日</span>
   </span>
 
     
