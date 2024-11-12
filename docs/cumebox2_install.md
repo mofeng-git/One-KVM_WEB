@@ -39,8 +39,11 @@
 #换国内软件源
 bash <(curl -sSL https://linuxmirrors.cn/main.sh) --source mirrors.tuna.tsinghua.edu.cn --protocol https --upgrade-software false
 
-#安装 Docker
+#从 Debian/Ubuntu 软件源安装 Docker
 apt install apparmor-utils docker.io -y
+
+#安装最新版本 Docker
+curl -fsSL https://get.docker.com | bash
 ```
 
 ```bash

@@ -2,7 +2,7 @@
 
 ### Frpc 安装
 
-```bash
+``` bash
 #Frpc 一键安装脚本
 wget https://raw.githubusercontent.com/stilleshan/frpc/master/frpc_linux_install.sh && chmod +x frpc_linux_install.sh && ./frpc_linux_install.sh
 ```
@@ -21,7 +21,7 @@ wget https://raw.githubusercontent.com/stilleshan/frpc/master/frpc_linux_install
 
 然后修改 `/usr/local/frp/frpc.toml` 填入你 Frp 服务商提供的配置文件或自建 Frps 服务器的配置文件。
 
-```bash
+``` bash
 # 修改 frpc.toml ，若有"atuoTLS"选项则需要使用"#"注释掉
 nano /usr/local/frp/frpc.toml
 

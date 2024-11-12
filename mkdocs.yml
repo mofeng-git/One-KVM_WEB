@@ -17,12 +17,15 @@ theme:
     - search.share
     - search.suggest
     - navigation.expand
-  font: false
 
 markdown_extensions:
   - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
-  - pymdownx.highlight
   - pymdownx.details
   - attr_list
   - md_in_html
@@ -43,6 +46,7 @@ copyright: Copyright &copy; 2023 - 2024 SilentWind
 extra_javascript:
     - 'js/baidu-tongji.js'
 
+
 plugins:
   - search:
         lang: zh
@@ -61,7 +65,7 @@ nav:
       - "介绍": index.md
       - "写在前面": prepare.md
       - "软件安装":
-        - "Docker 部署": docker_install.md
+        - "Docker 部署（推荐）": docker_install.md
         - "玩客云": onecloud_install.md
         #- "X86 主机安装": x86_install.md
         - "私家云二代": cumebox2_install.md
