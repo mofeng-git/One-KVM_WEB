@@ -41,6 +41,12 @@
     
     
       
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
     
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -368,7 +374,7 @@
         
   
   <span class="md-ellipsis">
-    Docker 部署
+    Docker 部署（推荐）
   </span>
   
 
@@ -1708,6 +1714,7 @@
 <details>
 <summary><strong>One-KVM 与 PiKVM 的不同之处？</strong></summary>
 <p>One-KVM 基于 PiKVM 二次开发，在 PiKVM 的基础上进行了本地化，增加了更多扩展功能，支持更多的硬件设备和平台。</p>
+<p>两者具体功能异同之处可以查看<a href="../prepare/#_2">软件功能</a>一节。</p>
 <p>如果您需要对功能进行高级配置，也可以查阅 <a href="https://docs.pikvm.org/">PiKVM 文档</a>，该项目文档关于高级功能配置的说明比较详细。</p>
 </details>
 </li>
@@ -1879,9 +1886,9 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
 <span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>    pinctrl-names = "default";
 <a id="__codelineno-7-2" name="__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3"></a>    phy-handle = &lt;&amp;eth_phy&gt;;
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>-   phy-mode = "rgmii-id";
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>+   phy-mode = "rgmii-rxid";
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="hll">-   phy-mode = "rgmii-id";
+</span><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="hll">+   phy-mode = "rgmii-rxid";
+</span><a id="__codelineno-7-6" name="__codelineno-7-6"></a>
 <a id="__codelineno-7-7" name="__codelineno-7-7"></a>    mdio {
 <a id="__codelineno-7-8" name="__codelineno-7-8"></a>        compatible = "snps,dwmac-mdio";
 </code></pre></div></td></tr></table></div>
@@ -1921,7 +1928,7 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月11日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月12日</span>
   </span>
 
     

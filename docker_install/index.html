@@ -26,7 +26,7 @@
     
     
       
-        <title>Docker 部署 - One-KVM 文档</title>
+        <title>Docker 部署（推荐） - One-KVM 文档</title>
       
     
     
@@ -40,6 +40,12 @@
       
     
     
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -98,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker 部署
+              Docker 部署（推荐）
             
           </span>
         </div>
@@ -375,7 +381,7 @@
           
   
   <span class="md-ellipsis">
-    Docker 部署
+    Docker 部署（推荐）
   </span>
   
 
@@ -386,7 +392,7 @@
         
   
   <span class="md-ellipsis">
-    Docker 部署
+    Docker 部署（推荐）
   </span>
   
 
@@ -408,7 +414,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      硬件清单
+      硬件准备
     </span>
   </a>
   
@@ -426,7 +432,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      设备映射说明
+      更新版本
     </span>
   </a>
   
@@ -434,6 +440,15 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      设备映射
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       环境变量
     </span>
@@ -1686,7 +1701,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      硬件清单
+      硬件准备
     </span>
   </a>
   
@@ -1704,7 +1719,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      设备映射说明
+      更新版本
     </span>
   </a>
   
@@ -1712,6 +1727,15 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      设备映射
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       环境变量
     </span>
@@ -1737,50 +1761,91 @@
   
 
 
-  <h1>Docker 部署</h1>
+  <h1>Docker 部署（推荐）</h1>
 
-<div><h3 id="_1">硬件清单</h3>
-<p>所需外设：USB采集卡、USB CH340+CH9329（可选）</p>
-<p>宿主机系统：Linux</p>
-<p>演示网站：<a href="https://kvmd-demo.mofeng.run/">https://kvmd-demo.mofeng.run/</a></p>
-<h3 id="docker">Docker 部署</h3>
-<p>Docker 可以使用 OTG 或 CH9329 作为虚拟 HID ，支持 amd64、arm64、armv7 架构的 Linux 系统安装。</p>
+<div><h3 id="_1">硬件准备</h3>
+<p>所需外设：Linux 主机、USB 采集卡、USB CH340+CH9329（若主机 OTG 不可用时可使用此硬件代替）</p>
+<details class="tip">
+<summary>如何开启 ARM 板 OTG 功能？</summary>
+<p>待更新。</p>
+</details>
+<details class="tip">
+<summary>如何安装 Docker？</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#从 Debian/Ubuntu 软件源安装 Docker</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>apt<span class="w"> </span>install<span class="w"> </span>docker.io<span class="w"> </span>-y
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#安装最新版本 Docker</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div></td></tr></table></div>
+</details>
 <details class="tip" open="open">
 <summary>OTG 与 CH9329 说明</summary>
 <p>OTG HID：现在大量的 ARM CPU 芯片都可以支持 USB OTG2.0/3.0 接口，该接口可能工作为 USB Host 模式用于连接USB设备。不过该接口也可以在 Linux 下作为 USB 从设备工作，此时可以将 ARM 板本身配置为键盘、鼠标、U 盘，从而将 OTG 接口作为虚拟 HID 设备使用。</p>
 <p>CH9329 HID： CH9329 是一款串口转标准 USB HID 设备(键盘、鼠标、自定义 HID)芯片， 在电脑上可被识别为标准的 USB 键盘设备、USB 鼠标设备或自定义 HID 类设备。可用作 One-KVM 的虚拟 HID 设备。</p>
-</details>
-<div class="admonition warning">
-<p class="admonition-title">提醒</p>
 <p>虚拟存储驱动器（MSD）、虚拟 USB 网卡等虚拟USB设备等功能仅使用 OTG 端口模式时可用，请注意<strong>使用 CH9329 HID 时不支持这些虚拟 USB 设备扩展功能</strong>。</p>
-</div>
+</details>
+<h3 id="docker">Docker 部署</h3>
+<p>Docker 可以使用 OTG 或 CH9329 作为虚拟 HID ，支持 amd64、arm64、armv7 架构的 Linux 系统安装。</p>
 <p>如果使用 OTG 作为虚拟 HID，可以使用如下部署命令：
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span>-v<span class="w"> </span>/lib/modules:/lib/modules:ro<span class="w"> </span>-v<span class="w"> </span>/dev:/dev<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span>-v<span class="w"> </span>/sys/kernel/config:/sys/kernel/config<span class="w"> </span>-e<span class="w"> </span><span class="nv">OTG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span>silentwind0/kvmd
-</code></pre></div></td></tr></table></div>
-<p>如果使用 CH9329 作为虚拟 HID，可以使用如下部署命令：
 </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>--device<span class="w"> </span>/dev/video0:/dev/video0<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span>--device<span class="w"> </span>/dev/ttyUSB0:/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>--device<span class="w"> </span>/dev/snd:/dev/snd<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span>silentwind0/kvmd
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>-v<span class="w"> </span>/lib/modules:/lib/modules:ro<span class="w"> </span>-v<span class="w"> </span>/dev:/dev<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span>-v<span class="w"> </span>/sys/kernel/config:/sys/kernel/config<span class="w"> </span>-e<span class="w"> </span><span class="nv">OTG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
-<p>部署完成访问 https://IP:4430 ,点击信任自签证书，即可开始使用，默认账号密码：admin/admin。</p>
-<p>如无法访问可以使用 <code>sudo docker logs kvmd</code> 命令查看日志尝试修复、提交 issue 或在 QQ 群内寻求帮助。</p>
-<h3 id="_2">设备映射说明</h3>
+<p>如果使用 CH9329 作为虚拟 HID，可以使用如下部署命令：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span>--device<span class="w"> </span>/dev/video0:/dev/video0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span>--device<span class="w"> </span>/dev/ttyUSB0:/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span>--device<span class="w"> </span>/dev/snd:/dev/snd<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span>silentwind0/kvmd
+</code></pre></div></td></tr></table></div>
+<p>命令默认从 Docker Hub 拉取镜像，若网络不畅无法连接，可以将命令尾端的 <code>silentwind0/kvmd</code> 替换为 <code>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd</code>，此地址为阿里云个人镜像托管服务杭州实例，拉取速度更快。</p>
+<p>部署完成浏览器访问 https://IP:4430 ,首次访问由于自签 SSL 证书原因会遇到浏览器安全提醒，点击高级继续访问即可开始使用 One-KVM，默认账号密码为 <code>admin/admin</code>。如无法访问可以使用 <code>sudo docker logs kvmd</code> 命令查看日志尝试修复、提交 issue 或在 QQ 群内寻求帮助。</p>
+<p>确定 Docker 容器运行正常后，可以使用如下命令使 One-KVM 容器开机自启。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">#设置 Docker 服务开机自启</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1">#设置 One-KVM 容器自动重新启动</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
+</code></pre></div></td></tr></table></div>
+<h3 id="_2">更新版本</h3>
+<p>停止现有容器并删除现有容器，然后按照上述步骤重新部署。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span>
+<span class="normal"><a href="#__codelineno-4-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">#停止 One-KVM 容器</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>docker<span class="w"> </span>stop<span class="w"> </span>kvmd
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1">#删除 One-KVM 容器</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>docker<span class="w"> </span>rm<span class="w"> </span>kvmd
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1">#更新 One-KVM Docker 镜像</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>docker<span class="w"> </span>pull<span class="w"> </span>silentwind0/kvmd
+</code></pre></div></td></tr></table></div>
+<h3 id="_3">设备映射</h3>
 <p><code>--device /dev/snd:/dev/snd</code> 映射系统声卡设备，需要与 <code>-e AUDIONUM=0</code> 环境变量配合使用。</p>
 <p><code>--device /dev/video0:/dev/video0</code> 映射系统视频设备。若是 OTG 模式映射所有设备时，可能需要与 <code>-e VIDEONUM=0</code> 环境量配合使用。</p>
 <p><code>-p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623</code> 将容器的端口映射到主机，用于向外暴露下列服务端口：<br>
@@ -1788,18 +1853,11 @@
  VNC 控制台：5900<br>
  IPMI 控制：623</p>
 <p><code>-v ./kvmd_config:/etc/kvmd</code> 可挂载容器内配置文件目录，用于持久化配置文件，便于使用者手动修改配置文件。</p>
-<p>默认从 Docker Hub 拉取镜像，若网络不畅无法连接可以替换为<code>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd</code>，此地址为阿里云个人镜像托管服务杭州实例，拉取速度更快。</p>
-<h3 id="_3">环境变量</h3>
-<p>通过这些环境变量可以控制大部分功能的开启关闭。</p>
+<h3 id="_4">环境变量</h3>
+<p><strong>账号密码</strong></p>
 <p><code>-e USERNAME=admin</code> 设置用户账号为 admin ，默认为 admin。</p>
 <p><code>-e PASSWORD=admin</code> 设置用户密码为 admin，默认为 admin。</p>
-<p><code>-e NOSSL=1</code> 禁用 HTTPS，启用 HTTP，在 8080 端口提供 WEB 服务。</p>
-<p><code>-e OTG=1</code> 启用 OTG 模式，默认为禁用。</p>
-<p><code>-e NOAUTH=1</code> 禁用身份认证，默认为启用。</p>
-<p><code>-e NOWEBTERMWRITE=1</code> 禁用 WEB 终端输入，设置为只读模式，默认为启用。</p>
-<p><code>-e NOWEBTERM=1</code> 禁用 WEB 终端，默认为启用。</p>
-<p><code>-e NOVNC=1</code> 禁用 VNC，默认为启用。</p>
-<p><code>-e NOIPMI=1</code> 禁用 IPMI，默认为启用。</p>
+<p><strong>设备指定</strong></p>
 <p><code>-e VIDEONUM=1</code> 设置 USB 采集卡地址编号，拼接方式为 "/dev/video"（此部分无需写入） + 环境变量值。默认为0代表 /dev/video0，如为1则代表 /dev/video1。</p>
 <p><code>-e AUDIONUM=0</code> 设置音频输入设备编号，拼接方式为 "hw:"（此部分无需写入） + 环境变量值。默认为0代表 hw:0，如为 CARD=MS2109 则代表 hw:CARD=MS2109。</p>
 <details class="tip">
@@ -1818,8 +1876,16 @@
 </ol>
 <p>从三种方式中任选其一设置环境变量即可在网页使用 H.264 音频。</p>
 </details>
-<p><code>-e NOMSD=1</code> 禁用 MSD，默认在 ARM 主机上启用。</p>
-<p><code>-e ATX=USBRELAY_HID</code> 使用 USB HID 继电器设备作为电源控制设备。</p></div>
+<p><code>-e ATX=USBRELAY_HID</code> 使用 USB HID 继电器设备作为电源控制设备。</p>
+<p><strong>功能启用</strong></p>
+<p><code>-e NOSSL=1</code> 禁用 HTTPS，启用 HTTP，在 8080 端口提供 WEB 服务。</p>
+<p><code>-e OTG=1</code> 启用 OTG 模式，默认为禁用。</p>
+<p><code>-e NOAUTH=1</code> 禁用身份认证，默认为启用。</p>
+<p><code>-e NOWEBTERMWRITE=1</code> 禁用 WEB 终端输入，设置为只读模式，默认为启用。</p>
+<p><code>-e NOWEBTERM=1</code> 禁用 WEB 终端，默认为启用。</p>
+<p><code>-e NOVNC=1</code> 禁用 VNC，默认为启用。</p>
+<p><code>-e NOIPMI=1</code> 禁用 IPMI，默认为启用。</p>
+<p><code>-e NOMSD=1</code> 禁用 MSD，默认在 ARM 主机上启用。</p></div>
 
 
 
@@ -1842,7 +1908,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月5日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月12日</span>
   </span>
 
     
