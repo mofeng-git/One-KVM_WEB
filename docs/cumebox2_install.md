@@ -1,10 +1,11 @@
+### 硬件说明
+
 这个盒子名称很多，私家云二代、比特米盒、CumeBox2。配置如下：
 
 ![私家云二代配置](img/c9ab7f618a59539cf998cf00a5f8ee26.png)
 
 相比玩客云，CPU 为 arm64 架构，多了一个 USB 口、两个 SATA 接口和板载双频 WIFI 。
 
-### 刷机
 
 首先刷机，大致流程：
 
@@ -16,24 +17,7 @@
 刷机详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
 
 
-
-
-****
-
-
-### 部署 One-KVM
-
-**整合包版**
-
-整合包底包使用 khadas-vim1 固件修改 dtb 而来，进行了特别适配，网口、oled 小屏幕、WIFI 、OTG 都正常可用。
-
-用 dd 命令把 One-KVM 的固件 img 写入 emmc 即可开始使用。
-
-??? example "固件写入示例"
-
-    ![image-20240926221132648](./img/image-20240926221132648.png)
-
-**Docker 版**
+### Docker 部署
 
 ```bash
 #换国内软件源
@@ -63,7 +47,18 @@ docker update --restart=always kvmd
 
 ![image-20240926220902937](./img/image-20240926220902937.png)
 
-### 使用
+
+### 整合包部署
+
+整合包底包使用 khadas-vim1 固件修改 dtb 而来，进行了特别适配，网口、oled 小屏幕、WIFI 、OTG 都正常可用。
+
+用 dd 命令把 One-KVM 的固件 img 写入 emmc 即可开始使用。
+
+??? example "固件写入示例"
+
+    ![image-20240926221132648](./img/image-20240926221132648.png)
+
+### 使用说明
 
 **硬件连接**
 
@@ -88,6 +83,6 @@ nmtui
 
 ![image-20240926220204960](./img/image-20240926220204960.png)
 
-**最终效果**
+**软件截图**
 
 ![image-20240926220156381](./img/image-20240926220156381.png)

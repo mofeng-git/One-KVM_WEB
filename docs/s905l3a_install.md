@@ -1,3 +1,5 @@
+### 硬件说明
+
 
 s905l3a One-KVM 通用包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试，理论上支持 E900V22C/D, CM311-1a-YST, M401A, M411A, UNT403A, UNT413A, ZTE-B863AV3.2-M, CM311-1a-CH, IP112H, B863AV3.1-M2 平台。
 
@@ -15,6 +17,8 @@ ID    SOC        MODEL                               DTB
 0     Other      Customize                           Enter-custom-dtb-name                             
 --------------------------------------------------------------------------------------
 ```
+
+### 整合包部署
 
 大致流程：
 

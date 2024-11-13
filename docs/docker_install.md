@@ -88,6 +88,8 @@ docker pull silentwind0/kvmd
 
 `-v ./kvmd_config:/etc/kvmd` 可挂载容器内配置文件目录，用于持久化配置文件，便于使用者手动修改配置文件。
 
+`-v/var/lib/kvmd/msd:/var/lib/kvmd/msd` 挂载指定容器 MSD 目录，可用于存放需要挂载的系统镜像等文件。
+
 ### 环境变量
 
 **账号密码**
@@ -116,11 +118,21 @@ docker pull silentwind0/kvmd
 
 `-e ATX=USBRELAY_HID` 使用 USB HID 继电器设备作为电源控制设备。
 
+**OTG 相关**
+
+`-e OTG=1` 启用 OTG 模式，默认为禁用。
+
+`-e NOMSD=1` 禁用 MSD，默认在 ARM 主机上启用。
+
+**CH9329 相关**
+
+`-e CH9329SPEED=9600` CH9239+CH340 串口通信速度，默认为9600bps，可选值：`1200`、`2400`、`4800`、`9600`、`14400`、`19200`、`38400`、`57600`、`115200`。
+
+`-e CH9329TIMEOUT=0.3` CH9239 HID 响应超时时间，超时后会刷新一条日志，默认为0.3秒。
+
 **功能启用**
 
 `-e NOSSL=1` 禁用 HTTPS，启用 HTTP，在 8080 端口提供 WEB 服务。
-
-`-e OTG=1` 启用 OTG 模式，默认为禁用。
 
 `-e NOAUTH=1` 禁用身份认证，默认为启用。
 
@@ -131,5 +143,3 @@ docker pull silentwind0/kvmd
 `-e NOVNC=1` 禁用 VNC，默认为启用。
 
 `-e NOIPMI=1` 禁用 IPMI，默认为启用。
-
-`-e NOMSD=1` 禁用 MSD，默认在 ARM 主机上启用。

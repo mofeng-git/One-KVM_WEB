@@ -272,3 +272,34 @@ CUS_HID USB 继电器的控制代码。
 
 - [Examples — HIDAPI documentation (trezor.github.io)](https://trezor.github.io/cython-hidapi/examples.html)
 - [Ubuntu 20.04 驱动LCUS_HID USB继电器_hid继电器程序-CSDN博客](https://blog.csdn.net/nibiewuxuanze/article/details/127069479)
+
+
+### 在 Linux 中重置 USB 设备
+
+如果如 USB 设备处于异常状态，可以使用 `usbreset` 实用程序重置它。可以使用以下适合特定 Linux 发行版的命令来安装 `usbreset`。
+
+```bash
+sudo apt install usbutils         [On Debian, Ubuntu and Mint]
+sudo yum install usbutils         [On RHEL/CentOS/Fedora and Rocky/AlmaLinux]
+sudo emerge -a sys-apps/usbutils  [On Gentoo Linux]
+sudo apk add usbutils             [On Alpine Linux]
+sudo pacman -S usbutils           [On Arch Linux]
+sudo zypper install usbutils      [On OpenSUSE]    
+sudo pkg install usbutils         [On FreeBSD]
+```
+
+安装后，可以使用以下命令重置 USB 设备，将 Bus 001 Device 004 替换为 USB 设备的总线和设备号：
+
+```bash
+sudo usbreset /dev/bus/usb/001/004
+```
+或者，可以使用以下命令，其中 是 USB 设备的 ID（来自 lsusb 输出）：
+
+```bash
+sudo usbreset 090c:1000
+sudo usbreset 001:005
+```
+
+参考资料：
+
+- [如何从 Linux 终端重置 USB 设备](https://cn.linux-console.net/?p=33930)
