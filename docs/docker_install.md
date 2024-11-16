@@ -100,7 +100,7 @@ docker pull silentwind0/kvmd
 
 `-v ./kvmd_config:/etc/kvmd` 可挂载容器内配置文件目录，用于持久化配置文件，便于使用者手动修改配置文件。
 
-`-v/var/lib/kvmd/msd:/var/lib/kvmd/msd` 挂载指定容器 MSD 目录，可用于存放需要挂载的系统镜像等文件。
+`-v ./msd:/var/lib/kvmd/msd` 挂载指定容器 MSD 目录，可用于存放需要挂载的系统镜像等文件。
 
 ### 环境变量
 
