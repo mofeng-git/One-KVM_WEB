@@ -44,7 +44,7 @@
 | [Vmare](virtualmachine_install.md) | Vmare-uefi | USB 采集卡、CH9329 | 241004 | 持续更新 |
 | [Virtualbox](virtualmachine_install.md) | Virtualbox-uefi | USB 采集卡、CH9329 | 241004 | 持续更新 |
 | [s905l3a  通用包](s905l3a_install.md) | E900v22c | USB 采集卡、OTG | 241004 | 停止更新 |
-| [我家云](chainedbox_install.md) | Chainedbox | USB 采集卡、OTG | 241004 | 停止更新 |
+| 我家云 | Chainedbox | USB 采集卡、OTG | 241004 | 停止更新 |
 | [龙芯久久派](2k0300_install.md) | 2k0300 | USB 采集卡、CH9329 | 241025 | 停止更新 |
 
 

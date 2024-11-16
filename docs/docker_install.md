@@ -37,26 +37,26 @@ curl -sSL https://one-kvm.mofeng.run/quick_start.sh -o quick_start.sh && bash qu
 
 ![quick_start](img/image-202411161848.png)
 
-**手动部署**
+**手动 Docker 部署**
 
-如果使用 OTG 作为虚拟 HID，可以使用如下部署命令：
-``` bash
-sudo docker run --name kvmd -itd --privileged=true \
-    -v /lib/modules:/lib/modules:ro -v /dev:/dev \
-    -v /sys/kernel/config:/sys/kernel/config -e OTG=1 \
-    -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
-    silentwind0/kvmd
-```
+=== "OTG HID"
+    ``` bash
+    sudo docker run --name kvmd -itd --privileged=true \
+        -v /lib/modules:/lib/modules:ro -v /dev:/dev \
+        -v /sys/kernel/config:/sys/kernel/config -e OTG=1 \
+        -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+        silentwind0/kvmd
+    ```
 
-如果使用 CH9329 作为虚拟 HID，可以使用如下部署命令：
-``` bash
-sudo docker run --name kvmd -itd \
-    --device /dev/video0:/dev/video0 \
-    --device /dev/ttyUSB0:/dev/ttyUSB0 \
-    --device /dev/snd:/dev/snd \
-    -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
-    silentwind0/kvmd
-```
+=== "CH9329 HID"
+    ``` bash
+    sudo docker run --name kvmd -itd \
+        --device /dev/video0:/dev/video0 \
+        --device /dev/ttyUSB0:/dev/ttyUSB0 \
+        --device /dev/snd:/dev/snd \
+        -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+        silentwind0/kvmd
+    ```
 
 命令默认从 Docker Hub 拉取镜像，若网络不畅无法连接，可以将命令尾端的 `silentwind0/kvmd` 替换为 `registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd`，此地址为阿里云个人镜像托管服务杭州实例，拉取速度更快。
 
