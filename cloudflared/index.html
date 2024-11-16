@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -56,7 +56,16 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -321,16 +330,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -417,111 +416,6 @@
   
   <span class="md-ellipsis">
     私家云二代
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../synology_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    群晖 NAS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2k0300_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    龙芯久久派
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../s905l3a_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    s905l3a 盒子
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../virtualmachine_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    虚拟机部署
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../onecloud_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    玩客云套装（停止维护）
   </span>
   
 
@@ -1697,24 +1591,24 @@
 <h3 id="cloudflared">cloudflared 隧道</h3>
 <p>要使用 Cloudflare Tunnel，需要你在Cloudflare 已经添加了域名，更多的详细内容可以参考 <a href="https://cloudflared.cn/">Cloudflare Tunnel 中文文档</a>。</p>
 <p>首先，进入 Cloudflare Zero Trust，在侧栏中点击 Network，展开后再点击 Tunnels。然后在 Select  connector to private resources 处选择 Add a tunnel，然后点击 Next。</p>
-<p><img alt="PixPin_2024-06-30_18-04-12" src="../img/PixPin_2024-06-30_18-04-12.png"></p>
-<p><img alt="PixPin_2024-06-30_18-05-34" src="../img/PixPin_2024-06-30_18-05-34.png"></p>
+<p><a class="glightbox" href="../img/PixPin_2024-06-30_18-04-12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-04-12" src="../img/PixPin_2024-06-30_18-04-12.png"></a></p>
+<p><a class="glightbox" href="../img/PixPin_2024-06-30_18-05-34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-05-34" src="../img/PixPin_2024-06-30_18-05-34.png"></a></p>
 <p>选择 Add a Tunnel，点击Next，填入一个隧道名称，然后点击 Save Tunnel。</p>
-<p><img alt="PixPin_2024-06-30_18-06-42" src="../img/PixPin_2024-06-30_18-06-42.png"></p>
+<p><a class="glightbox" href="../img/PixPin_2024-06-30_18-06-42.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-06-42" src="../img/PixPin_2024-06-30_18-06-42.png"></a></p>
 <p>之后可以看到这个安装命令，选择对应的系统和架构，点击命令栏可以复制命令。</p>
 <p>注意，如果你是在 armhf 架构上的设备（如玩客云）上，由于 Cloudflared arm32-bit 软件包为 arm 架构，需要在执行 Cloudflare 网页所给命令前，执行如下命令添加此架构软件包的安装支持。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo dpkg --add-architecture arm
 </code></pre></div></td></tr></table></div>
-<p><img alt="PixPin_2024-06-30_18-28-34" src="../img/PixPin_2024-06-30_18-28-34.png"></p>
-<p><img alt="PixPin_2024-06-30_18-09-10" src="../img/PixPin_2024-06-30_18-09-10.png"></p>
+<p><a class="glightbox" href="../img/PixPin_2024-06-30_18-28-34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-28-34" src="../img/PixPin_2024-06-30_18-28-34.png"></a></p>
+<p><a class="glightbox" href="../img/PixPin_2024-06-30_18-09-10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-09-10" src="../img/PixPin_2024-06-30_18-09-10.png"></a></p>
 <p>点击 Public Hostnames 的 tab，点击 Add a public hostname，之后选择 TCP 协议填入 One-KVM 的内网 IP 和端口，填写完成后点击 Save tunnel 保存配置。主域名只能使用已经添加到 Cloudflare 的域名。</p>
-<p><img alt="PixPin_2024-06-30_18-20-29" src="../img/PixPin_2024-06-30_18-20-29.png"></p>
+<p><a class="glightbox" href="../img/PixPin_2024-06-30_18-20-29.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-20-29" src="../img/PixPin_2024-06-30_18-20-29.png"></a></p>
 <p>最后就可以看到正在运行的 Cloudflare Tunnel 了。</p>
-<p><img alt="PixPin_2024-06-30_18-29-44" src="../img/PixPin_2024-06-30_18-29-44.png"></p>
+<p><a class="glightbox" href="../img/PixPin_2024-06-30_18-29-44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-29-44" src="../img/PixPin_2024-06-30_18-29-44.png"></a></p>
 <details class="note">
 <summary>网页远程访问需要使用"https://"协议头</summary>
 <p>注意，远程访问 One-KVM 网页时需要手动在网址栏添加"https://"协议头，否则默认的"http://"协议头会返回错误"400 Bad Request The plain HTTP request was sent to HTTPS port"。</p>
-<p><img alt="PixPin_2024-06-30_16-37-59" src="../img/PixPin_2024-06-30_16-37-59.png"></p>
+<p><a class="glightbox" href="../img/PixPin_2024-06-30_16-37-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_16-37-59" src="../img/PixPin_2024-06-30_16-37-59.png"></a></p>
 </details></div>
 
 
@@ -1765,6 +1659,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1844,13 +1740,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
       
         <script src="../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

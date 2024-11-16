@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -52,7 +52,16 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -317,16 +326,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -413,111 +412,6 @@
   
   <span class="md-ellipsis">
     私家云二代
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../synology_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    群晖 NAS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2k0300_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    龙芯久久派
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../s905l3a_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    s905l3a 盒子
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../virtualmachine_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    虚拟机部署
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../onecloud_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    玩客云套装（停止维护）
   </span>
   
 
@@ -1672,15 +1566,15 @@
 <div><h3 id="_1">前言</h3>
 <p>群晖 NAS 系统也是使用的 Linux 系统，但对 NAS 用途进行了定制，可能缺少折腾其他应用所需的内核模块。这篇文章来写一下如何为群晖编译内核模块。</p>
 <p>首先需要明确需要编译的模块。我想在 NAS 上使用 Docker 部署 One-KVM，需要映射 USB 采集卡和 USB 串口设备，对应 UVC 驱动和 CH340 驱动，然而群晖缺少内核驱动无法识别这两个 USB 设备，故需要自己编译。下图是最终效果，可以看到驱动架构加载成功，设备路径也出来了。</p>
-<p><img alt="image-20240926215520107" src="../img/image-20240926215520107.png"></p>
+<p><a class="glightbox" href="../img/image-20240926215520107.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215520107" src="../img/image-20240926215520107.png"></a></p>
 <h3 id="_2">说明</h3>
 <p>群晖开源文件下载站：<a href="https://archive.synology.cn/download">Synology Archive Download Site - Index of /download</a></p>
 <p>在这里可以下载到群晖的大部分源代码（为群晖的开源点赞），编译内核只需要群晖的构建工具链和内核源代码就足够了。根据自己群晖的型号和版本下载对应文件。</p>
 <p>开启群晖 SSH 并连接执行 <code>uname -a</code> 可以得到内核信息：<code>Linux MofengNAS 4.4.302+ #72803 SMP Mon Aug 19 19:59:09 CST 2024 x86_64 GNU/Linux synology_apollolake_218+</code>，在群晖控制面版 信息中心可以看到群晖 DSM 版本信息：<code>DSM 7.2.2-72803</code>。这个信息很重要，后面要用到。</p>
-<p><img alt="image-20240926215723271" src="../img/image-20240926215723271.png"></p>
+<p><a class="glightbox" href="../img/image-20240926215723271.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215723271" src="../img/image-20240926215723271.png"></a></p>
 <p>然后根据群晖型号和 DSM 版本下载 Linux 内核源代码和构建工具，内核源代码在  <code>ToolChain/Synology NAS GPL Source/DSM 版本号</code> 目录下，构建工具在 <code>ToolChain/toolchain/DSM 版本号</code> 目录下。下图和命令是作者群晖 NAS 对应的文件，大家需要根据自己的情况做相应修改。</p>
-<p><img alt="image-20240926215728335" src="../img/image-20240926215728335.png"></p>
-<p><img alt="image-20240926215733078" src="../img/image-20240926215733078.png"></p>
+<p><a class="glightbox" href="../img/image-20240926215728335.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215728335" src="../img/image-20240926215728335.png"></a></p>
+<p><a class="glightbox" href="../img/image-20240926215733078.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215733078" src="../img/image-20240926215733078.png"></a></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -1707,18 +1601,18 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a>cp<span class="w"> </span>synoconfigs/apollolake<span class="w"> </span>.config
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>make<span class="w"> </span>menuconfig
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240926215741546" src="../img/image-20240926215741546.png"></p>
-<p><img alt="image-20240926215746435" src="../img/image-20240926215746435.png"></p>
-<p><img alt="image-20240926215750459" src="../img/image-20240926215750459.png"></p>
+<p><a class="glightbox" href="../img/image-20240926215741546.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215741546" src="../img/image-20240926215741546.png"></a></p>
+<p><a class="glightbox" href="../img/image-20240926215746435.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215746435" src="../img/image-20240926215746435.png"></a></p>
+<p><a class="glightbox" href="../img/image-20240926215750459.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215750459" src="../img/image-20240926215750459.png"></a></p>
 <p>将图中所需依赖项都开启，然后保存退出。</p>
-<p><img alt="image-20240926215755153" src="../img/image-20240926215755153.png"></p>
-<p><img alt="image-20240926215801175" src="../img/image-20240926215801175.png"></p>
-<p><img alt="image-20240926215809771" src="../img/image-20240926215809771.png"></p>
+<p><a class="glightbox" href="../img/image-20240926215755153.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215755153" src="../img/image-20240926215755153.png"></a></p>
+<p><a class="glightbox" href="../img/image-20240926215801175.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215801175" src="../img/image-20240926215801175.png"></a></p>
+<p><a class="glightbox" href="../img/image-20240926215809771.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215809771" src="../img/image-20240926215809771.png"></a></p>
 <p><strong>正式编译</strong></p>
 <p><strong>注意</strong>：你以为现在就可以开始编译模块了，实际上还不行。这里有一个坑，驱动的 <code>vermagic</code> 要与内核一致才能正确加载，而默认编译的驱动 <code>vermagic</code> 少了一个 "+" 号，直接加载会报错，如下图。这里提一嘴，后面你编译好了驱动可以使用 <code>sudo insmod 文件名.ko</code> 和 <code>sudo dmesg</code> 来验证是否可以使用。</p>
-<p><img alt="image-20240926215814960" src="../img/image-20240926215814960.png"></p>
+<p><a class="glightbox" href="../img/image-20240926215814960.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215814960" src="../img/image-20240926215814960.png"></a></p>
 <p>这里需要修改 <code>Makefile</code> 文件最开始的地方，修改为群晖对应内核版本，使驱动 <code>vermagic</code>  正确。</p>
-<p><img alt="image-20240926215820916" src="../img/image-20240926215820916.png"></p>
+<p><a class="glightbox" href="../img/image-20240926215820916.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215820916" src="../img/image-20240926215820916.png"></a></p>
 <p>现在可以开始编译了，这里需要使用群晖的 <code>gcc</code> 工具链，不能使用系统自带的 <code>gcc</code>。如果有缺少什么依赖的话直接安装就好了。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
@@ -1755,7 +1649,7 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a>uvcvideo.ko
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a>ch341.ko
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240926215829154" src="../img/image-20240926215829154.png"></p>
+<p><a class="glightbox" href="../img/image-20240926215829154.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215829154" src="../img/image-20240926215829154.png"></a></p>
 <h3 id="_4">参考</h3>
 <p><a href="https://vircloud.net/exp/dsm-driver.html">搭建群晖 Synology NAS 开发环境，自编译网卡等驱动 - VirCloud's Blog - Learning&amp;Sharing</a></p></div>
 
@@ -1807,6 +1701,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1848,13 +1744,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
       
         <script src="../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

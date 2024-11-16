@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -56,7 +56,16 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -321,16 +330,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -417,111 +416,6 @@
   
   <span class="md-ellipsis">
     私家云二代
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../synology_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    群晖 NAS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2k0300_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    龙芯久久派
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../s905l3a_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    s905l3a 盒子
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../virtualmachine_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    虚拟机部署
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../onecloud_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    玩客云套装（停止维护）
   </span>
   
 
@@ -1761,16 +1655,16 @@
 </div>
 <h3 id="windows">Windows</h3>
 <p>对于 Windows，可以使用 UVNC 和 TigerVNC，可在网盘下载（位置：/玩客云/PiKVM相关软件/）。下面是 UVNC 的使用示例。</p>
-<p><img alt="img" src="../img/1717946873827-42.png"></p>
+<p><a class="glightbox" href="../img/1717946873827-42.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../img/1717946873827-42.png"></a></p>
 <h3 id="android">安卓 Android</h3>
 <p>对于安卓移动端，可以使用AVNC和bVNC Pro这两个开源软件。两个应用的操作手势都支持触摸屏和触摸板。对于AVNC应用，不能使用默认的安全性设置，需手动修改安全性为Vncauth才能正常连接PiKVM VNC。</p>
-<p><img alt="img" src="../img/1717946871729-39.png"></p>
-<p><img alt="img" src="../img/1717946869599-36.png"></p>
+<p><a class="glightbox" href="../img/1717946871729-39.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../img/1717946871729-39.png"></a></p>
+<p><a class="glightbox" href="../img/1717946869599-36.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../img/1717946869599-36.png"></a></p>
 <h3 id="ios">苹果 IOS</h3>
 <p>对于苹果 iOS ，可以使用 <a href="https://apps.apple.com/us/app/bvnc-pro/id1506461202">bVNC</a> 应用程序，这是一个付费软件。</p>
 <h3 id="vncauth">VNCAuth身份认证</h3>
 <p>对于使用VNCAuth身份认证的VNC客户端（即只需使用密码不需要输入账户的VNC客户端），如果修改了PiKVM程序密码后，此身份认证文件不会自动修改，需手动在文件<code>/etc/kvmd/vncpasswd</code>修改或添加密码映射。添加内容为“自定义VNC密码 -&gt; WEB账户:WEB密码”，如下为示例：</p>
-<p><img alt="img" src="../img/1717946094181-13.png"></p></div>
+<p><a class="glightbox" href="../img/1717946094181-13.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../img/1717946094181-13.png"></a></p></div>
 
 
 
@@ -1820,6 +1714,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1899,13 +1795,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
       
         <script src="../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -56,7 +56,16 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -321,16 +330,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -417,111 +416,6 @@
   
   <span class="md-ellipsis">
     私家云二代
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../synology_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    群晖 NAS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2k0300_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    龙芯久久派
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../s905l3a_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    s905l3a 盒子
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../virtualmachine_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    虚拟机部署
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../onecloud_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    玩客云套装（停止维护）
   </span>
   
 
@@ -1743,7 +1637,7 @@
 <p>此功能由群友 自.知 设计，使用 ffmpeg 进行软编码。由于为 CPU 软件编码，在玩客云设备上此功能效果较差。</p>
 <p><strong>使用</strong></p>
 <p>整合包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。由于玩客云 CPU 性能较差，所以 <code>kvmd-ffmpeg</code> 服务默认为关闭状态（网页表现如下），避免影响其他服务的流畅性。</p>
-<p><img alt="image-20240622152523786" src="../img/image-20240622152523786.png"></p>
+<p><a class="glightbox" href="../img/image-20240622152523786.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240622152523786" src="../img/image-20240622152523786.png"></a></p>
 <p>如需要可执行如下命令可手动开启。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
@@ -1754,7 +1648,7 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kvmd-ffmpeg
 </code></pre></div></td></tr></table></div>
 <p>在玩客云上，H.264 视频非常卡顿，使用体验较差。</p>
-<p><img alt="image-20240610154409422" src="../img/image-20240610154409422.png"></p>
+<p><a class="glightbox" href="../img/image-20240610154409422.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240610154409422" src="../img/image-20240610154409422.png"></a></p>
 <p><strong>安装</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1778,7 +1672,7 @@
 <p><strong>端口映射</strong></p>
 <p>在防火墙映射 20000-40000 udp 端口，演示站就是使用的这个方法。</p>
 <p>此方法局限性较大，需要映射太多端口，不推荐使用。</p>
-<p><img alt="image-20241021132357799" src="../img/image-20241021132357799.png"></p>
+<p><a class="glightbox" href="../img/image-20241021132357799.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241021132357799" src="../img/image-20241021132357799.png"></a></p>
 <p><strong>异地组网</strong></p>
 <p>这里以 Tailscale 异地组网为例，首先安装客户端：<a href="https://tailscale.com/download/linux">Download · Tailscale</a>，这里可以直接在 One-KVM 主机上安装 Tailscale，安装命令如下。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -1804,11 +1698,11 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a>tailscale ip
 </code></pre></div></td></tr></table></div>
 <p>然后进行多设备组网，下图是一个实例。</p>
-<p><img alt="image-20241021142837222" src="../img/image-20241021142837222.png"></p>
+<p><a class="glightbox" href="../img/image-20241021142837222.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241021142837222" src="../img/image-20241021142837222.png"></a></p>
 <p>然后使用虚拟局域网 IP 访问即可使用 One-KVM 的 H.264/WebRTC 功能。</p>
-<p><img alt="image-20241021143310563" src="../img/image-20241021143310563.png"></p>
+<p><a class="glightbox" href="../img/image-20241021143310563.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241021143310563" src="../img/image-20241021143310563.png"></a></p>
 <p>由于 Tailscale 官方中继服务器位于境外，网络联通性比较差，推荐使用自建中键服务器，可以参考这篇文章： <a href="https://anubis.cafe/6fdf334e">自建 Tailscale 中继服务器 | Anubis的小窝</a></p>
-<p><img alt="image-20241021144135937" src="../img/image-20241021144135937.png"></p>
+<p><a class="glightbox" href="../img/image-20241021144135937.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241021144135937" src="../img/image-20241021144135937.png"></a></p>
 <h3 id="_1">视频演示</h3>
 <p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../video/2024-11-05%2016-36-29_x264.mp4" type="video/mp4"></source></video></div></p></div>
 
@@ -1860,6 +1754,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1939,13 +1835,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
       
         <script src="../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

@@ -18,11 +18,11 @@
         <link rel="prev" href="../onecloud_install/">
       
       
-        <link rel="next" href="../synology_install/">
+        <link rel="next" href="../faq/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -56,7 +56,16 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -323,16 +332,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
       
@@ -493,111 +492,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../synology_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    群晖 NAS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2k0300_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    龙芯久久派
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../s905l3a_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    s905l3a 盒子
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../virtualmachine_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    虚拟机部署
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../onecloud_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    玩客云套装（停止维护）
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1747,7 +1641,7 @@
 
 <div><h3 id="_1">硬件说明</h3>
 <p>这个盒子名称很多，私家云二代、比特米盒、CumeBox2。配置如下：</p>
-<p><img alt="私家云二代配置" src="../img/c9ab7f618a59539cf998cf00a5f8ee26.png"></p>
+<p><a class="glightbox" href="../img/c9ab7f618a59539cf998cf00a5f8ee26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="私家云二代配置" src="../img/c9ab7f618a59539cf998cf00a5f8ee26.png"></a></p>
 <p>相比玩客云，CPU 为 arm64 架构，多了一个 USB 口、两个 SATA 接口和板载双频 WIFI 。</p>
 <p>首先刷机，大致流程：</p>
 <ul>
@@ -1798,20 +1692,20 @@
 <a id="__codelineno-1-11" name="__codelineno-1-11"></a>docker<span class="w"> </span>logs<span class="w"> </span>kvmd
 <a id="__codelineno-1-12" name="__codelineno-1-12"></a>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240926220902937" src="../img/image-20240926220902937.png"></p>
+<p><a class="glightbox" href="../img/image-20240926220902937.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220902937" src="../img/image-20240926220902937.png"></a></p>
 <h3 id="_2">整合包部署</h3>
 <p>整合包底包使用 khadas-vim1 固件修改 dtb 而来，进行了特别适配，网口、oled 小屏幕、WIFI 、OTG 都正常可用。</p>
 <p>用 dd 命令把 One-KVM 的固件 img 写入 emmc 即可开始使用。</p>
 <details class="example">
 <summary>固件写入示例</summary>
-<p><img alt="image-20240926221132648" src="../img/image-20240926221132648.png"></p>
+<p><a class="glightbox" href="../img/image-20240926221132648.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926221132648" src="../img/image-20240926221132648.png"></a></p>
 </details>
 <h3 id="_3">使用说明</h3>
 <p><strong>硬件连接</strong></p>
-<p><img alt="image-20240926220219805" src="../img/image-20240926220219805.png"></p>
+<p><a class="glightbox" href="../img/image-20240926220219805.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220219805" src="../img/image-20240926220219805.png"></a></p>
 <p><strong>OLED 显示屏</strong></p>
 <p>前面板的小 OLED 显示屏会循环显示欢迎语、温度和 IP 地址。</p>
-<p><img alt="oled" src="../img/1730628391056.png"></p>
+<p><a class="glightbox" href="../img/1730628391056.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="oled" src="../img/1730628391056.png"></a></p>
 <p><strong>WIFI 连接</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
@@ -1823,9 +1717,9 @@
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#第一次连接后，盒子重启连接会自动连接上一次连接的 WIFI</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>nmtui
 </code></pre></div></td></tr></table></div>
-<p><img alt="image-20240926220204960" src="../img/image-20240926220204960.png"></p>
+<p><a class="glightbox" href="../img/image-20240926220204960.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220204960" src="../img/image-20240926220204960.png"></a></p>
 <p><strong>软件截图</strong></p>
-<p><img alt="image-20240926220156381" src="../img/image-20240926220156381.png"></p></div>
+<p><a class="glightbox" href="../img/image-20240926220156381.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220156381" src="../img/image-20240926220156381.png"></a></p></div>
 
 
 
@@ -1875,6 +1769,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -1910,13 +1806,13 @@
         
         
           
-          <a href="../synology_install/" class="md-footer__link md-footer__link--next" aria-label="下一页: 群晖 NAS">
+          <a href="../faq/" class="md-footer__link md-footer__link--next" aria-label="下一页: 常见问题">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                群晖 NAS
+                常见问题
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1954,13 +1850,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.sections", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
       
         <script src="../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
