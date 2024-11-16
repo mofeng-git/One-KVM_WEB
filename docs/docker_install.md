@@ -25,15 +25,19 @@
     
 ### Docker 部署
 
+Docker 可以使用 OTG 或 CH9329 作为虚拟 HID ，支持 amd64、arm64、armv7 架构的 Linux 系统安装。
+
 **脚本部署**
+
+选择 One-KVM Docker 安装向导脚本安装可以帮助检查环境和快速安装。
 
 ```bash
 curl -sSL https://one-kvm.mofeng.run/quick_start.sh -o quick_start.sh && bash quick_start.sh
 ```
 
-**手动部署**
+![quick_start](img/image-202411161848.png)
 
-Docker 可以使用 OTG 或 CH9329 作为虚拟 HID ，支持 amd64、arm64、armv7 架构的 Linux 系统安装。
+**手动部署**
 
 如果使用 OTG 作为虚拟 HID，可以使用如下部署命令：
 ``` bash
@@ -102,9 +106,7 @@ docker pull silentwind0/kvmd
 
 **账号密码**
 
-`-e USERNAME=admin` 设置用户账号为 admin ，默认为 admin。
-
-`-e PASSWORD=admin` 设置用户密码为 admin，默认为 admin。
+`-e USERNAME=admin` `-e PASSWORD=admin` 设置用户账号和密码（包含 WEB VNC 和 IPMI），需要同时指定账号和密码，默认为 admin/admin，。
 
 **设备指定**
 
