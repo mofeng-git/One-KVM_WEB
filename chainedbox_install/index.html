@@ -12,13 +12,13 @@
         <meta name="author" content="SilentWind">
       
       
-        <link rel="canonical" href="https://one-kvm.mofeng.run/synology_install/">
+        <link rel="canonical" href="https://one-kvm.mofeng.run/chainedbox_install/">
       
       
-        <link rel="prev" href="../virtualmachine_install/">
+        <link rel="prev" href="../synology_install/">
       
       
-        <link rel="next" href="../chainedbox_install/">
+        <link rel="next" href="../2k0300_install/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>群晖 NAS - One-KVM 文档</title>
+        <title>我家云盒子 - One-KVM 文档</title>
       
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              群晖 NAS
+              我家云盒子
             
           </span>
         </div>
@@ -526,6 +526,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../synology_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    群晖 NAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -540,7 +561,7 @@
           
   
   <span class="md-ellipsis">
-    群晖 NAS
+    我家云盒子
   </span>
   
 
@@ -551,7 +572,7 @@
         
   
   <span class="md-ellipsis">
-    群晖 NAS
+    我家云盒子
   </span>
   
 
@@ -573,16 +594,16 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      驱动准备
+      硬件介绍
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker 部署
+      整合包部署
     </span>
   </a>
   
@@ -592,27 +613,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chainedbox_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    我家云盒子
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1757,16 +1757,16 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      驱动准备
+      硬件介绍
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker 部署
+      整合包部署
     </span>
   </a>
   
@@ -1790,53 +1790,13 @@
   
 
 
-  <h1>群晖 NAS</h1>
+  <h1>我家云盒子</h1>
 
-<div><h3 id="_1">驱动准备</h3>
-<p>在群晖控制面板 -- 终端机和 SNMP -- 终端机勾选 启动 SSH 功能，使用 SSH 客户端连接群晖 SSH。</p>
-<p><a class="glightbox" href="../img/image-20240926215507373.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215507373" src="../img/image-20240926215507373.png"></a></p>
-<p>按照 <a href="../synology_ko/">《为群晖 NAS 编译额外内核驱动》</a> 文章内容为群晖补全相关驱动，<strong>如果此步未完成后续无法部署</strong>。</p>
-<p>可使用 <code>ls /dev | grep -E "video|ttyUSB"</code>，如果有设地址，就说明准备好了，如下图。准备好了就用不着 SSH 了，可以在控制面板同样的地方关闭 SSH。</p>
-<p><a class="glightbox" href="../img/image-20240926215520107.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215520107" src="../img/image-20240926215520107.png"></a></p>
-<h3 id="docker">Docker 部署</h3>
-<div class="admonition warning">
-<p class="admonition-title">提醒</p>
-<p>虚拟存储驱动器（MSD）、虚拟 USB 网卡等虚拟USB设备等功能仅使用 OTG 端口模式时可用，请注意<strong>使用 CH9329 HID 时不支持这些虚拟 USB 设备扩展功能</strong>。</p>
-</div>
-<p>进入群晖容器管理界面，打开左边侧栏选择新建项目。设置好项目名名称和路径后选择创建 docker-compose.yml ，填入如下内容然后点击下一步，网页门户设置可以不修改继续下一步，最后点击完成，等待容器创建启动。</p>
-<p>容器启动完成就可以开始使用了，访问 https://NASIP:4430 就可以开始使用了，默认账号密码  <code>admin</code>/ <code>admin</code>，更多 Docker 环境变量的设置可以查阅 <a href="../docker_install/">Docker 部署</a>。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3.7'</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">services</span><span class="p">:</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nt">kvmd</span><span class="p">:</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"8080:8080"</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"4430:4430"</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"5900:5900"</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"623:623"</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="nt">devices</span><span class="p">:</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"/dev/video0:/dev/video0"</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"/dev/ttyUSB0:/dev/ttyUSB0"</span>
-</code></pre></div></td></tr></table></div>
-<p><a class="glightbox" href="../img/image-20240926215530277.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215530277" src="../img/image-20240926215530277.png"></a></p>
-<p><a class="glightbox" href="../img/image-20240926215538229.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215538229" src="../img/image-20240926215538229.png"></a></p>
-<p><a class="glightbox" href="../img/image-20240926215545004.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215545004" src="../img/image-20240926215545004.png"></a></p>
-<p><a class="glightbox" href="../img/image-20240926215551767.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215551767" src="../img/image-20240926215551767.png"></a></p>
-<p><a class="glightbox" href="../img/image-20240926215558542.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215558542" src="../img/image-20240926215558542.png"></a></p>
-<p><a class="glightbox" href="../img/image-20240926215604413.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215604413" src="../img/image-20240926215604413.png"></a></p>
-<p><strong>最终效果</strong></p>
-<p><a class="glightbox" href="../img/image-20240926215616652.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926215616652" src="../img/image-20240926215616652.png"></a></p></div>
+<div><h3 id="_1">硬件介绍</h3>
+<p>我家云使用了 RK3328 CPU，1GB DDR3 的内存和 8GB 的 ROM 储存空间，以及，内置了 3.5 寸 SATA 硬盘位，配备了一个千兆网络接口，一个 USB3.0 接口和一个 USB2.0 接口。机身大小为 187<em>57</em>157mm。</p>
+<h3 id="_2">整合包部署</h3>
+<p>使用双公头 USB 数据线连接电脑短接我家云主板 MASKROM 触点进行线刷，在瑞芯微开发工具软件界面选择作者提供的整合包刷入即可。</p>
+<p><a class="glightbox" href="../img/image-202411182144.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="整合包线刷" src="../img/image-202411182144.png"></a></p></div>
 
 
 
@@ -1859,7 +1819,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月18日</span>
   </span>
 
     
@@ -1869,7 +1829,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年9月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月18日</span>
   </span>
 
     
@@ -1906,7 +1866,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../virtualmachine_install/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 虚拟机部署">
+          <a href="../synology_install/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 群晖 NAS">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1916,20 +1876,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                虚拟机部署
+                群晖 NAS
               </div>
             </div>
           </a>
         
         
           
-          <a href="../chainedbox_install/" class="md-footer__link md-footer__link--next" aria-label="下一页: 我家云盒子">
+          <a href="../2k0300_install/" class="md-footer__link md-footer__link--next" aria-label="下一页: 龙芯久久派">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                我家云盒子
+                龙芯久久派
               </div>
             </div>
             <div class="md-footer__button md-icon">
