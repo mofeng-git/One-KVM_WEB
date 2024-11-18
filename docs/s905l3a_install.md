@@ -1,7 +1,7 @@
 ### 硬件说明
 
 
-s905l3a One-KVM 通用包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试，理论上支持 E900V22C/D, CM311-1a-YST, M401A, M411A, UNT403A, UNT413A, ZTE-B863AV3.2-M, CM311-1a-CH, IP112H, B863AV3.1-M2 平台。
+s905l3a One-KVM 通用包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试。
 
 `armbian-install` 安装可选型号：
 ```
@@ -16,6 +16,34 @@ ID    SOC        MODEL                               DTB
 306   s905l3a    M401A,UNT403A,B863AV3.2-M           meson-g12a-s905l3a-m401a.dtb                      
 0     Other      Customize                           Enter-custom-dtb-name                             
 --------------------------------------------------------------------------------------
+```
+### Docker 部署
+
+大致流程：
+
+- 为机顶盒刷入安卓系统，安卓系统 ROOT 后安装切换卡载系统 apk
+- 为优盘刷入可启动的 armbian 系统，优盘接入机顶盒，在安卓系统下切换至卡载系统
+- 执行 `armbian-install` 命令将卡载系统刷写入 EMMC
+- 拔出优盘重启机顶盒，换源，安装 Docker 软件
+- 在 Docker 中部署 kvmd 镜像
+```bash
+#运行 kvmd 容器
+sudo docker run -name kvmd -itd --privileged=true
+    -v /lib/modules:/lib/modules:ro -v /dev:/dev
+    -v /sys/kernel/config:/sys/kernel/config -e OTG=1 -e VIDEONUM=1 \
+    -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+    registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd
+
+#使能 OTG device 模式
+sudo echo device > /sys/class/usb role/ffe09000.usb-role-switch/role
+#将 OTG 端口使能命令写入开机启动脚本 /etc/rc.local
+sudo nano /etc/rc.local
+#添加脚本执行权限
+sudo chmod +x /etc/rc.local
+
+#确认容器正常运行后，设置 Docker 自启动，容器 kvmd 自启动
+sudo systemctl enable docker
+sudo docker update --restart=always kvmd
 ```
 
 ### 整合包部署
