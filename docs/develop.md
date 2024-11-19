@@ -53,6 +53,216 @@ dd if=/dev/mmcblk1 bs=512 skip=1 count=32767  | gzip > Boot_SkipUSBBurning.gz
 
 参考资料：[gpioset 命令 | 人人都懂物联网 (getiot.tech)](https://getiot.tech/zh/linux-command/gpioset)
 
+??? tip "玩客云 5.x Linux 内核的所有 GPIO 引脚"
+    === "gpioinfo"
+        ```
+        gpiochip0 - 83 lines:
+            line   0: "J2 Header Pin 35" unused input active-high 
+            line   1: "J2 Header Pin 36" unused input active-high 
+            line   2: "J2 Header Pin 32" unused input active-high 
+            line   3: "J2 Header Pin 31" unused input active-high 
+            line   4: "J2 Header Pin 29" unused input active-high 
+            line   5: "J2 Header Pin 18" unused input active-high 
+            line   6: "J2 Header Pin 22" unused input active-high 
+            line   7: "J2 Header Pin 16" unused input active-high 
+            line   8: "J2 Header Pin 23" unused input active-high 
+            line   9: "J2 Header Pin 21" unused input active-high 
+            line  10: "J2 Header Pin 19" unused input active-high 
+            line  11: "J2 Header Pin 33" unused input active-high 
+            line  12: "J2 Header Pin 8" unused input active-high 
+            line  13: "J2 Header Pin 10" unused input active-high 
+            line  14: "J2 Header Pin 15" unused input active-high 
+            line  15: "J2 Header Pin 13" unused input active-high 
+            line  16: "J2 Header Pin 24" unused input active-high 
+            line  17: "J2 Header Pin 26" unused input active-high 
+            line  18: "Revision (upper)" unused input active-high 
+            line  19: "Revision (lower)" unused input active-high 
+            line  20: "J2 Header Pin 7" unused input active-high 
+            line  21:      unnamed       unused   input  active-high 
+            line  22: "J2 Header Pin 12" unused input active-high 
+            line  23: "J2 Header Pin 11" unused input active-high 
+            line  24:      unnamed       unused   input  active-high 
+            line  25:      unnamed       unused   input  active-high 
+            line  26:      unnamed       unused   input  active-high 
+            line  27: "TFLASH_VDD_EN" "regulator-tflash_vdd" output active-high [used]
+            line  28:      unnamed       unused   input  active-high 
+            line  29:      unnamed       unused   input  active-high 
+            line  30: "VCCK_PWM (PWM_C)" unused input active-high 
+            line  31:   "I2CA_SDA"       unused   input  active-high 
+            line  32:   "I2CA_SCL"       unused   input  active-high 
+            line  33:   "I2CB_SDA"       unused   input  active-high 
+            line  34:   "I2CB_SCL"       unused   input  active-high 
+            line  35: "VDDEE_PWM (PWM_D)" unused input active-high 
+            line  36:      unnamed       unused   input  active-high 
+            line  37:   "HDMI_HPD"       unused   input  active-high 
+            line  38: "HDMI_I2C_SDA" unused input active-high 
+            line  39: "HDMI_I2C_SCL" unused input active-high 
+            line  40: "ETH_PHY_INTR" unused input active-high 
+            line  41: "ETH_PHY_NRST" "PHY reset" output active-low [used]
+            line  42:   "ETH_TXD1"       unused   input  active-high 
+            line  43:   "ETH_TXD0"       unused   input  active-high 
+            line  44:   "ETH_TXD3"       unused   input  active-high 
+            line  45:   "ETH_TXD2"       unused   input  active-high 
+            line  46: "ETH_RGMII_TX_CLK" unused input active-high 
+            line  47: "SD_DATA1 (SDB_D1)" unused input active-high 
+            line  48: "SD_DATA0 (SDB_D0)" unused input active-high 
+            line  49:     "SD_CLK"       unused   input  active-high 
+            line  50:     "SD_CMD"       unused   input  active-high 
+            line  51: "SD_DATA3 (SDB_D3)" unused input active-high 
+            line  52: "SD_DATA2 (SDB_D2)" unused input active-high 
+            line  53: "SD_CDN (SD_DET_N)" "cd" input active-low [used]
+            line  54: "SDC_D0 (EMMC)" unused output active-high 
+            line  55: "SDC_D1 (EMMC)" unused output active-high 
+            line  56: "SDC_D2 (EMMC)" unused output active-high 
+            line  57: "SDC_D3 (EMMC)" unused output active-high 
+            line  58: "SDC_D4 (EMMC)" unused output active-high 
+            line  59: "SDC_D5 (EMMC)" unused output active-high 
+            line  60: "SDC_D6 (EMMC)" unused output active-high 
+            line  61: "SDC_D7 (EMMC)" unused output active-high 
+            line  62: "SDC_CLK (EMMC)" unused output active-high 
+            line  63: "SDC_RSTn (EMMC)" "reset" output active-low [used]
+            line  64: "SDC_CMD (EMMC)" unused output active-high 
+            line  65:   "BOOT_SEL"       unused   input  active-high 
+            line  66:      unnamed       unused   input  active-high 
+            line  67:      unnamed       unused   input  active-high 
+            line  68:      unnamed       unused   input  active-high 
+            line  69:      unnamed       unused   input  active-high 
+            line  70:      unnamed       unused  output  active-high 
+            line  71:      unnamed       unused  output  active-high 
+            line  72:      unnamed       unused   input  active-high 
+            line  73:   "ETH_RXD1"       unused   input  active-high 
+            line  74:   "ETH_RXD0"       unused   input  active-high 
+            line  75:  "ETH_RX_DV"       unused   input  active-high 
+            line  76: "RGMII_RX_CLK" unused input active-high 
+            line  77:   "ETH_RXD3"       unused   input  active-high 
+            line  78:   "ETH_RXD2"       unused   input  active-high 
+            line  79:   "ETH_TXEN"       unused   input  active-high 
+            line  80: "ETH_PHY_REF_CLK_25MOUT" unused input active-high 
+            line  81:    "ETH_MDC"       unused   input  active-high 
+            line  82:   "ETH_MDIO"       unused   input  active-high 
+        gpiochip1 - 16 lines:
+            line   0:    "UART TX"       unused   input  active-high 
+            line   1:    "UART RX"       unused   input  active-high 
+            line   2:      unnamed       unused  output  active-high 
+            line   3: "TF_3V3N_1V8_EN" "TF_IO" output active-high [used]
+            line   4: "USB_HUB_RST_N" "usb-hub-reset" output active-high [used]
+            line   5: "USB_OTG_PWREN" unused input active-high 
+            line   6: "J7 Header Pin 2" unused input active-high 
+            line   7:      "IR_IN"       unused   input  active-high 
+            line   8: "J7 Header Pin 4" unused input active-high 
+            line   9: "J7 Header Pin 6" unused input active-high 
+            line  10: "J7 Header Pin 5" unused input active-high 
+            line  11: "J7 Header Pin 7" unused input active-high 
+            line  12:   "HDMI_CEC"       unused   input  active-high 
+            line  13:    "SYS_LED" "BugScaner:blue:alive" output active-low [used]
+            line  14:      unnamed       unused  output  active-high 
+            line  15:      unnamed       unused  output  active-high
+        ```
+    === "sysfs"
+        ```
+        gpiochip1: GPIOs 413-428, parent: platform/c8100084.pinctrl, aobus-banks:
+        gpio-413 (UART TX             )
+        gpio-414 (UART RX             )
+        gpio-415 (                    )
+        gpio-416 (TF_3V3N_1V8_EN      |TF_IO               ) out hi 
+        gpio-417 (USB_HUB_RST_N       |usb-hub-reset       ) out lo 
+        gpio-418 (USB_OTG_PWREN       )
+        gpio-419 (J7 Header Pin 2     )
+        gpio-420 (IR_IN               )
+        gpio-421 (J7 Header Pin 4     )
+        gpio-422 (J7 Header Pin 6     )
+        gpio-423 (J7 Header Pin 5     )
+        gpio-424 (J7 Header Pin 7     )
+        gpio-425 (HDMI_CEC            )
+        gpio-426 (SYS_LED             |BugScaner:blue:alive) out hi ACTIVE LOW
+        gpio-427 (                    )
+        gpio-428 (                    )
+
+        gpiochip0: GPIOs 429-511, parent: platform/c1109880.pinctrl, cbus-banks:
+        gpio-429 (J2 Header Pin 35    )
+        gpio-430 (J2 Header Pin 36    )
+        gpio-431 (J2 Header Pin 32    )
+        gpio-432 (J2 Header Pin 31    )
+        gpio-433 (J2 Header Pin 29    )
+        gpio-434 (J2 Header Pin 18    )
+        gpio-435 (J2 Header Pin 22    )
+        gpio-436 (J2 Header Pin 16    )
+        gpio-437 (J2 Header Pin 23    )
+        gpio-438 (J2 Header Pin 21    )
+        gpio-439 (J2 Header Pin 19    )
+        gpio-440 (J2 Header Pin 33    )
+        gpio-441 (J2 Header Pin 8     )
+        gpio-442 (J2 Header Pin 10    )
+        gpio-443 (J2 Header Pin 15    )
+        gpio-444 (J2 Header Pin 13    )
+        gpio-445 (J2 Header Pin 24    )
+        gpio-446 (J2 Header Pin 26    )
+        gpio-447 (Revision (upper)    )
+        gpio-448 (Revision (lower)    )
+        gpio-449 (J2 Header Pin 7     )
+        gpio-450 (                    )
+        gpio-451 (J2 Header Pin 12    )
+        gpio-452 (J2 Header Pin 11    )
+        gpio-453 (                    )
+        gpio-454 (                    )
+        gpio-455 (                    )
+        gpio-456 (TFLASH_VDD_EN       |regulator-tflash_vdd) out lo 
+        gpio-457 (                    )
+        gpio-458 (                    )
+        gpio-459 (VCCK_PWM (PWM_C)    )
+        gpio-460 (I2CA_SDA            )
+        gpio-461 (I2CA_SCL            )
+        gpio-462 (I2CB_SDA            )
+        gpio-463 (I2CB_SCL            )
+        gpio-464 (VDDEE_PWM (PWM_D)   )
+        gpio-465 (                    )
+        gpio-466 (HDMI_HPD            )
+        gpio-467 (HDMI_I2C_SDA        )
+        gpio-468 (HDMI_I2C_SCL        )
+        gpio-469 (ETH_PHY_INTR        )
+        gpio-470 (ETH_PHY_NRST        |PHY reset           ) out hi ACTIVE LOW
+        gpio-471 (ETH_TXD1            )
+        gpio-472 (ETH_TXD0            )
+        gpio-473 (ETH_TXD3            )
+        gpio-474 (ETH_TXD2            )
+        gpio-475 (ETH_RGMII_TX_CLK    )
+        gpio-476 (SD_DATA1 (SDB_D1)   )
+        gpio-477 (SD_DATA0 (SDB_D0)   )
+        gpio-478 (SD_CLK              )
+        gpio-479 (SD_CMD              )
+        gpio-480 (SD_DATA3 (SDB_D3)   )
+        gpio-481 (SD_DATA2 (SDB_D2)   )
+        gpio-482 (SD_CDN (SD_DET_N)   |cd                  ) in  hi ACTIVE LOW
+        gpio-483 (SDC_D0 (EMMC)       )
+        gpio-484 (SDC_D1 (EMMC)       )
+        gpio-485 (SDC_D2 (EMMC)       )
+        gpio-486 (SDC_D3 (EMMC)       )
+        gpio-487 (SDC_D4 (EMMC)       )
+        gpio-488 (SDC_D5 (EMMC)       )
+        gpio-489 (SDC_D6 (EMMC)       )
+        gpio-490 (SDC_D7 (EMMC)       )
+        gpio-491 (SDC_CLK (EMMC)      )
+        gpio-492 (SDC_RSTn (EMMC)     |reset               ) out hi ACTIVE LOW
+        gpio-493 (SDC_CMD (EMMC)      )
+        gpio-494 (BOOT_SEL            )
+        gpio-495 (                    )
+        gpio-496 (                    )
+        gpio-497 (                    )
+        gpio-498 (                    )
+        gpio-499 (                    )
+        gpio-500 (                    )
+        gpio-501 (                    )
+        gpio-502 (ETH_RXD1            )
+        gpio-503 (ETH_RXD0            )
+        gpio-504 (ETH_RX_DV           )
+        gpio-505 (RGMII_RX_CLK        )
+        gpio-506 (ETH_RXD3            )
+        gpio-507 (ETH_RXD2            )
+        gpio-508 (ETH_TXEN            )
+        gpio-509 (ETH_PHY_REF_CLK_25MO)
+        gpio-510 (ETH_MDC             )
+        gpio-511 (ETH_MDIO            )
+        ```
 ### HDMI环出
 
 ```bash

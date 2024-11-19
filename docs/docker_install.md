@@ -16,7 +16,10 @@
     curl -fsSL https://get.docker.com | bash
     ```
 
-???+ tip "OTG 与 CH9329 说明"
+??? tip "Docker  部署与整合包部署性能差异"
+    Docker 安装不比实机安装 One-KVM 性能差，详见此[应用性能测试](docker_performance.md)。
+
+??? tip "OTG 与 CH9329 说明"
     OTG HID：现在大量的 ARM CPU 芯片都可以支持 USB OTG2.0/3.0 接口，该接口可能工作为 USB Host 模式用于连接USB设备。不过该接口也可以在 Linux 下作为 USB 从设备工作，此时可以将 ARM 板本身配置为键盘、鼠标、U 盘，从而将 OTG 接口作为虚拟 HID 设备使用。
 
     CH9329 HID： CH9329 是一款串口转标准 USB HID 设备(键盘、鼠标、自定义 HID)芯片， 在电脑上可被识别为标准的 USB 键盘设备、USB 鼠标设备或自定义 HID 类设备。可用作 One-KVM 的虚拟 HID 设备。
