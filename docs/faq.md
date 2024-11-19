@@ -120,7 +120,7 @@
 
 1. ??? "**玩客云刷入整合包后局域网访问响应非常缓慢，延时高度达秒，如何解决？**"
 
-        此外极少数玩客云系统适配问题，发生频率约为2%，作者测试可通过修改玩客云 dtb 网卡模式 "rgmii-id" 为 "rgmii-rxid" 的方法解决。
+        此为极少数玩客云系统适配问题，发生频率约为2%，作者测试可通过修改玩客云 dtb 网卡模式 "rgmii-id" 为 "rgmii-rxid" 的方法解决。
         ```bash 
         dtc -I dtb -O dts /boot/dtb/meson8b-onecloud.dtb -o meson8b-onecloud.dts
         nano meson8b-onecloud.dts
