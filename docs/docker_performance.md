@@ -3,7 +3,7 @@
 ### 测试方法
 ```
 #被控机循环播放 1080p 视频
-#使用如下测试命令，统计 CPU 占用并生成图标
+#使用如下测试命令，统计 CPU 占用并生成图表
 apt-get install sysstat
 sar -u 1 60 -o tmp1
 sadf -T  -g ./tmp1  --  > test1.svg
