@@ -18,7 +18,7 @@
         <link rel="prev" href="../onecloud_install/">
       
       
-        <link rel="next" href="../s905l3a_install/">
+        <link rel="next" href="../orangepizero_install/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -334,6 +334,8 @@
       
         
       
+        
+      
     
     
       
@@ -505,6 +507,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../orangepizero_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    香橙派 zero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -531,10 +554,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_1_3_4" id="__nav_1_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -545,8 +568,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_3_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_5">
             <span class="md-nav__icon md-icon"></span>
             其他设备
           </label>
@@ -1829,15 +1852,14 @@
   <h1>私家云二代</h1>
 
 <div><h3 id="_1">硬件说明</h3>
-<p>这个盒子名称很多，私家云二代、比特米盒、CumeBox2。配置如下：</p>
-<p><a class="glightbox" href="../img/c9ab7f618a59539cf998cf00a5f8ee26.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="私家云二代配置" src="../img/c9ab7f618a59539cf998cf00a5f8ee26.png"></a></p>
-<p>相比玩客云，CPU 为 arm64 架构，多了一个 USB 口、两个 SATA 接口和板载双频 WIFI 。</p>
+<p>这个盒子名称很多，私家云二代、比特米盒子、CumeBox2。</p>
+<p>配置：晶晨 S905X CPU ，1G + 8G，百兆网口，2个 USB 2.0，1个 OTG 2.0，2个 SATA 3.0，板载双频 WIFI 及蓝牙，TF 卡槽和 HDMI 接口。</p>
 <p>首先刷机，大致流程：</p>
 <ul>
 <li>短接主板触点使用 Amlogic USB Burning Tool 烧录工具给盒子线刷一个 android tv6.0 固件</li>
 <li>通电开机进入 android tv，安装 apk 切换到外部（U 盘/TF 卡）引导</li>
 <li>重启开机后进入U 盘/TF 卡上的 armbian 系统</li>
-<li>用 dd 命令把 khadas-vim1 的固件 img 写入 emmc </li>
+<li>用 dd 命令把 khadas-vim1 或者 Armbian_21.08.1_Ubuntu_CumeBox2_5.10.602 固件 img 写入 emmc </li>
 </ul>
 <p>刷机详细过程可参考：<a href="https://ruohai.wang/202404/cumebox2-install-armbian/">私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)</a></p>
 <h3 id="docker">Docker 部署</h3>
@@ -1890,6 +1912,12 @@
 <p><a class="glightbox" href="../img/image-20240926221132648.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926221132648" src="../img/image-20240926221132648.png"></a></p>
 </details>
 <h3 id="_3">使用说明</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>部分低功耗设备在未接通电源时可能通过 USB 线从私家云二代 OTG 口取电并启动至异常状态，再接通电源也无法启动。要解决此问题，您可以剥开 USB 线剪断红色5V细电线。</p>
+</div>
+<p><strong>SSH</strong></p>
+<p>Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。</p>
 <p><strong>硬件连接</strong></p>
 <p><a class="glightbox" href="../img/image-20240926220219805.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220219805" src="../img/image-20240926220219805.png"></a></p>
 <p><strong>OLED 显示屏</strong></p>
@@ -1931,7 +1959,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月13日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月26日</span>
   </span>
 
     
@@ -1995,13 +2023,13 @@
         
         
           
-          <a href="../s905l3a_install/" class="md-footer__link md-footer__link--next" aria-label="下一页: s905l3a 盒子">
+          <a href="../orangepizero_install/" class="md-footer__link md-footer__link--next" aria-label="下一页: 香橙派 zero">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                s905l3a 盒子
+                香橙派 zero
               </div>
             </div>
             <div class="md-footer__button md-icon">
