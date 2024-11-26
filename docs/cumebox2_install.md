@@ -1,18 +1,15 @@
 ### 硬件说明
 
-这个盒子名称很多，私家云二代、比特米盒、CumeBox2。配置如下：
+这个盒子名称很多，私家云二代、比特米盒子、CumeBox2。
 
-![私家云二代配置](img/c9ab7f618a59539cf998cf00a5f8ee26.png)
-
-相比玩客云，CPU 为 arm64 架构，多了一个 USB 口、两个 SATA 接口和板载双频 WIFI 。
-
+配置：晶晨 S905X CPU ，1G + 8G，百兆网口，2个 USB 2.0，1个 OTG 2.0，2个 SATA 3.0，板载双频 WIFI 及蓝牙，TF 卡槽和 HDMI 接口。
 
 首先刷机，大致流程：
 
 - 短接主板触点使用 Amlogic USB Burning Tool 烧录工具给盒子线刷一个 android tv6.0 固件
 - 通电开机进入 android tv，安装 apk 切换到外部（U 盘/TF 卡）引导
 - 重启开机后进入U 盘/TF 卡上的 armbian 系统
-- 用 dd 命令把 khadas-vim1 的固件 img 写入 emmc 
+- 用 dd 命令把 khadas-vim1 或者 Armbian_21.08.1_Ubuntu_CumeBox2_5.10.602 固件 img 写入 emmc 
 
 刷机详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
 
@@ -59,6 +56,13 @@ docker update --restart=always kvmd
     ![image-20240926221132648](./img/image-20240926221132648.png)
 
 ### 使用说明
+
+!!! tip
+    部分低功耗设备在未接通电源时可能通过 USB 线从私家云二代 OTG 口取电并启动至异常状态，再接通电源也无法启动。要解决此问题，您可以剥开 USB 线剪断红色5V细电线。
+
+**SSH**
+
+Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。
 
 **硬件连接**
 

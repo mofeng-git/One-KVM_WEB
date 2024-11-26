@@ -74,6 +74,7 @@ nav:
         - "玩客云": onecloud_install.md
         #- "X86 主机安装": x86_install.md
         - "私家云二代": cumebox2_install.md
+        - "香橙派 zero": orangepizero_install.md
         - 其他设备:
           - "s905l3a 盒子": s905l3a_install.md
           - "虚拟机部署": virtualmachine_install.md
