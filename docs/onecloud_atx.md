@@ -1,7 +1,7 @@
 ### 玩客云 GPIO 引脚介绍
-玩客云 WIFI 焊盘计数规则，从左下角开始逆时针增加。图片转载自恩山无线论坛 tage。
+玩客云 WIFI 焊盘计数规则，从左下角开始逆时针增加。
 
-![WIFI 焊盘计数](img/image-20241112113.png)
+![WIFI 焊盘](./img/oneclou_gpio_list.png)
 
 引脚编号对照关系如下表。
 
@@ -16,14 +16,15 @@ GPIO-436 默认in 1 可用 连接焊盘26脚
 GPIO-437 默认in 1 可用 连接焊盘17脚
 GPIO-438 默认in 1 可用 连接焊盘16脚
 GPIO-440 默认in 1 可用 连接焊盘12脚
-GPIO-441 默认in 1 可用 连接焊盘43脚 TXD
-GPIO-442 默认in 1 可用 连接焊盘42脚 RXD
-GPIO-443 默认in 1 可用 连接焊盘41脚 RTX_N
-GPIO-444 默认in 1 可用 连接焊盘44脚 CTS_N
+GPIO-441 默认in 1 可用 连接焊盘43脚
+GPIO-442 默认in 1 可用 连接焊盘42脚
+GPIO-444 默认in 1 可用 连接焊盘44脚
 GPIO-446 默认in 1 可用 连接焊盘13脚
 ```
 
-实例：以26号焊盘为例，由物理焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521，再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。
+以26号焊盘为例：
+1. 由物理 WIFI 空焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521。
+2. 再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。
 
 ### GPIO直连
 
