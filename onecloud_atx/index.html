@@ -1834,8 +1834,8 @@
   <h1>玩客云 GPIO</h1>
 
 <div><h3 id="gpio">玩客云 GPIO 引脚介绍</h3>
-<p>玩客云 WIFI 焊盘计数规则，从左下角开始逆时针增加。图片转载自恩山无线论坛 tage。</p>
-<p><a class="glightbox" href="../img/image-20241112113.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="WIFI 焊盘计数" src="../img/image-20241112113.png"></a></p>
+<p>玩客云 WIFI 焊盘计数规则，从左下角开始逆时针增加。</p>
+<p><a class="glightbox" href="../img/oneclou_gpio_list.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="WIFI 焊盘" src="../img/oneclou_gpio_list.png"></a></p>
 <p>引脚编号对照关系如下表。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -1850,8 +1850,7 @@
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
 <span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>GPIO-430 默认in 1 可用 连接焊盘19脚
+<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>GPIO-430 默认in 1 可用 连接焊盘19脚
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>GPIO-431 默认in 1 可用 连接焊盘14脚
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>GPIO-432 默认in 1 可用 连接焊盘15脚
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>GPIO-433 默认in 1 可用 连接焊盘27脚
@@ -1861,13 +1860,14 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>GPIO-437 默认in 1 可用 连接焊盘17脚
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>GPIO-438 默认in 1 可用 连接焊盘16脚
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>GPIO-440 默认in 1 可用 连接焊盘12脚
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>GPIO-441 默认in 1 可用 连接焊盘43脚 TXD
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>GPIO-442 默认in 1 可用 连接焊盘42脚 RXD
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>GPIO-443 默认in 1 可用 连接焊盘41脚 RTX_N
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>GPIO-444 默认in 1 可用 连接焊盘44脚 CTS_N
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>GPIO-446 默认in 1 可用 连接焊盘13脚
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>GPIO-441 默认in 1 可用 连接焊盘43脚
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>GPIO-442 默认in 1 可用 连接焊盘42脚
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>GPIO-444 默认in 1 可用 连接焊盘44脚
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>GPIO-446 默认in 1 可用 连接焊盘13脚
 </code></pre></div></td></tr></table></div>
-<p>实例：以26号焊盘为例，由物理焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521，再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。</p>
+<p>以26号焊盘为例：
+1. 由物理 WIFI 空焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521。
+2. 再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。</p>
 <h3 id="gpio_1">GPIO直连</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1907,7 +1907,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月11日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月27日</span>
   </span>
 
     
