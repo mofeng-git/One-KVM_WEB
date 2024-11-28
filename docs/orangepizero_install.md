@@ -14,9 +14,13 @@ Orange Pi Zero 采用了全志四核A7高性能处理器Allwinner H2/H3+，集�
 
 进入系统后执行下列命令即可完成 One-KVM Docker 版的安装。
 
+!!! warning 提醒
+    不建议 `apt upgrade` 升级内核和设备树，可能会出现系统异常，OTG 功能无法使用。
+
 ```
 #清除 g_serial 内核模块自动挂载
 echo "" > /etc/modules-load.d/modules.conf
+reboot
 
 #Docker 部署 One-KVM
 apt update

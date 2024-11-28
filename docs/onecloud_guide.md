@@ -15,7 +15,7 @@
 
 被控机端，将HDMI视频线和USB双公线接入对应接口即可。
 
-!!! warning
+!!! warning 提醒
     玩客云USB设备插反会导致PiKVM所有远控功能无法使用。
 
 !!! tip
