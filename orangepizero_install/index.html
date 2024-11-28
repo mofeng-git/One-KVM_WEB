@@ -336,6 +336,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -519,59 +527,6 @@
   
   
   
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_1_3_5" id="__nav_1_3_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    其他设备
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_3_5">
-            <span class="md-nav__icon md-icon"></span>
-            其他设备
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../s905l3a_install/" class="md-nav__link">
         
@@ -666,35 +621,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../onecloud_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    玩客云套装（停止维护）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1841,6 +1767,10 @@
 <p>这里使用 <code>Armbian_23.02.0-trunk_Orangepizero_jammy_current_5.15.85_msd-patched.img</code> 作为基础系统，并使用 Docker 部署 On-KVM。Armbian 镜像下载地址：<a href="https://github.com/jacobbar/fruity-pikvm/releases/download/os-images/Armbian_23.02.0-trunk_Orangepizero_jammy_current_5.15.85_msd-patched.zip">Armbian_23.02.0-trunk_Orangepizero_jammy_current_5.15.85_msd-patched.zip</a></p>
 <p><a class="glightbox" href="../img/image-20241126135200887.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241126135200887" src="../img/image-20241126135200887.png"></a></p>
 <p>进入系统后执行下列命令即可完成 One-KVM Docker 版的安装。</p>
+<div class="admonition warning 提醒">
+<p class="admonition-title">Warning</p>
+<p>不建议 <code>apt upgrade</code> 升级内核和设备树，可能会出现系统异常，OTG 功能无法使用。</p>
+</div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1853,19 +1783,21 @@
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>#清除 g_serial 内核模块自动挂载
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>#清除 g_serial 内核模块自动挂载
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>echo "" &gt; /etc/modules-load.d/modules.conf
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>#Docker 部署 One-KVM
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>apt update
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>apt install docker.io
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>docker run --name kvmd -itd --privileged=true \
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    -v /dev:/dev -v /sys/kernel/config:/sys/kernel/config \
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    -v /lib/modules:/lib/modules:ro -e OTG=1 \
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    silentwind0/kvmd
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>#确认容器正常运行后可添加自动重启
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>docker update --restart=always kvmd
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>reboot
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>#Docker 部署 One-KVM
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>apt update
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>apt install docker.io
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>docker run --name kvmd -itd --privileged=true \
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    -v /dev:/dev -v /sys/kernel/config:/sys/kernel/config \
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    -v /lib/modules:/lib/modules:ro -e OTG=1 \
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    silentwind0/kvmd
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>#确认容器正常运行后可添加自动重启
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>docker update --restart=always kvmd
 </code></pre></div></td></tr></table></div>
 <p>运行效果如下。</p>
 <p><a class="glightbox" href="../img/image-20241126144130798.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241126144130798" src="../img/image-20241126144130798.png"></a></p>
@@ -1902,7 +1834,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月28日</span>
   </span>
 
     
