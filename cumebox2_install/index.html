@@ -251,6 +251,8 @@
       
         
       
+        
+      
     
     
       
@@ -319,6 +321,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker 部署（推荐）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -353,47 +376,26 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    软件安装
+    整合包安装
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_4">
             <span class="md-nav__icon md-icon"></span>
-            软件安装
+            整合包安装
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../docker_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker 部署（推荐）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -474,18 +476,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker 部署
+      整合包部署
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
-      整合包部署
+      Docker 部署
     </span>
   </a>
   
@@ -605,6 +607,27 @@
   
   <span class="md-ellipsis">
     我家云盒子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../octopus-flanet_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    章鱼星球
   </span>
   
 
@@ -1731,18 +1754,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker 部署
+      整合包部署
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#docker" class="md-nav__link">
     <span class="md-ellipsis">
-      整合包部署
+      Docker 部署
     </span>
   </a>
   
@@ -1788,6 +1811,13 @@
 <li>用 dd 命令把 khadas-vim1 或者 Armbian_21.08.1_Ubuntu_CumeBox2_5.10.602 固件 img 写入 emmc </li>
 </ul>
 <p>刷机详细过程可参考：<a href="https://ruohai.wang/202404/cumebox2-install-armbian/">私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)</a></p>
+<h3 id="_2">整合包部署</h3>
+<p>整合包底包使用 khadas-vim1 固件修改 DTB 而来，进行了特别适配，网口、OLED 小屏幕、WIFI 、OTG 都正常可用。</p>
+<p>将 Armbian_5.77_Aml-s905_Ubuntu_bionic_default_5.0.2_20190401.img 固件写入 U 盘，将私家云二代启动，然后使用 <code>scp</code> 命令拷贝 One-KVM 整合包到 U 盘，最后用 dd 命令把 One-KVM IMG 文件写入 EMMC 即可开始使用。</p>
+<details class="example">
+<summary>固件写入示例</summary>
+<p><a class="glightbox" href="../img/image-20240926221132648.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926221132648" src="../img/image-20240926221132648.png"></a></p>
+</details>
 <h3 id="docker">Docker 部署</h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
@@ -1830,13 +1860,6 @@
 <a id="__codelineno-1-12" name="__codelineno-1-12"></a>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
 </code></pre></div></td></tr></table></div>
 <p><a class="glightbox" href="../img/image-20240926220902937.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220902937" src="../img/image-20240926220902937.png"></a></p>
-<h3 id="_2">整合包部署</h3>
-<p>整合包底包使用 khadas-vim1 固件修改 dtb 而来，进行了特别适配，网口、oled 小屏幕、WIFI 、OTG 都正常可用。</p>
-<p>用 dd 命令把 One-KVM 的固件 img 写入 emmc 即可开始使用。</p>
-<details class="example">
-<summary>固件写入示例</summary>
-<p><a class="glightbox" href="../img/image-20240926221132648.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926221132648" src="../img/image-20240926221132648.png"></a></p>
-</details>
 <h3 id="_3">使用说明</h3>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1885,7 +1908,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月26日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月2日</span>
   </span>
 
     

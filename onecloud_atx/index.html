@@ -249,6 +249,8 @@
       
         
       
+        
+      
     
     
       
@@ -321,6 +323,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../docker_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker 部署（推荐）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -353,47 +376,26 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
         
           
-          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    软件安装
+    整合包安装
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
             <span class="md-nav__icon md-icon"></span>
-            软件安装
+            整合包安装
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../docker_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker 部署（推荐）
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -533,6 +535,27 @@
   
   <span class="md-ellipsis">
     我家云盒子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../octopus-flanet_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    章鱼星球
   </span>
   
 
@@ -1791,9 +1814,15 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a>GPIO-444 默认in 1 可用 连接焊盘44脚
 <a id="__codelineno-0-14" name="__codelineno-0-14"></a>GPIO-446 默认in 1 可用 连接焊盘13脚
 </code></pre></div></td></tr></table></div>
-<p>以26号焊盘为例：
-1. 由物理 WIFI 空焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521。
-2. 再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。</p>
+<p>以26号焊盘为例：</p>
+<ol>
+<li>
+<p>由物理 WIFI 空焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521。</p>
+</li>
+<li>
+<p>再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。</p>
+</li>
+</ol>
 <h3 id="gpio_1">GPIO直连</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1833,7 +1862,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月2日</span>
   </span>
 
     
