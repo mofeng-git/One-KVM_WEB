@@ -1817,10 +1817,17 @@
 <p>以26号焊盘为例：</p>
 <ol>
 <li>
-<p>由物理 WIFI 空焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521。</p>
+<p>由物理 WIFI 空焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-436，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521。</p>
 </li>
 <li>
 <p>再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。</p>
+</li>
+<li>
+<p>得到脚本文件所需内容，将内容替换写入 <code>/etc/kvmd/custom_atx/gpio.sh</code>。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>gpioset<span class="w"> </span>-m<span class="w"> </span><span class="nb">time</span><span class="w"> </span>-s<span class="w"> </span><span class="m">1</span><span class="w"> </span>gpiochip0<span class="w"> </span><span class="nv">7</span><span class="o">=</span><span class="m">0</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>gpioset<span class="w"> </span>gpiochip0<span class="w"> </span><span class="nv">7</span><span class="o">=</span><span class="m">1</span>
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="gpio_1">GPIO直连</h3>
