@@ -13,6 +13,15 @@
 
 刷机详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
 
+### 整合包部署
+
+整合包底包使用 khadas-vim1 固件修改 DTB 而来，进行了特别适配，网口、OLED 小屏幕、WIFI 、OTG 都正常可用。
+
+将 Armbian_5.77_Aml-s905_Ubuntu_bionic_default_5.0.2_20190401.img 固件写入 U 盘，将私家云二代启动，然后使用 `scp` 命令拷贝 One-KVM 整合包到 U 盘，最后用 dd 命令把 One-KVM IMG 文件写入 EMMC 即可开始使用。
+
+??? example "固件写入示例"
+
+    ![image-20240926221132648](./img/image-20240926221132648.png)
 
 ### Docker 部署
 
@@ -43,17 +52,6 @@ docker update --restart=always kvmd
 ```
 
 ![image-20240926220902937](./img/image-20240926220902937.png)
-
-
-### 整合包部署
-
-整合包底包使用 khadas-vim1 固件修改 dtb 而来，进行了特别适配，网口、oled 小屏幕、WIFI 、OTG 都正常可用。
-
-用 dd 命令把 One-KVM 的固件 img 写入 emmc 即可开始使用。
-
-??? example "固件写入示例"
-
-    ![image-20240926221132648](./img/image-20240926221132648.png)
 
 ### 使用说明
 

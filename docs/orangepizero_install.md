@@ -4,6 +4,10 @@ Orange Pi Zero 采用了全志四核A7高性能处理器Allwinner H2/H3+，集�
 
 说明：香橙派 zero 供电和 OTG 数据传输为同一个 microusb 接口，推荐使用数据供电分离一分二的 USB 线材。
 
+### 整合包部署
+
+待更新。
+
 ### Docker 部署
 
 第一步是把下载好的 Armbian 镜像写入 SD 卡。

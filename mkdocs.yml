@@ -69,8 +69,8 @@ nav:
     - "开始":
       - "介绍": index.md
       - "写在前面": prepare.md
-      - "软件安装":
-        - "Docker 部署（推荐）": docker_install.md
+      - "Docker 部署（推荐）": docker_install.md
+      - "整合包安装":
         - "玩客云": onecloud_install.md
         #- "X86 主机安装": x86_install.md
         - "私家云二代": cumebox2_install.md
@@ -79,6 +79,7 @@ nav:
         - "虚拟机部署": virtualmachine_install.md
         - "群晖 NAS": synology_install.md
         - "我家云盒子": chainedbox_install.md
+        - "章鱼星球": octopus-flanet_install.md
         - "龙芯久久派": 2k0300_install.md
         #- "玩客云套装（停止维护）": onecloud_guide.md
       #- "身份认证": auth.md
