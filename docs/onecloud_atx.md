@@ -24,9 +24,16 @@ GPIO-446 默认in 1 可用 连接焊盘13脚
 
 以26号焊盘为例：
 
-1. 由物理 WIFI 空焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-430，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521。
+1. 由物理 WIFI 空焊盘位置26空位，根据焊盘表格得到 sysfs gpio 编号 gpio-436，如果是6.x 高 Linux 内核系统需要加上91的偏移量为 gpio-521。
 
 2. 再根据gpio软件标识名称 "J2 Header Pin 16" 找到 gpioinfo 编号 gpiochip0 line7。
+
+3. 得到脚本文件所需内容，将内容替换写入 `/etc/kvmd/custom_atx/gpio.sh`。
+
+    ```bash
+    gpioset -m time -s 1 gpiochip0 7=0
+    gpioset gpiochip0 7=1
+    ```
 
 ### GPIO直连
 
