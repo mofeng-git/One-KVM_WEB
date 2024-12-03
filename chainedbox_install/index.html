@@ -589,6 +589,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用说明
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1744,6 +1753,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用说明
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1765,10 +1783,33 @@
   <h1>我家云盒子</h1>
 
 <div><h3 id="_1">硬件介绍</h3>
-<p>我家云使用了 RK3328 CPU，1GB DDR3 的内存和 8GB 的 ROM 储存空间，以及，内置了 3.5 寸 SATA 硬盘位，配备了一个千兆网络接口，一个 USB3.0 接口和一个 USB2.0 接口。机身大小为 187<em>57</em>157mm。</p>
+<p>我家云使用了 RK3328 CPU，1GB DDR3 的内存和 8GB 的 ROM 储存空间，以及，内置了 3.5 寸 SATA 硬盘位，配备了一个千兆网络接口，一个 USB3.0 接口和一个 USB2.0 接口，机身大小为 187<em>57</em>157mm。</p>
 <h3 id="_2">整合包部署</h3>
-<p>使用双公头 USB 数据线连接电脑短接我家云主板 MASKROM 触点进行线刷，在瑞芯微开发工具软件界面选择作者提供的整合包刷入即可。</p>
-<p><a class="glightbox" href="../img/image-202411182144.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="整合包线刷" src="../img/image-202411182144.png"></a></p></div>
+<p>大致流程：</p>
+<ul>
+<li>
+<p>电脑安装好驱动，打开瑞芯微开发工具软件界面，选择 One-KVM 整合包文件。</p>
+</li>
+<li>
+<p>我家云拆机，USB.20 接口连接电脑，然后短接我家云主板 MASKROM 触点并通电使其进入 MASKROM 模式</p>
+</li>
+<li>
+<p>待瑞芯微开发工具软件界面提示找到 MASKROM 设备后点击执行刷入作者提供的整合包即可。刷完之后重新给我家云通电就能启动 One-KVM 系统。</p>
+</li>
+</ul>
+<p>我家云主板 MASKROM 触点位置如下图。</p>
+<p><a class="glightbox" href="../img/freecompress-01b88f3974c8f447d7c098ccaa292a32.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="我家云主板 MASKROM 触点位置" src="../img/freecompress-01b88f3974c8f447d7c098ccaa292a32.jpeg"></a></p>
+<p><a class="glightbox" href="../img/image-202411182144.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="整合包线刷" src="../img/image-202411182144.png"></a></p>
+<h3 id="_3">使用说明</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>部分低功耗设备在未接通电源时可能通过 USB 线从我家云 OTG 口取电并启动至异常状态，再接通电源也无法启动。要解决此问题，您可以剥开 USB 线剪断红色5V细电线。</p>
+</div>
+<p><strong>SSH</strong></p>
+<p>Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。</p>
+<p><strong>硬件连接</strong></p>
+<p>我家云 USB2.0 口为 OTG 口接 USB 双公线，USB3.0 口为普通 USB 口接 USB HDMI 采集卡。</p>
+<p><a class="glightbox" href="../img/freecompress-1733221690264.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="硬件连接" src="../img/freecompress-1733221690264.png"></a></p></div>
 
 
 
@@ -1791,7 +1832,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年11月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月3日</span>
   </span>
 
     
