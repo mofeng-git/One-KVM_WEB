@@ -11,6 +11,10 @@
 - 重启开机后进入U 盘/TF 卡上的 armbian 系统
 - 用 dd 命令把 khadas-vim1 或者 Armbian_21.08.1_Ubuntu_CumeBox2_5.10.602 固件 img 写入 emmc 
 
+私家云二代主板短接触点如下图。
+
+![私家云二代主板短接触点](img/IMG_20241203_195852.jpg)
+
 刷机详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
 
 ### 整合包部署
