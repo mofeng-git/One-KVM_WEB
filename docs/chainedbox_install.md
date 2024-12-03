@@ -32,3 +32,7 @@ Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。
 我家云 USB2.0 口为 OTG 口接 USB 双公线，USB3.0 口为普通 USB 口接 USB HDMI 采集卡。
 
 ![硬件连接](img/freecompress-1733221690264.png)
+
+**软件截图**
+
+![我家云软件截图](img/PixPin_2024-12-03_14-06-21.png)
