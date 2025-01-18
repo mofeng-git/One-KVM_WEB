@@ -1,7 +1,7 @@
 ### 硬件说明
 
-
-s905l3a One-KVM 整合包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试。
+!!! warning 提醒
+    此 One-KVM 整合包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试。其他 s905l3a CPU 盒子可能无法使用，若无法使用可使用下面的 Docker 部署方法。
 
 `armbian-install` 安装可选型号：
 ```
@@ -42,14 +42,14 @@ ID    SOC        MODEL                               DTB
 - 在 Docker 中部署 kvmd 镜像
 ```bash
 #运行 kvmd 容器
-sudo docker run -name kvmd -itd --privileged=true
+sudo docker run --name kvmd -itd --privileged=true
     -v /lib/modules:/lib/modules:ro -v /dev:/dev
     -v /sys/kernel/config:/sys/kernel/config -e OTG=1 -e VIDEONUM=1 \
     -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
     registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd
 
 #使能 OTG device 模式
-sudo echo device > /sys/class/usb role/ffe09000.usb-role-switch/role
+sudo echo device > /sys/class/usb_role/ffe09000.usb-role-switch/role
 #将 OTG 端口使能命令写入开机启动脚本 /etc/rc.local
 sudo nano /etc/rc.local
 #添加脚本执行权限
