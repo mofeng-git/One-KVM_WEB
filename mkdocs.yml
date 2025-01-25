@@ -68,66 +68,66 @@ plugins:
 nav:
     - "开始":
       - "介绍": index.md
-      - "写在前面": prepare.md
-      - "Docker 部署": docker_install.md
+      - "写在前面": start_install/prepare.md
+      - "Docker 部署": start_install/docker_install.md
       - "已适配硬件安装":
-        - "玩客云": onecloud_install.md
+        - "玩客云": start_install/onecloud_install.md
         #- "X86 主机安装": x86_install.md
-        - "私家云二代": cumebox2_install.md
-        - "香橙派 Zero": orangepizero_install.md
-        - "S905l3a 盒子": s905l3a_install.md
-        - "虚拟机部署": virtualmachine_install.md
-        - "群晖 NAS": synology_install.md
-        - "我家云盒子": chainedbox_install.md
-        - "章鱼星球": octopus-flanet_install.md
-        - "龙芯久久派": 2k0300_install.md
-        #- "玩客云套装（停止维护）": onecloud_guide.md
-      #- "身份认证": auth.md
-      - "常见问题": faq.md
+        - "私家云二代": start_install/cumebox2_install.md
+        - "香橙派 Zero": start_install/orangepizero_install.md
+        - "S905l3a 盒子": start_install/s905l3a_install.md
+        - "虚拟机部署": start_install/virtualmachine_install.md
+        - "群晖 NAS": start_install/synology_install.md
+        - "我家云盒子": start_install/chainedbox_install.md
+        - "章鱼星球": start_install/octopus-flanet_install.md
+        - "龙芯久久派": start_install/2k0300_install.md
+        #- "玩客云套装（停止维护）": start_install/onecloud_guide.md
+      - "常见问题": start_install/faq.md
       - "感谢": thanks.md
 
     - "网络":
       - "互联网访问":
-        - "端口转发": port_forwarding.md
-        - "Frp 端口映射": frp.md
-        - "Tailscale 异地组网": tailscale.md
-        - "Cloudflared 隧道": cloudflared.md
-      #- "WIFI 连接": wifi.md
-      - "SSL 加密连接": ssl.md
+        - "端口转发": network/port_forwarding.md
+        - "Frp 端口映射": network/frp.md
+        - "Tailscale 异地组网": network/tailscale.md
+        - "Cloudflared 隧道": network/cloudflared.md
+      #- "WIFI 连接": network/wifi.md
+      - "SSL 加密连接": network/ssl.md
 
     - "音视频":
-      - "H.264 / WebRTC": h264.md
-      - "H.264 音频": audio.md
-      - "视频录制": video_record.md
+      - "H.264 / WebRTC": audio_and_video/h264.md
+      - "H.264 音频": audio_and_video/audio.md
+      - "视频录制": audio_and_video/video_record.md
 
     - "外围设备":
       - "键盘和鼠标":
-        - "鼠标模式": mouse.md
-        - "鼠标抖动器": mouse_jiggler.md
-        - "CH9329 HID": ch9329_hid.md
-        # "蓝牙 HID": bluetooth_hid.md
-      - "大容量存储驱动器": msd.md
-      - "USB 以太网": usb_ethernet.md
-      - "USB 串口": usb_serial.md
-      - "动态 USB 配置": usb_dynamic.md
+        - "鼠标模式": attached_device/mouse.md
+        - "鼠标抖动器": attached_device/mouse_jiggler.md
+        - "CH9329 HID": attached_device/ch9329_hid.md
+        # "蓝牙 HID": attached_device/bluetooth_hid.md
+      - "大容量存储驱动器": attached_device/msd.md
+      - "USB 以太网": attached_device/usb_ethernet.md
+      - "USB 串口": attached_device/usb_serial.md
+      - "动态 USB 配置": attached_device/usb_dynamic.md
       - "ATX 电源控制":
-        - "玩客云 GPIO": onecloud_atx.md
-        #- "GPIO 通用配置": gpio.md
-        - "USB 继电器": usb_relay.md
-        #- "USB 转 GPIO 配置": usb2gpio.md
+        - "玩客云 GPIO": attached_device/onecloud_atx.md
+        #- "GPIO 通用配置": attached_device/gpio.md
+        - "USB 继电器": attached_device/usb_relay.md
+        #- "USB 转 GPIO 配置": attached_device/usb2gpio.md
 
     - "高级用法":
-      #- "启动时配置": on_start_config.md
-      - "VNC 连接": vnc.md
-      - "KVM 一控多": kvm_switch.md
-      - "WOL 网络唤醒": wol.md
-      - "Webterm 网页终端": webterm.md
-      - "2FA 双重身份验证": 2fa.md
-      #- "IPMI 和 Redfish 集成": ipmi.md
-      #- "HDMI 环出": loop_out.md
+      #- "启动时配置": advanced_using/on_start_config.md
+      - "VNC 连接": advanced_using/vnc.md
+      - "KVM 一控多": advanced_using/kvm_switch.md
+      - "WOL 网络唤醒": advanced_using/wol.md
+      - "Webterm 网页终端": advanced_using/webterm.md
+      #- "身份认证": auth.md
+      - "2FA 双重身份验证": advanced_using/2fa.md
+      #- "IPMI 和 Redfish 集成": advanced_using/ipmi.md
+      #- "HDMI 环出": advanced_using/loop_out.md
 
     - "开发":
-      - "HTTP API": api.md
-      - "构建 One-KVM 系统": building_os.md
-      - "周边套件": parts_library.md
-      - "知识库": develop.md
+      - "HTTP API": development/api.md
+      - "构建 One-KVM 系统": development/building_os.md
+      - "周边套件": development/parts_library.md
+      - "知识库": development/develop.md
