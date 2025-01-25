@@ -1,42 +1,59 @@
-### 基本配置
+### USB 串口功能
 
-此功能可用于从被控机到 PiKVM 的终端访问，或用于需要串行连接的其他目的。
+USB 串口功能允许被控主机通过虚拟串口访问 One-KVM，或用于其他需要串行连接的场景。
 
-1. 编辑 `/etc/kvmd/override.yaml` 添加如下串口配置。
-   ```yaml
-   otg:
-       devices:
-           serial:
-               enabled: true
-   ```
+!!! info "USB 设备限制说明"
+    每个模拟的 USB 设备都会消耗有限的硬件资源（称为端点）。
 
-2. 运行以下命令：
-   ```bash
-   sudo echo ttyGS0 >> /etc/securetty
-   ```
+#### 配置步骤
 
-3. 创建目录 `/etc/systemd/system/getty@ttyGS0.service.d` ，然后在此目录中编辑文件 `override.conf` ，将其下面的内容复制到此文件。
-   ```bash
-   sudo mkdir -p /etc/systemd/system/getty@ttyGS0.service.d
-   sudo nano /etc/systemd/system/getty@ttyGS0.service.d/override.conf
-   ```
-   ```
-   [Service]
-   TTYReset=no
-   TTYVHangup=no
-   TTYVTDisallocate=no
-   ```
+1. 编辑 `/etc/kvmd/override.yaml` 添加串口配置：
+    ```yaml
+    otg:
+        devices:
+            serial:
+                enabled: true
+    ```
 
-4. 运行以下命令：
-   ```bash
-   sudo systemctl enable getty@ttyGS0.service
-   sudo reboot
-   ```
+2. 添加串口终端设备：
+    ```bash
+    sudo echo ttyGS0 >> /etc/securetty
+    ```
 
-5. 重新启动 PiKVM 后，就可以访问 USB 所连接的服务器上的虚拟串行端口，可以使用 screen、putty 或类似的程序从服务器访问 PiKVM ，该端口设备名可能为 `/dev/ttyAMA0` 或 `/dev/ttyACM0`。
-   ```bash
-   #串口连接示例
-   sudo screen /dev/ttyACM0 115200
-   ```
-   ![PixPin_2024-06-30_22-29-20](../img/PixPin_2024-06-30_22-29-20.png)
+3. 配置串口服务：
+    ```bash
+    # 创建配置目录
+    sudo mkdir -p /etc/systemd/system/getty@ttyGS0.service.d
+
+    # 编辑配置文件
+    sudo nano /etc/systemd/system/getty@ttyGS0.service.d/override.conf
+    ```
+
+    添加以下内容：
+    ```ini
+    [Service]
+    TTYReset=no
+    TTYVHangup=no
+    TTYVTDisallocate=no
+    ```
+
+4. 启用服务并重启：
+    ```bash
+    sudo systemctl enable getty@ttyGS0.service
+    sudo reboot
+    ```
+
+#### 使用说明
+
+重启后，被控主机可以通过虚拟串口访问 One-KVM。串口设备名称可能为：
+
+- `/dev/ttyAMA0`
+- `/dev/ttyACM0`
+
+使用示例：
+```bash
+sudo screen /dev/ttyACM0 115200
+```
+
+![串口连接示例](../img/PixPin_2024-06-30_22-29-20.png)
 

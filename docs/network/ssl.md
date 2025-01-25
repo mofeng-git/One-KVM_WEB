@@ -1,17 +1,27 @@
 ### 更换 SSL 证书
 
-SSL 证书密钥放置在 /etc/kvmd/nginx/ssl/ 目录下，默认为 One-KVM 安装时生成的自签证书，不受浏览器信任。如果需要使用自己的证书，请替换 /etc/kvmd/nginx/ssl/中的密钥和证书并重新启动kvmd-nginx服务。
+!!! note "One-KVM 默认使用自签名证书"
+    One-KVM 默认使用自签名证书，存放在 `/etc/kvmd/nginx/ssl/` 目录下。由于是自签名证书，浏览器会提示不安全。您可以替换为受信任的 SSL 证书来解决这个问题。
 
-这是安装 ZeroSSL SSL证书的简单示例。
+以下以 ZeroSSL 免费证书为例，演示如何更换 SSL 证书：
 
-首先添加域名或 IP 并完成域名或  IP 验证，然后下载 NGINX 格式的 SSL 证书。
+1. 在 ZeroSSL 控制台添加您的域名或 IP，完成域名验证
+2. 下载 NGINX 格式的证书文件包
 
-![PixPin_2024-06-30_17-10-48](../img/PixPin_2024-06-30_17-10-48.png)
+![ZeroSSL下载证书](../img/PixPin_2024-06-30_17-10-48.png)
 
-然后将下载的 SSL 证书和私钥重命名为”server“+后缀名，上传至 One-KVM 主机 /etc/kvmd/nginx/ssl/ 目录下，最后重启 kvmd-nginx 服务使新的 SSL 证书生效。
+3. 将下载的证书文件重命名并上传：
 
+    - 将证书文件重命名为 `server.crt`
+    - 将私钥文件重命名为 `server.key`
+    - 上传至 One-KVM 的 `/etc/kvmd/nginx/ssl/` 目录
+
+4. 重启 kvmd-nginx 服务使新证书生效：
 ```bash
 sudo systemctl restart kvmd-nginx
 ```
 
-![PixPin_2024-06-30_17-14-59](../img/PixPin_2024-06-30_17-14-59.png)
+![更换证书成功](../img/PixPin_2024-06-30_17-14-59.png)
+
+!!! tip "其他证书提供商"
+    如果您使用其他证书提供商，操作步骤类似，主要确保证书和私钥文件重命名正确并放置在正确的目录即可。

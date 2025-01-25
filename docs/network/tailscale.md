@@ -1,16 +1,33 @@
-> Tailscale 是一种虚拟专用网服务，可让您在世界任何地方都能安全、轻松地访问您拥有的设备和应用程序。它使用开源的 WireGuard 协议实现加密的点对点连接，这意味着只有在你的专用网络上的设备才能相互通信。
+### Tailscale 异地组网
 
-### Tailscale 客户端安装
+!!! note "什么是 Tailscale?"
+    Tailscale 是一个基于 WireGuard® 协议的零配置 VPN 网络工具。它能帮助您：
+    
+    - 在任何地方安全访问您的设备
+    - 无需复杂的网络配置
+    - 使用端到端加密保护数据安全
+    - 支持多平台（Windows、macOS、Linux、iOS、Android）
 
+#### 安装配置步骤
+
+1. 在 One-KVM 上安装 Tailscale 客户端：
 ```bash
-#Tailscale 客户端一键安装脚本
+# 下载并执行安装脚本
 curl -fsSL https://tailscale.com/install.sh | sh
-#启动 Tailscale
+
+# 启动 Tailscale 并登录
 tailscale up
 ```
 
-![PixPin_2024-06-30_17-39-00](../img/PixPin_2024-06-30_17-39-00.png)
+2. 按照终端提示的链接完成授权登录：
 
-![PixPin_2024-06-30_17-41-12](../img/PixPin_2024-06-30_17-41-12.png)
+![Tailscale授权登录](../img/PixPin_2024-06-30_17-39-00.png)
 
-可以看到 Tailscale 网页管理后台已经出现新设备了，多端互访、异地组网等更详细的内容可以参考 Tailscale 官方文档 [Docs · Tailscale Docs](https://tailscale.com/kb)。
+3. 登录成功后，可以在 Tailscale 管理后台看到新添加的设备：
+
+![Tailscale设备列表](../img/PixPin_2024-06-30_17-41-12.png)
+
+!!! tip "Tailscale 设备 IP 地址"
+    - Tailscale 默认会分配类似 `100.x.y.z` 的 IP 地址
+    - 使用该 IP 地址即可从任何地方访问您的 One-KVM
+    - 更多高级功能（如 ACL 控制、子网路由等）请参考 [Tailscale 官方文档](https://tailscale.com/kb)
