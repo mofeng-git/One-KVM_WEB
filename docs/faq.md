@@ -118,13 +118,14 @@
         echo 1 > /sys/class/leds/green/brightness
         ```
 
-1. ??? "**玩客云刷入整合包后局域网访问响应非常缓慢，延时高度达秒，如何解决？**"
+1. ??? "**玩客云刷入整合包后局域网访问响应非常缓慢，延时高达数秒，如何解决？**"
 
-        此为极少数玩客云系统适配问题，发生频率约为2%，作者测试可通过修改玩客云 dtb 网卡模式 "rgmii-id" 为 "rgmii-rxid" 的方法解决。
+        此为极少数玩客云系统适配问题，发生频率约为2%，作者测试可通过修改玩客云 dtb 网卡模式 "rgmii-id" 为 "rgmii-rxid" 的方法解决，修改后重启生效。
         ```bash 
         dtc -I dtb -O dts /boot/dtb/meson8b-onecloud.dtb -o meson8b-onecloud.dts
         nano meson8b-onecloud.dts
         dtc -I dts -O dtb meson8b-onecloud.dts -o /boot/dtb/meson8b-onecloud.dtb
+        reboot
         ```
 
         ``` hl_lines="4 5"

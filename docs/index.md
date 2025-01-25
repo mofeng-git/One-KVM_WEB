@@ -37,15 +37,20 @@ One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级�
 ![KVM 主页](./img/image.png)
 
 ### 技术支持
-BUG 反馈、使用交流和免费技术支持：
+
+**BUG 反馈、使用交流和免费技术支持**
 
 - Github Issue：[https://github.com/mofeng-git/One-KVM/issues](https://github.com/mofeng-git/One-KVM/issues)
 
 - QQ 交流群：569514148
 
-付费技术支持：
+**付费技术支持**
+
+付费技术支持包含远程调试安装、故障排查、固件定制适配、功能定制开发等服务。
 
 - QQ 私聊：3463289142
+
+- 咸鱼用户名: 默风SilentWind
 
 
 ### 赞助方式
