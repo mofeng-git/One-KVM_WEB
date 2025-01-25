@@ -12,19 +12,25 @@
         <meta name="author" content="SilentWind">
       
       
+        <link rel="canonical" href="https://one-kvm.mofeng.run/attached_device/msd/">
       
       
+        <link rel="prev" href="../ch9329_hid/">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+        <link rel="next" href="../usb_ethernet/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>One-KVM 文档</title>
+        <title>大容量存储驱动器 - One-KVM 文档</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -43,14 +49,23 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -60,6 +75,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#msd-msd" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -71,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              大容量存储驱动器
             
           </span>
         </div>
@@ -181,7 +201,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -207,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/network/port_forwarding/" class="md-tabs__link">
+        <a href="../../network/port_forwarding/" class="md-tabs__link">
           
   
     
@@ -230,7 +250,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/audio_and_video/h264/" class="md-tabs__link">
+        <a href="../../audio_and_video/h264/" class="md-tabs__link">
           
   
     
@@ -246,17 +266,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/attached_device/mouse/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../mouse/" class="md-tabs__link">
           
   
     
@@ -279,7 +303,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/advanced_using/vnc/" class="md-tabs__link">
+        <a href="../../advanced_using/vnc/" class="md-tabs__link">
           
   
     
@@ -299,7 +323,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/development/api/" class="md-tabs__link">
+        <a href="../../development/api/" class="md-tabs__link">
           
   
     
@@ -334,7 +358,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -397,7 +421,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -430,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/prepare/" class="md-nav__link">
+      <a href="../../start_install/prepare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/docker_install/" class="md-nav__link">
+      <a href="../../start_install/docker_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/onecloud_install/" class="md-nav__link">
+      <a href="../../start_install/onecloud_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/cumebox2_install/" class="md-nav__link">
+      <a href="../../start_install/cumebox2_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -574,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/orangepizero_install/" class="md-nav__link">
+      <a href="../../start_install/orangepizero_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/s905l3a_install/" class="md-nav__link">
+      <a href="../../start_install/s905l3a_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -616,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/virtualmachine_install/" class="md-nav__link">
+      <a href="../../start_install/virtualmachine_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -637,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/synology_install/" class="md-nav__link">
+      <a href="../../start_install/synology_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/chainedbox_install/" class="md-nav__link">
+      <a href="../../start_install/chainedbox_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/octopus-flanet_install/" class="md-nav__link">
+      <a href="../../start_install/octopus-flanet_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/2k0300_install/" class="md-nav__link">
+      <a href="../../start_install/2k0300_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -729,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/faq/" class="md-nav__link">
+      <a href="../../start_install/faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/thanks/" class="md-nav__link">
+      <a href="../../thanks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -874,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/port_forwarding/" class="md-nav__link">
+      <a href="../../network/port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/frp/" class="md-nav__link">
+      <a href="../../network/frp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/tailscale/" class="md-nav__link">
+      <a href="../../network/tailscale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/cloudflared/" class="md-nav__link">
+      <a href="../../network/cloudflared/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/ssl/" class="md-nav__link">
+      <a href="../../network/ssl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/h264/" class="md-nav__link">
+      <a href="../../audio_and_video/h264/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1063,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/audio/" class="md-nav__link">
+      <a href="../../audio_and_video/audio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1084,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/video_record/" class="md-nav__link">
+      <a href="../../audio_and_video/video_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1109,8 +1133,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1129,19 +1155,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1152,7 +1179,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             外围设备
@@ -1214,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/mouse/" class="md-nav__link">
+      <a href="../mouse/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1235,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/mouse_jiggler/" class="md-nav__link">
+      <a href="../mouse_jiggler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1256,7 +1283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/ch9329_hid/" class="md-nav__link">
+      <a href="../ch9329_hid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1282,10 +1309,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/attached_device/msd/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    大容量存储驱动器
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1294,6 +1339,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#msd-msd" class="md-nav__link">
+    <span class="md-ellipsis">
+      新建 MSD 分区并启用 MSD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      手动上传镜像
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      可写闪存驱动器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可写闪存驱动器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      制作 ventoy 可引导镜像
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msd" class="md-nav__link">
+    <span class="md-ellipsis">
+      修改 MSD 路径
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1306,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_ethernet/" class="md-nav__link">
+      <a href="../usb_ethernet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1327,7 +1441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_serial/" class="md-nav__link">
+      <a href="../usb_serial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_dynamic/" class="md-nav__link">
+      <a href="../usb_dynamic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1415,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/onecloud_atx/" class="md-nav__link">
+      <a href="../onecloud_atx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1436,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_relay/" class="md-nav__link">
+      <a href="../usb_relay/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/vnc/" class="md-nav__link">
+      <a href="../../advanced_using/vnc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/kvm_switch/" class="md-nav__link">
+      <a href="../../advanced_using/kvm_switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1566,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/wol/" class="md-nav__link">
+      <a href="../../advanced_using/wol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/webterm/" class="md-nav__link">
+      <a href="../../advanced_using/webterm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1608,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/2fa/" class="md-nav__link">
+      <a href="../../advanced_using/2fa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1686,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/api/" class="md-nav__link">
+      <a href="../../development/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1707,7 +1821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/building_os/" class="md-nav__link">
+      <a href="../../development/building_os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1728,7 +1842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/parts_library/" class="md-nav__link">
+      <a href="../../development/parts_library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1749,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/develop/" class="md-nav__link">
+      <a href="../../development/develop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1788,6 +1902,65 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#msd-msd" class="md-nav__link">
+    <span class="md-ellipsis">
+      新建 MSD 分区并启用 MSD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      手动上传镜像
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      可写闪存驱动器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可写闪存驱动器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      制作 ventoy 可引导镜像
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msd" class="md-nav__link">
+    <span class="md-ellipsis">
+      修改 MSD 路径
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1798,8 +1971,198 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+  <h1>大容量存储驱动器</h1>
+
+<div><p><strong>MSD</strong>（Mass Storage Drive），即大容量储存设备，可以实现远程上传文件，挂载镜像等功能。由于Linux限制，CD-ROM格式大小最大为2.2G，FALSH格式大小无限制。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>最大 CD-ROM 镜像文件大小为 2.2 GB，这是 Linux 内核限制。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>对于玩客云 请不要在USB双公线（OTG线）与被控机断开或被控机关机时使用解除镜像挂载功能（ 断开连接），否则会因USB OTG 端口操作不可用致使内核疯狂持续报错，日志服务占用CPU 100%，系统稳定性下降。这时除非USB OTG连接恢复正常，MSD功能会一直保持不可用状态。</p>
+</div>
+<hr>
+<h3 id="msd-msd">新建 MSD 分区并启用 MSD</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>整合包 201004 版本以后，MSD功能默认启用（使用 /var/lib/kvmd/msd 目录），可任意指定目录（若无权限可执行 <code>chown kvmd -R /var/lib/kvmd/msd/</code> 使自定义目录可写），无需新建分区。</p>
+<p>若仍然新建分区挂载，需在 <code>/etc/kvmd/override.yaml</code> 中注释 msd 的子选项 <code>remount_cmd: /bin/true</code> 为 <code>#remount_cmd: /bin/true</code>，使 MSD 分区具有正确的权限。</p>
+</div>
+<p>下面三种方式任选其一即可，对于新手第三种方法更为推荐，使用虚拟磁盘文件做 MSD 分区，无需对物理磁盘进行分区，操作更加安全和简单。</p>
+<details class="使用玩客云emmc空间">
+<summary>使用玩客云emmc空间</summary>
+<p>作者在安装篇的网盘的链接中提供了包含此软件的系统镜像（网盘路径：/One-KVM 相关/gparted_on_armbain_usbdisk.zip），刷入U盘后将U盘插到玩客云网口旁的USB口插电启动，连接ssh（root/1234）输入<code>gparted</code>即可启动磁盘分区软件。</p>
+<p>如果没有打开如图所示的Gparted软件界面请检查你的ssh终端是否支持X11转发功能。</p>
+<p>在打开的Gparted界面右键 /dev/mmcblp1p2 选择 Resize/Move 来调整分区，在Free space following框中输入新建分区的大小（可输入4096），再将分出来的空闲空间格式化为ext4格式，最后点击主界面选项卡下的“√”应用刚才的选择即可。</p>
+<p><a class="glightbox" href="../../img/1717947165712-55.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../../img/1717947165712-55.png"></a></p>
+<p><a class="glightbox" href="../../img/1717947165712-56.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../../img/1717947165712-56.png"></a></p>
+</details>
+<details class="使用sd卡">
+<summary>使用sd卡</summary>
+<p>建议不要使用杂牌储存卡（部分杂牌储存卡反应为Windows正常、Linux能识别但无法访问和读写）。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#查看TF卡位置</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>fdisk<span class="w"> </span>-l
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#将其格式化为ext4文件格式（将sdx替换为你的设备地址）</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>mkfs.ext4<span class="w"> </span>/dev/sdx
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="使用虚拟磁盘文件">
+<summary>使用虚拟磁盘文件</summary>
+<p>通过新建一个新的 img 文件用作 MSD 文件系统，此方法通过已测试。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#虚拟磁盘创建示例代码，512单位为 1M 的倍数，这个数字可以替换成你所需要的容量</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/root/diska.img<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">512</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>mkfs.ext4<span class="w"> </span>/root/diska.img
+</code></pre></div></td></tr></table></div>
+</details>
+<p><strong>挂载分区</strong></p>
+<p>请确认要挂载的分区路径，不要出错（如/dev/mmcblk1、/dev/mmcblk0p3、/root/diska.img） ，这里以 /dev/mmcblk0 为例。
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#查看系统所有分区</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>df<span class="w"> </span>-h
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#在文件末尾添加如下挂载，如为/dev/mmcblk0需自行替换</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>nano<span class="w"> </span>/etc/fstab
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>/dev/mmcblk0p3<span class="w"> </span>/var/lib/kvmd/msd<span class="w">  </span>ext4<span class="w">  </span>nofail,nodev,nosuid,noexec,rw,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>journal,X-kvmd.otgmsd-root<span class="o">=</span>/var/lib/kvmd/msd,X-kvmd.otgmsd-user<span class="o">=</span>kvmd<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">#如果挂载操作报错请检查并修正错误</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>mount<span class="w"> </span>/dev/mmcblk0p3
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">#开启MSD功能，到/etc/kvmd/override.yaml修改msd选项为otg</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>nano<span class="w"> </span>/etc/kvmd/override.yaml
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd-otg<span class="w"> </span>kvmd
+</code></pre></div></td></tr></table></div>
+<hr>
+<h3 id="_1">手动上传镜像</h3>
+<p>One-KVM  将镜像文件存储在一个特殊的分区中，该分区挂载在 <code>/var/lib/kvmd/msd</code> 目录。如果该分区无法写入说明该分区是只读的，可执行下列命令。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">#使 MSD 分区可写</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>sudo<span class="w"> </span>kvmd-helper-otgmsd-remount<span class="w"> </span>rw
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1">#手动上传镜像文件到 /var/lib/kvmd/msd 目录</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">#使 MSD 分区制度</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>sudo<span class="w"> </span>kvmd-helper-otgmsd-remount<span class="w"> </span>ro
+</code></pre></div></td></tr></table></div>
+<hr>
+<h3 id="_2">可写闪存驱动器</h3>
+<p>在 PiKVM 上模拟闪存驱动器（flash）时，您可以允许目标主机将文件写入镜像。停止驱动器后，可以在本地主机上下载并打开此映像。 如果您需要从目标主机获取一些文件，这也可以实现。</p>
+<p>使用此功能必须提前准备好虚拟闪存驱动器的文件系统镜像，这可以在本地主机或网页终端中完成。</p>
+<h4 id="ventoy">制作 ventoy 可引导镜像</h4>
+<p>对于 20241004 （不包含）以下版本，操作目录时需要先执行 <code>kvmd-helper-otgmsd-remount rw</code> 手动将内部存储重新挂载为读写模式。</p>
+<ol>
+<li>在 <code>/var/lib/kvmd/msd</code> 目录创建一个空的镜像文件，大小按需设置。本例中文件名为flash.img，大小为 4096MB。</li>
+</ol>
+<p></p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/var/lib/kvmd/msd/flash.img<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">4096</span><span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress
+</code></pre></div></td></tr></table></div>
+2. 网页菜单选择驱动器 --&gt; 镜像 --&gt; flash.img，并将驱动模式由 cd-rom 切换为 flash，单击连接 MSD 至主机。
+<ol>
+<li>
+<p>被控机打开 ventoy ，选择虚拟的磁盘安装软件。
+    <a class="glightbox" href="../../img/image-202411061233.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ventoy" src="../../img/image-202411061233.png"></a></p>
+</li>
+<li>
+<p>将系统镜像放入 ventoy 分区文件夹。
+<a class="glightbox" href="../../img/image-202411061235.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ventoy iso" src="../../img/image-202411061235.png"></a></p>
+</li>
+</ol>
+<p>结束后此 flash 镜像制作完成，在需要的时候挂载引导即可。</p>
+<p><a class="glightbox" href="../../img/image-a7b96b94541ed44744db758ae774a58c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ventoy 0" src="../../img/image-a7b96b94541ed44744db758ae774a58c.png"></a>
+<a class="glightbox" href="../../img/image-38e54e47eb0de7894fdb6dc9c7fb9a51.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ventoy 1" src="../../img/image-38e54e47eb0de7894fdb6dc9c7fb9a51.png"></a></p>
+<h3 id="msd">修改 MSD 路径</h3>
+<div class="admonition warning">
+<p class="admonition-title">提醒</p>
+<p>此方法仅适合整合包 201004 及版本以后，MSD功能默认启用（使用 /var/lib/kvmd/msd 目录），由挂载分区变化为z直接使用目录。</p>
+</div>
+<p>MSD 目录的定义此文件中，在 <code>/usr/local/lib/python3.11/dist-packages/kvmd-4.3-py3.11.egg/kvmd/fstab.py</code>，将文件中 <code>/var/lib/kvmd/msd/</code> 替换为自定义目录。</p>
+<p>命令示例：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">#以 /home/msd/ 目录为例</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/mnt/msd/<span class="o">{</span>images,meta<span class="o">}</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>chown<span class="w"> </span>kvmd<span class="w"> </span>-R<span class="w"> </span>/mnt/msd/
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1">#目录中的 "/" 前需要添加 "\" 进行转义</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/\/var\/lib\/kvmd\/msd/\/mnt\/msd/g'</span><span class="w">  </span>/usr/local/lib/python3.11/dist-packages/kvmd-4.3-py3.11.egg/kvmd/fstab.py
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd<span class="w"> </span>kvmd-otg
+</code></pre></div></td></tr></table></div>
+<p><a class="glightbox" href="../../img/image-202411082232.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="msd" src="../../img/image-202411082232.png"></a></p></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月25日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年6月10日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1819,6 +2182,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../ch9329_hid/" class="md-footer__link md-footer__link--prev" aria-label="上一页: CH9329 HID">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                CH9329 HID
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../usb_ethernet/" class="md-footer__link md-footer__link--next" aria-label="下一页: USB 以太网">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                USB 以太网
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1847,13 +2248,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "/assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="/js/baidu-tongji.js"></script>
+        <script src="../../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

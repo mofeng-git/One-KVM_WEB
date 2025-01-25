@@ -12,19 +12,25 @@
         <meta name="author" content="SilentWind">
       
       
+        <link rel="canonical" href="https://one-kvm.mofeng.run/audio_and_video/h264/">
       
       
+        <link rel="prev" href="../../network/ssl/">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+        <link rel="next" href="../audio/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>One-KVM 文档</title>
+        <title>H.264 / WebRTC - One-KVM 文档</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -43,14 +49,23 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -60,6 +75,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#h264" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -71,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              H.264 / WebRTC
             
           </span>
         </div>
@@ -181,7 +201,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -207,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/network/port_forwarding/" class="md-tabs__link">
+        <a href="../../network/port_forwarding/" class="md-tabs__link">
           
   
     
@@ -226,11 +246,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/audio_and_video/h264/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -256,7 +278,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/attached_device/mouse/" class="md-tabs__link">
+        <a href="../../attached_device/mouse/" class="md-tabs__link">
           
   
     
@@ -279,7 +301,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/advanced_using/vnc/" class="md-tabs__link">
+        <a href="../../advanced_using/vnc/" class="md-tabs__link">
           
   
     
@@ -299,7 +321,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/development/api/" class="md-tabs__link">
+        <a href="../../development/api/" class="md-tabs__link">
           
   
     
@@ -334,7 +356,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -397,7 +419,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -430,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/prepare/" class="md-nav__link">
+      <a href="../../start_install/prepare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/docker_install/" class="md-nav__link">
+      <a href="../../start_install/docker_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/onecloud_install/" class="md-nav__link">
+      <a href="../../start_install/onecloud_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/cumebox2_install/" class="md-nav__link">
+      <a href="../../start_install/cumebox2_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -574,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/orangepizero_install/" class="md-nav__link">
+      <a href="../../start_install/orangepizero_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/s905l3a_install/" class="md-nav__link">
+      <a href="../../start_install/s905l3a_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -616,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/virtualmachine_install/" class="md-nav__link">
+      <a href="../../start_install/virtualmachine_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -637,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/synology_install/" class="md-nav__link">
+      <a href="../../start_install/synology_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/chainedbox_install/" class="md-nav__link">
+      <a href="../../start_install/chainedbox_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/octopus-flanet_install/" class="md-nav__link">
+      <a href="../../start_install/octopus-flanet_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/2k0300_install/" class="md-nav__link">
+      <a href="../../start_install/2k0300_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -729,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/faq/" class="md-nav__link">
+      <a href="../../start_install/faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/thanks/" class="md-nav__link">
+      <a href="../../thanks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -874,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/port_forwarding/" class="md-nav__link">
+      <a href="../../network/port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/frp/" class="md-nav__link">
+      <a href="../../network/frp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/tailscale/" class="md-nav__link">
+      <a href="../../network/tailscale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/cloudflared/" class="md-nav__link">
+      <a href="../../network/cloudflared/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/ssl/" class="md-nav__link">
+      <a href="../../network/ssl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,8 +1013,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1005,19 +1029,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1028,7 +1053,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             音视频
@@ -1039,10 +1064,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/audio_and_video/h264/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    H.264 / WebRTC
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1051,6 +1094,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#h264" class="md-nav__link">
+    <span class="md-ellipsis">
+      H.264 介绍
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h264webrtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      H.264/WebRTC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      视频演示
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1063,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/audio/" class="md-nav__link">
+      <a href="../audio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1084,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/video_record/" class="md-nav__link">
+      <a href="../video_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/mouse/" class="md-nav__link">
+      <a href="../../attached_device/mouse/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1235,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/mouse_jiggler/" class="md-nav__link">
+      <a href="../../attached_device/mouse_jiggler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1256,7 +1344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/ch9329_hid/" class="md-nav__link">
+      <a href="../../attached_device/ch9329_hid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1285,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/msd/" class="md-nav__link">
+      <a href="../../attached_device/msd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1306,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_ethernet/" class="md-nav__link">
+      <a href="../../attached_device/usb_ethernet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1327,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_serial/" class="md-nav__link">
+      <a href="../../attached_device/usb_serial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,7 +1436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_dynamic/" class="md-nav__link">
+      <a href="../../attached_device/usb_dynamic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1415,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/onecloud_atx/" class="md-nav__link">
+      <a href="../../attached_device/onecloud_atx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1436,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_relay/" class="md-nav__link">
+      <a href="../../attached_device/usb_relay/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/vnc/" class="md-nav__link">
+      <a href="../../advanced_using/vnc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/kvm_switch/" class="md-nav__link">
+      <a href="../../advanced_using/kvm_switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1566,7 +1654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/wol/" class="md-nav__link">
+      <a href="../../advanced_using/wol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/webterm/" class="md-nav__link">
+      <a href="../../advanced_using/webterm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1608,7 +1696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/2fa/" class="md-nav__link">
+      <a href="../../advanced_using/2fa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1686,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/api/" class="md-nav__link">
+      <a href="../../development/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1707,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/building_os/" class="md-nav__link">
+      <a href="../../development/building_os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1728,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/parts_library/" class="md-nav__link">
+      <a href="../../development/parts_library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1749,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/develop/" class="md-nav__link">
+      <a href="../../development/develop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1788,6 +1876,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#h264" class="md-nav__link">
+    <span class="md-ellipsis">
+      H.264 介绍
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h264webrtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      H.264/WebRTC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      视频演示
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1798,8 +1921,161 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+  <h1>H.264 / WebRTC</h1>
+
+<div><h3 id="h264">H.264 介绍</h3>
+<p>H.264，也被称为 MPEG-4 AVC（Advanced Video Coding），是一种广泛使用的视频压缩标准，尤其适用于需要高效压缩比的应用场景，比如互联网流媒体传输、蓝光光盘视频等。</p>
+<p>H.264 视频相较 MJPEG 视频拥有完整音频和低码率的特点，可以在更低的带宽下运行。由于 PiKVM 官方的H.264视频功能仅适配树莓派 GPU，所以在其它设备上使用H.264功能暂时无法硬编码（对于玩客云设备，Armbian 系统也没有可用的 VPU 驱动）。</p>
+<p>下面是 One-KVM 项目中关于 H.264 视频的两种解决方案：libx264、ffmpeg。</p>
+<details class="libx264">
+<summary>Libx264</summary>
+<p>Libx264 是一个用于编码 H.264 视频的开源库，是由 VideoLAN 和其他贡献者开发的，并且由于其高效的编码质量和速度，在很多视频处理软件中都有使用。</p>
+<p>作者已将其与 ustreamer 集成，在 Docker 版容器中默认启用此功能，相比后面的 ffmpeg 方案性能更好使用更加方便。此 ustreamer 分支可查看 <a href="https://github.com/mofeng-git/ustreamer">https://github.com/mofeng-git/ustreamer</a>。</p>
+<p>H.264/WebRTC 网页视频可能需要额外映射 20000-40000 UDP 端口。</p>
+</details>
+<details class="ffmpeg">
+<summary>Ffmpeg</summary>
+<p><strong>此方法已停止维护仅做归档使用</strong></p>
+<p>此功能由群友 自.知 设计，使用 ffmpeg 进行软编码。由于为 CPU 软件编码，在玩客云设备上此功能效果较差。</p>
+<p><strong>使用</strong></p>
+<p>整合包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已预装此功能，更早的版本中没有预装此功能（若需要手动安装可参照文末教程）。由于玩客云 CPU 性能较差，所以 <code>kvmd-ffmpeg</code> 服务默认为关闭状态（网页表现如下），避免影响其他服务的流畅性。</p>
+<p><a class="glightbox" href="../../img/image-20240622152523786.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240622152523786" src="../../img/image-20240622152523786.png"></a></p>
+<p>如需要可执行如下命令可手动开启。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#启动 kvmd-ffmpeg 服务</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>kvmd-ffmpeg
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#设置 kvmd-ffmpeg 服务开机自启</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kvmd-ffmpeg
+</code></pre></div></td></tr></table></div>
+<p>在玩客云上，H.264 视频非常卡顿，使用体验较差。</p>
+<p><a class="glightbox" href="../../img/image-20240610154409422.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240610154409422" src="../../img/image-20240610154409422.png"></a></p>
+<p><strong>安装</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#此功能默认未安装，开启需要执行 kvmd_h264_install.sh 脚本</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w">  </span>--branch<span class="w"> </span>9b97e01b340484fb1c75916531b2c63aea3e8046<span class="w"> </span>https://github.com/mofeng-git/One-KVM.git
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>One-KVM<span class="w"> </span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>sudo<span class="w"> </span>bash<span class="w"> </span>kvmd_h264_install.sh
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#停止 kvmd-ffmpeg 服务</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>kvmd-ffmpeg
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>kvmd-ffmpeg
+</code></pre></div></td></tr></table></div>
+</details>
+<h3 id="h264webrtc">H.264/WebRTC</h3>
+<p>MJPEG 视频流传输使用网页访问相同的 HTTP 连接。相比之下，WebRTC 是一种完全不同的视频传输方式，使用 P2P 连接和 UDP 传输数据，这可以降低网络负载和网络延迟，不过增加了配置难度。</p>
+<p>为此，One-KVM 会检查哪个网络接口是默认网关，并尝试使用 Google STUN 服务器查找外部地址。这在使用 Tailscale 或从外部互联网连接到 One-KVM 时是必要的。如果你不喜欢使用 Google（出于可靠性考虑，将其作为默认设置），你可以自行选择其他 STUN 服务器，或设置你自己的 STUN 服务器。</p>
+<p><code>/etc/kvmd/override.yaml</code> 中的默认配置：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>janus:
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span>stun:
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span>host:<span class="w"> </span>stun.l.google.com
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span>port:<span class="w"> </span><span class="m">19302</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span>retries:<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span>retries_delay:<span class="w"> </span><span class="m">5</span>.0
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">        </span>timeout:<span class="w"> </span><span class="m">5</span>.0
+</code></pre></div></td></tr></table></div>
+<p>如需异地访问，端口映射、异地组网两种方式任选其一即可，推荐使用异地组网方式。</p>
+<p><strong>端口映射</strong></p>
+<p>在防火墙映射 20000-40000 udp 端口，演示站就是使用的这个方法。</p>
+<p>此方法局限性较大，需要映射太多端口，不推荐使用。</p>
+<p><a class="glightbox" href="../../img/image-20241021132357799.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241021132357799" src="../../img/image-20241021132357799.png"></a></p>
+<p><strong>异地组网</strong></p>
+<p>这里以 Tailscale 异地组网为例，首先安装客户端：<a href="https://tailscale.com/download/linux">Download · Tailscale</a>，这里可以直接在 One-KVM 主机上安装 Tailscale，安装命令如下。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>curl -fsSL https://tailscale.com/install.sh | sh
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>#登录同一 Tailscale 账号
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>tailscale up
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>#一些工具命令
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>#查看虚拟局域网设备列表
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>tailscale status
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>#查看网络状态和中继服务器状态
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>tailscale netcheck
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>#查看当前设备虚拟局域网 IP
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>tailscale ip
+</code></pre></div></td></tr></table></div>
+<p>然后进行多设备组网，下图是一个实例。</p>
+<p><a class="glightbox" href="../../img/image-20241021142837222.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241021142837222" src="../../img/image-20241021142837222.png"></a></p>
+<p>然后使用虚拟局域网 IP 访问即可使用 One-KVM 的 H.264/WebRTC 功能。</p>
+<p><a class="glightbox" href="../../img/image-20241021143310563.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241021143310563" src="../../img/image-20241021143310563.png"></a></p>
+<p>由于 Tailscale 官方中继服务器位于境外，网络联通性比较差，推荐使用自建中键服务器，可以参考这篇文章： <a href="https://anubis.cafe/6fdf334e">自建 Tailscale 中继服务器 | Anubis的小窝</a></p>
+<p><a class="glightbox" href="../../img/image-20241021144135937.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20241021144135937" src="../../img/image-20241021144135937.png"></a></p>
+<h3 id="_1">视频演示</h3>
+<p>如果实际使用中感觉 H.264 视频质量不理想，可以尝试网页右上角系统菜单调整增加 H.264 比特率。</p>
+<p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../video/2024-11-05%2016-36-29_x264.mp4" type="video/mp4"></source></video></div></p></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月25日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年6月10日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1819,6 +2095,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../network/ssl/" class="md-footer__link md-footer__link--prev" aria-label="上一页: SSL 加密连接">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                SSL 加密连接
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../audio/" class="md-footer__link md-footer__link--next" aria-label="下一页: H.264 音频">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                H.264 音频
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1847,13 +2161,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "/assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="/js/baidu-tongji.js"></script>
+        <script src="../../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

@@ -12,19 +12,21 @@
         <meta name="author" content="SilentWind">
       
       
+        <link rel="canonical" href="https://one-kvm.mofeng.run/start_install/onecloud_guide/">
       
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>One-KVM 文档</title>
+        <title>玩客云套装使用说明 - One-KVM 文档</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -43,14 +45,23 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -60,6 +71,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -71,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              玩客云套装使用说明
             
           </span>
         </div>
@@ -181,7 +197,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -207,7 +223,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/network/port_forwarding/" class="md-tabs__link">
+        <a href="../../network/port_forwarding/" class="md-tabs__link">
           
   
     
@@ -230,7 +246,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/audio_and_video/h264/" class="md-tabs__link">
+        <a href="../../audio_and_video/h264/" class="md-tabs__link">
           
   
     
@@ -256,7 +272,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/attached_device/mouse/" class="md-tabs__link">
+        <a href="../../attached_device/mouse/" class="md-tabs__link">
           
   
     
@@ -279,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/advanced_using/vnc/" class="md-tabs__link">
+        <a href="../../advanced_using/vnc/" class="md-tabs__link">
           
   
     
@@ -299,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/development/api/" class="md-tabs__link">
+        <a href="../../development/api/" class="md-tabs__link">
           
   
     
@@ -334,7 +350,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -397,7 +413,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -430,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/prepare/" class="md-nav__link">
+      <a href="../prepare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/docker_install/" class="md-nav__link">
+      <a href="../docker_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/onecloud_install/" class="md-nav__link">
+      <a href="../onecloud_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/cumebox2_install/" class="md-nav__link">
+      <a href="../cumebox2_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -574,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/orangepizero_install/" class="md-nav__link">
+      <a href="../orangepizero_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/s905l3a_install/" class="md-nav__link">
+      <a href="../s905l3a_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -616,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/virtualmachine_install/" class="md-nav__link">
+      <a href="../virtualmachine_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -637,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/synology_install/" class="md-nav__link">
+      <a href="../synology_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/chainedbox_install/" class="md-nav__link">
+      <a href="../chainedbox_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/octopus-flanet_install/" class="md-nav__link">
+      <a href="../octopus-flanet_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/2k0300_install/" class="md-nav__link">
+      <a href="../2k0300_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -729,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/faq/" class="md-nav__link">
+      <a href="../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/thanks/" class="md-nav__link">
+      <a href="../../thanks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -874,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/port_forwarding/" class="md-nav__link">
+      <a href="../../network/port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/frp/" class="md-nav__link">
+      <a href="../../network/frp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/tailscale/" class="md-nav__link">
+      <a href="../../network/tailscale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/cloudflared/" class="md-nav__link">
+      <a href="../../network/cloudflared/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/ssl/" class="md-nav__link">
+      <a href="../../network/ssl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1042,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/h264/" class="md-nav__link">
+      <a href="../../audio_and_video/h264/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1063,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/audio/" class="md-nav__link">
+      <a href="../../audio_and_video/audio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1084,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/video_record/" class="md-nav__link">
+      <a href="../../audio_and_video/video_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/mouse/" class="md-nav__link">
+      <a href="../../attached_device/mouse/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1235,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/mouse_jiggler/" class="md-nav__link">
+      <a href="../../attached_device/mouse_jiggler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1256,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/ch9329_hid/" class="md-nav__link">
+      <a href="../../attached_device/ch9329_hid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1285,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/msd/" class="md-nav__link">
+      <a href="../../attached_device/msd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1306,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_ethernet/" class="md-nav__link">
+      <a href="../../attached_device/usb_ethernet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1327,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_serial/" class="md-nav__link">
+      <a href="../../attached_device/usb_serial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_dynamic/" class="md-nav__link">
+      <a href="../../attached_device/usb_dynamic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1415,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/onecloud_atx/" class="md-nav__link">
+      <a href="../../attached_device/onecloud_atx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1436,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_relay/" class="md-nav__link">
+      <a href="../../attached_device/usb_relay/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/vnc/" class="md-nav__link">
+      <a href="../../advanced_using/vnc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/kvm_switch/" class="md-nav__link">
+      <a href="../../advanced_using/kvm_switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1566,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/wol/" class="md-nav__link">
+      <a href="../../advanced_using/wol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/webterm/" class="md-nav__link">
+      <a href="../../advanced_using/webterm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1608,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/2fa/" class="md-nav__link">
+      <a href="../../advanced_using/2fa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1686,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/api/" class="md-nav__link">
+      <a href="../../development/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1707,7 +1723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/building_os/" class="md-nav__link">
+      <a href="../../development/building_os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1728,7 +1744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/parts_library/" class="md-nav__link">
+      <a href="../../development/parts_library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1749,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/develop/" class="md-nav__link">
+      <a href="../../development/develop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1787,6 +1803,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件展示
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件连接
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#msd" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atx" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATX电源控制
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1798,8 +1860,94 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<div><h1 id="_1">玩客云套装使用说明</h1>
+<div class="admonition warning">
+<p class="admonition-title">提醒</p>
+<p>此页为作者早期出售的玩客云 One-KVM 套装文档，此部分仅作存档使用，内容不再更新。</p>
+</div>
+<h3 id="_2"><strong>硬件展示</strong></h3>
+<p><a class="glightbox" href="../../img/ae7bc732-0dc7-42a0-84fa-56f11c33d453.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ae7bc732-0dc7-42a0-84fa-56f11c33d453" src="../../img/ae7bc732-0dc7-42a0-84fa-56f11c33d453.png"></a></p>
+<p><a class="glightbox" href="../../img/image-20240609231232943.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240609231232943" src="../../img/image-20240609231232943.png"></a></p>
+<h3 id="_3">硬件连接</h3>
+<p>将HDMI转USB采集卡插入玩客云主机网口旁USB口，HDMI视频线插入采集卡HDMI端，USB双公线插入玩客云主机HDMI口旁USB口，插入网线，接入电源。</p>
+<p>被控机端，将HDMI视频线和USB双公线接入对应接口即可。</p>
+<div class="admonition warning 提醒">
+<p class="admonition-title">Warning</p>
+<p>玩客云USB设备插反会导致PiKVM所有远控功能无法使用。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>部分低功耗设备在未接通电源时可能通过USB双公线从玩客云取电并启动至异常状态，再接通电源也无法启动。要解决此问题，您可以剥开USB双公线剪断红色5V细电线。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>初始WEB和VNC账号密码都为admin/admin且同步，root用户密码通常为用户自行设置，若未设置可尝试1234。<br>ssh默认端口：22<br>web默认端口：80，443<br>vnc默认端口：5900<br>janus ws端口(默认关闭)：5009</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>排障指南：<br>网页视频黑屏提示无No Singal，请检查硬件是否正确连接或松动；<br>网页端黑屏无任何画面或彩色竖条，请检查是否有被控机HDMI信号输入；<br>进系统画面显示正常，bios界面黑屏或渲染异常，请尝试在BIOS界面开启CMS兼容模式；<br>虚拟鼠标错位或移动范围异常可尝试在网页右上角切换鼠标相对模式；<br>画面显示片刻黑屏，刷新网页重复此现象，可以尝试使用火狐浏览器；<br>如果以上情况都不符合请尝试重启玩客云自动复位，仍旧无法解决可在Github提issue或加入One-KVM交流群反馈。</p>
+</div>
+<h3 id="msd">MSD</h3>
+<p>Mass Storage Drive，即大容量储存设备，可以实现远程上传文件，挂载镜像等功能。由于Linux限制，CD-ROM格式大小最大为2.2G，FALSH格式大小无限制。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>请不要在USB双公线（OTG线）与被控机断开或被控机关机时使用解除镜像挂载功能（ 断开连接），否则会因USB OTG 端口操作不可用致使内核疯狂持续报错，日志服务占用CPU 100%，系统稳定性下降。这时除非USB OTG连接恢复正常，MSD功能会一直保持不可用状态。</p>
+</div>
+<h3 id="atx">ATX电源控制</h3>
+<p>如果要使用ATX控制物理开关机功能请连接好开机线（<strong>目前成品深色引出线接9pin中的开机负极，浅色引出线接开机针脚正极，如黑白、褐红，橙黄对应负极和正极</strong>），延长线不分颜色直接使用。</p>
+<p><a class="glightbox" href="../../img/1717946862304-33.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../../img/1717946862304-33.png"></a></p>
+<p><a class="glightbox" href="../../img/1717946858221-30.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../../img/1717946858221-30.jpeg"></a></p></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月25日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年6月10日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1847,13 +1995,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "/assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="/js/baidu-tongji.js"></script>
+        <script src="../../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

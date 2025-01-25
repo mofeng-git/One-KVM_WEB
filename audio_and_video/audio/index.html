@@ -12,19 +12,25 @@
         <meta name="author" content="SilentWind">
       
       
+        <link rel="canonical" href="https://one-kvm.mofeng.run/audio_and_video/audio/">
       
       
+        <link rel="prev" href="../h264/">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+        <link rel="next" href="../video_record/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>One-KVM 文档</title>
+        <title>H.264 音频 - One-KVM 文档</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
       
 
@@ -43,14 +49,23 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -60,6 +75,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -71,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              H.264 音频
             
           </span>
         </div>
@@ -181,7 +201,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -207,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/network/port_forwarding/" class="md-tabs__link">
+        <a href="../../network/port_forwarding/" class="md-tabs__link">
           
   
     
@@ -226,11 +246,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/audio_and_video/h264/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../h264/" class="md-tabs__link">
           
   
     
@@ -256,7 +278,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/attached_device/mouse/" class="md-tabs__link">
+        <a href="../../attached_device/mouse/" class="md-tabs__link">
           
   
     
@@ -279,7 +301,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/advanced_using/vnc/" class="md-tabs__link">
+        <a href="../../advanced_using/vnc/" class="md-tabs__link">
           
   
     
@@ -299,7 +321,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/development/api/" class="md-tabs__link">
+        <a href="../../development/api/" class="md-tabs__link">
           
   
     
@@ -334,7 +356,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -397,7 +419,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -430,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/prepare/" class="md-nav__link">
+      <a href="../../start_install/prepare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/docker_install/" class="md-nav__link">
+      <a href="../../start_install/docker_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/onecloud_install/" class="md-nav__link">
+      <a href="../../start_install/onecloud_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/cumebox2_install/" class="md-nav__link">
+      <a href="../../start_install/cumebox2_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -574,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/orangepizero_install/" class="md-nav__link">
+      <a href="../../start_install/orangepizero_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/s905l3a_install/" class="md-nav__link">
+      <a href="../../start_install/s905l3a_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -616,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/virtualmachine_install/" class="md-nav__link">
+      <a href="../../start_install/virtualmachine_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -637,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/synology_install/" class="md-nav__link">
+      <a href="../../start_install/synology_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/chainedbox_install/" class="md-nav__link">
+      <a href="../../start_install/chainedbox_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -679,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/octopus-flanet_install/" class="md-nav__link">
+      <a href="../../start_install/octopus-flanet_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/2k0300_install/" class="md-nav__link">
+      <a href="../../start_install/2k0300_install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -729,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/start_install/faq/" class="md-nav__link">
+      <a href="../../start_install/faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -750,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/thanks/" class="md-nav__link">
+      <a href="../../thanks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -874,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/port_forwarding/" class="md-nav__link">
+      <a href="../../network/port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -895,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/frp/" class="md-nav__link">
+      <a href="../../network/frp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/tailscale/" class="md-nav__link">
+      <a href="../../network/tailscale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -937,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/cloudflared/" class="md-nav__link">
+      <a href="../../network/cloudflared/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/network/ssl/" class="md-nav__link">
+      <a href="../../network/ssl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,8 +1013,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1005,19 +1029,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1028,7 +1053,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             音视频
@@ -1042,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/h264/" class="md-nav__link">
+      <a href="../h264/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,10 +1085,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/audio_and_video/audio/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    H.264 音频
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1072,6 +1115,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      效果演示
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1084,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/audio_and_video/video_record/" class="md-nav__link">
+      <a href="../video_record/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/mouse/" class="md-nav__link">
+      <a href="../../attached_device/mouse/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1235,7 +1314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/mouse_jiggler/" class="md-nav__link">
+      <a href="../../attached_device/mouse_jiggler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1256,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/ch9329_hid/" class="md-nav__link">
+      <a href="../../attached_device/ch9329_hid/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1285,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/msd/" class="md-nav__link">
+      <a href="../../attached_device/msd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1306,7 +1385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_ethernet/" class="md-nav__link">
+      <a href="../../attached_device/usb_ethernet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1327,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_serial/" class="md-nav__link">
+      <a href="../../attached_device/usb_serial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_dynamic/" class="md-nav__link">
+      <a href="../../attached_device/usb_dynamic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1415,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/onecloud_atx/" class="md-nav__link">
+      <a href="../../attached_device/onecloud_atx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1436,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/attached_device/usb_relay/" class="md-nav__link">
+      <a href="../../attached_device/usb_relay/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1524,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/vnc/" class="md-nav__link">
+      <a href="../../advanced_using/vnc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1545,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/kvm_switch/" class="md-nav__link">
+      <a href="../../advanced_using/kvm_switch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1566,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/wol/" class="md-nav__link">
+      <a href="../../advanced_using/wol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/webterm/" class="md-nav__link">
+      <a href="../../advanced_using/webterm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1608,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/advanced_using/2fa/" class="md-nav__link">
+      <a href="../../advanced_using/2fa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1686,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/api/" class="md-nav__link">
+      <a href="../../development/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1707,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/building_os/" class="md-nav__link">
+      <a href="../../development/building_os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1728,7 +1807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/parts_library/" class="md-nav__link">
+      <a href="../../development/parts_library/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1749,7 +1828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/development/develop/" class="md-nav__link">
+      <a href="../../development/develop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1788,6 +1867,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      效果演示
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1798,8 +1903,97 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+  <h1>H.264 音频</h1>
+
+<div><p>现 Docker 版 H.264/WebRTC 支持实时的流畅音频，音质足够听音乐。</p>
+<p>HDMI 音频采集使用 Linux ALSA 声卡驱动，由 ustreamer janus 采集 HDMI 采集卡的音频并转码为 opus 实时音频格式，通过 H.264/WebRTC 在浏览器端播放。</p>
+<h3 id="_1">使用</h3>
+<p>对于 Docker 版本用户，Docker 部署时可通过 <code>-e AUDIONUM=0</code> <a href="docker_install.md#_3">环境变量</a> 指定。</p>
+<hr>
+<p>对于整合包用户，音频设备配置文件为 <code>/etc/kvmd/janus/janus.plugin.ustreamer.jcfg</code>，可通过修改此文件使用音频输入设备。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">video</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nv">sink = "kvmd</span><span class="p p-Indicator">::</span><span class="nv">ustreamer</span><span class="p p-Indicator">::</span><span class="nv">h264"</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p p-Indicator">}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nt">audio</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">     </span><span class="nv">device = "hw</span><span class="p p-Indicator">:</span><span class="nv">0"</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">     </span><span class="nv">tc358743 = "/dev/video0"</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p p-Indicator">}</span>
+</code></pre></div></td></tr></table></div>
+<p>其中 <code>device</code> 后面的值为采集卡音频设备地址，<code>tc358743</code> 后面的值为你的采集卡视频地址。</p>
+<p>Linux 系统下音频设备可通过 <code>arecord -L</code> 或 <code>arecord -l</code> 命令查看。</p>
+<p><strong>音频输入设备编号说明</strong></p>
+<ol>
+<li>
+<p>使用声卡编号，例如：hw:0</p>
+</li>
+<li>
+<p>使用声卡名，例如：hw:CARD=MS2109</p>
+</li>
+<li>
+<p>使用设备文件，例如：hw:/dev/snd/controlC0</p>
+</li>
+</ol>
+<p>从三种方式中任选其一写入配置文件中接口写入即可在网页使用 H.264 音频。</p>
+<h3 id="_2">效果演示</h3>
+<p><a class="glightbox" href="../../img/image-202411051650.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HDMI 音频" src="../../img/image-202411051650.png"></a></p>
+<p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../video/2024-11-05%2016-36-29_x264.mp4" type="video/mp4"></source></video></div></p></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月25日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年6月29日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1819,6 +2013,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../h264/" class="md-footer__link md-footer__link--prev" aria-label="上一页: H.264 / WebRTC">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                H.264 / WebRTC
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../video_record/" class="md-footer__link md-footer__link--next" aria-label="下一页: 视频录制">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                视频录制
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1847,13 +2079,15 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "/assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="/js/baidu-tongji.js"></script>
+        <script src="../../js/baidu-tongji.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
