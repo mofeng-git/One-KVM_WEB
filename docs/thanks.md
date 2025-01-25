@@ -1,14 +1,11 @@
-Github地址：[https://github.com/mofeng-git/One-KVM](https://github.com/mofeng-git/One-KVM) （欢迎点个Star）
 
-QQ交流群：569514148 （One-KVM交流群）
+### 赞助方式
 
-### 赞助
+如果 One-KVM 对你有帮助，欢迎赞助作者，以支持作者继续开发和维护此项目。
 
-这个项目基于众多开源项目二次开发，作者为此花费了大量的时间和精力进行测试和维护。若此项目对您有用，您可以考虑通过 **[为爱发电](https://afdian.com/a/silentwind)** 赞助一笔小钱支持作者。作者将能有更多的金钱来测试和维护 One-KVM 的各种配置，并在项目上投入更多的时间和精力。
+[为爱发电](https://afdian.com/a/silentwind){ .md-button }
 
-为爱发电：[https://afdian.com/a/silentwind](https://afdian.com/a/silentwind)
-
-### 感谢
+### 感谢名单
 
 - 浩龙的电子嵌入式之路
 - Tsuki
@@ -33,9 +30,18 @@ QQ交流群：569514148 （One-KVM交流群）
 - 爱发电用户_08cff
 - guoke
 - mgt
+- 姜沢掵
+- ui_beam
+- 爱发电用户_c0dd7
+- 爱发电用户_dnjK
+- 忍者胖猪
+- 永遠の願い
+- 爱发电用户_GBrF
+- 爱发电用户_fd65c
+- 爱发电用户_vhNa
 - ......
 
-**本项目使用了下下列开源项目**
+### 使用的开源项目
 
 1. [GitHub - pikvm/pikvm: Open and inexpensive DIY IP-KVM based on Raspberry Pi](https://github.com/pikvm/pikvm)
 2. [GitHub - hzyitc/armbian-onecloud: Armbian for onecloud. 玩客云用armbian](https://github.com/hzyitc/armbian-onecloud/)

@@ -84,6 +84,7 @@ nav:
         #- "玩客云套装（停止维护）": onecloud_guide.md
       #- "身份认证": auth.md
       - "常见问题": faq.md
+      - "感谢": thanks.md
 
     - "网络":
       - "互联网访问":
@@ -130,5 +131,3 @@ nav:
       - "构建 One-KVM 系统": building_os.md
       - "周边套件": parts_library.md
       - "知识库": develop.md
-
-    - "感谢": thanks.md
