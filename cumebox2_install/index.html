@@ -622,7 +622,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      硬件说明
+      硬件介绍
     </span>
   </a>
   
@@ -675,7 +675,7 @@
         
   
   <span class="md-ellipsis">
-    香橙派 zero
+    香橙派 Zero
   </span>
   
 
@@ -696,7 +696,7 @@
         
   
   <span class="md-ellipsis">
-    s905l3a 盒子
+    S905l3a 盒子
   </span>
   
 
@@ -1894,7 +1894,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      硬件说明
+      硬件介绍
     </span>
   </a>
   
@@ -1947,94 +1947,94 @@
 
   <h1>私家云二代</h1>
 
-<div><h3 id="_1">硬件说明</h3>
-<p>这个盒子名称很多，私家云二代、比特米盒子、CumeBox2。</p>
-<p>配置：晶晨 S905X CPU ，1G + 8G，百兆网口，2个 USB 2.0，1个 OTG 2.0，2个 SATA 3.0，板载双频 WIFI 及蓝牙，TF 卡槽和 HDMI 接口。</p>
-<p>首先刷机，大致流程：</p>
-<ul>
-<li>短接主板触点使用 Amlogic USB Burning Tool 烧录工具给盒子线刷一个 android tv6.0 固件</li>
-<li>通电开机进入 android tv，安装 apk 切换到外部（U 盘/TF 卡）引导</li>
-<li>重启开机后进入U 盘/TF 卡上的 armbian 系统</li>
-<li>用 dd 命令把 khadas-vim1 或者 Armbian_21.08.1_Ubuntu_CumeBox2_5.10.602 固件 img 写入 emmc </li>
-</ul>
-<p>私家云二代主板短接触点如下图。</p>
+<div><h3 id="_1">硬件介绍</h3>
+<p>私家云二代（也称比特米盒子、CumeBox2，为同一硬件）搭载了晶晨 S905X 处理器，配备了 1GB RAM 和 8GB 内部存储，拥有一个百兆网口、两个 USB 2.0接口、一个 OTG 2.0端口、两个 SATA 3.0接口、内置双频 WIFI 及蓝牙，并提供 TF 卡槽和 HDMI 输出。</p>
+<h3 id="_2">整合包部署</h3>
+<p>整合包底包基于 Armbian Khadas-vim1 固件修改 DTB 而来，进行了特别适配，网口、OLED 小屏幕、WIFI 、OTG 都正常可用。</p>
+<p><strong>刷机准备与步骤</strong></p>
+<ol>
+<li><strong>下载固件</strong>：获取 Android TV 6.0固件，这是用于烧录其他系统的过渡系统。</li>
+<li><strong>短接主板触点</strong>：参照提供的图片短接指定的触点以进入烧录模式。</li>
+<li><strong>使用烧录工具</strong>：利用 Amlogic USB Burning Tool 将 Android TV 固件写入设备。</li>
+<li><strong>安装 APK</strong>：开机后，在新安装的 Android TV 环境中安装特定的APK文件，使设备能够从外部介质（如U盘或 TF 卡）启动准备好的 Armbian 系统。</li>
+<li><strong>切换至 Armbian</strong>：重启后，设备应该能直接进入准备好的 Armbian 操作系统。</li>
+<li><strong>写入最终固件</strong>：最后一步是通过 dd 命令将整合包写入 EMMC。</li>
+</ol>
 <p><a class="glightbox" href="../img/IMG_20241203_195852.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="私家云二代主板短接触点" src="../img/IMG_20241203_195852.jpg"></a></p>
 <p>刷机详细过程可参考：<a href="https://ruohai.wang/202404/cumebox2-install-armbian/">私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)</a></p>
-<h3 id="_2">整合包部署</h3>
-<p>整合包底包使用 khadas-vim1 固件修改 DTB 而来，进行了特别适配，网口、OLED 小屏幕、WIFI 、OTG 都正常可用。</p>
-<p>将 Armbian_5.77_Aml-s905_Ubuntu_bionic_default_5.0.2_20190401.img 固件写入 U 盘，将私家云二代启动，然后使用 <code>scp</code> 命令拷贝 One-KVM 整合包到 U 盘，最后用 dd 命令把 One-KVM IMG 文件写入 EMMC 即可开始使用。</p>
-<details class="example">
-<summary>固件写入示例</summary>
-<p><a class="glightbox" href="../img/image-20240926221132648.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926221132648" src="../img/image-20240926221132648.png"></a></p>
-</details>
 <h3 id="docker">Docker 部署</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#换国内软件源</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>bash<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-sSL<span class="w"> </span>https://linuxmirrors.cn/main.sh<span class="o">)</span><span class="w"> </span>--source<span class="w"> </span>mirrors.tuna.tsinghua.edu.cn<span class="w"> </span>--protocol<span class="w"> </span>https<span class="w"> </span>--upgrade-software<span class="w"> </span><span class="nb">false</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#从 Debian/Ubuntu 软件源安装 Docker</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>apt<span class="w"> </span>install<span class="w"> </span>apparmor-utils<span class="w"> </span>docker.io<span class="w"> </span>-y
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">#安装最新版本 Docker</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#运行 docker 命令，使用 OTG HID</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">#系统 /dev/video0 设备已经存在，所以新插入的 USB 采集卡从 /dev/video1 开始</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>-v<span class="w"> </span>/dev:/dev<span class="w"> </span>-v<span class="w"> </span>/sys/kernel/config:/sys/kernel/config<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>-v<span class="w"> </span>/lib/modules:/lib/modules:ro<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span>-e<span class="w"> </span><span class="nv">OTG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">VIDEONUM</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span>silentwind0/kvmd
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1">#确认容器正常运行后可添加自动重启</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>docker<span class="w"> </span>logs<span class="w"> </span>kvmd
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
+<p><strong>安装 Docker</strong></p>
+<ul>
+<li>使用官方包管理器安装：
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>apt<span class="w"> </span>install<span class="w"> </span>apparmor-utils<span class="w"> </span>docker.io<span class="w"> </span>-y
+</code></pre></div></td></tr></table></div></li>
+<li>或者安装最新版本：
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div></td></tr></table></div></li>
+</ul>
+<p><strong>Docker 部署 One-KVM 容器</strong>
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#运行 docker 命令，使用 OTG HID</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1">#系统 /dev/video0 设备已经存在，所以新插入的 USB 采集卡从 /dev/video1 开始</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span>-v<span class="w"> </span>/dev:/dev<span class="w"> </span>-v<span class="w"> </span>/sys/kernel/config:/sys/kernel/config<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span>-v<span class="w"> </span>/lib/modules:/lib/modules:ro<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span>-e<span class="w"> </span><span class="nv">OTG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">VIDEONUM</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span>silentwind0/kvmd
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1">#确认容器正常运行后可添加自动重启</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>docker<span class="w"> </span>logs<span class="w"> </span>kvmd
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
 </code></pre></div></td></tr></table></div>
 <p><a class="glightbox" href="../img/image-20240926220902937.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220902937" src="../img/image-20240926220902937.png"></a></p>
 <h3 id="_3">使用说明</h3>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">提醒</p>
 <p>部分低功耗设备在未接通电源时可能通过 USB 线从私家云二代 OTG 口取电并启动至异常状态，再接通电源也无法启动。要解决此问题，您可以剥开 USB 线剪断红色5V细电线。</p>
 </div>
-<p><strong>SSH</strong></p>
+<p><strong>SSH 远程登录</strong></p>
 <p>Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>不建议使用 <code>apt upgrade</code> 升级内核和设备树，可能会出现系统异常，OTG 功能无法使用。</p>
+</div>
 <p><strong>硬件连接</strong></p>
 <p><a class="glightbox" href="../img/image-20240926220219805.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220219805" src="../img/image-20240926220219805.png"></a></p>
 <p><strong>OLED 显示屏</strong></p>
 <p>前面板的小 OLED 显示屏会循环显示欢迎语、温度和 IP 地址。</p>
 <p><a class="glightbox" href="../img/1730628391056.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="oled" src="../img/1730628391056.png"></a></p>
 <p><strong>WIFI 连接</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>apt<span class="w"> </span>install<span class="w"> </span>network-manager<span class="w"> </span>-y
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">#在命令行文本图形界面中进行 WIFI 连接，支持双频 WIFI</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#第一次连接后，盒子重启连接会自动连接上一次连接的 WIFI</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>nmtui
+<ul>
+<li>
+<p>安装软件包
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>apt<span class="w"> </span>install<span class="w"> </span>network-manager<span class="w"> </span>-y
 </code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>连接 WIFI
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">#在命令行文本图形界面中进行 WIFI 连接，支持双频 WIFI</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1">#第一次连接后，盒子重启连接会自动连接上一次连接的 WIFI</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>nmtui
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
 <p><a class="glightbox" href="../img/image-20240926220204960.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220204960" src="../img/image-20240926220204960.png"></a></p>
-<p><strong>软件截图</strong></p>
-<p><a class="glightbox" href="../img/image-20240926220156381.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220156381" src="../img/image-20240926220156381.png"></a></p></div>
+<p><strong>ATX 电源控制</strong></p>
+<p>私家云二代可以使用 USB HID 继电器作为物理开关机功能的控制方式。</p>
+<p><a class="glightbox" href="../img/1717946862304-33.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../img/1717946862304-33.png"></a></p></div>
 
 
 
@@ -2057,7 +2057,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2024年12月3日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月25日</span>
   </span>
 
     
@@ -2121,13 +2121,13 @@
         
         
           
-          <a href="../orangepizero_install/" class="md-footer__link md-footer__link--next" aria-label="下一页: 香橙派 zero">
+          <a href="../orangepizero_install/" class="md-footer__link md-footer__link--next" aria-label="下一页: 香橙派 Zero">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                香橙派 zero
+                香橙派 Zero
               </div>
             </div>
             <div class="md-footer__button md-icon">

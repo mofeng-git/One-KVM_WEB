@@ -26,7 +26,7 @@
     
     
       
-        <title>s905l3a 盒子 - One-KVM 文档</title>
+        <title>S905l3a 盒子 - One-KVM 文档</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              s905l3a 盒子
+              S905l3a 盒子
             
           </span>
         </div>
@@ -603,7 +603,7 @@
         
   
   <span class="md-ellipsis">
-    香橙派 zero
+    香橙派 Zero
   </span>
   
 
@@ -631,7 +631,7 @@
           
   
   <span class="md-ellipsis">
-    s905l3a 盒子
+    S905l3a 盒子
   </span>
   
 
@@ -642,7 +642,7 @@
         
   
   <span class="md-ellipsis">
-    s905l3a 盒子
+    S905l3a 盒子
   </span>
   
 
@@ -1927,15 +1927,15 @@
   
 
 
-  <h1>s905l3a 盒子</h1>
+  <h1>S905l3a 盒子</h1>
 
 <div><h3 id="_1">硬件说明</h3>
-<div class="admonition warning 提醒">
-<p class="admonition-title">Warning</p>
-<p>此 One-KVM 整合包在中兴 B863AV3.2M 和 CM311-1a-CH 通过测试。其他 s905l3a CPU 盒子可能无法使用，若无法使用可使用下面的 Docker 部署方法。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>此 One-KVM 整合包已经在中兴 B863AV3.2M 和 CM311-1a-CH 设备上通过了测试。对于其他使用 S905L3A CPU 的盒子，可能不完全兼容。如果遇到不兼容的情况，请考虑下面提供的 Docker 部署方法。</p>
 </div>
-<p><code>armbian-install</code> 安装可选型号：
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<p>当使用 <code>armbian-install</code> 工具安装时，以下是支持的设备列表及其对应的 DTB 文件名：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1958,62 +1958,58 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a>--------------------------------------------------------------------------------------
 </code></pre></div></td></tr></table></div>
 <h3 id="_2">整合包部署</h3>
-<p>大致流程：</p>
-<ul>
-<li>
-<p>通电开机进入 android tv，ROOT 后安装 apk 切换到外部（U 盘/TF 卡）引导</p>
-</li>
-<li>
-<p>将整合包写入 U 盘/TF 卡上，盒子重启开机后进入 U 盘/TF 卡上的 armbian 系统</p>
-</li>
-<li>
-<p>用 <code>armbian-install</code> 命令选择对应型号把 One-KVM 的固件 img 写入 emmc</p>
-</li>
-</ul>
+<ol>
+<li><strong>写入整合包</strong>：将 One-KVM 整合包写入U盘或 TF 卡。</li>
+<li><strong>进入 Android TV</strong>：启动设备并进入预装的 Android TV 系统。</li>
+<li><strong>安装引导 APK</strong>：在 Android TV 中获取 ROOT 权限，并安装用于切换到外部介质（如U盘或 TF 卡）引导的 APK。</li>
+<li><strong>刷入固件</strong>：在Android TV启动 APK 引导U盘或 TF 卡，进入 Armbian 环境之后使用 <code>armbian-install</code> 命令选择与设备匹配的型号进行安装。</li>
+</ol>
 <p>安装示例：
 <a class="glightbox" href="../img/PixPin_2024-10-16_22-49-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="install" src="../img/PixPin_2024-10-16_22-49-59.png"></a></p>
 <h3 id="docker">Docker 部署</h3>
-<p>大致流程：</p>
+<p>如果使用Docker来部署服务，步骤如下：</p>
+<ol>
+<li><strong>刷入 Android 系统</strong>：为您的机顶盒刷入一个可 ROOT 的 Android 系统，并安装用于切换到外部介质引导的 APK。</li>
+<li><strong>刷入 Armbian 系统</strong>：为优盘刷入一个可启动的 Armbian 系统镜像，并将其接入机顶盒，在 Android系统下切换至该外部介质启动。</li>
+<li><strong>刷写 EMMC</strong>：使用 <code>armbian-install</code> 命令将当前的 Armbian 系统刷写入 EMMC。</li>
+<li><strong>配置 Docker</strong>：拔出优盘，重启机顶盒。更换软件源为国内源，然后安装 Docker。</li>
+<li><strong>部署 One-KVM</strong>：使用 Docker运行 One-KVM 镜像，确保 OTG 端口被正确设置为 device 模式，并将此命令添加到开机启动脚本中。确认容器正常运行后，设置 Docker 服务以及容器自启动。</li>
+</ol>
+<p>部署 One-KVM 的命令如下：</p>
 <ul>
-<li>为机顶盒刷入安卓系统，安卓系统 ROOT 后安装切换卡载系统 apk</li>
-<li>为优盘刷入可启动的 armbian 系统，优盘接入机顶盒，在安卓系统下切换至卡载系统</li>
-<li>执行 <code>armbian-install</code> 命令将卡载系统刷写入 EMMC</li>
-<li>拔出优盘重启机顶盒，换源，安装 Docker 软件</li>
-<li>在 Docker 中部署 kvmd 镜像
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#运行 kvmd 容器</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span>-v<span class="w"> </span>/lib/modules:/lib/modules:ro<span class="w"> </span>-v<span class="w"> </span>/dev:/dev
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>-v<span class="w"> </span>/sys/kernel/config:/sys/kernel/config<span class="w"> </span>-e<span class="w"> </span><span class="nv">OTG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">VIDEONUM</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="c1">#使能 OTG device 模式</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>device<span class="w"> </span>&gt;<span class="w"> </span>/sys/class/usb_role/ffe09000.usb-role-switch/role
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1">#将 OTG 端口使能命令写入开机启动脚本 /etc/rc.local</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/rc.local
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="c1">#添加脚本执行权限</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/etc/rc.local
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1">#确认容器正常运行后，设置 Docker 自启动，容器 kvmd 自启动</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>sudo<span class="w"> </span>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
+<li>运行 kvmd 容器
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>-v<span class="w"> </span>/lib/modules:/lib/modules:ro<span class="w"> </span>-v<span class="w"> </span>/dev:/dev
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span>-v<span class="w"> </span>/sys/kernel/config:/sys/kernel/config<span class="w"> </span>-e<span class="w"> </span><span class="nv">OTG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">VIDEONUM</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd
 </code></pre></div></td></tr></table></div></li>
+<li>
+<p>设置 OTG 端口为 device 模式
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#使能 OTG device 模式</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>device<span class="w"> </span>&gt;<span class="w"> </span>/sys/class/usb_role/ffe09000.usb-role-switch/role
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">#将 OTG 端口使能命令写入开机启动脚本 /etc/rc.local</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/rc.local
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1">#添加脚本执行权限</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/etc/rc.local
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>设置容器开机自启动
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>sudo<span class="w"> </span>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
+</code></pre></div></td></tr></table></div>
+</li>
 </ul></div>
 
 
@@ -2037,7 +2033,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月18日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月25日</span>
   </span>
 
     
@@ -2084,7 +2080,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../orangepizero_install/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 香橙派 zero">
+          <a href="../orangepizero_install/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 香橙派 Zero">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2094,7 +2090,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                香橙派 zero
+                香橙派 Zero
               </div>
             </div>
           </a>
