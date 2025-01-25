@@ -1336,7 +1336,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      配置示例
+      配置方法
     </span>
   </a>
   
@@ -1345,7 +1345,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      参数优化
+      性能优化
     </span>
   </a>
   
@@ -1896,7 +1896,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      配置示例
+      配置方法
     </span>
   </a>
   
@@ -1905,7 +1905,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      参数优化
+      性能优化
     </span>
   </a>
   
@@ -1932,12 +1932,24 @@
   <h1>CH9329 HID</h1>
 
 <div><h3 id="_1">硬件介绍</h3>
-<p>CH9329 是一款串口转标准USB HID设备(键盘、鼠标、自定义HID)芯片，根据不同的工作模式，在电脑上可被识别为标准的USB键盘设备、USB鼠标设备或自定义HID类设备。</p>
+<p>CH9329 是一款串口转标准USB HID设备芯片，支持转换为键盘、鼠标或自定义HID设备。根据配置的工作模式，可在电脑上被识别为相应的标准USB设备。</p>
 <p><a class="glightbox" href="../../img/image-20240812203814747.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240812203814747" src="../../img/image-20240812203814747.png"></a></p>
-<h3 id="_2">配置示例</h3>
-<p>对于Docker 版用户，可在部署时通过环境变量设置 CH9329 参数。</p>
-<p>也可到 <code>/etc/kvmd/override.yaml</code> 替换添加如下配置内容，<code>speed</code> 参数为串口通信速度。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="admonition warning">
+<p class="admonition-title">使用注意</p>
+<p>根据用户反馈，实际使用中可能出现设备断联的情况，建议采取以下措施来提高稳定性：</p>
+<ul>
+<li>将波特率调整为115200</li>
+<li>开启无操作 <a href="../mouse_jiggler/">鼠标抖动器</a></li>
+</ul>
+</div>
+<h3 id="_2">配置方法</h3>
+<p>可通过以下两种方式配置CH9329参数：</p>
+<ol>
+<li>Docker部署时通过环境变量设置</li>
+<li>直接修改配置文件 <code>/etc/kvmd/override.yaml</code></li>
+</ol>
+<p>配置文件示例：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
@@ -1946,14 +1958,28 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nt">hid</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ch9329</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="nt">device</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/dev/ttyUSB0</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="nt">speed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9600</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="nt">speed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9600</span><span class="w">        </span><span class="c1"># 串口通信速度</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="nt">read_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_3">参数优化</h3>
-<p>可下载<a href="https://www.wch.cn/downloads/CH9329EVT_ZIP.html">CH9329配置&amp;测试工具</a>对硬件参数进行修改。</p>
-<p>通过提供的上位机软件，用户可自行配置芯片工作模式、串口通信模式、串口通信波特率、多种超时时间、VID、PID，以及各种USB字符串描述符。</p>
-<p>这里推荐用户将串口通信波特率从 9600 修改为 115200 （同时还需要修改 One-KVM 配置文件的CH9329 speed 参数），CH9329 延迟将大幅减小，网页远程控制体验将大幅提升。</p>
-<p>如有对抗检测的需要，也可以自行修改 USB 设备标识 VID 和 PID。</p>
+<h3 id="_3">性能优化</h3>
+<p>使用<a href="https://www.wch.cn/downloads/CH9329EVT_ZIP.html">CH9329配置&amp;测试工具</a>可对设备进行以下优化：</p>
+<ol>
+<li>
+<p><strong>提升响应速度</strong></p>
+<ul>
+<li>将波特率从9600提升到115200</li>
+<li>同步修改One-KVM配置文件中的speed参数</li>
+</ul>
+<p>此调整有助于改善远程控制的操控体验。</p>
+</li>
+<li>
+<p><strong>自定义设备标识</strong></p>
+<ul>
+<li>可修改USB设备的VID和PID</li>
+<li>支持配置USB字符串描述符</li>
+</ul>
+</li>
+</ol>
 <p><a class="glightbox" href="../../img/image-202422131332.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="CH9329Test_CfgTool" src="../../img/image-202422131332.png"></a></p></div>
 
 

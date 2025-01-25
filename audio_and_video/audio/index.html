@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#hdmi" class="md-skip">
           跳转至
         </a>
       
@@ -1130,20 +1130,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hdmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDMI 音频支持
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDMI 音频支持">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      使用
+      配置方法
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      效果演示
+      查找音频设备
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      效果展示
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1874,20 +1898,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hdmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDMI 音频支持
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDMI 音频支持">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      使用
+      配置方法
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      效果演示
+      查找音频设备
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      效果展示
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1911,12 +1959,16 @@
 
   <h1>H.264 音频</h1>
 
-<div><p>现 Docker 版 H.264/WebRTC 支持实时的流畅音频，音质足够听音乐。</p>
-<p>HDMI 音频采集使用 Linux ALSA 声卡驱动，由 ustreamer janus 采集 HDMI 采集卡的音频并转码为 opus 实时音频格式，通过 H.264/WebRTC 在浏览器端播放。</p>
-<h3 id="_1">使用</h3>
-<p>对于 Docker 版本用户，Docker 部署时可通过 <code>-e AUDIONUM=0</code> <a href="docker_install.md#_3">环境变量</a> 指定。</p>
-<hr>
-<p>对于整合包用户，音频设备配置文件为 <code>/etc/kvmd/janus/janus.plugin.ustreamer.jcfg</code>，可通过修改此文件使用音频输入设备。</p>
+<div><h3 id="hdmi">HDMI 音频支持</h3>
+<div class="admonition note">
+<p class="admonition-title">音频功能说明</p>
+<p>One-KVM 最新版本支持通过 H.264/WebRTC 实时传输 HDMI 音频，音质足够流畅地播放音乐。系统使用 Linux ALSA 声卡驱动，由 ustreamer 和 janus 负责采集 HDMI 音频并转码为 opus 格式。</p>
+</div>
+<h4 id="_1">配置方法</h4>
+<p><strong>Docker 版本用户</strong></p>
+<p>通过环境变量 <code>-e AUDIONUM=0</code> 指定音频设备，详见<a href="../../start_install/docker_install/#_3">Docker 环境变量说明</a>。</p>
+<p><strong>整合包用户</strong></p>
+<p>编辑音频配置文件 <code>/etc/kvmd/janus/janus.plugin.ustreamer.jcfg</code>：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -1931,22 +1983,25 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">     </span><span class="nv">tc358743 = "/dev/video0"</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p p-Indicator">}</span>
 </code></pre></div></td></tr></table></div>
-<p>其中 <code>device</code> 后面的值为采集卡音频设备地址，<code>tc358743</code> 后面的值为你的采集卡视频地址。</p>
-<p>Linux 系统下音频设备可通过 <code>arecord -L</code> 或 <code>arecord -l</code> 命令查看。</p>
-<p><strong>音频输入设备编号说明</strong></p>
+<p>配置说明：</p>
+<ul>
+<li><code>device</code>: 音频设备地址</li>
+<li><code>tc358743</code>: 采集卡视频设备地址</li>
+</ul>
+<h4 id="_2">查找音频设备</h4>
+<p>在 Linux 系统下，可以通过以下命令查看可用的音频设备：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>arecord<span class="w"> </span>-L<span class="w">   </span><span class="c1"># 查看详细设备列表</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>arecord<span class="w"> </span>-l<span class="w">   </span><span class="c1"># 查看简要设备列表</span>
+</code></pre></div></td></tr></table></div>
+<p>支持以下三种方式指定音频设备：</p>
 <ol>
-<li>
-<p>使用声卡编号，例如：hw:0</p>
-</li>
-<li>
-<p>使用声卡名，例如：hw:CARD=MS2109</p>
-</li>
-<li>
-<p>使用设备文件，例如：hw:/dev/snd/controlC0</p>
-</li>
+<li>声卡编号方式：<code>hw:0</code></li>
+<li>声卡名称方式：<code>hw:CARD=MS2109</code></li>
+<li>设备文件方式：<code>hw:/dev/snd/controlC0</code></li>
 </ol>
-<p>从三种方式中任选其一写入配置文件中接口写入即可在网页使用 H.264 音频。</p>
-<h3 id="_2">效果演示</h3>
+<p>选择其中一种方式配置即可启用 HDMI 音频功能。</p>
+<h4 id="_3">效果展示</h4>
 <p><a class="glightbox" href="../../img/image-202411051650.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HDMI 音频" src="../../img/image-202411051650.png"></a></p>
 <p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../video/2024-11-05%2016-36-29_x264.mp4" type="video/mp4"></source></video></div></p></div>
 

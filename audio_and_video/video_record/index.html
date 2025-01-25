@@ -1153,18 +1153,33 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      视频录制功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视频录制功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       前端录制
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       后端录制
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1876,18 +1891,33 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      视频录制功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视频录制功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       前端录制
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       后端录制
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1911,17 +1941,36 @@
 
   <h1>视频录制</h1>
 
-<div><p>根据需求可以选择网页前端视频录制或后端命令行视频录制。</p>
-<h3 id="_1">前端录制</h3>
-<p>网页视频音视频录制功能由浏览端实现，调用浏览器 MediaStream Recording API 进行视频的录制和保存。</p>
-<p>此功能支持 MJPEG 视频模式（无音频）、H.264/WebRTC 视频模式（可包含音频）下的视频画面录制。</p>
-<p>点击网页右上角 --&gt; 系统 --&gt; 开始录制即可开始当前视频画面的录制，点击结束录制后浏览器会自动下载录制的视频文件，文件格式为 webm。</p>
-<p><strong>实际效果</strong></p>
-<p><a class="glightbox" href="../../img/image-202411052015.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="视频录制" src="../../img/image-202411052015.png"></a></p>
-<h3 id="_2">后端录制</h3>
-<p><strong>视频录制</strong></p>
-<p>登录 One-KVM 主机终端，使用 ustreamer-dump 工具进行视频导出，再使用 ffmpeg 进行视频转码。</p>
-<p>可以使用 <code>ustreamer-dump --help</code> 查看此工具用法，示例如下：</p>
+<div><h3 id="_1">视频录制功能</h3>
+<p>One-KVM 支持前端和后端两种视频录制方式，您可以根据需求选择合适的方案。</p>
+<h4 id="_2">前端录制</h4>
+<div class="admonition note">
+<p class="admonition-title">浏览器录制</p>
+<p>前端录制功能由浏览器的 MediaStream Recording API 实现，支持：</p>
+<ul>
+<li>MJPEG 视频模式（无音频）</li>
+<li>H.264/WebRTC 视频模式（可包含音频）</li>
+<li>自动下载录制文件（WebM 格式）</li>
+</ul>
+</div>
+<p><strong>使用方法</strong></p>
+<ol>
+<li>点击网页右上角 --&gt; 系统 --&gt; 开始录制</li>
+<li>系统开始录制当前视频画面</li>
+<li>点击结束录制后，浏览器自动下载录制文件</li>
+</ol>
+<p><a class="glightbox" href="../../img/image-202411052015.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="视频录制界面" src="../../img/image-202411052015.png"></a></p>
+<h4 id="_3">后端录制</h4>
+<div class="admonition tip">
+<p class="admonition-title">命令行录制</p>
+<p>后端录制使用 ustreamer-dump 工具，支持：</p>
+<ul>
+<li>多种视频编码格式</li>
+<li>实时转码功能</li>
+<li>灵活的命令行选项</li>
+</ul>
+</div>
+<p><strong>录制原始码流</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -1929,29 +1978,34 @@
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
 <span class="normal"><a href="#__codelineno-0-6">6</a></span>
 <span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span>
-<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#录制原始码流</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#录制 h264 视频码流（需 ustreamer 启用 h264）</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::h264<span class="w"> </span>-o<span class="w"> </span>video-recoed1.h264
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#录制 mjpeg 视频码流（需 ustreamer 启用 mjpeg）</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::jpeg<span class="w"> </span>-o<span class="w"> </span>video-recoed1.jpeg
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#录制 yuyv 视频码流（需 ustreamer 启用 yuyv）</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::yyuyv<span class="w"> </span>-o<span class="w"> </span>video-recoed1.yuyv
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># 录制 H.264 视频码流（需启用 H.264）</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::h264<span class="w"> </span>-o<span class="w"> </span>video-record.h264
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># 录制 MJPEG 视频码流（需启用 MJPEG）</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::jpeg<span class="w"> </span>-o<span class="w"> </span>video-record.mjpeg
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1"># 录制 YUYV 视频码流（需启用 YUYV）</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::yuyv<span class="w"> </span>-o<span class="w"> </span>video-record.yuyv
 </code></pre></div></td></tr></table></div>
+<p><strong>实时转码为 MP4</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#录制的同时转码视频为 MP4 格式</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># mjpeg --&gt; mp4</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::jpeg<span class="w"> </span>-o<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>ffmpeg<span class="w"> </span>-use_wallclock_as_timestamps<span class="w"> </span><span class="m">1</span><span class="w"> </span>-i<span class="w"> </span>pipe:<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>video-recoed1.mp4
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># MJPEG 转 MP4</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::jpeg<span class="w"> </span>-o<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span>ffmpeg<span class="w"> </span>-use_wallclock_as_timestamps<span class="w"> </span><span class="m">1</span><span class="w"> </span>-i<span class="w"> </span>pipe:<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>video-record.mp4
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">#h.264 --&gt; mp4</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::h264<span class="w"> </span>-o<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>ffmpeg<span class="w"> </span>-use_wallclock_as_timestamps<span class="w"> </span><span class="m">1</span><span class="w"> </span>-i<span class="w"> </span>pipe:<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>video-recoed2.mp4
-</code></pre></div></td></tr></table></div></div>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1"># H.264 转 MP4</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>ustreamer-dump<span class="w"> </span>-s<span class="w"> </span>kvmd::ustreamer::h264<span class="w"> </span>-o<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span>ffmpeg<span class="w"> </span>-use_wallclock_as_timestamps<span class="w"> </span><span class="m">1</span><span class="w"> </span>-i<span class="w"> </span>pipe:<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>video-record.mp4
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">查看帮助</p>
+<p>使用 <code>ustreamer-dump --help</code> 可以查看更多命令行选项和用法说明。</p>
+</div></div>
 
 
 

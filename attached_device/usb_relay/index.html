@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#usb-atx" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1465,6 +1470,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    USB 继电器
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1474,6 +1490,74 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usb-atx" class="md-nav__link">
+    <span class="md-ellipsis">
+      USB 继电器实现 ATX 电源管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="USB 继电器实现 ATX 电源管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      演示视频
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1818,6 +1902,65 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usb-atx" class="md-nav__link">
+    <span class="md-ellipsis">
+      USB 继电器实现 ATX 电源管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="USB 继电器实现 ATX 电源管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      演示视频
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1836,14 +1979,23 @@
 
   <h1>USB 继电器</h1>
 
-<div><p>这里将介绍如何使用 USB 继电器实现 ATX 电源管理。</p>
-<p>硬件：LCUS_HID USB 继电器<br>
-路径：/dev/hidraw0</p>
-<p><a class="glightbox" href="../../img/image-1727875062722.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LCUS_HID USB" src="../../img/image-1727875062722.png"></a></p>
-<p><a class="glightbox" href="../../img/2024100200.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LCUS_HID USB" src="../../img/2024100200.png"></a></p>
-<p>Docker 容器建立时映射继电器设备并设置环境变量  <code>-e ATX=USBRELAY_HID</code></p>
-<p>私家云二代示例命令：
-</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div><h3 id="usb-atx">USB 继电器实现 ATX 电源管理</h3>
+<h4 id="_1">硬件要求</h4>
+<ul>
+<li>设备型号：LCUS_HID USB 继电器</li>
+<li>设备路径：<code>/dev/hidraw0</code></li>
+</ul>
+<p><a class="glightbox" href="../../img/image-1727875062722.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LCUS_HID USB 继电器正面" src="../../img/image-1727875062722.png"></a>
+<a class="glightbox" href="../../img/2024100200.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LCUS_HID USB 继电器背面" src="../../img/2024100200.png"></a></p>
+<h4 id="_2">配置说明</h4>
+<p>在启动 Docker 容器时，需要：</p>
+<ol>
+<li>映射继电器设备</li>
+<li>设置环境变量 <code>ATX=USBRELAY_HID</code></li>
+</ol>
+<h4 id="_3">部署示例</h4>
+<p>以下是私家云二代的完整部署命令：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
@@ -1853,6 +2005,7 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
+<h4 id="_4">演示视频</h4>
 <p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../video/one-kvm_atx0_x264.mp4" type="video/mp4"></source></video></div></p></div>
 
 

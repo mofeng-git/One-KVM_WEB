@@ -1894,8 +1894,7 @@
   <h1>Webterm 网页终端</h1>
 
 <div><h3 id="_1">说明</h3>
-<p>网页终端默认登入的账户为 kvmd-webterm，根据用户需求，最新包 One-KVM_Armbian_by-SilentWind_for-Onecloud_24.6.18 中已将 kvmd-webterm 用户加入 sudo 权限组，可以直接使用 sudo 进行提权执行特权命令。</p>
-<p>更早的版本中未配置此功能，kvmd-webterm 用户无法使用 <code>sudo</code> 命令，如需执行需要root权限的命令请先执行 <code>su root</code> 切换到 root 账户。</p>
+<p>网页终端默认登入的账户为 kvmd-webterm，处于安全考虑此用户无法使用 <code>sudo</code> 命令，如需执行需要root权限的命令请先执行 <code>su root</code> 切换到 root 账户。</p>
 <p><a class="glightbox" href="../../img/image-20240622160417474.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240622160417474" src="../../img/image-20240622160417474.png"></a></p></div>
 
 

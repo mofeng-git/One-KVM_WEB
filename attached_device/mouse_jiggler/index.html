@@ -1306,27 +1306,42 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      介绍
+      鼠标抖动器
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="鼠标抖动器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      启用
+      启用方法
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      算法
+      工作原理
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用场景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1887,27 +1902,42 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      介绍
+      鼠标抖动器
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="鼠标抖动器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      启用
+      启用方法
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      算法
+      工作原理
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用场景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1931,30 +1961,70 @@
 
   <h1>鼠标抖动器</h1>
 
-<div><h3 id="_1">介绍</h3>
-<p>鼠标抖动器是一种用于模拟电脑鼠标运动的功能。它可以防止睡眠模式、待机模式或屏保启动。当目标主机上正在进行某些冗长的进程（如安装软件），而用户需要用侧视功能监控进程时，该功能就非常有用，用户无需手动移动鼠标来避开屏幕保护程序。</p>
-<h3 id="_2">启用</h3>
-<p>要启用鼠标抖动器功能，必须更新到最新版本，并在 <code>/etc/kvmd/override.yaml</code> 中添加一些配置。</p>
-<p><code>active: true</code> 此行配置将允许鼠标抖动器功能在重启后自动激活运行，如果不希望这样，可以删除此行。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div><h3 id="_1">鼠标抖动器</h3>
+<div class="admonition note">
+<p class="admonition-title">功能说明</p>
+<p>鼠标抖动器（Mouse Jiggler）是一个模拟鼠标移动的功能，可以：</p>
+<ul>
+<li>防止系统进入睡眠或待机模式</li>
+<li>阻止屏幕保护程序激活</li>
+<li>在后台自动运行，无需人工干预</li>
+<li>不会干扰正常的操作</li>
+</ul>
+</div>
+<h4 id="_2">启用方法</h4>
+<ol>
+<li>
+<p>编辑配置文件 <code>/etc/kvmd/override.yaml</code>：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">kvmd</span><span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nt">hid</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nt">jiggler</span><span class="p">:</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">            </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">    </span><span class="c1"># 在菜单中显示此功能</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">            </span><span class="nt">active</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">     </span><span class="c1"># 开机后自动启动（可选）</span>
 </code></pre></div></td></tr></table></div>
-<p>添加配置后需要重启 kvmd 服务使配置生效。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd
+</li>
+<li>
+<p>重启 kvmd 服务：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd
 </code></pre></div></td></tr></table></div>
-<p><a class="glightbox" href="../../img/PixPin_2024-06-30_19-39-44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_19-39-44" src="../../img/PixPin_2024-06-30_19-39-44.png"></a></p>
-<h3 id="_3">算法</h3>
-<p>当鼠标抖动器功能处于启用状态时，程序会倒计时上次用户输入（即键盘或鼠标的任何操作）后的时间。如果超过 60 秒没有任何操作，标抖动器功能就会执行一次鼠标移动，然后再等待 60 秒，直到下一次迭代。</p>
-<p>绝对模式：坐标会根据屏幕分辨率进行转换：<code>(-100, -100), wait, (100, 100), wait...</code> 相对坐标：<code>(-10, -10), wait, (10, 10), wait...</code>
-即使网页关闭，鼠标抖动器功能也能在后台继续工作。</p>
-<p>当然，此功能不会干扰用户的正常工作，如果用户正在使用键盘和鼠标进行交互，此程序不会引入干扰，直到它发现闲置时间超过了 60 秒的阈值。</p></div>
+</li>
+<li>
+<p>在 Web 界面右上角系统菜单中开启功能：</p>
+</li>
+</ol>
+<p><a class="glightbox" href="../../img/PixPin_2024-06-30_19-39-44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="鼠标抖动器开关" src="../../img/PixPin_2024-06-30_19-39-44.png"></a></p>
+<h4 id="_3">工作原理</h4>
+<div class="admonition info">
+<p class="admonition-title">运行机制</p>
+<ol>
+<li>系统会监控用户的输入活动（键盘和鼠标）</li>
+<li>当检测到 60 秒无操作时：</li>
+<li>绝对定位模式：移动到 <code>(-100, -100)</code> → 等待 → <code>(100, 100)</code> → 等待</li>
+<li>相对定位模式：移动 <code>(-10, -10)</code> → 等待 → <code>(10, 10)</code> → 等待</li>
+<li>重复以上过程直到检测到用户操作</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">特点说明</p>
+<ul>
+<li>支持绝对和相对两种鼠标模式</li>
+<li>坐标会根据屏幕分辨率自动调整</li>
+<li>即使关闭 Web 界面也能在后台运行</li>
+<li>用户操作时会自动暂停，不会造成干扰</li>
+<li>仅在检测到超过 60 秒无操作时才会启动</li>
+</ul>
+</div>
+<h4 id="_4">使用场景</h4>
+<ul>
+<li>远程监控软件安装过程</li>
+<li>防止系统自动锁屏或休眠</li>
+<li>需要保持系统活动状态的场合</li>
+<li>长时间无人值守的操作</li>
+</ul></div>
 
 
 

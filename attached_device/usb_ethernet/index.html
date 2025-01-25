@@ -1392,6 +1392,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows 系统配置
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1893,6 +1902,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows 系统配置
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1916,7 +1934,7 @@
 <div><h3 id="_1">基本配置</h3>
 <ol>
 <li>
-<p>编辑 <code>/etc/kvmd/override.yaml</code> 文件添加以下行：
+<p>编辑 <code>/etc/kvmd/override.yaml</code> 文件添加配置：
     </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -1928,10 +1946,9 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="nt">ethernet</span><span class="p">:</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">            </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">            </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ecm</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">            </span><span class="nt">host_mac</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">48:6f:73:74:50:43</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">            </span><span class="nt">kvm_mac</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42:61:64:55:53:42</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">            </span><span class="nt">host_mac</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">48:6f:73:74:50:43</span><span class="w">  </span><span class="c1"># 被控机网络接口的MAC地址</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">            </span><span class="nt">kvm_mac</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42:61:64:55:53:42</span><span class="w">   </span><span class="c1"># PiKVM usb0接口的MAC地址</span>
 </code></pre></div></td></tr></table></div>
-    <code>host_mac</code> 地址将用于被控机的网络接口。<code>kvm_mac</code> 表示将分配给 PiKVM 本地接口的地址，PiKVM 接口应该是 <code>usb0</code> 接口。如果没有指定 <code>host_mac</code> 或 <code>kvm_mac</code>，将使用随机值。驱动程序参数表示 USB 网络将使用的协议，默认值为 ecm，其他可用值包括 eem、ncm、rndis 和 rndis5。
 <p><strong>驱动程序兼容性：</strong></p>
 <table>
 <thead>
@@ -1966,27 +1983,25 @@
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_20-41-01.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_20-41-01" src="../../img/PixPin_2024-06-30_20-41-01.png"></a></p>
 </li>
 <li>
-<p>要在被控机上自动配置 USB 网络，建议使用 <code>kvmd-otgnet</code> 服务。它会自动配置防火墙，启动 DHCP 为本地 PiKVM <code>usb0</code> 接口和被控机接口分配 IPv4 地址。默认情况下，将为 <code>usb0</code> 接口和被控机接口分配 172.30.30.0/24 地址。出于安全考虑，从被控机到 PiKVM 端的所有传入连接都将被阻止（ICMP 和用于 DHCP 的 UDP 端口 67 除外）。
+<p>启用 <code>kvmd-otgnet</code> 服务进行自动配置：
     </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>kvmd-otgnet
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kvmd-otgnet
 </code></pre></div></td></tr></table></div>
-    在 <code>kvmd-otgnet</code>  服务运行后，被控机可能需要手动进行 DHCP 请求才能获取到 IP 地址。
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<blockquote>
+<p>注意：服务启动后，被控机可能需要手动获取IP：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>#在 Ubuntu 22.04 上经过测试
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>#根据 host_mac 地址判断 USB 网络接口名称
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>ifconfig -a
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>sudo apt install udhcpc
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>udhcpc -i 网络接口
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Ubuntu 22.04测试通过</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>ifconfig<span class="w"> </span>-a<span class="w">                </span><span class="c1"># 查看网络接口名称</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>udhcpc<span class="w">   </span><span class="c1"># 安装 DHCP 客户端</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>udhcpc<span class="w"> </span>-i<span class="w"> </span>&lt;接口名称&gt;<span class="w">      </span><span class="c1"># 获取 IP 地址</span>
 </code></pre></div></td></tr></table></div>
-    <a class="glightbox" href="../../img/PixPin_2024-06-30_21-07-06.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_21-07-06" src="../../img/PixPin_2024-06-30_21-07-06.png"></a>
-    如果要允许从被控机访问 PiKVM 界面，则、需要使用 <code>/etc/kvmd/override.yaml</code> 文件在白名单中添加端口 80 和 443，如下所示：
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+</blockquote>
+<p><a class="glightbox" href="../../img/PixPin_2024-06-30_21-07-06.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_21-07-06" src="../../img/PixPin_2024-06-30_21-07-06.png"></a>
+如果要允许从被控机访问 One-KVM 界面，则、需要使用 <code>/etc/kvmd/override.yaml</code> 文件在白名单中添加端口 80 和 443，如下所示：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">otgnet</span><span class="p">:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nt">firewall</span><span class="p">:</span>
@@ -1995,14 +2010,16 @@
 </li>
 </ol>
 <h3 id="_2">路由转发</h3>
-<p>默认情况下，只允许 PiKVM 和被控机主机之间互相通信，被控机主机无法访问 PiKVM 以外的其他主机。如果被控机主机需要通过 USB 以太网功能访问全部网络（即可以访问 PiKVM 可以访问的所有主机），需要在 <code>/etc/kvmd/override.yaml</code> 中添加下的配置。</p>
+<p>要启用被控机访问外部网络的功能，需要：</p>
 <ol>
-<li>允许 IPv4 转发
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"net.ipv4.ip_forward = 1"</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/sysctl.d/99-kvmd-extra.conf
-</code></pre></div></td></tr></table></div></li>
-<li>在配置文件中添加用于转发请求的网络接口（默认网关）、添加 DNS 服务器以提供主机名解析服务，以及分配的虚拟网段。 
-     <code>net</code> 参数定义 <code>usb0</code> 接口和被控机网络接口获取到的的网络地址范围，包括在 <code>post_start_cmd_append</code> 下定义的 DNS 服务器。注意：该网络不应与 PiKVM 所连接的网络网段相同。
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<li>
+<p>开启IPv4转发：
+    </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"net.ipv4.ip_forward = 1"</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/sysctl.d/99-kvmd-extra.conf
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>配置网络参数（在 <code>/etc/kvmd/override.yaml</code> 中）：
+    </p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span>
@@ -2011,16 +2028,27 @@
 <span class="normal"><a href="#__codelineno-5-7">7</a></span>
 <span class="normal"><a href="#__codelineno-5-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">otgnet</span><span class="p">:</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="nt">firewall</span><span class="p">:</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">        </span><span class="nt">forward_iface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth0</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">        </span><span class="nt">forward_iface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth0</span><span class="w">    </span><span class="c1"># 指定外部网络接口</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nt">commands</span><span class="p">:</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">        </span><span class="nt">post_start_cmd_append</span><span class="p">:</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"--dhcp-option=6,8.8.8.8"</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"--dhcp-option=6,8.8.8.8"</span><span class="w">    </span><span class="c1"># 配置DNS服务器</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="nt">iface</span><span class="p">:</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">        </span><span class="nt">net</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.65.0.0/28</span>
-</code></pre></div></td></tr></table></div></li>
-<li>重启 PiKVM。<code>reboot</code>
-    <a class="glightbox" href="../../img/PixPin_2024-06-30_21-43-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_21-43-59" src="../../img/PixPin_2024-06-30_21-43-59.png"></a></li>
-</ol></div>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">        </span><span class="nt">net</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.65.0.0/28</span><span class="w">    </span><span class="c1"># 设置不同于主网络的地址段</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>重启 One-KVM。<code>reboot</code>
+    <a class="glightbox" href="../../img/PixPin_2024-06-30_21-43-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_21-43-59" src="../../img/PixPin_2024-06-30_21-43-59.png"></a></p>
+</li>
+</ol>
+<h3 id="windows">Windows 系统配置</h3>
+<p>对于 Windows 系统：</p>
+<ol>
+<li>使用 <code>rndis</code> 驱动</li>
+<li>Windows 7 及以上版本会自动安装驱动</li>
+<li>Windows XP 至 Windows 7 需要手动安装 RNDIS 5 驱动</li>
+</ol>
+<p>配置完成后，可以通过 ping 命令测试连接。</p></div>
 
 
 

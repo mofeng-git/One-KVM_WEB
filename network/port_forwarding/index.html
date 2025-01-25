@@ -1895,21 +1895,34 @@
 
   <h1>端口转发</h1>
 
-<div><p>如果需要从互联网访问 PiKVM，最简单的方法是在路由器上设置转发端口。在这种情况下，需要运营商给路由器分配了公网 IPv4 或公网 IPv6 地址。</p>
+<div><p>如果需要从互联网访问 One-KVM，最简单的方法是在路由器上设置转发端口。在这种情况下，需要运营商给路由器分配了公网 IPv4 或公网 IPv6 地址。</p>
 <h3 id="_1">端口转发配置</h3>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>要配置端口转发将 One-KVM 服务暴露到公网上时，强烈建议您设置强密码并启用双因素授权避免未授权访问。<br>
-如果没有公网 IP 地址，可以尝试使用 Frp 、 Tailscale 等软件进行端口映射或异地组网。</p>
+<p class="admonition-title">安全建议</p>
+<p>要配置端口转发将 One-KVM 服务暴露到公网上时，强烈建议您设置强密码并启用双因素认证以防止未授权访问。<br>
+如果没有公网 IP 地址，可以考虑使用 Frp、Tailscale 等工具实现端口映射或异地组网。</p>
 </div>
-<p>Web UI 的监听端口为 (HTTP 80) 和 (HTTPS 443)，默认情况下，80端口会自动重定向到443端口。大多数情况下，转发443端口就足够了，如果还需要使用 VNC 服务的则需要再转发5900端口。</p>
-<p>这是在小米路由器管理后台新建端口转发的简单示例。</p>
+<p>One-KVM 整合包版本的 Web 界面默认使用以下端口：</p>
+<ul>
+<li>HTTP：80 端口（会自动重定向到 HTTPS）</li>
+<li>HTTPS：443 端口</li>
+</ul>
+<p>One-KVM Docker 版本的 Web 界面默认使用以下端口：</p>
+<ul>
+<li>HTTP：8080 端口（会自动重定向到 HTTPS）</li>
+<li>HTTPS：4430 端口</li>
+</ul>
+<p>通常情况下，只需要转发 443 或 4430 端口即可访问 Web 管理界面。</p>
+<p>以下是在小米路由器管理后台配置端口转发的示例。</p>
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-01-25.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_17-01-25" src="../../img/PixPin_2024-06-30_17-01-25.png"></a></p>
-<details class="note">
-<summary>网页远程访问需要使用"https://"协议头</summary>
-<p>注意，远程访问 One-KVM 网页时需要手动在网址栏添加"https://"协议头，否则默认的"http://"协议头会返回错误"400 Bad Request The plain HTTP request was sent to HTTPS port"。</p>
-<p><a class="glightbox" href="../../img/PixPin_2024-06-30_16-37-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_16-37-59" src="../../img/PixPin_2024-06-30_16-37-59.png"></a></p>
-</details></div>
+<div class="admonition note">
+<p class="admonition-title">使用 HTTPS 协议访问</p>
+<p>访问 One-KVM 网页界面时，必须使用 <code>https://</code> 协议头，例如：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>https://your-domain:port
+</code></pre></div></td></tr></table></div>
+使用 <code>http://</code> 将会收到 "400 Bad Request" 错误
+<p><a class="glightbox" href="../../img/PixPin_2024-06-30_16-37-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HTTPS访问提示" src="../../img/PixPin_2024-06-30_16-37-59.png"></a></p>
+</div></div>
 
 
 

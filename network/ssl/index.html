@@ -1896,14 +1896,36 @@
   <h1>SSL 加密连接</h1>
 
 <div><h3 id="ssl">更换 SSL 证书</h3>
-<p>SSL 证书密钥放置在 /etc/kvmd/nginx/ssl/ 目录下，默认为 One-KVM 安装时生成的自签证书，不受浏览器信任。如果需要使用自己的证书，请替换 /etc/kvmd/nginx/ssl/中的密钥和证书并重新启动kvmd-nginx服务。</p>
-<p>这是安装 ZeroSSL SSL证书的简单示例。</p>
-<p>首先添加域名或 IP 并完成域名或  IP 验证，然后下载 NGINX 格式的 SSL 证书。</p>
-<p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-10-48.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_17-10-48" src="../../img/PixPin_2024-06-30_17-10-48.png"></a></p>
-<p>然后将下载的 SSL 证书和私钥重命名为”server“+后缀名，上传至 One-KVM 主机 /etc/kvmd/nginx/ssl/ 目录下，最后重启 kvmd-nginx 服务使新的 SSL 证书生效。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd-nginx
+<div class="admonition note">
+<p class="admonition-title">One-KVM 默认使用自签名证书</p>
+<p>One-KVM 默认使用自签名证书，存放在 <code>/etc/kvmd/nginx/ssl/</code> 目录下。由于是自签名证书，浏览器会提示不安全。您可以替换为受信任的 SSL 证书来解决这个问题。</p>
+</div>
+<p>以下以 ZeroSSL 免费证书为例，演示如何更换 SSL 证书：</p>
+<ol>
+<li>在 ZeroSSL 控制台添加您的域名或 IP，完成域名验证</li>
+<li>下载 NGINX 格式的证书文件包</li>
+</ol>
+<p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-10-48.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ZeroSSL下载证书" src="../../img/PixPin_2024-06-30_17-10-48.png"></a></p>
+<ol>
+<li>
+<p>将下载的证书文件重命名并上传：</p>
+<ul>
+<li>将证书文件重命名为 <code>server.crt</code></li>
+<li>将私钥文件重命名为 <code>server.key</code></li>
+<li>上传至 One-KVM 的 <code>/etc/kvmd/nginx/ssl/</code> 目录</li>
+</ul>
+</li>
+<li>
+<p>重启 kvmd-nginx 服务使新证书生效：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd-nginx
 </code></pre></div></td></tr></table></div>
-<p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-14-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_17-14-59" src="../../img/PixPin_2024-06-30_17-14-59.png"></a></p></div>
+</li>
+</ol>
+<p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-14-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="更换证书成功" src="../../img/PixPin_2024-06-30_17-14-59.png"></a></p>
+<div class="admonition tip">
+<p class="admonition-title">其他证书提供商</p>
+<p>如果您使用其他证书提供商，操作步骤类似，主要确保证书和私钥文件重命名正确并放置在正确的目录即可。</p>
+</div></div>
 
 
 

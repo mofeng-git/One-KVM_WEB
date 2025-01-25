@@ -1008,9 +1008,24 @@
         <li class="md-nav__item">
   <a href="#cloudflared" class="md-nav__link">
     <span class="md-ellipsis">
-      cloudflared 隧道
+      Cloudflared 隧道
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cloudflared 隧道">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置步骤
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1869,9 +1884,24 @@
         <li class="md-nav__item">
   <a href="#cloudflared" class="md-nav__link">
     <span class="md-ellipsis">
-      cloudflared 隧道
+      Cloudflared 隧道
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cloudflared 隧道">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置步骤
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1895,31 +1925,55 @@
 
   <h1>Cloudflared 隧道</h1>
 
-<div><blockquote>
-<p>Cloudflare Tunnel 为您提供了一种将资源连接到 Cloudflare 的安全方法，无需公共路由 IP 地址。使用 Tunnel，您不会将流量发送到外部 IP — 相反，基础设施中的轻量级守护程序 (cloudflared) 会创建与 Cloudflare 全球网络的仅出站连接。Cloudflare Tunnel 可以将 HTTP Web 服务器、SSH 服务器、远程桌面和其他协议安全地连接到 Cloudflare。这样，您的源站就可以通过 Cloudflare 提供流量，而不会受到绕过 Cloudflare 的攻击。</p>
-</blockquote>
-<h3 id="cloudflared">cloudflared 隧道</h3>
-<p>要使用 Cloudflare Tunnel，需要你在Cloudflare 已经添加了域名，更多的详细内容可以参考 <a href="https://cloudflared.cn/">Cloudflare Tunnel 中文文档</a>。</p>
-<p>首先，进入 Cloudflare Zero Trust，在侧栏中点击 Network，展开后再点击 Tunnels。然后在 Select  connector to private resources 处选择 Add a tunnel，然后点击 Next。</p>
+<div><h3 id="cloudflared">Cloudflared 隧道</h3>
+<div class="admonition note">
+<p class="admonition-title">前置条件</p>
+<p>使用 Cloudflare Tunnel 需要您已经在 Cloudflare 添加了域名。更多详细内容可以参考 <a href="https://cloudflared.cn/">Cloudflare Tunnel 中文文档</a>。</p>
+</div>
+<h4 id="_1">配置步骤</h4>
+<ol>
+<li>
+<p>进入 Cloudflare Zero Trust，在侧栏中点击 Network，展开后点击 Tunnels。在 Select connector to private resources 处选择 Add a tunnel，然后点击 Next。</p>
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_18-04-12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-04-12" src="../../img/PixPin_2024-06-30_18-04-12.png"></a></p>
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_18-05-34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-05-34" src="../../img/PixPin_2024-06-30_18-05-34.png"></a></p>
-<p>选择 Add a Tunnel，点击Next，填入一个隧道名称，然后点击 Save Tunnel。</p>
+</li>
+<li>
+<p>选择 Add a Tunnel，点击 Next，填入隧道名称，然后点击 Save Tunnel。</p>
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_18-06-42.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-06-42" src="../../img/PixPin_2024-06-30_18-06-42.png"></a></p>
-<p>之后可以看到这个安装命令，选择对应的系统和架构，点击命令栏可以复制命令。</p>
-<p>注意，如果你是在 armhf 架构上的设备（如玩客云）上，由于 Cloudflared arm32-bit 软件包为 arm 架构，需要在执行 Cloudflare 网页所给命令前，执行如下命令添加此架构软件包的安装支持。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo dpkg --add-architecture arm
+</li>
+<li>
+<p>复制安装命令（选择对应的系统和架构）</p>
+<div class="admonition warning">
+<p class="admonition-title">ARM 设备注意事项</p>
+<p>如果您使用 armhf 架构设备（如玩客云），需要先执行：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>--add-architecture<span class="w"> </span>arm
 </code></pre></div></td></tr></table></div>
+</div>
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_18-28-34.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-28-34" src="../../img/PixPin_2024-06-30_18-28-34.png"></a></p>
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_18-09-10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-09-10" src="../../img/PixPin_2024-06-30_18-09-10.png"></a></p>
-<p>点击 Public Hostnames 的 tab，点击 Add a public hostname，之后选择 TCP 协议填入 One-KVM 的内网 IP 和端口，填写完成后点击 Save tunnel 保存配置。主域名只能使用已经添加到 Cloudflare 的域名。</p>
+</li>
+<li>
+<p>配置公共域名</p>
+<ul>
+<li>切换到 Public Hostnames 标签页</li>
+<li>点击 Add a public hostname</li>
+<li>选择 TCP 协议</li>
+<li>填入 One-KVM 的内网 IP 和端口</li>
+<li>点击 Save tunnel 保存配置</li>
+</ul>
+</li>
+</ol>
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_18-20-29.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-20-29" src="../../img/PixPin_2024-06-30_18-20-29.png"></a></p>
-<p>最后就可以看到正在运行的 Cloudflare Tunnel 了。</p>
+<p>配置完成后，您可以看到正在运行的 Cloudflare Tunnel：</p>
 <p><a class="glightbox" href="../../img/PixPin_2024-06-30_18-29-44.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_18-29-44" src="../../img/PixPin_2024-06-30_18-29-44.png"></a></p>
-<details class="note">
-<summary>网页远程访问需要使用"https://"协议头</summary>
-<p>注意，远程访问 One-KVM 网页时需要手动在网址栏添加"https://"协议头，否则默认的"http://"协议头会返回错误"400 Bad Request The plain HTTP request was sent to HTTPS port"。</p>
-<p><a class="glightbox" href="./img/PixPin_2024-06-30_16-37-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_16-37-59" src="./img/PixPin_2024-06-30_16-37-59.png"></a></p>
-</details></div>
+<div class="admonition note">
+<p class="admonition-title">使用 HTTPS 协议访问</p>
+<p>访问 One-KVM 网页界面时，必须使用 <code>https://</code> 协议头，例如：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>https://your-domain:port
+</code></pre></div></td></tr></table></div>
+使用 <code>http://</code> 将会收到 "400 Bad Request" 错误。
+<p><a class="glightbox" href="../../img/PixPin_2024-06-30_16-37-59.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HTTPS访问提示" src="../../img/PixPin_2024-06-30_16-37-59.png"></a></p>
+</div></div>
 
 
 

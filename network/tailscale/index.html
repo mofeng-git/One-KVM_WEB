@@ -987,9 +987,24 @@
         <li class="md-nav__item">
   <a href="#tailscale" class="md-nav__link">
     <span class="md-ellipsis">
-      Tailscale 客户端安装
+      Tailscale 异地组网
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Tailscale 异地组网">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装配置步骤
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1869,9 +1884,24 @@
         <li class="md-nav__item">
   <a href="#tailscale" class="md-nav__link">
     <span class="md-ellipsis">
-      Tailscale 客户端安装
+      Tailscale 异地组网
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Tailscale 异地组网">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装配置步骤
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1895,21 +1925,49 @@
 
   <h1>Tailscale 异地组网</h1>
 
-<div><blockquote>
-<p>Tailscale 是一种虚拟专用网服务，可让您在世界任何地方都能安全、轻松地访问您拥有的设备和应用程序。它使用开源的 WireGuard 协议实现加密的点对点连接，这意味着只有在你的专用网络上的设备才能相互通信。</p>
-</blockquote>
-<h3 id="tailscale">Tailscale 客户端安装</h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div><h3 id="tailscale">Tailscale 异地组网</h3>
+<div class="admonition note">
+<p class="admonition-title">什么是 Tailscale?</p>
+<p>Tailscale 是一个基于 WireGuard® 协议的零配置 VPN 网络工具。它能帮助您：</p>
+<ul>
+<li>在任何地方安全访问您的设备</li>
+<li>无需复杂的网络配置</li>
+<li>使用端到端加密保护数据安全</li>
+<li>支持多平台（Windows、macOS、Linux、iOS、Android）</li>
+</ul>
+</div>
+<h4 id="_1">安装配置步骤</h4>
+<ol>
+<li>
+<p>在 One-KVM 上安装 Tailscale 客户端：
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#Tailscale 客户端一键安装脚本</span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># 下载并执行安装脚本</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://tailscale.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#启动 Tailscale</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>tailscale<span class="w"> </span>up
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># 启动 Tailscale 并登录</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>tailscale<span class="w"> </span>up
 </code></pre></div></td></tr></table></div>
-<p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-39-00.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_17-39-00" src="../../img/PixPin_2024-06-30_17-39-00.png"></a></p>
-<p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-41-12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PixPin_2024-06-30_17-41-12" src="../../img/PixPin_2024-06-30_17-41-12.png"></a></p>
-<p>可以看到 Tailscale 网页管理后台已经出现新设备了，多端互访、异地组网等更详细的内容可以参考 Tailscale 官方文档 <a href="https://tailscale.com/kb">Docs · Tailscale Docs</a>。</p></div>
+</li>
+<li>
+<p>按照终端提示的链接完成授权登录：</p>
+</li>
+</ol>
+<p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-39-00.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Tailscale授权登录" src="../../img/PixPin_2024-06-30_17-39-00.png"></a></p>
+<ol>
+<li>登录成功后，可以在 Tailscale 管理后台看到新添加的设备：</li>
+</ol>
+<p><a class="glightbox" href="../../img/PixPin_2024-06-30_17-41-12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Tailscale设备列表" src="../../img/PixPin_2024-06-30_17-41-12.png"></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tailscale 设备 IP 地址</p>
+<ul>
+<li>Tailscale 默认会分配类似 <code>100.x.y.z</code> 的 IP 地址</li>
+<li>使用该 IP 地址即可从任何地方访问您的 One-KVM</li>
+<li>更多高级功能（如 ACL 控制、子网路由等）请参考 <a href="https://tailscale.com/kb">Tailscale 官方文档</a></li>
+</ul>
+</div></div>
 
 
 
