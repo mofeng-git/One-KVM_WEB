@@ -1,45 +1,39 @@
-### 硬件说明
+### 硬件介绍
 
-这个盒子名称很多，私家云二代、比特米盒子、CumeBox2。
+私家云二代（也称比特米盒子、CumeBox2，为同一硬件）搭载了晶晨 S905X 处理器，配备了 1GB RAM 和 8GB 内部存储，拥有一个百兆网口、两个 USB 2.0接口、一个 OTG 2.0端口、两个 SATA 3.0接口、内置双频 WIFI 及蓝牙，并提供 TF 卡槽和 HDMI 输出。
 
-配置：晶晨 S905X CPU ，1G + 8G，百兆网口，2个 USB 2.0，1个 OTG 2.0，2个 SATA 3.0，板载双频 WIFI 及蓝牙，TF 卡槽和 HDMI 接口。
+### 整合包部署
 
-首先刷机，大致流程：
+整合包底包基于 Armbian Khadas-vim1 固件修改 DTB 而来，进行了特别适配，网口、OLED 小屏幕、WIFI 、OTG 都正常可用。
 
-- 短接主板触点使用 Amlogic USB Burning Tool 烧录工具给盒子线刷一个 android tv6.0 固件
-- 通电开机进入 android tv，安装 apk 切换到外部（U 盘/TF 卡）引导
-- 重启开机后进入U 盘/TF 卡上的 armbian 系统
-- 用 dd 命令把 khadas-vim1 或者 Armbian_21.08.1_Ubuntu_CumeBox2_5.10.602 固件 img 写入 emmc 
+**刷机准备与步骤**
 
-私家云二代主板短接触点如下图。
+1. **下载固件**：获取 Android TV 6.0固件，这是用于烧录其他系统的过渡系统。
+2. **短接主板触点**：参照提供的图片短接指定的触点以进入烧录模式。
+3. **使用烧录工具**：利用 Amlogic USB Burning Tool 将 Android TV 固件写入设备。
+4. **安装 APK**：开机后，在新安装的 Android TV 环境中安装特定的APK文件，使设备能够从外部介质（如U盘或 TF 卡）启动准备好的 Armbian 系统。
+5. **切换至 Armbian**：重启后，设备应该能直接进入准备好的 Armbian 操作系统。
+6. **写入最终固件**：最后一步是通过 dd 命令将整合包写入 EMMC。
 
 ![私家云二代主板短接触点](img/IMG_20241203_195852.jpg)
 
 刷机详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
 
-### 整合包部署
-
-整合包底包使用 khadas-vim1 固件修改 DTB 而来，进行了特别适配，网口、OLED 小屏幕、WIFI 、OTG 都正常可用。
-
-将 Armbian_5.77_Aml-s905_Ubuntu_bionic_default_5.0.2_20190401.img 固件写入 U 盘，将私家云二代启动，然后使用 `scp` 命令拷贝 One-KVM 整合包到 U 盘，最后用 dd 命令把 One-KVM IMG 文件写入 EMMC 即可开始使用。
-
-??? example "固件写入示例"
-
-    ![image-20240926221132648](./img/image-20240926221132648.png)
 
 ### Docker 部署
 
-```bash
-#换国内软件源
-bash <(curl -sSL https://linuxmirrors.cn/main.sh) --source mirrors.tuna.tsinghua.edu.cn --protocol https --upgrade-software false
+**安装 Docker**
 
-#从 Debian/Ubuntu 软件源安装 Docker
+- 使用官方包管理器安装：
+``` bash
 apt install apparmor-utils docker.io -y
-
-#安装最新版本 Docker
+```
+- 或者安装最新版本：
+```bash
 curl -fsSL https://get.docker.com | bash
 ```
 
+**Docker 部署 One-KVM 容器**
 ```bash
 #运行 docker 命令，使用 OTG HID
 #系统 /dev/video0 设备已经存在，所以新插入的 USB 采集卡从 /dev/video1 开始
@@ -59,12 +53,15 @@ docker update --restart=always kvmd
 
 ### 使用说明
 
-!!! tip
+!!! tip "提醒"
     部分低功耗设备在未接通电源时可能通过 USB 线从私家云二代 OTG 口取电并启动至异常状态，再接通电源也无法启动。要解决此问题，您可以剥开 USB 线剪断红色5V细电线。
 
-**SSH**
+**SSH 远程登录**
 
 Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。
+
+!!! warning "警告"
+    不建议使用 `apt upgrade` 升级内核和设备树，可能会出现系统异常，OTG 功能无法使用。
 
 **硬件连接**
 
@@ -79,9 +76,13 @@ Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。
 
 **WIFI 连接**
 
+- 安装软件包
 ```bash
 apt install network-manager -y
+```
 
+- 连接 WIFI
+```bash
 #在命令行文本图形界面中进行 WIFI 连接，支持双频 WIFI
 #第一次连接后，盒子重启连接会自动连接上一次连接的 WIFI
 nmtui
@@ -89,6 +90,8 @@ nmtui
 
 ![image-20240926220204960](./img/image-20240926220204960.png)
 
-**软件截图**
+**ATX 电源控制**
 
-![image-20240926220156381](./img/image-20240926220156381.png)
+私家云二代可以使用 USB HID 继电器作为物理开关机功能的控制方式。
+
+![img](./img/1717946862304-33.png)
