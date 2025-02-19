@@ -39,12 +39,12 @@
 | 整合包适配概况 | (点击型号蓝字可查看详情) | | | |
 | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
 | **固件型号** | **固件代号** | **硬件情况** | **最新版本** | **维护状态** |
-| [玩客云](onecloud_install.md) | Onecloud | USB 采集卡、OTG | 241018 | 持续更新 |
-| [私家云二代](cumebox2_install.md) | Cumebox2 | USB 采集卡、OTG | 241004 | 持续更新 |
-| [Vmare](virtualmachine_install.md) | Vmare-uefi | USB 采集卡、CH9329 | 241004 | 持续更新 |
-| [Virtualbox](virtualmachine_install.md) | Virtualbox-uefi | USB 采集卡、CH9329 | 241004 | 持续更新 |
-| [s905l3a  通用包](s905l3a_install.md) | E900v22c | USB 采集卡、OTG | 241004 | 停止更新 |
-| [我家云](chainedbox_install.md) | Chainedbox | USB 采集卡、OTG | 241004 | 停止更新 |
+| [玩客云](onecloud_install.md) | Onecloud | USB 采集卡、OTG | 241214 | 持续更新 |
+| [私家云二代](cumebox2_install.md) | Cumebox2 | USB 采集卡、OTG | 241214 | 持续更新 |
+| [Vmare](virtualmachine_install.md) | Vmare-uefi | USB 采集卡、CH9329 | 241214 | 持续更新 |
+| [Virtualbox](virtualmachine_install.md) | Virtualbox-uefi | USB 采集卡、CH9329 | 241214 | 持续更新 |
+| [s905l3a  通用包](s905l3a_install.md) | E900v22c | USB 采集卡、OTG | 241214 | 持续更新 |
+| [我家云](chainedbox_install.md) | Chainedbox | USB 采集卡、OTG | 241214 | 持续更新 |
 | [龙芯久久派](2k0300_install.md) | 2k0300 | USB 采集卡、CH9329 | 241025 | 停止更新 |
 
 
