@@ -59,6 +59,12 @@ One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级�
 
 **[远方](https://runyf.cn/)** 长期赞助作者，如需要成品硬件套装也可以看看他的店铺（闲鱼用户名：小远技术店铺）。
 
+### 文件下载
+
+huang1111网盘（免登录高速下载）：[https://webdav.huang1111.cn/s/e0Yfl](https://webdav.huang1111.cn/s/e0Yfl)
+
+百度网盘（需登录）：[https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9a](https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj) 
+
 ### 赞助方式
 
 如果 One-KVM 对你有帮助，欢迎赞助作者，以支持作者继续开发和维护此项目。

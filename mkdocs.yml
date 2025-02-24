@@ -68,7 +68,7 @@ plugins:
 nav:
     - "开始":
       - "介绍": index.md
-      - "写在前面": start_install/prepare.md
+      - "写在前面": prepare.md
       - "Docker 部署": start_install/docker_install.md
       - "已适配硬件安装":
         - "玩客云": start_install/onecloud_install.md
@@ -126,8 +126,8 @@ nav:
       #- "IPMI 和 Redfish 集成": advanced_using/ipmi.md
       #- "HDMI 环出": advanced_using/loop_out.md
 
-    - "开发":
+    - "周边套件与开发":
+      - "周边套件": development/parts_library.md
       - "HTTP API": development/api.md
       - "构建 One-KVM 系统": development/building_os.md
-      - "周边套件": development/parts_library.md
       - "知识库": development/develop.md

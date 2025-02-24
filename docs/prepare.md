@@ -1,6 +1,6 @@
 ### 工作原理
 
-![架构图](../img/drawio1.png)
+![架构图](img/drawio1.png)
 
 ### 软件功能
 
@@ -39,13 +39,13 @@
 | 整合包适配概况 | (点击型号蓝字可查看详情) | | | |
 | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
 | **固件型号** | **固件代号** | **硬件情况** | **最新版本** | **维护状态** |
-| [玩客云](onecloud_install.md) | Onecloud | USB 采集卡、OTG | 241214 | 持续更新 |
-| [私家云二代](cumebox2_install.md) | Cumebox2 | USB 采集卡、OTG | 241214 | 持续更新 |
-| [Vmare](virtualmachine_install.md) | Vmare-uefi | USB 采集卡、CH9329 | 241214 | 持续更新 |
-| [Virtualbox](virtualmachine_install.md) | Virtualbox-uefi | USB 采集卡、CH9329 | 241214 | 持续更新 |
-| [s905l3a  通用包](s905l3a_install.md) | E900v22c | USB 采集卡、OTG | 241214 | 持续更新 |
-| [我家云](chainedbox_install.md) | Chainedbox | USB 采集卡、OTG | 241214 | 持续更新 |
-| [龙芯久久派](2k0300_install.md) | 2k0300 | USB 采集卡、CH9329 | 241025 | 停止更新 |
+| [玩客云](start_install/onecloud_install.md) | Onecloud | USB 采集卡、OTG | 241214 | 持续更新 |
+| [私家云二代](start_install/cumebox2_install.md) | Cumebox2 | USB 采集卡、OTG | 241214 | 持续更新 |
+| [Vmare](start_install/virtualmachine_install.md) | Vmare-uefi | USB 采集卡、CH9329 | 241214 | 持续更新 |
+| [Virtualbox](start_install/virtualmachine_install.md) | Virtualbox-uefi | USB 采集卡、CH9329 | 241214 | 持续更新 |
+| [s905l3a  通用包](start_install/s905l3a_install.md) | E900v22c | USB 采集卡、OTG | 241214 | 持续更新 |
+| [我家云](start_install/chainedbox_install.md) | Chainedbox | USB 采集卡、OTG | 241214 | 持续更新 |
+| [龙芯久久派](start_install/2k0300_install.md) | 2k0300 | USB 采集卡、CH9329 | 241025 | 停止更新 |
 
 
 | USB 采集卡硬件兼容性 |              |                |                |              |
@@ -59,9 +59,9 @@
 
 ### 文件下载
 
-百度网盘（需登录）：[https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9a](https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj) 
+huang1111网盘（免登录高速下载）：[https://webdav.huang1111.cn/s/e0Yfl](https://webdav.huang1111.cn/s/e0Yfl)
 
-OneIndex（免登录不限速）：[https://files.mofeng.run/](https://files.mofeng.run/)
+百度网盘（需登录）：[https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9a](https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj) 
 
 
 <!-- 截图大同小异，取消展示各个硬件，移动至各自页面  
