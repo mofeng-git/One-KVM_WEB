@@ -2,206 +2,206 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://one-kvm.mofeng.run/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/prepare/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/thanks/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/2fa/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/auth/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/ipmi/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/kvm_switch/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/loop_out/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/on_start_config/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/vnc/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/webterm/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/advanced_using/wol/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/bluetooth_hid/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/ch9329_hid/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/gpio/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/mouse/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/mouse_jiggler/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/msd/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/onecloud_atx/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/usb2gpio/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/usb_dynamic/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/usb_ethernet/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/usb_relay/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/attached_device/usb_serial/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/audio_and_video/audio/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/audio_and_video/h264/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/audio_and_video/video_record/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/development/api/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/development/building_os/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/development/develop/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/development/parts_library/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/network/cloudflared/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/network/frp/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/network/port_forwarding/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/network/ssl/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/network/tailscale/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/network/wifi/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/2k0300_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/chainedbox_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/cumebox2_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/docker_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/docker_performance/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/faq/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/octopus-flanet_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/onecloud_guide/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/onecloud_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/orangepizero_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/s905l3a_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/synology_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/synology_ko/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
     <url>
          <loc>https://one-kvm.mofeng.run/start_install/virtualmachine_install/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <lastmod>2025-03-06</lastmod>
     </url>
 </urlset>
