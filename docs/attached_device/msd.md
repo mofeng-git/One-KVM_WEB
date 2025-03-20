@@ -59,6 +59,20 @@ kvmd:
 
 ![msd](../img/image-202411082232.png)
 
+#### 互传文件
+
+由群友录制的演示视频：
+
+![type:video](../video/msd_normalfiles.mp4)
+
+相关选项：
+```yaml
+#使用的文件夹，位于 MSD 文件夹里
+normalfiles_path: NormalFiles
+#生成的镜像文件大小，单位为 MB
+normalfiles_size: 256
+```
+
 -----
 
 ### 附录：旧版本 MSD 分区挂载说明

@@ -19,6 +19,10 @@
 
 刷机详细过程可参考：[私家云二代/比特米盒/CumeBox2刷机Armbian教程 // 喵ฅ^•ﻌ•^ฅ (ruohai.wang)](https://ruohai.wang/202404/cumebox2-install-armbian/)
 
+**升级方法**
+
+将最新 dd 整合包写入U盘，插到盒子 USB 口上通电启动，这时就会启动U盘系统。如需要写入 emmc 则需要将 dd 整合包通过 dd 工具写入 emmc。
+  
 
 ### Docker 部署
 

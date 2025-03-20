@@ -4,7 +4,7 @@
 
 ### 整合包部署
 
-1. **刷入精简版 Android TV 固件**：使用 USB_Burning_Tool 晶晨刷机软件线刷精简版的 Android TV 固件到章鱼星球中。
+1. **刷入精简版 Android TV 固件**：使用 USB_Burning_Tool 晶晨刷机软件线刷 Android ATV 固件到章鱼星球中。
 2. **准备U盘启动介质**：将 One-KVM 整合包写入U盘，并确保U盘插入章鱼星球二维码旁边的 USB 2口。
 3. **引导启动U盘**：安卓系统启动后，使用 `adb connect yourip` 命令连接安卓系统，并通过 `adb reboot update` 命令重启以引导从U盘中的系统启动。此步骤仅需在第一次执行。
 4. **安装系统至 EMMC**：当U盘中的系统成功启动后，通过 SSH 登录进入终端，使用 `armbian-install` 命令选择对应型号（如202型号和1分区）安装 One-KVM 系统。
