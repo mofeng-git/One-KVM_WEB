@@ -44,15 +44,6 @@ One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级�
 
 - QQ 交流群：569514148
 
-**付费技术支持**
-
-付费技术支持包含远程调试安装、故障排查、固件定制适配、功能定制开发等服务。
-
-- QQ 私聊：3463289142
-
-- 咸鱼用户名: 默风SilentWind
-
-
 **成品硬件套装**
 
 作者时间能力有限，当前没有出售任何硬件套装。如有需要，可自行安装或在购物平台购买其他商家的成品。
@@ -61,7 +52,7 @@ One-KVM 是基于廉价计算机硬件和 PiKVM 软件二次开发的 BIOS 级�
 
 ### 文件下载
 
-huang1111网盘（免登录高速下载）：[https://webdav.huang1111.cn/s/e0Yfl](https://webdav.huang1111.cn/s/e0Yfl)
+免登录高速下载地址：[https://pan.huang1111.cn/s/mxkx3T1](https://pan.huang1111.cn/s/mxkx3T1) （由 Huang1111公益计划 赞助）
 
 百度网盘（需登录）：[https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9a](https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj) 
 
