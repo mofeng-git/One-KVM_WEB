@@ -117,6 +117,7 @@ nav:
 
     - "高级用法":
       #- "启动时配置": advanced_using/on_start_config.md
+      - "外观主题": advanced_using/appearances.md
       - "VNC 连接": advanced_using/vnc.md
       - "KVM 一控多": advanced_using/kvm_switch.md
       - "WOL 网络唤醒": advanced_using/wol.md
