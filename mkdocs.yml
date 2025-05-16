@@ -80,6 +80,7 @@ nav:
         - "群晖 NAS": start_install/synology_install.md
         - "我家云盒子": start_install/chainedbox_install.md
         - "章鱼星球": start_install/octopus-flanet_install.md
+        - "章鱼星球（安卓-硬件编码）": start_install/octopus-flanet_andriod_install.md
         - "龙芯久久派": start_install/2k0300_install.md
         #- "玩客云套装（停止维护）": start_install/onecloud_guide.md
       - "常见问题": start_install/faq.md
