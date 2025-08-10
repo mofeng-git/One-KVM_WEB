@@ -44,10 +44,11 @@ markdown_extensions:
 repo_url: https://github.com/mofeng-git/One-KVM
 repo_name: mofeng-git/One-KVM
 
-copyright: Copyright &copy; 2023 - 2024 SilentWind
+copyright: Copyright &copy; 2023 - 2025 SilentWind <br> ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备2025068931号-1</a> &emsp; <img src="/img/beian.png" alt="公安备案" width="12" height="12"> 赣公网安备36092202000251号
+
 
 extra_javascript:
-    - 'js/baidu-tongji.js'
+  - 'js/baidu-tongji.js'
 
 
 plugins:
