@@ -25,9 +25,8 @@
 
         如果路由器有公网 IP 地址，可以使用端口映射转发443端口（对于整合包）或4430端口（对于 Docker）。在其他情况下，可以使用内网穿透或异地组网服务（如 Tailscale 和 FRP ）。
 
-1. ??? "**如何修改软件端口和账户密码？**"
+1. ??? "**如何修改软件 WEB 登录的账户密码？**"
 
-        修改端口可以编辑 `/etc/kvmd/nginx/ 目录下的 `conf` 后缀文件将相关端口修改所需端口（443是网页运行的端口），然后运行 `systemctl restart kvmd kvmd-nginx` 生效。
 
         **注意**：对于整合包用户，HDMI 终端和 SSH 终端可以直接以root用户登录。但PiKVM网页终端的默认登入用户是kvmd-webterm低权限账户（无密码），没有 root 权限且无法使用 `sudo` 提权，若需要执行特权命令请先在终端执行 `su root` 命令并输入密码切换为root账户。
 
@@ -45,6 +44,14 @@
             #重启服务，使修改生效
             systemctl restart kvmd kvmd-nginx
             ```
+
+
+1. ??? "**如何修改软件 WEB 服务运行的端口？**"
+
+         修改端口可以编辑 `/etc/kvmd/override.yaml` 文件，将 http 端口和 https 修改所需端口（443 是网页运行的默认端口）。
+         
+         修改完成后运行 `systemctl restart kvmd-nginx` 命令重启 `kvmd-nginx` 服务后生效。
+            ![override.yaml](../img/image-202508210916.png)
 
 ### 视频
 
