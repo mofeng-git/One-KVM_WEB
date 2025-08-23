@@ -2024,6 +2024,7 @@
 <p><strong>手动 Docker 部署</strong></p>
 <p>如果需要设置更多参数，可以查阅下面小节"设备映射"和"环境变量"的说明添加额外的命令行参数。</p>
 <p>推荐使用 <code>--net=host</code> 网络模式以获得更好的 wol 功能和 webrtc 通信支持。</p>
+<p>docker host 网络模式：</p>
 <ul>
 <li><strong>端口 8080</strong>：HTTP Web 服务</li>
 <li><strong>端口 4430</strong>：HTTPS Web 服务</li>
@@ -2062,36 +2063,67 @@
 </div>
 </div>
 </div>
-<p>如果网络条件不佳，可考虑使用阿里云个人镜像仓库加速下载，使用时将将命令尾端的 <code>silentwind0/kvmd</code> 替换为 <code>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd</code>。</p>
-<p>部署完成浏览器访问 https://IP:4430 ，首次访问由于自签 SSL 证书原因可能会遇到浏览器安全提醒，点击高级和继续访问。</p>
-<p>默认账号密码为 <code>admin/admin</code>，如无法访问可以使用 <code>sudo docker logs kvmd</code> 命令查看日志尝试修复、提交 issue 或在 QQ 群内寻求帮助。</p>
-<p>确定 Docker 容器运行正常后，可以使用如下命令使 One-KVM 容器开机自启。</p>
+<p>docker bridge 模式：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">OTG HID</label><label for="__tabbed_2_2">CH9329 HID</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">#设置 Docker 服务开机自启</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1">#设置 One-KVM 容器自动重新启动</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
+<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span>-v<span class="w"> </span>/lib/modules:/lib/modules:ro<span class="w"> </span>-v<span class="w"> </span>/dev:/dev<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span>-v<span class="w"> </span>/sys/kernel/config:/sys/kernel/config<span class="w"> </span>-e<span class="w"> </span><span class="nv">OTG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
-<p>若要更新容器版本，需要停止现有容器并删除现有容器，然后按照上述步骤重新部署。</p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
 <span class="normal"><a href="#__codelineno-6-5">5</a></span>
-<span class="normal"><a href="#__codelineno-6-6">6</a></span>
-<span class="normal"><a href="#__codelineno-6-7">7</a></span>
-<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">#停止 One-KVM 容器</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>docker<span class="w"> </span>stop<span class="w"> </span>kvmd
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">#删除 One-KVM 容器</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>docker<span class="w"> </span>rm<span class="w"> </span>kvmd
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="c1">#更新 One-KVM Docker 镜像</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>docker<span class="w"> </span>pull<span class="w"> </span>silentwind0/kvmd
+<span class="normal"><a href="#__codelineno-6-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span>--device<span class="w"> </span>/dev/video0:/dev/video0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span>--device<span class="w"> </span>/dev/ttyUSB0:/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span>--device<span class="w"> </span>/dev/snd:/dev/snd<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span>silentwind0/kvmd
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>如果网络条件不佳，可考虑使用阿里云个人镜像仓库加速下载，使用时将将命令尾端的 <code>silentwind0/kvmd</code> 替换为 <code>registry.cn-hangzhou.aliyuncs.com/silentwind/kvmd</code>。</p>
+<p>部署完成浏览器访问 https://IP:4430 ，首次访问由于自签 SSL 证书原因可能会遇到浏览器安全提醒，点击高级和继续访问。</p>
+<p>默认账号密码为 <code>admin/admin</code>，如无法访问可以使用 <code>sudo docker logs kvmd</code> 命令查看日志尝试修复、提交 issue 或在 QQ 群内寻求帮助。</p>
+<p>确定 Docker 容器运行正常后，可以使用如下命令使 One-KVM 容器开机自启。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1">#设置 Docker 服务开机自启</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1">#设置 One-KVM 容器自动重新启动</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>docker<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>kvmd
+</code></pre></div></td></tr></table></div>
+<p>若要更新容器版本，需要停止现有容器并删除现有容器，然后按照上述步骤重新部署。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1">#停止 One-KVM 容器</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>docker<span class="w"> </span>stop<span class="w"> </span>kvmd
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1">#删除 One-KVM 容器</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>docker<span class="w"> </span>rm<span class="w"> </span>kvmd
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="c1">#更新 One-KVM Docker 镜像</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>docker<span class="w"> </span>pull<span class="w"> </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
 <h3 id="_2">设备、端口和目录映射</h3>
 <p><strong>采集卡设备</strong>：<code>--device /dev/video0:/dev/video0</code> 映射系统视频设备。若是 OTG 模式映射所有设备时，可能需要与 <code>-e VIDEONUM=0</code> 环境量配合使用。</p>
