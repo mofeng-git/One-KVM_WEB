@@ -44,14 +44,25 @@ curl -sSL https://one-kvm.mofeng.run/quick_start.sh -o quick_start.sh && bash qu
 
 **手动 Docker 部署**
 
-如果需要设置更多参数，可以查阅下面小节“设备映射”和“环境变量”的说明添加额外的命令行参数。
+如果需要设置更多参数，可以查阅下面小节"设备映射"和"环境变量"的说明添加额外的命令行参数。
+
+推荐使用 `--net=host` 网络模式以获得更好的 wol 功能和 webrtc 通信支持。
+
+docker host 网络模式：
+
+- **端口 8080**：HTTP Web 服务
+- **端口 4430**：HTTPS Web 服务
+- **端口 5900**：VNC 服务
+- **端口 623**：IPMI 服务
+- **端口 20000-40000**：WebRTC 通信端口范围，用于低延迟视频传输
+- **端口 9（UDP）**：Wake-on-LAN（WOL）唤醒功能
 
 === "OTG HID"
     ``` bash
     sudo docker run --name kvmd -itd --privileged=true \
         -v /lib/modules:/lib/modules:ro -v /dev:/dev \
         -v /sys/kernel/config:/sys/kernel/config -e OTG=1 \
-        -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+        --net=host \
         silentwind0/kvmd
     ```
 
@@ -60,8 +71,27 @@ curl -sSL https://one-kvm.mofeng.run/quick_start.sh -o quick_start.sh && bash qu
     sudo docker run --name kvmd -itd \
         --device /dev/video0:/dev/video0 \
         --device /dev/ttyUSB0:/dev/ttyUSB0 \
-        --device /dev/snd:/dev/snd \
-        -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+        --net=host \
+        silentwind0/kvmd
+    ```
+ 
+docker bridge 模式：
+
+=== "OTG HID"
+    ``` bash
+    sudo docker run --name kvmd -itd --privileged=true \
+        -v /lib/modules:/lib/modules:ro -v /dev:/dev \
+        -v /sys/kernel/config:/sys/kernel/config -e OTG=1 \
+         -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+        silentwind0/kvmd
+    ```
+
+=== "CH9329 HID"
+    ``` bash
+    sudo docker run --name kvmd -itd \
+        --device /dev/video0:/dev/video0 \
+        --device /dev/ttyUSB0:/dev/ttyUSB0 \
+        - -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
         silentwind0/kvmd
     ```
 
@@ -100,6 +130,8 @@ docker pull silentwind0/kvmd
 **采集卡设备**：`--device /dev/video0:/dev/video0` 映射系统视频设备。若是 OTG 模式映射所有设备时，可能需要与 `-e VIDEONUM=0` 环境量配合使用。
 
 **音频输入设备**：`--device /dev/snd:/dev/snd` 映射系统声卡设备，需要与 `-e AUDIONUM=0` 环境变量配合使用。
+
+**显卡设备**：`--device /dev/dri:/dev/dri` 映射系统显卡设备，需要与 `-e HWENCODER=vaapi` 环境变量配合使用。
 
 **开放端口**：`-p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623` 将容器的端口映射到主机。也可使用 `--net=host` 参数将容器与主机共享网络，暴露所有端口。
 
@@ -141,6 +173,11 @@ docker pull silentwind0/kvmd
 - `-e CH9329SPEED=9600` CH9239+CH340 串口通信速度，默认为9600bps，可选值：`1200`、`2400`、`4800`、`9600`、`14400`、`19200`、`38400`、`57600`、`115200`。
 
 - `-e CH9329TIMEOUT=0.3` CH9239 HID 响应超时时间，超时后会刷新一条日志，默认为0.3秒。
+
+**硬件编码参数**
+
+`-e HWENCODER=vaapi` 作者 frok 修改了 ustreamer， 现在实验性支持通过 FFmpeg 库进行硬件加速 H.264 编码，可以显著提高编码性能并降低 CPU 使用率。目前已测试设备为 AMD VAAPI 设备，使用硬件编码功能还需要通过 `--device /dev/dri:/dev/dri` 设备目录。 
+
 
 **其他功能控制**：
 
