@@ -2022,7 +2022,16 @@
 </code></pre></div></td></tr></table></div>
 <p><a class="glightbox" href="../../img/image-202411161848.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="quick_start" src="../../img/image-202411161848.png"></a></p>
 <p><strong>手动 Docker 部署</strong></p>
-<p>如果需要设置更多参数，可以查阅下面小节“设备映射”和“环境变量”的说明添加额外的命令行参数。</p>
+<p>如果需要设置更多参数，可以查阅下面小节"设备映射"和"环境变量"的说明添加额外的命令行参数。</p>
+<p>推荐使用 <code>--net=host</code> 网络模式以获得更好的 wol 功能和 webrtc 通信支持。</p>
+<ul>
+<li><strong>端口 8080</strong>：HTTP Web 服务</li>
+<li><strong>端口 4430</strong>：HTTPS Web 服务</li>
+<li><strong>端口 5900</strong>：VNC 服务</li>
+<li><strong>端口 623</strong>：IPMI 服务</li>
+<li><strong>端口 20000-40000</strong>：WebRTC 通信端口范围，用于低延迟视频传输</li>
+<li><strong>端口 9（UDP）</strong>：Wake-on-LAN（WOL）唤醒功能</li>
+</ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">OTG HID</label><label for="__tabbed_1_2">CH9329 HID</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2033,7 +2042,7 @@
 <span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>kvmd<span class="w"> </span>-itd<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span>-v<span class="w"> </span>/lib/modules:/lib/modules:ro<span class="w"> </span>-v<span class="w"> </span>/dev:/dev<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span>-v<span class="w"> </span>/sys/kernel/config:/sys/kernel/config<span class="w"> </span>-e<span class="w"> </span><span class="nv">OTG</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
 </div>
@@ -2047,7 +2056,7 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span>--device<span class="w"> </span>/dev/video0:/dev/video0<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span>--device<span class="w"> </span>/dev/ttyUSB0:/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span>--device<span class="w"> </span>/dev/snd:/dev/snd<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
 </div>
@@ -2087,6 +2096,7 @@
 <h3 id="_2">设备、端口和目录映射</h3>
 <p><strong>采集卡设备</strong>：<code>--device /dev/video0:/dev/video0</code> 映射系统视频设备。若是 OTG 模式映射所有设备时，可能需要与 <code>-e VIDEONUM=0</code> 环境量配合使用。</p>
 <p><strong>音频输入设备</strong>：<code>--device /dev/snd:/dev/snd</code> 映射系统声卡设备，需要与 <code>-e AUDIONUM=0</code> 环境变量配合使用。</p>
+<p><strong>显卡设备</strong>：<code>--device /dev/dri:/dev/dri</code> 映射系统显卡设备，需要与 <code>-e HWENCODER=vaapi</code> 环境变量配合使用。</p>
 <p><strong>开放端口</strong>：<code>-p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623</code> 将容器的端口映射到主机。也可使用 <code>--net=host</code> 参数将容器与主机共享网络，暴露所有端口。</p>
 <p><strong>目录映射</strong>：</p>
 <ul>
@@ -2132,6 +2142,8 @@
 <p><code>-e CH9329TIMEOUT=0.3</code> CH9239 HID 响应超时时间，超时后会刷新一条日志，默认为0.3秒。</p>
 </li>
 </ul>
+<p><strong>硬件编码参数</strong></p>
+<p><code>-e HWENCODER=vaapi</code> 作者 frok 修改了 ustreamer， 现在实验性支持通过 FFmpeg 库进行硬件加速 H.264 编码，可以显著提高编码性能并降低 CPU 使用率。目前已测试设备为 AMD VAAPI 设备，使用硬件编码功能还需要通过 <code>--device /dev/dri:/dev/dri</code> 设备目录。 </p>
 <p><strong>其他功能控制</strong>：</p>
 <ul>
 <li>
@@ -2175,7 +2187,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年1月25日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年8月23日</span>
   </span>
 
     
