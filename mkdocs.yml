@@ -32,9 +32,7 @@ markdown_extensions:
   - md_in_html
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.emoji
 
   - pymdownx.highlight:
       anchor_linenums: true
@@ -58,6 +56,67 @@ plugins:
       video_controls: True
       video_autoplay: false
       is_video: True
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: zh
+          name: 简体中文
+          build: true
+          default: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            "开始": "Start"
+            "介绍": "Introduction"
+            "写在前面": "Read First"
+            "Docker 部署": "Docker Deployment"
+            "已适配硬件安装": "Supported Hardware Installations"
+            "玩客云": "OneCloud"
+            "私家云二代": "CumeBox 2"
+            "香橙派 Zero": "Orange Pi Zero"
+            "S905l3a 盒子": "S905l3a Box"
+            "虚拟机部署": "Virtual Machine Deployment"
+            "群晖 NAS": "Synology NAS"
+            "我家云盒子": "ChainedBox"
+            "章鱼星球": "Octopus Planet"
+            "章鱼星球（安卓-硬件编码）": "Octopus Planet (Android - HW Encode)"
+            "龙芯久久派": "Loongson 2K0300"
+            "常见问题": "FAQ"
+            "感谢": "Thanks"
+            "网络": "Network"
+            "互联网访问": "Internet Access"
+            "端口转发": "Port Forwarding"
+            "Frp 端口映射": "FRP Port Mapping"
+            "Tailscale 异地组网": "Tailscale Mesh"
+            "Cloudflared 隧道": "Cloudflared Tunnel"
+            "SSL 加密连接": "SSL Encrypted Connection"
+            "音视频": "Audio & Video"
+            "H.264 音频": "H.264 Audio"
+            "视频录制": "Video Recording"
+            "外围设备": "Peripherals"
+            "键盘和鼠标": "Keyboard and Mouse"
+            "鼠标模式": "Mouse Modes"
+            "鼠标抖动器": "Mouse Jiggler"
+            "大容量存储驱动器": "Mass Storage Device"
+            "USB 以太网": "USB Ethernet"
+            "USB 串口": "USB Serial"
+            "动态 USB 配置": "Dynamic USB Configuration"
+            "ATX 电源控制": "ATX Power Control"
+            "玩客云 GPIO": "OneCloud GPIO"
+            "USB 继电器": "USB Relay"
+            "高级用法": "Advanced Usage"
+            "外观主题": "Appearance Themes"
+            "VNC 连接": "VNC Connection"
+            "KVM 一控多": "KVM Switch"
+            "WOL 网络唤醒": "Wake-on-LAN (WOL)"
+            "Webterm 网页终端": "Webterm Web Terminal"
+            "2FA 双重身份验证": "2FA Two-Factor Authentication"
+            "周边套件与开发": "Accessories & Development"
+            "周边套件": "Accessories"
+            "HTTP API": "HTTP API"
+            "构建 One-KVM 系统": "Build One-KVM OS"
+            "知识库": "Knowledge Base"
   - git-revision-date-localized:
       enable_creation_date: true
       timezone: Asia/Shanghai
