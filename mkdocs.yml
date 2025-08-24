@@ -32,12 +32,9 @@ markdown_extensions:
   - md_in_html
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.emoji
-
-  - pymdownx.highlight:
-      anchor_linenums: true
-      linenums: true
-      
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 repo_url: https://github.com/mofeng-git/One-KVM
 repo_name: mofeng-git/One-KVM
@@ -56,6 +53,7 @@ plugins:
       video_controls: True
       video_autoplay: false
       is_video: True
+  - glightbox
   - i18n:
       docs_structure: folder
       languages:
@@ -122,7 +120,6 @@ plugins:
       timezone: Asia/Shanghai
       type: date
       locale: zh
-  - glightbox
     
 
 nav:

@@ -82,7 +82,7 @@ docker bridge 模式：
     sudo docker run --name kvmd -itd --privileged=true \
         -v /lib/modules:/lib/modules:ro -v /dev:/dev \
         -v /sys/kernel/config:/sys/kernel/config -e OTG=1 \
-         -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+        -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
         silentwind0/kvmd
     ```
 
@@ -91,7 +91,7 @@ docker bridge 模式：
     sudo docker run --name kvmd -itd \
         --device /dev/video0:/dev/video0 \
         --device /dev/ttyUSB0:/dev/ttyUSB0 \
-        - -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
+        -p 8080:8080 -p 4430:4430 -p 5900:5900 -p 623:623 \
         silentwind0/kvmd
     ```
 
