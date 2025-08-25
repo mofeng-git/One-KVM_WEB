@@ -247,7 +247,7 @@ Experimental support for hardware-accelerated H.264 encoding for improved perfor
 | Hardware Type | Environment Variable | Device Mapping | Tested Platform |
 |---------------|---------------------|----------------|----------------|
 | **AMD VAAPI** | `HWENCODER=vaapi` | `--device /dev/dri:/dev/dri` | AMD Graphics |
-| **RK MPP** | `HWENCODER=rkmpp` | `--device /dev/:/dev/` | RK3588S |
+| **RK MPP** | `HWENCODER=rkmpp` | `-v /dev/:/dev/` | RK3588S |
 
 #### Feature Toggles
 

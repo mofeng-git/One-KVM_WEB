@@ -250,7 +250,7 @@ docker pull silentwind0/kvmd
 | 硬件类型 | 环境变量 | 设备映射 | 测试平台 |
 |----------|----------|----------|----------|
 | **AMD VAAPI** | `HWENCODER=vaapi` | `--device /dev/dri:/dev/dri` | AMD 核显 |
-| **RK MPP** | `HWENCODER=rkmpp` | `--device /dev/:/dev/` | RK3588S |
+| **RK MPP** | `HWENCODER=rkmpp` | `-v /dev/:/dev/` | RK3588S |
 
 #### 功能开关
 
