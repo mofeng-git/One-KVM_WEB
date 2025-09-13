@@ -2,742 +2,742 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://one-kvm.mofeng.run/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/prepare/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/prepare/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/prepare/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/thanks/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/thanks/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/thanks/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/2fa/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/2fa/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/2fa/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/appearances/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/appearances/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/appearances/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/auth/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/auth/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/auth/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/ipmi/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/ipmi/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/ipmi/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/kvm_switch/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/kvm_switch/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/kvm_switch/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/loop_out/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/loop_out/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/loop_out/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/on_start_config/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/on_start_config/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/on_start_config/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/vnc/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/vnc/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/vnc/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/webterm/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/webterm/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/webterm/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/advanced_using/wol/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/wol/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/wol/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/bluetooth_hid/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/bluetooth_hid/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/bluetooth_hid/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/ch9329_hid/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/ch9329_hid/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/ch9329_hid/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/gpio/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/gpio/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/gpio/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/mouse/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/mouse/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/mouse/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/mouse_jiggler/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/mouse_jiggler/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/mouse_jiggler/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/msd/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/msd/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/msd/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/onecloud_atx/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/onecloud_atx/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/onecloud_atx/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/usb2gpio/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb2gpio/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb2gpio/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/usb_dynamic/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb_dynamic/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb_dynamic/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/usb_ethernet/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb_ethernet/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb_ethernet/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/usb_relay/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb_relay/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb_relay/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/attached_device/usb_serial/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb_serial/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb_serial/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/audio_and_video/audio/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/audio_and_video/audio/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/audio_and_video/audio/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/audio_and_video/h264/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/audio_and_video/h264/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/audio_and_video/h264/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/audio_and_video/video_record/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/audio_and_video/video_record/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/audio_and_video/video_record/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/development/api/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/development/api/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/development/api/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/development/building_os/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/development/building_os/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/development/building_os/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/development/develop/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/development/develop/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/development/develop/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/development/parts_library/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/development/parts_library/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/development/parts_library/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/network/cloudflared/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/cloudflared/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/cloudflared/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/network/frp/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/frp/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/frp/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/network/port_forwarding/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/port_forwarding/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/port_forwarding/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/network/ssl/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/ssl/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/ssl/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/network/tailscale/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/tailscale/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/tailscale/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/network/wifi/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/wifi/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/wifi/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/2k0300_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/2k0300_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/2k0300_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/chainedbox_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/chainedbox_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/chainedbox_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/cumebox2_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/cumebox2_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/cumebox2_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/docker_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/docker_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/docker_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/docker_performance/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/docker_performance/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/docker_performance/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/faq/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/faq/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/faq/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/octopus-flanet_andriod_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/octopus-flanet_andriod_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/octopus-flanet_andriod_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/octopus-flanet_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/octopus-flanet_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/octopus-flanet_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/onecloud_guide/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/onecloud_guide/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/onecloud_guide/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/onecloud_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/onecloud_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/onecloud_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/orangepizero_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/orangepizero_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/orangepizero_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/s905l3a_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/s905l3a_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/s905l3a_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/synology_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/synology_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/synology_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/synology_ko/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/synology_ko/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/synology_ko/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/start_install/virtualmachine_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/virtualmachine_install/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/virtualmachine_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/prepare/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/prepare/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/prepare/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/thanks/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/thanks/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/thanks/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/2fa/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/2fa/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/2fa/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/appearances/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/appearances/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/appearances/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/auth/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/auth/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/auth/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/ipmi/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/ipmi/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/ipmi/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/kvm_switch/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/kvm_switch/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/kvm_switch/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/loop_out/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/loop_out/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/loop_out/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/on_start_config/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/on_start_config/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/on_start_config/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/vnc/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/vnc/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/vnc/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/webterm/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/webterm/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/webterm/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/advanced_using/wol/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/advanced_using/wol/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/advanced_using/wol/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/bluetooth_hid/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/bluetooth_hid/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/bluetooth_hid/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/ch9329_hid/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/ch9329_hid/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/ch9329_hid/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/gpio/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/gpio/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/gpio/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/mouse/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/mouse/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/mouse/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/mouse_jiggler/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/mouse_jiggler/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/mouse_jiggler/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/msd/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/msd/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/msd/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/onecloud_atx/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/onecloud_atx/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/onecloud_atx/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/usb2gpio/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb2gpio/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb2gpio/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/usb_dynamic/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb_dynamic/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb_dynamic/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/usb_ethernet/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb_ethernet/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb_ethernet/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/usb_relay/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb_relay/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb_relay/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/attached_device/usb_serial/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/attached_device/usb_serial/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/attached_device/usb_serial/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/audio_and_video/audio/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/audio_and_video/audio/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/audio_and_video/audio/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/audio_and_video/h264/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/audio_and_video/h264/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/audio_and_video/h264/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/audio_and_video/video_record/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/audio_and_video/video_record/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/audio_and_video/video_record/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/development/api/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/development/api/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/development/api/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/development/building_os/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/development/building_os/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/development/building_os/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/development/develop/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/development/develop/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/development/develop/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/development/parts_library/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/development/parts_library/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/development/parts_library/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/network/cloudflared/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/cloudflared/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/cloudflared/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/network/frp/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/frp/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/frp/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/network/port_forwarding/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/port_forwarding/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/port_forwarding/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/network/ssl/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/ssl/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/ssl/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/network/tailscale/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/tailscale/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/tailscale/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/network/wifi/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/network/wifi/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/network/wifi/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/2k0300_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/2k0300_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/2k0300_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/chainedbox_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/chainedbox_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/chainedbox_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/cumebox2_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/cumebox2_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/cumebox2_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/docker_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/docker_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/docker_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/docker_performance/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/docker_performance/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/docker_performance/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/faq/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/faq/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/faq/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/octopus-flanet_andriod_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/octopus-flanet_andriod_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/octopus-flanet_andriod_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/octopus-flanet_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/octopus-flanet_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/octopus-flanet_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/onecloud_guide/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/onecloud_guide/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/onecloud_guide/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/onecloud_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/onecloud_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/onecloud_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/orangepizero_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/orangepizero_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/orangepizero_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/s905l3a_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/s905l3a_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/s905l3a_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/synology_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/synology_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/synology_install/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/synology_ko/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/synology_ko/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/synology_ko/"/>
     </url>
     <url>
         <loc>https://one-kvm.mofeng.run/en/start_install/virtualmachine_install/</loc>
-        <lastmod>2025-08-25</lastmod>
+        <lastmod>2025-09-13</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://one-kvm.mofeng.run/en/start_install/virtualmachine_install/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://one-kvm.mofeng.run/start_install/virtualmachine_install/"/>
