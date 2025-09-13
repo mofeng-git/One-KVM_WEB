@@ -31,3 +31,32 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
       - run: mkdocs gh-deploy --force
+      - name: Create ZIP package
+        run: |
+          echo "Creating ZIP package..."
+          cd site
+          zip -r ../docs.zip .
+          cd ..
+          ls -la docs.zip
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Upload ZIP to FTP
+        run: |
+          echo "Uploading ZIP file using lftp..."
+          lftp -c "
+            open ftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_SERVER }};
+            put docs.zip;
+            quit
+          "
+      - name: Extract files on server
+        run: |
+          echo "Triggering extraction on server..."
+          curl -s "http://${{ secrets.WEBSITE_DOMAIN }}/extractor.php?file=docs" || echo "Extraction request sent"
+      - name: Clean up ZIP file on server
+        run: |
+          echo "Cleaning up ZIP file on server..."
+          lftp -c "
+            open ftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_SERVER }};
+            rm docs.zip;
+            quit
+          " || echo "Cleanup completed"
