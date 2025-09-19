@@ -118,7 +118,7 @@
 
 1. ??? "**如何改变玩客云前面板 LED 灯颜色？**"
 
-        对于5.9内核系统有`green_on`,`red_on`,`bule_on`,`green_off`,`red_off`,`bule_off`命令可用。
+        对于5.9内核系统有`green_on`,`red_on`,`blue_on`,`green_off`,`red_off`,`blue_off`命令可用。
 
         对于6.x高内核的系统，可以使用如下命令控制LED的亮灭，0为灭，1为亮。
         ```bash
