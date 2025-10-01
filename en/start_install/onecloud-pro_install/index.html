@@ -18,7 +18,7 @@
         <link rel="prev" href="../onecloud_install/">
       
       
-        <link rel="next" href="../cumebox2_install/">
+        <link rel="next" href="../oec-turbo_install/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#hardware-introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -549,6 +549,8 @@
       
         
       
+        
+      
     
     
       
@@ -650,27 +652,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#hardware-introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      硬件介绍
+      Hardware Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#integrated-package-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      整合包部署
+      Integrated Package Deployment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#usage-instructions" class="md-nav__link">
     <span class="md-ellipsis">
-      使用说明
+      Usage Instructions
     </span>
   </a>
   
@@ -680,6 +682,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oec-turbo_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OEC TURBO 盒子
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -780,7 +803,7 @@
         
   
   <span class="md-ellipsis">
-    Synology NAS
+    群晖 NAS（停止维护）
   </span>
   
 
@@ -843,7 +866,7 @@
         
   
   <span class="md-ellipsis">
-    Octopus Planet (Android - HW Encode)
+    章鱼星球（安卓-硬件编码，停止维护）
   </span>
   
 
@@ -864,7 +887,7 @@
         
   
   <span class="md-ellipsis">
-    Loongson 2K0300
+    龙芯久久派（停止维护）
   </span>
   
 
@@ -994,6 +1017,8 @@
       
         
       
+        
+      
     
     
       
@@ -1102,6 +1127,27 @@
   
   <span class="md-ellipsis">
     Cloudflared Tunnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/gostc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GOSTC 内网穿透
   </span>
   
 
@@ -1978,27 +2024,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#hardware-introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      硬件介绍
+      Hardware Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#integrated-package-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      整合包部署
+      Integrated Package Deployment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#usage-instructions" class="md-nav__link">
     <span class="md-ellipsis">
-      使用说明
+      Usage Instructions
     </span>
   </a>
   
@@ -2024,34 +2070,34 @@
 
   <h1>玩客云 Pro</h1>
 
-<div><h3 id="_1">硬件介绍</h3>
-<p>玩客云 Pro 采用了 S912 八核 CPU，搭配 2GB 内存和 8GB 内部储存空间。它配备了一个千兆网络接口、2个 USB 2.0接口，并提供 TF 卡槽和 HDMI 输出。</p>
-<h3 id="_2">整合包部署</h3>
+<div><h3 id="hardware-introduction">Hardware Introduction</h3>
+<p>The OneCloud Pro features an S912 octa-core CPU, paired with 2GB RAM and 8GB internal storage. It is equipped with one Gigabit Ethernet interface, two USB 2.0 ports, and provides a TF card slot and HDMI output.</p>
+<h3 id="integrated-package-deployment">Integrated Package Deployment</h3>
 <ol>
-<li><strong>准备 SD 卡启动介质</strong>：将 One-KVM 整合包写入 SD 卡，插入玩客云 Pro  SD 卡插槽。</li>
-<li><strong>引导启动 SD 卡</strong>：首次原系统刷机时需要按住 reset 按钮，插电，看到玩客云 logo 消失后放开 reset 按钮。后面再次刷机直接通电会自动启动 SD 卡中的系统。</li>
-<li><strong>安装系统至 EMMC</strong>：当 SD 卡盘中的系统成功启动后，通过 One-KVM 网页终端或者 SSH 登录进入终端，使用 <code>armbian-install</code> 命令选择对应型号（v1.1 主板对应 201代号，v1.2 主板对应 213）安装 One-KVM 系统。</li>
+<li><strong>Prepare SD Card Boot Media</strong>: Write the One-KVM integrated package to an SD card and insert it into the OneCloud Pro SD card slot.</li>
+<li><strong>Boot from SD Card</strong>: For the first time flashing from the original system, hold the reset button while plugging in power. Release the reset button after the OneCloud logo disappears. For subsequent flashing, the system will automatically boot from the SD card upon power-on.</li>
+<li><strong>Install System to EMMC</strong>: After the SD card system successfully boots, log into the terminal through the One-KVM web terminal or SSH, and use the <code>armbian-install</code> command to select the corresponding model (v1.1 board corresponds to code 201, v1.2 board corresponds to code 213) to install the One-KVM system.</li>
 </ol>
-<p>安装示例（使用One-KVM 网页终端）：
+<p>Installation example (using One-KVM web terminal):
 <a class="glightbox" href="../../../img/image-20250919153600000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../../../img/image-20250919153600000.png"></a>
 <a class="glightbox" href="../../../img/image-20250919153700000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../../../img/image-20250919153700000.png"></a></p>
-<h3 id="_3">使用说明</h3>
+<h3 id="usage-instructions">Usage Instructions</h3>
 <div class="admonition tip">
-<p class="admonition-title">提醒</p>
-<p>部分低功耗设备在未接通电源时可能通过 USB 线从玩客云 Pro  OTG 口取电并启动至异常状态，再接通电源也无法启动。要解决此问题，您可以剥开 USB 线剪断红色5V细电线。</p>
+<p class="admonition-title">Note</p>
+<p>Some low-power devices may draw power through the USB cable from the OneCloud Pro OTG port when not connected to power, causing them to start in an abnormal state where they cannot boot even after power is connected. To resolve this issue, you can strip the USB cable and cut the red 5V wire.</p>
 </div>
-<p><strong>SSH 远程登录</strong></p>
-<p>Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。</p>
+<p><strong>SSH Remote Login</strong></p>
+<p>The Armbian system enables SSH by default, with initial SSH username/password as root/1234.</p>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>不建议使用 <code>apt upgrade</code> 升级内核和设备树，可能会出现系统异常，OTG 功能无法使用。</p>
+<p class="admonition-title">Warning</p>
+<p>It is not recommended to use <code>apt upgrade</code> to upgrade the kernel and device tree, as this may cause system abnormalities and render the OTG function unusable.</p>
 </div>
-<p><strong>硬件连接</strong></p>
-<p>二维码旁 USB 口为 OTG 口接 USB 双公线，网口旁 USB 口为普通 USB 口接 USB HDMI 采集卡。</p>
-<p><strong>ATX 电源控制</strong></p>
-<p>主板有可以直接使用的 GPIO 引脚，可以用于 ATX 电源开关机控制。</p>
+<p><strong>Hardware Connection</strong></p>
+<p>The USB port next to the QR code is the OTG port for connecting USB dual-male cable. The USB port next to the network port is a regular USB port for connecting USB HDMI capture card.</p>
+<p><strong>ATX Power Control</strong></p>
+<p>The motherboard has directly usable GPIO pins that can be used for ATX power switch control.</p>
 <p><a class="glightbox" href="../../../img/image-20250919175100000.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../../../img/image-20250919175100000.jpg"></a></p>
-<p>如果要使用ATX控制物理开关机功能请连接好开机线。</p>
+<p>If you want to use ATX control for physical power on/off functionality, please connect the power-on cable properly.</p>
 <p><a class="glightbox" href="../../../img/1717946862304-33.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="img" src="../../../img/1717946862304-33.png"></a></p></div>
 
 
@@ -2075,7 +2121,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年9月19日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2025</span>
   </span>
 
     
@@ -2085,7 +2131,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年9月19日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2025</span>
   </span>
 
     
@@ -2139,13 +2185,13 @@
         
         
           
-          <a href="../cumebox2_install/" class="md-footer__link md-footer__link--next" aria-label="Next: CumeBox 2">
+          <a href="../oec-turbo_install/" class="md-footer__link md-footer__link--next" aria-label="Next: OEC TURBO 盒子">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CumeBox 2
+                OEC TURBO 盒子
               </div>
             </div>
             <div class="md-footer__button md-icon">
