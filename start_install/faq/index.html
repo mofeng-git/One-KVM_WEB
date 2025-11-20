@@ -931,7 +931,7 @@
         
   
   <span class="md-ellipsis">
-    感谢
+    赞助计划和感谢
   </span>
   
 
@@ -2069,7 +2069,6 @@
 <details>
 <summary><strong>One-KVM 与 PiKVM 的不同之处？</strong></summary>
 <p>One-KVM 基于 PiKVM 二次开发，在 PiKVM 的基础上进行了本地化，增加了更多扩展功能，支持更多的硬件设备和平台。</p>
-<p>两者具体功能异同之处可以查看<a href="../../prepare/#_2">软件功能</a>一节。</p>
 <p>如果您需要对功能进行高级配置，也可以查阅 <a href="https://docs.pikvm.org/">PiKVM 文档</a>，该项目文档关于高级功能配置的说明比较详细。</p>
 </details>
 </li>
@@ -2112,17 +2111,29 @@
 <span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#切换为 root 账户</span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#切换为 root 账户</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>su<span class="w"> </span>root
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#添加用户 请将 silentwind 替换为你的用户名</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>kvmd-htpasswd<span class="w"> </span><span class="nb">set</span><span class="w"> </span>silentwind
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#输入密码</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">#删除用户</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>kvmd-htpasswd<span class="w"> </span>del<span class="w"> </span>admin
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#列出所有用户</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>kvmd-htpasswd<span class="w"> </span>list
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#重启服务，使修改生效</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd<span class="w"> </span>kvmd-nginx
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#添加用户 请将 silentwind 替换为你的用户名</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#旧版本为 set 命令，新版本为 add 命令</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">#kvmd-htpasswd set silentwind</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>kvmd-htpasswd<span class="w"> </span>add<span class="w"> </span>silentwind
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#输入密码</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#删除用户</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>kvmd-htpasswd<span class="w"> </span>del<span class="w"> </span>admin
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="c1">#列出所有用户</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>kvmd-htpasswd<span class="w"> </span>list
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="c1">#重启服务，使修改生效</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>kvmd<span class="w"> </span>kvmd-nginx
 </code></pre></div></td></tr></table></div>
 </details>
 </li>
@@ -2304,7 +2315,7 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年9月29日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年11月20日</span>
   </span>
 
     
@@ -2368,13 +2379,13 @@ mac 地址编辑 /etc/systemd/network/99-eth0.network 文件即可。
         
         
           
-          <a href="../../thanks/" class="md-footer__link md-footer__link--next" aria-label="下一页: 感谢">
+          <a href="../../thanks/" class="md-footer__link md-footer__link--next" aria-label="下一页: 赞助计划和感谢">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                感谢
+                赞助计划和感谢
               </div>
             </div>
             <div class="md-footer__button md-icon">

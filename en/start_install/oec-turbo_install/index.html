@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#hardware-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -667,18 +667,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#hardware-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      硬件介绍
+      Hardware Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#integrated-image-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      整合包部署
+      Integrated Image Deployment
     </span>
   </a>
   
@@ -922,7 +922,7 @@
         
   
   <span class="md-ellipsis">
-    Thanks
+    赞助计划和感谢
   </span>
   
 
@@ -2009,18 +2009,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#hardware-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      硬件介绍
+      Hardware Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#integrated-image-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      整合包部署
+      Integrated Image Deployment
     </span>
   </a>
   
@@ -2046,43 +2046,43 @@
 
   <h1>OEC TURBO 盒子</h1>
 
-<div><h3 id="_1">硬件介绍</h3>
-<p>OEC TURBO 采用了 RK3568 CPU，搭配了 4G 内存和 8G 的内部储存空间，它配备了一个千兆网络接口千兆网卡，一个 Typec 口和一个 USB 3.0 接口，机器内置一个 SATA 硬盘位。</p>
-<p>优势是其 VPU 驱动是开放的， One-KVM 为此硬件适配了 H264 硬件编解码，能获得更好的 H264 视频体验。</p>
-<h3 id="_2">整合包部署</h3>
-<p><strong>文件准备</strong></p>
-<p>首先下载好 OEC TUBRO 刷机工具和 One-KVM 整合包，解压好相关文件，进入刷机目录。这里建议把解压后的 One-KVM 镜像重命名为更短的名字（如 OEC.img）放到刷机工具目录下，这样不会因为文件名太长看不见刷机进度。</p>
+<div><h3 id="hardware-overview">Hardware Overview</h3>
+<p>The OEC TURBO is powered by an RK3568 CPU, paired with 4 GB of RAM and 8 GB of internal storage. It includes a gigabit Ethernet port, one Type‑C port, one USB 3.0 port, and a built‑in SATA drive bay.</p>
+<p>Its main advantage is that the VPU driver is open source. One-KVM provides hardware H.264 encoding and decoding support for this device, enabling a better H.264 video experience.</p>
+<h3 id="integrated-image-deployment">Integrated Image Deployment</h3>
+<p><strong>Prepare the files</strong></p>
+<p>First download the OEC TURBO flashing tool and the One-KVM integrated image, then extract all related files and enter the flashing tool directory. It is recommended to rename the extracted One-KVM image to a shorter name (for example <code>OEC.img</code>) and place it in the flashing tool directory so that the flashing progress bar will not be hidden by an overly long file name.</p>
 <p><a class="glightbox" href="../../../img/image-20251001081900000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../../img/image-20251001081900000.png"></a></p>
-<p>如果之前没有安装过瑞芯微驱动，可以打开文件夹 <code>OEC-TUBRO刷机工具\RK3566刷机驱动\DriverInstall.exe</code> 进行驱动的安装。此前安装过驱动的可以跳过这个步骤。</p>
+<p>If you have never installed Rockchip drivers before, open <code>OEC-TUBRO刷机工具\RK3566刷机驱动\DriverInstall.exe</code> to install the driver. If you have previously installed the driver, you can skip this step.</p>
 <p><a class="glightbox" href="../../../img/image-20251001082100000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../../img/image-20251001082100000.png"></a></p>
-<p>然后打开刷机软件 RKDevTool.exe ，点击路径后面的三个小点按钮，把 boot文件（就是刷机工具文件夹下的 MiniLoaderAll.bin文件）和 One-KVM 系统镜像的文件路径更新为你系统的实际路径。</p>
+<p>Then open <code>RKDevTool.exe</code>. Click the three dots next to the path fields and update the boot file (the <code>MiniLoaderAll.bin</code> file under the flashing tool folder) and the One-KVM system image path to match the actual paths on your system.</p>
 <p><a class="glightbox" href="../../../img/image-20251001082200000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../../img/image-20251001082200000.png"></a></p>
-<p><strong>开始刷机</strong></p>
-<p>需要拆机，短接主板电阻进入 MASKROM 进行刷机。</p>
-<p>网心云OEC拆机：</p>
+<p><strong>Start flashing</strong></p>
+<p>You need to open the case and short a resistor on the motherboard to enter MASKROM mode for flashing.</p>
+<p>Disassembly steps for the OEC:</p>
 <ol>
-<li>底部向上推一下打开盖板</li>
-<li>有一个SATA硬盘位、一个Type-C接口，使用螺丝刀拧下4颗螺丝</li>
-<li>向上推一下外壳、然后取下侧面外壳，拆卸SATA接口，用螺丝刀拧下三颗螺丝，把SATA接口翻转过来，撕下保护排线的黑胶带，SATA排线很薄比较脆弱不能硬扯，取排线有技巧的，左边黑色的卡扣可以向上扣开，这样是解锁了，可以很轻松把SATA排线取出来。</li>
-<li>然后用螺丝刀拧下内壳上面的8颗螺丝，使用一个卡片在左边空隙慢慢撬一下，取出内壳。</li>
-<li>主板板正面有我们需要短接的电阻</li>
+<li>Push the bottom cover upward to remove it.</li>
+<li>Inside you will see a SATA bay and a Type‑C port. Use a screwdriver to remove the four screws.</li>
+<li>Slide the outer shell up and remove the side cover, disconnect the SATA connector, then remove the three screws holding the SATA bracket. Flip the SATA board over, peel off the black tape protecting the ribbon cable, and carefully remove the cable. The SATA ribbon cable is thin and fragile—do not pull it hard. There is a small black latch on the left side of the connector that can be flipped up to unlock it, which allows the ribbon cable to be removed easily.</li>
+<li>Remove the eight screws on the inner chassis with a screwdriver, then insert a card into the gap on the left side and gently pry the inner chassis out.</li>
+<li>On the front side of the motherboard you will find the resistor that needs to be shorted.</li>
 </ol>
 <p><a class="glightbox" href="../../../img/image-20251001082300000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../../img/image-20251001082300000.png"></a></p>
-<p>然后开始短接电阻刷机。先短接电阻（和网上其他教程短接焊接点是同一个作用），再插入TypeC数据线（刷机过程不需要接DC 12V 供电），2秒左右后松开短接工具。这时候软件提示发现一个 MASKROM 设备，点击软件界面的执行按钮，等待下载数据烧录即可。</p>
-<p>若是新版刷机软件遇到"system超过Flash大小 下载失败"报错，可以勾选执行按钮上方的上强制按地址写选项，再次刷机。</p>
+<p>Now you can short the resistor and start flashing. First short the resistor (this has the same effect as shorting the pads mentioned in other online tutorials), then plug in the Type‑C data cable (there is no need to connect the 12 V DC power supply during flashing). After about 2 seconds, release the short. At this point the tool should detect a MASKROM device. Click the “Run” (execute) button in the tool and wait for the data to be downloaded and written.</p>
+<p>If the newer flashing tool reports an error such as “system exceeds Flash size, download failed”, you can check the “force to write by address” option above the execute button and then flash again.</p>
 <p><a class="glightbox" href="../../../img/image-20251001082500000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../../img/image-20251001082500000.png"></a></p>
-<p>系统刷入完成之后拔掉 Typec线，插入 DC 12V 电源线，就可以开始使用了。</p>
-<p><strong>SSH 远程登录</strong></p>
-<p>Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。</p>
+<p>After the system has been flashed successfully, unplug the Type‑C cable, plug in the 12 V DC power supply, and you can start using the device.</p>
+<p><strong>SSH remote login</strong></p>
+<p>The Armbian system enables SSH by default. The initial SSH credentials are <code>root</code> / <code>1234</code>.</p>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>不建议使用 <code>apt upgrade</code> 升级内核和设备树，可能会出现系统异常，OTG 功能无法使用。</p>
+<p class="admonition-title">Warning</p>
+<p>It is not recommended to use <code>apt upgrade</code> to update the kernel and device tree. Doing so may cause system issues and make the OTG function unusable.</p>
 </div>
-<p><strong>硬件连接</strong></p>
-<p>Typec 口是 USB OTG 口接被控机设备，USB 3.0 C口是普通 USB 口接 USB 采集卡。</p>
-<p><strong>USB 端点数量</strong></p>
-<p>此硬件 CPU 的 USB OTG 端点数量为9个，共可以虚拟端点总数为9个的 USB 设备。</p>
-<p><strong>软件截图</strong></p>
+<p><strong>Hardware connections</strong></p>
+<p>The Type‑C port is the USB OTG port and should be connected to the target (controlled) machine. The USB 3.0 Type‑A port is a regular USB port and should be connected to the USB capture card.</p>
+<p><strong>USB endpoints</strong></p>
+<p>The CPU in this device provides 9 USB OTG endpoints, so it can emulate USB devices whose total endpoints do not exceed 9.</p>
+<p><strong>Screenshots</strong></p>
 <p><a class="glightbox" href="../../../img/image-20251001082800000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../../img/image-20251001082800000.png"></a></p></div>
 
 
@@ -2106,7 +2106,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年10月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2025</span>
   </span>
 
     
@@ -2116,7 +2116,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年10月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2025</span>
   </span>
 
     
