@@ -1636,9 +1636,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onekvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      OneKVM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OneKVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker 配置说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      配置说明
+      整合包配置说明
     </span>
   </a>
   
@@ -1647,18 +1666,14 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      部署示例
+      演示视频
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      演示视频
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -2063,9 +2078,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#onekvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      OneKVM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OneKVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker 配置说明
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      配置说明
+      整合包配置说明
     </span>
   </a>
   
@@ -2074,18 +2108,14 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      部署示例
+      演示视频
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      演示视频
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -2114,21 +2144,22 @@
 
   <h1>USB 继电器</h1>
 
-<div><h3 id="usb-atx">USB 继电器实现 ATX 电源管理</h3>
-<h4 id="_1">硬件要求</h4>
+<div><h2 id="usb-atx">USB 继电器实现 ATX 电源管理</h2>
+<h3 id="_1">硬件要求</h3>
 <ul>
 <li>设备型号：LCUS_HID USB 继电器</li>
 <li>设备路径：<code>/dev/hidraw0</code></li>
 </ul>
 <p><a class="glightbox" href="../../img/image-1727875062722.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LCUS_HID USB 继电器正面" src="../../img/image-1727875062722.png"></a>
 <a class="glightbox" href="../../img/2024100200.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LCUS_HID USB 继电器背面" src="../../img/2024100200.png"></a></p>
-<h4 id="_2">配置说明</h4>
+<h3 id="onekvm">OneKVM</h3>
+<h4 id="docker">Docker 配置说明</h4>
 <p>在启动 Docker 容器时，需要：</p>
 <ol>
 <li>映射继电器设备</li>
 <li>设置环境变量 <code>ATX=USBRELAY_HID</code></li>
 </ol>
-<h4 id="_3">部署示例</h4>
+<p><strong>部署示例</strong></p>
 <p>以下是私家云二代的完整部署命令：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
@@ -2140,7 +2171,10 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
-<h4 id="_4">演示视频</h4>
+<h4 id="_2">整合包配置说明</h4>
+<p>默认整合包默认使用的策略： ARM 设备默认使用 GPIO 驱动方式，X64 虚拟机默认是使用 USB 继电器。</p>
+<p>如有特殊需求，可以编辑 <code>/etc/kvmd/atx.sh</code> 和 <code>/etc/kvmd/cutom_atx</code> 目录下的脚本文件。</p>
+<h4 id="_3">演示视频</h4>
 <p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../video/one-kvm_atx0_x264.mp4" type="video/mp4"></source></video></div></p></div>
 
 
@@ -2164,7 +2198,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年8月24日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年11月24日</span>
   </span>
 
     

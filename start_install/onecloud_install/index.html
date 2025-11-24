@@ -2095,15 +2095,24 @@
 <li>将 USB 双公线的一端插入玩客云主机 HDMI 接口旁边的 USB 插槽，另一端连接至被控机器相应的 USB 接口。</li>
 <li>确保所有连接稳固，接入电源及网线。</li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">硬件安全警告</p>
+<p>为避免潜在风险（如被控设备无法正常启动或识别设备，甚至极少数情况下造成硬件损坏），强烈建议在使用 USB 双公线前采取以下任一安全措施：</p>
+<p>方案一：剪断或移除 USB 线中的红色 5V 电源线（VCC），仅保留数据线（D+/D−）和地线（GND），以切断供电路径；</p>
+<p>方案二：在 USB 链路中串接一个带独立电源开关的 USB HUB，并确保在连接时关闭其电源开关。</p>
+<p>部分低功耗设备可能在未通主电源的情况下，通过 USB OTG 接口从 KVM 设备反向取电，导致进入异常状态——即使后续接通主电源也可能无法正常启动。</p>
+<p><strong>除非您明确了解操作后果，否则请务必采用上述防护措施以保障设备安全。</strong></p>
+</div>
 <div class="admonition tip">
-<p class="admonition-title">提醒</p>
-<p>部分低功耗设备在未接通电源时可能通过 USB 双公线从玩客云 OTG 口取电并启动至异常状态，再接通电源也无法启动。要解决此问题，您可以剥开 USB双 公线剪断红色 5V 细电线。</p>
+<p class="admonition-title">数据安全提示</p>
+<p>不建议直接断电！eMMC 在写入过程中突然断电可能导致数据丢失。</p>
+<p>如因特殊原因需直接断电，建议在写入操作后执行 <code>sync</code> 命令确保数据写入；关机或重启时，建议使用 <code>poweroff</code> 或 <code>reboot</code> 指令，让系统安全完成数据同步和关机流程。</p>
 </div>
 <p><a class="glightbox" href="../../img/image-20240609231232943.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240609231232943" src="../../img/image-20240609231232943.png"></a></p>
 <p><strong>SSH 远程登录</strong></p>
 <p>Armbian 系统默认开启 SSH 服务，初始用户密码为 root/1234。请尽快更改默认密码以增强安全性。</p>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
+<p class="admonition-title">系统升级警告</p>
 <p>不建议使用 <code>apt upgrade</code> 升级内核和设备树，可能会出现系统异常，OTG 功能无法使用。</p>
 </div>
 <p><strong>ATX 电源控制</strong></p>
@@ -2177,7 +2186,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年10月1日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年11月24日</span>
   </span>
 
     
