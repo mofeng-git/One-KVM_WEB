@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,45 +12,45 @@
         <meta name="author" content="SilentWind">
       
       
-        <link rel="canonical" href="https://docs.one-kvm.cn/en/start_install/octopus-flanet_install/">
+        <link rel="canonical" href="https://docs.one-kvm.cn/network/stun/">
       
       
-        <link rel="prev" href="../chainedbox_install/">
+        <link rel="prev" href="../port_forwarding/">
       
       
-        <link rel="next" href="../octopus-flanet_andriod_install/">
+        <link rel="next" href="../frp/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>Octopus Planet - One-KVM 文档</title>
+        <title>STUN/TURN 服务 - One-KVM 文档</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
       
 
-
-    
-    
-      
-    
-    
-      
-    
-    
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
 
     
     
+      
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -59,7 +59,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -71,8 +71,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#hardware" class="md-skip">
-          Skip to content
+        <a href="#turn" class="md-skip">
+          跳转至
         </a>
       
     </div>
@@ -84,8 +84,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../" title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="One-KVM 文档" class="md-header__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Octopus Planet
+              STUN/TURN 服务
             
           </span>
         </div>
@@ -119,20 +119,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../start_install/octopus-flanet_install/" hreflang="zh" class="md-select__link">
+            <a href="./" hreflang="zh" class="md-select__link">
               简体中文
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="en" class="md-select__link">
+            <a href="../../en/network/stun/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -151,21 +151,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -178,7 +178,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -189,7 +189,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/mofeng-git/One-KVM" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/mofeng-git/One-KVM" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -210,25 +210,23 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
           
   
     
   
-  Start
+  开始
 
         </a>
       </li>
@@ -239,22 +237,26 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../network/port_forwarding/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../port_forwarding/" class="md-tabs__link">
           
   
     
   
-  Network
+  网络
 
         </a>
       </li>
@@ -277,7 +279,7 @@
   
     
   
-  Audio & Video
+  音视频
 
         </a>
       </li>
@@ -303,7 +305,7 @@
   
     
   
-  Peripherals
+  外围设备
 
         </a>
       </li>
@@ -326,7 +328,7 @@
   
     
   
-  Advanced Usage
+  高级用法
 
         </a>
       </li>
@@ -346,7 +348,7 @@
   
     
   
-  Accessories & Development
+  周边套件与开发
 
         </a>
       </li>
@@ -374,9 +376,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../" title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
+    <a href="../.." title="One-KVM 文档" class="md-nav__button md-logo" aria-label="One-KVM 文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -386,7 +388,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/mofeng-git/One-KVM" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/mofeng-git/One-KVM" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
@@ -403,8 +405,6 @@
       
   
   
-    
-  
   
   
     
@@ -419,6 +419,481 @@
         
       
         
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    开始
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            开始
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prepare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    写在前面
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/docker_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker 部署
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    已适配硬件安装
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            已适配硬件安装
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/onecloud_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    玩客云
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/onecloud-pro_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    玩客云 Pro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/oec-turbo_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OEC TURBO 盒子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/cumebox2_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    私家云二代
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/orangepizero_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    香橙派 Zero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/s905l3a_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S905l3a 盒子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/virtualmachine_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    虚拟机部署
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/synology_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    群晖 NAS（停止维护）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/chainedbox_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    我家云盒子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/octopus-flanet_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    章鱼星球
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/octopus-flanet_andriod_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    章鱼星球（安卓-硬件编码，停止维护）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/2k0300_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    龙芯久久派（停止维护）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_install/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常见问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thanks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    赞助计划和感谢
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
       
         
       
@@ -437,80 +912,28 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
   
   <span class="md-ellipsis">
-    Start
+    网络
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
-            Start
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            网络
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../prepare/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Read First
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../docker_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker Deployment
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
                 
   
   
@@ -520,18 +943,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -555,24 +966,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Supported Hardware Installations
+    互联网访问
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
-            Supported Hardware Installations
+            互联网访问
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -583,179 +994,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../onecloud_install/" class="md-nav__link">
+      <a href="../port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    OneCloud
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../onecloud-pro_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    OneCloud Pro
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../oec-turbo_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    OEC TURBO Box
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cumebox2_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    CumeBox 2
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../orangepizero_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Orange Pi Zero
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../s905l3a_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    S905l3a Box
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../virtualmachine_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Virtual Machine Deployment
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../synology_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Synology NAS (EOL)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chainedbox_install/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ChainedBox
+    端口转发
   </span>
   
 
@@ -783,7 +1026,7 @@
           
   
   <span class="md-ellipsis">
-    Octopus Planet
+    STUN/TURN 服务
   </span>
   
 
@@ -794,7 +1037,7 @@
         
   
   <span class="md-ellipsis">
-    Octopus Planet
+    STUN/TURN 服务
   </span>
   
 
@@ -802,39 +1045,21 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
+  <a href="#turn" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integrated-image-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Integrated Image Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
+      TURN 服务提供商
     </span>
   </a>
   
@@ -856,11 +1081,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../octopus-flanet_andriod_install/" class="md-nav__link">
+      <a href="../frp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Octopus Planet (Android - HW Encode, EOL)
+    Frp 端口映射
   </span>
   
 
@@ -877,40 +1102,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../2k0300_install/" class="md-nav__link">
+      <a href="../tailscale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Loongson 2K0300 (EOL)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    FAQ
+    Tailscale 异地组网
   </span>
   
 
@@ -927,139 +1123,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thanks/" class="md-nav__link">
+      <a href="../cloudflared/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Sponsorship & Thanks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Network
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Network
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Internet Access
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            Internet Access
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../network/port_forwarding/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Port Forwarding
+    Cloudflared 隧道
   </span>
   
 
@@ -1076,95 +1144,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network/stun/" class="md-nav__link">
+      <a href="../gostc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    STUN/TURN Service
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../network/frp/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    FRP Port Mapping
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../network/tailscale/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tailscale Mesh
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../network/cloudflared/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cloudflared Tunnel
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../network/gostc/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GOSTC NAT Traversal
+    GOSTC 内网穿透
   </span>
   
 
@@ -1189,11 +1173,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network/ssl/" class="md-nav__link">
+      <a href="../ssl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SSL Encrypted Connection
+    SSL 加密连接
   </span>
   
 
@@ -1244,7 +1228,7 @@
             
   
   <span class="md-ellipsis">
-    Audio & Video
+    音视频
   </span>
   
 
@@ -1254,7 +1238,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Audio & Video
+            音视频
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1290,7 +1274,7 @@
         
   
   <span class="md-ellipsis">
-    H.264 Audio
+    H.264 音频
   </span>
   
 
@@ -1311,7 +1295,7 @@
         
   
   <span class="md-ellipsis">
-    Video Recording
+    视频录制
   </span>
   
 
@@ -1368,7 +1352,7 @@
             
   
   <span class="md-ellipsis">
-    Peripherals
+    外围设备
   </span>
   
 
@@ -1378,7 +1362,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Peripherals
+            外围设备
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1416,7 +1400,7 @@
             
   
   <span class="md-ellipsis">
-    Keyboard and Mouse
+    键盘和鼠标
   </span>
   
 
@@ -1426,7 +1410,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
-            Keyboard and Mouse
+            键盘和鼠标
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1441,7 +1425,7 @@
         
   
   <span class="md-ellipsis">
-    Mouse Modes
+    鼠标模式
   </span>
   
 
@@ -1462,7 +1446,7 @@
         
   
   <span class="md-ellipsis">
-    Mouse Jiggler
+    鼠标抖动器
   </span>
   
 
@@ -1512,7 +1496,7 @@
         
   
   <span class="md-ellipsis">
-    Mass Storage Device
+    大容量存储驱动器
   </span>
   
 
@@ -1533,7 +1517,7 @@
         
   
   <span class="md-ellipsis">
-    USB Ethernet
+    USB 以太网
   </span>
   
 
@@ -1554,7 +1538,7 @@
         
   
   <span class="md-ellipsis">
-    USB Serial
+    USB 串口
   </span>
   
 
@@ -1575,7 +1559,7 @@
         
   
   <span class="md-ellipsis">
-    Dynamic USB Configuration
+    动态 USB 配置
   </span>
   
 
@@ -1617,7 +1601,7 @@
             
   
   <span class="md-ellipsis">
-    ATX Power Control
+    ATX 电源控制
   </span>
   
 
@@ -1627,7 +1611,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
-            ATX Power Control
+            ATX 电源控制
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1642,7 +1626,7 @@
         
   
   <span class="md-ellipsis">
-    OneCloud GPIO
+    玩客云 GPIO
   </span>
   
 
@@ -1663,7 +1647,7 @@
         
   
   <span class="md-ellipsis">
-    USB Relay
+    USB 继电器
   </span>
   
 
@@ -1728,7 +1712,7 @@
             
   
   <span class="md-ellipsis">
-    Advanced Usage
+    高级用法
   </span>
   
 
@@ -1738,7 +1722,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Advanced Usage
+            高级用法
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1753,7 +1737,7 @@
         
   
   <span class="md-ellipsis">
-    Appearance Themes
+    外观主题
   </span>
   
 
@@ -1774,7 +1758,7 @@
         
   
   <span class="md-ellipsis">
-    VNC Connection
+    VNC 连接
   </span>
   
 
@@ -1795,7 +1779,7 @@
         
   
   <span class="md-ellipsis">
-    KVM Switch
+    KVM 一控多
   </span>
   
 
@@ -1816,7 +1800,7 @@
         
   
   <span class="md-ellipsis">
-    Wake-on-LAN (WOL)
+    WOL 网络唤醒
   </span>
   
 
@@ -1837,7 +1821,7 @@
         
   
   <span class="md-ellipsis">
-    Webterm Web Terminal
+    Webterm 网页终端
   </span>
   
 
@@ -1858,7 +1842,7 @@
         
   
   <span class="md-ellipsis">
-    2FA Two-Factor Authentication
+    2FA 双重身份验证
   </span>
   
 
@@ -1911,7 +1895,7 @@
             
   
   <span class="md-ellipsis">
-    Accessories & Development
+    周边套件与开发
   </span>
   
 
@@ -1921,7 +1905,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Accessories & Development
+            周边套件与开发
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1936,7 +1920,7 @@
         
   
   <span class="md-ellipsis">
-    Accessories
+    周边套件
   </span>
   
 
@@ -1978,7 +1962,7 @@
         
   
   <span class="md-ellipsis">
-    Build One-KVM OS
+    构建 One-KVM 系统
   </span>
   
 
@@ -1999,7 +1983,7 @@
         
   
   <span class="md-ellipsis">
-    Knowledge Base
+    知识库
   </span>
   
 
@@ -2029,39 +2013,21 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
+  <a href="#turn" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integrated-image-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Integrated Image Deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
+      TURN 服务提供商
     </span>
   </a>
   
@@ -2085,50 +2051,20 @@
   
 
 
-  <h1>Octopus Planet</h1>
+  <h1>STUN/TURN 服务</h1>
 
-<div><h3 id="hardware">Hardware</h3>
-<p>The Octopus Flanet box features an S912 octa-core CPU, 2GB RAM, and 8GB internal storage. It has a Gigabit Ethernet port, two USB 2.0 ports, a TF slot, and HDMI output.</p>
-<h3 id="integrated-image-deployment">Integrated Image Deployment</h3>
-<ol>
-<li>Flash a minimal Android TV firmware using USB_Burning_Tool</li>
-<li>Write the One-KVM integrated image to a USB drive and plug it into the USB 2.0 port near the QR code</li>
-<li>After Android boots, connect via <code>adb connect &lt;ip&gt;</code> and run <code>adb reboot update</code> to boot from the USB drive (first time only)</li>
-<li>Once booted from USB, SSH in and run <code>armbian-install</code> (choose the correct model, e.g., 202/1-partition) to install to EMMC</li>
-</ol>
-<details class="help" open="open">
-<summary>Boot from USB1 port</summary>
-<p>If the device fails to boot from USB2, you can boot from USB1:</p>
-<p>After writing the image to the USB drive, edit <code>uEnv.txt</code> in the BOOT partition root, replace <code>FDT=/dtb/amlogic/meson-gxm-khadas-vim2.dtb</code> with <code>FDT=/dtb/amlogic/meson-gxm-q200.dtb</code>. Then edit <code>etc/rc.local</code> in the ROOTFS partition and comment out the second line by prefixing <code>#</code>.</p>
-<p>After successfully booting from USB1 and logging in, edit <code>/etc/rc.local</code> again to remove the <code>#</code> from the second line, save, and then run <code>armbian-install</code> to write to EMMC.</p>
-</details>
-<p>Install example:
-<a class="glightbox" href="../../../img/2024-12-02_17-36.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="install" src="../../../img/2024-12-02_17-36.png"></a></p>
-<h3 id="usage">Usage</h3>
-<div class="admonition warning">
-<p class="admonition-title">Hardware safety warning</p>
-<p>To avoid issues such as the target failing to boot or detect devices (and in rare cases hardware damage), take one of these precautions before using a USB cable:</p>
-<p>Option 1: cut/remove the red 5V (VCC) wire in the USB cable so only the data lines (D+/D−) and ground remain, breaking the power path.</p>
-<p>Option 2: insert a USB hub with its own power switch into the USB link and keep that switch off while connecting.</p>
-<p>Some low-power targets can back-power from the KVM via the OTG port before their main power is applied, leaving them in a bad state that persists even after you power them normally.</p>
-<p><strong>Unless you fully understand the risks, use one of the safeguards above to protect your hardware.</strong></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Data safety reminder</p>
-<p>Avoid hard power-offs. Cutting power while eMMC writes are in progress can corrupt data.</p>
-<p>If you must cut power, run <code>sync</code> after write operations. For shutdowns/reboots, prefer <code>poweroff</code> or <code>reboot</code> so the system flushes data cleanly.</p>
-</div>
-<p><strong>SSH</strong></p>
-<p>Armbian enables SSH by default. Initial credentials: root/1234.</p>
-<div class="admonition warning">
-<p class="admonition-title">System upgrade warning</p>
-<p>Do not run <code>apt upgrade</code> to upgrade the kernel/DTB. It may break OTG.</p>
-</div>
-<p><strong>Connections</strong></p>
-<p>The USB port near the Ethernet jack is OTG for the dual-headed cable; the port near the QR code is for the USB HDMI capture card.</p>
-<p><a class="glightbox" href="../../../img/IMG_20241202_180410.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image-20240926220219805" src="../../../img/IMG_20241202_180410.png"></a></p>
-<p><strong>Screenshots</strong></p>
-<p><a class="glightbox" href="../../../img/IMG_20241202_184800.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Octopus Flanet" src="../../../img/IMG_20241202_184800.png"></a></p></div>
+<div><p>在现实的网络环境中，大多数设备都位于 NAT（网络地址转换） 设备或防火墙之后，这给 WebRTC 的 P2P 直连带来了巨大挑战。STUN 和 TURN 服务器正是为了解决这个问题而诞生的。</p>
+<p>它们都是 ICE（Interactive Connectivity Establishment，交互式连接建立） 框架的重要组成部分，各自承担着不同但互补的职责：</p>
+<ul>
+<li>STUN：尝试发现直接 P2P 连接的可能性</li>
+<li>TURN：在直接连接失败时提供中继服务</li>
+</ul>
+<p><a class="glightbox" href="../../img/image-20251202163700000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="STUN 和 TURN 示意图" src="../../img/image-20251202163700000.png"></a></p>
+<h3 id="turn">TURN 服务提供商</h3>
+<p>互联网上有众多的公共 STUN 服务器，但几乎没有公开的 TRUN 服务器。</p>
+<p>STUN/TURN 服务可以使用 coturn 程序自建。</p>
+<p>如果你在使用 Cloudflare ，Cloudflare 为每个账户提供了每月 1T 的 TURN 中转流量。不过对于中国大陆地区用户，Cloudflare 提供的 TURN 服务可能存在网络连通性问题或高延迟的表现。</p>
+<p><a class="glightbox" href="../../img/image-20251202164800000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Cloudflare STUN/TURN" src="../../img/image-20251202164800000.png"></a></p></div>
 
 
 
@@ -2148,20 +2084,20 @@
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
+    <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年12月3日</span>
   </span>
 
     
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
+    <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2025年12月3日</span>
   </span>
 
     
@@ -2186,7 +2122,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  回到页面顶部
 </button>
         
       </main>
@@ -2195,33 +2131,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../chainedbox_install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ChainedBox">
+          <a href="../port_forwarding/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 端口转发">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Previous
+                上一页
               </span>
               <div class="md-ellipsis">
-                ChainedBox
+                端口转发
               </div>
             </div>
           </a>
         
         
           
-          <a href="../octopus-flanet_andriod_install/" class="md-footer__link md-footer__link--next" aria-label="Next: Octopus Planet (Android - HW Encode, EOL)">
+          <a href="../frp/" class="md-footer__link md-footer__link--next" aria-label="下一页: Frp 端口映射">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Next
+                下一页
               </span>
               <div class="md-ellipsis">
-                Octopus Planet (Android - HW Encode, EOL)
+                Frp 端口映射
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2259,12 +2195,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.footer", "search.highlight", "search.share", "search.suggest", "navigation.expand", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="../../../baidu-tongji.js"></script>
+        <script src="../../baidu-tongji.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

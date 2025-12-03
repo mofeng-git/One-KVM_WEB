@@ -607,7 +607,7 @@
         
   
   <span class="md-ellipsis">
-    玩客云 Pro
+    OneCloud Pro
   </span>
   
 
@@ -628,7 +628,7 @@
         
   
   <span class="md-ellipsis">
-    OEC TURBO 盒子
+    OEC TURBO Box
   </span>
   
 
@@ -733,7 +733,7 @@
         
   
   <span class="md-ellipsis">
-    群晖 NAS（停止维护）
+    Synology NAS (EOL)
   </span>
   
 
@@ -796,7 +796,7 @@
         
   
   <span class="md-ellipsis">
-    章鱼星球（安卓-硬件编码，停止维护）
+    Octopus Planet (Android - HW Encode, EOL)
   </span>
   
 
@@ -817,7 +817,7 @@
         
   
   <span class="md-ellipsis">
-    龙芯久久派（停止维护）
+    Loongson 2K0300 (EOL)
   </span>
   
 
@@ -867,7 +867,7 @@
         
   
   <span class="md-ellipsis">
-    赞助计划和感谢
+    Sponsorship & Thanks
   </span>
   
 
@@ -949,6 +949,8 @@
       
         
       
+        
+      
     
     
       
@@ -994,6 +996,27 @@
   
   <span class="md-ellipsis">
     Port Forwarding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/stun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STUN/TURN Service
   </span>
   
 
@@ -1077,7 +1100,7 @@
         
   
   <span class="md-ellipsis">
-    GOSTC 内网穿透
+    GOSTC NAT Traversal
   </span>
   
 
@@ -1636,18 +1659,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#one-kvm" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      One-KVM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One-KVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker configuration
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#integrated-image-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Integrated image configuration
     </span>
   </a>
   
@@ -1656,9 +1689,14 @@
           <li class="md-nav__item">
   <a href="#demo-video" class="md-nav__link">
     <span class="md-ellipsis">
-      Demo Video
+      Demo video
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2063,18 +2101,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#one-kvm" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      One-KVM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="One-KVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker configuration
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#integrated-image-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Integrated image configuration
     </span>
   </a>
   
@@ -2083,9 +2131,14 @@
           <li class="md-nav__item">
   <a href="#demo-video" class="md-nav__link">
     <span class="md-ellipsis">
-      Demo Video
+      Demo video
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2114,21 +2167,22 @@
 
   <h1>USB Relay</h1>
 
-<div><h3 id="usb-relay-for-atx-power-management">USB Relay for ATX Power Management</h3>
-<h4 id="requirements">Requirements</h4>
+<div><h2 id="usb-relay-for-atx-power-management">USB Relay for ATX Power Management</h2>
+<h3 id="requirements">Requirements</h3>
 <ul>
 <li>Device: LCUS_HID USB Relay</li>
 <li>Device path: <code>/dev/hidraw0</code></li>
 </ul>
 <p><a class="glightbox" href="../../../img/image-1727875062722.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LCUS_HID USB Relay Front" src="../../../img/image-1727875062722.png"></a>
 <a class="glightbox" href="../../../img/2024100200.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LCUS_HID USB Relay Back" src="../../../img/2024100200.png"></a></p>
-<h4 id="configuration">Configuration</h4>
+<h3 id="one-kvm">One-KVM</h3>
+<h4 id="docker-configuration">Docker configuration</h4>
 <p>When starting the Docker container, you need to:</p>
 <ol>
 <li>Map the relay device</li>
 <li>Set the environment variable <code>ATX=USBRELAY_HID</code></li>
 </ol>
-<h4 id="example">Example</h4>
+<p><strong>Example</strong></p>
 <p>Below is a sample deployment for Cumebox 2:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
@@ -2140,7 +2194,9 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>-p<span class="w"> </span><span class="m">4430</span>:4430<span class="w"> </span>-p<span class="w"> </span><span class="m">5900</span>:5900<span class="w"> </span>-p<span class="w"> </span><span class="m">623</span>:623<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span>silentwind0/kvmd
 </code></pre></div></td></tr></table></div>
-<h4 id="demo-video">Demo Video</h4>
+<h4 id="integrated-image-configuration">Integrated image configuration</h4>
+<p>Integrated images default to: ARM devices use GPIO, x64 virtual machines use the USB relay. If you need a different strategy, edit the scripts under <code>/etc/kvmd/atx.sh</code> and <code>/etc/kvmd/cutom_atx</code>.</p>
+<h4 id="demo-video">Demo video</h4>
 <p><div class="video-container"><video style="position:relative;width:100%;height:22.172vw" controls alt="type:video"><source src="../../../video/one-kvm_atx0_x264.mp4" type="video/mp4"></source></video></div></p></div>
 
 
@@ -2164,7 +2220,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2025</span>
   </span>
 
     

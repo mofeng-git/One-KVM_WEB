@@ -680,7 +680,7 @@
         
   
   <span class="md-ellipsis">
-    玩客云 Pro
+    OneCloud Pro
   </span>
   
 
@@ -701,7 +701,7 @@
         
   
   <span class="md-ellipsis">
-    OEC TURBO 盒子
+    OEC TURBO Box
   </span>
   
 
@@ -806,7 +806,7 @@
         
   
   <span class="md-ellipsis">
-    群晖 NAS（停止维护）
+    Synology NAS (EOL)
   </span>
   
 
@@ -869,7 +869,7 @@
         
   
   <span class="md-ellipsis">
-    章鱼星球（安卓-硬件编码，停止维护）
+    Octopus Planet (Android - HW Encode, EOL)
   </span>
   
 
@@ -890,7 +890,7 @@
         
   
   <span class="md-ellipsis">
-    龙芯久久派（停止维护）
+    Loongson 2K0300 (EOL)
   </span>
   
 
@@ -940,7 +940,7 @@
         
   
   <span class="md-ellipsis">
-    赞助计划和感谢
+    Sponsorship & Thanks
   </span>
   
 
@@ -1022,6 +1022,8 @@
       
         
       
+        
+      
     
     
       
@@ -1067,6 +1069,27 @@
   
   <span class="md-ellipsis">
     Port Forwarding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/stun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STUN/TURN Service
   </span>
   
 
@@ -1150,7 +1173,7 @@
         
   
   <span class="md-ellipsis">
-    GOSTC 内网穿透
+    GOSTC NAT Traversal
   </span>
   
 
@@ -2085,21 +2108,22 @@
 <div><h3 id="working-principle">Working Principle</h3>
 <p><a class="glightbox" href="../../img/drawio1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Architecture" src="../../img/drawio1.png"></a></p>
 <h3 id="features">Features</h3>
-<p>The table compares One-KVM with other projects based on PiKVM. It is for reference only and not intended to mislead. Please contact us to correct any mistakes.</p>
+<div class="admonition tip">
+<p class="admonition-title">Note</p>
+<p>This table reflects how One-KVM currently adapts these KVM software stacks. It does not represent the feature set of their official hardware products.</p>
+</div>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Feature</th>
-<th style="text-align: center;">One-KVM</th>
-<th style="text-align: center;">PiKVM</th>
-<th style="text-align: center;">ArmKVM</th>
-<th style="text-align: center;">BLIKVM</th>
+<th style="text-align: center;">One-KVM (PiKVM)</th>
+<th style="text-align: center;">BliKVM</th>
+<th style="text-align: center;">JetKVM</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Open-source OS</td>
-<td style="text-align: center;">√</td>
+<td style="text-align: center;">Open source</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
@@ -2107,63 +2131,48 @@
 <tr>
 <td style="text-align: center;">Simplified Chinese UI</td>
 <td style="text-align: center;">√</td>
-<td style="text-align: center;">x</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 </tr>
 <tr>
-<td style="text-align: center;">Remote video stream</td>
+<td style="text-align: center;">Remote video formats</td>
 <td style="text-align: center;">MJPEG/H.264</td>
 <td style="text-align: center;">MJPEG/H.264</td>
-<td style="text-align: center;">MJPEG/H.264</td>
-<td style="text-align: center;">MJPEG/H.264</td>
+<td style="text-align: center;">H.264</td>
 </tr>
 <tr>
 <td style="text-align: center;">H.264 encoding</td>
+<td style="text-align: center;">CPU/GPU</td>
 <td style="text-align: center;">CPU</td>
-<td style="text-align: center;">GPU</td>
-<td style="text-align: center;">Unknown</td>
-<td style="text-align: center;">GPU</td>
+<td style="text-align: center;">CPU/GPU</td>
 </tr>
 <tr>
 <td style="text-align: center;">Remote audio</td>
 <td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">×</td>
 </tr>
 <tr>
 <td style="text-align: center;">Remote mouse/keyboard</td>
 <td style="text-align: center;">OTG/CH9329</td>
-<td style="text-align: center;">OTG/CH9329/Pico/Bluetooth</td>
 <td style="text-align: center;">OTG</td>
 <td style="text-align: center;">OTG</td>
 </tr>
 <tr>
 <td style="text-align: center;">VNC control</td>
 <td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">×</td>
 </tr>
 <tr>
 <td style="text-align: center;">ATX power control</td>
 <td style="text-align: center;">GPIO/USB relay</td>
-<td style="text-align: center;">GPIO</td>
-<td style="text-align: center;">GPIO</td>
-<td style="text-align: center;">GPIO</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">×</td>
 </tr>
 <tr>
 <td style="text-align: center;">Virtual storage mounting</td>
 <td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: center;">CD-ROM images &gt; 2.2G</td>
-<td style="text-align: center;">x</td>
-<td style="text-align: center;">x</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 </tr>
@@ -2172,67 +2181,27 @@
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
 </tr>
 <tr>
 <td style="text-align: center;">Web clipboard</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
+<td style="text-align: center;">×</td>
 </tr>
 <tr>
 <td style="text-align: center;">OCR recognition</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
+<td style="text-align: center;">×</td>
 </tr>
 <tr>
 <td style="text-align: center;">Web terminal</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: center;">Network serial terminal</td>
-<td style="text-align: center;">x</td>
-<td style="text-align: center;">x</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: center;">HDMI switch support</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: center;">Video recording</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">x</td>
-<td style="text-align: center;">x</td>
-<td style="text-align: center;">x</td>
+<td style="text-align: center;">×</td>
 </tr>
 <tr>
 <td style="text-align: center;">Docker deployment</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">x</td>
-<td style="text-align: center;">x</td>
-<td style="text-align: center;">x</td>
-</tr>
-<tr>
-<td style="text-align: center;">Official hardware kits</td>
-<td style="text-align: center;">x</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: center;">Tech support</td>
-<td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
@@ -2245,75 +2214,11 @@
 <li>Platform: Docker</li>
 <li>Hardware: USB UVC capture card, CH9329 + CH340 or OTG port</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Integrated image compatibility</th>
-<th style="text-align: center;">(Click model name for details)</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>Model</strong></td>
-<td style="text-align: center;"><strong>Codename</strong></td>
-<td style="text-align: center;"><strong>Hardware</strong></td>
-<td style="text-align: center;"><strong>Latest</strong></td>
-<td style="text-align: center;"><strong>Status</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="../start_install/onecloud_install/">OneCloud (玩客云)</a></td>
-<td style="text-align: center;">Onecloud</td>
-<td style="text-align: center;">USB capture, OTG</td>
-<td style="text-align: center;">241214</td>
-<td style="text-align: center;">Updating</td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="../start_install/cumebox2_install/">Cumebox 2 (私家云二代)</a></td>
-<td style="text-align: center;">Cumebox2</td>
-<td style="text-align: center;">USB capture, OTG</td>
-<td style="text-align: center;">241214</td>
-<td style="text-align: center;">Updating</td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="../start_install/virtualmachine_install/">VMware</a></td>
-<td style="text-align: center;">Vmare-uefi</td>
-<td style="text-align: center;">USB capture, CH9329</td>
-<td style="text-align: center;">241214</td>
-<td style="text-align: center;">Updating</td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="../start_install/virtualmachine_install/">VirtualBox</a></td>
-<td style="text-align: center;">Virtualbox-uefi</td>
-<td style="text-align: center;">USB capture, CH9329</td>
-<td style="text-align: center;">241214</td>
-<td style="text-align: center;">Updating</td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="../start_install/s905l3a_install/">s905l3a (General)</a></td>
-<td style="text-align: center;">E900v22c</td>
-<td style="text-align: center;">USB capture, OTG</td>
-<td style="text-align: center;">241214</td>
-<td style="text-align: center;">Updating</td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="../start_install/chainedbox_install/">ChainedBox (我家云)</a></td>
-<td style="text-align: center;">Chainedbox</td>
-<td style="text-align: center;">USB capture, OTG</td>
-<td style="text-align: center;">241214</td>
-<td style="text-align: center;">Updating</td>
-</tr>
-<tr>
-<td style="text-align: center;"><a href="../start_install/2k0300_install/">Loongson 2K0300 (龙芯久久派)</a></td>
-<td style="text-align: center;">2k0300</td>
-<td style="text-align: center;">USB capture, CH9329</td>
-<td style="text-align: center;">241025</td>
-<td style="text-align: center;">EOL</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Adapted hardware</strong></p>
+<blockquote>
+<p>Paid images are available only to sponsoring members; see the <a href="../thanks/">sponsorship plan</a>.</p>
+</blockquote>
+<p><a class="glightbox" href="../../img/%E8%AE%BE%E5%A4%87%E9%80%82%E9%85%8D%E4%BF%A1%E6%81%AF%E8%A1%A8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hardware compatibility matrix" src="../../img/%E8%AE%BE%E5%A4%87%E9%80%82%E9%85%8D%E4%BF%A1%E6%81%AF%E8%A1%A8.png"></a></p>
 <table>
 <thead>
 <tr>
@@ -2347,6 +2252,13 @@
 <td style="text-align: center;">Recommended</td>
 </tr>
 <tr>
+<td style="text-align: center;">MS2130S</td>
+<td style="text-align: center;">USB3.0</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">Recommended</td>
+</tr>
+<tr>
 <td style="text-align: center;">MS2131</td>
 <td style="text-align: center;">USB3.0</td>
 <td style="text-align: center;">√</td>
@@ -2370,8 +2282,9 @@
 </tbody>
 </table>
 <h3 id="downloads">Downloads</h3>
-<p>Huang1111 WebDAV (high-speed, no login): <a href="https://webdav.huang1111.cn/s/e0Yfl">https://webdav.huang1111.cn/s/e0Yfl</a></p>
-<p>Baidu Netdisk (login required): <a href="https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj">https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9a</a></p>
+<p>High-speed download: <a href="http://sd1.files.one-kvm.cn/">http://sd1.files.one-kvm.cn/</a> (community-sponsored direct links with EdgeOne CDN; use a multi-threaded downloader for best speed)</p>
+<p>High-speed download (no login): <a href="https://pan.huang1111.cn/s/mxkx3T1">https://pan.huang1111.cn/s/mxkx3T1</a> (sponsored by the Huang1111 Public Welfare Program)</p>
+<p>Baidu Netdisk (login required): <a href="https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj">https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj</a></p>
 <!-- Screenshots are similar; removed from overview and moved to each hardware page
 **OneCloud**
 
@@ -2429,7 +2342,7 @@ More platforms are not listed one by one.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2025</span>
   </span>
 
     

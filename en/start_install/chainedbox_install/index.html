@@ -608,7 +608,7 @@
         
   
   <span class="md-ellipsis">
-    玩客云 Pro
+    OneCloud Pro
   </span>
   
 
@@ -629,7 +629,7 @@
         
   
   <span class="md-ellipsis">
-    OEC TURBO 盒子
+    OEC TURBO Box
   </span>
   
 
@@ -734,7 +734,7 @@
         
   
   <span class="md-ellipsis">
-    群晖 NAS（停止维护）
+    Synology NAS (EOL)
   </span>
   
 
@@ -860,7 +860,7 @@
         
   
   <span class="md-ellipsis">
-    章鱼星球（安卓-硬件编码，停止维护）
+    Octopus Planet (Android - HW Encode, EOL)
   </span>
   
 
@@ -881,7 +881,7 @@
         
   
   <span class="md-ellipsis">
-    龙芯久久派（停止维护）
+    Loongson 2K0300 (EOL)
   </span>
   
 
@@ -931,7 +931,7 @@
         
   
   <span class="md-ellipsis">
-    赞助计划和感谢
+    Sponsorship & Thanks
   </span>
   
 
@@ -1013,6 +1013,8 @@
       
         
       
+        
+      
     
     
       
@@ -1058,6 +1060,27 @@
   
   <span class="md-ellipsis">
     Port Forwarding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/stun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STUN/TURN Service
   </span>
   
 
@@ -1141,7 +1164,7 @@
         
   
   <span class="md-ellipsis">
-    GOSTC 内网穿透
+    GOSTC NAT Traversal
   </span>
   
 
@@ -2075,14 +2098,23 @@
 <p><a class="glightbox" href="../../../img/freecompress-01b88f3974c8f447d7c098ccaa292a32.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="MASKROM pads" src="../../../img/freecompress-01b88f3974c8f447d7c098ccaa292a32.jpeg"></a></p>
 <p><a class="glightbox" href="../../../img/image-202411182144.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Flash image" src="../../../img/image-202411182144.png"></a></p>
 <h3 id="usage">Usage</h3>
+<div class="admonition warning">
+<p class="admonition-title">Hardware safety warning</p>
+<p>To avoid issues such as the target failing to boot or detect devices (and in rare cases hardware damage), take one of these precautions before using a dual-headed USB cable:</p>
+<p>Option 1: cut/remove the red 5V (VCC) wire in the USB cable so only the data lines (D+/D−) and ground remain, breaking the power path.</p>
+<p>Option 2: insert a USB hub with its own power switch into the USB link and keep that switch off while connecting.</p>
+<p>Some low-power targets can back-power from the KVM via the OTG port before their main power is applied, leaving them in a bad state that persists even after you power them normally.</p>
+<p><strong>Unless you fully understand the risks, use one of the safeguards above to protect your hardware.</strong></p>
+</div>
 <div class="admonition tip">
-<p class="admonition-title">Reminder</p>
-<p>Some low-power targets may draw power from the OTG port and enter a bad state before external power is applied. If so, cut the red 5V wire inside the USB cable.</p>
+<p class="admonition-title">Data safety reminder</p>
+<p>Avoid hard power-offs. Cutting power while eMMC writes are in progress can corrupt data.</p>
+<p>If you must cut power, run <code>sync</code> after write operations. For shutdowns/reboots, prefer <code>poweroff</code> or <code>reboot</code> so the system flushes data cleanly.</p>
 </div>
 <p><strong>SSH</strong></p>
 <p>Armbian enables SSH by default. Initial credentials: root/1234.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">System upgrade warning</p>
 <p>Do not run <code>apt upgrade</code> to upgrade the kernel/DTB. It may break OTG.</p>
 </div>
 <p><strong>Connections</strong></p>
@@ -2110,7 +2142,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2025</span>
   </span>
 
     
@@ -2157,7 +2189,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../synology_install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 群晖 NAS（停止维护）">
+          <a href="../synology_install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Synology NAS (EOL)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2167,7 +2199,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                群晖 NAS（停止维护）
+                Synology NAS (EOL)
               </div>
             </div>
           </a>
