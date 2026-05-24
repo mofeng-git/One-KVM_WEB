@@ -1,0 +1,289 @@
+site_name: One-KVM 文档
+site_description: One-KVM 文档
+site_author: SilentWind
+site_url: https://docs.one-kvm.cn/
+
+docs_dir: docs
+
+theme:
+  name: material
+  language: zh
+  logo: img/favicon.png
+  favicon: img/favicon.png
+  palette:
+    - scheme: default
+      primary: white
+      accent: zinc
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - scheme: slate
+      primary: black
+      accent: zinc
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - search.suggest
+    - navigation.expand
+    - content.tabs.link
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+repo_url: https://github.com/mofeng-git/One-KVM
+repo_name: mofeng-git/One-KVM
+
+copyright: Copyright &copy; 2023 - 2026 SilentWind<br> ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备2025068931号-1</a> &emsp; <img src="/img/beian.png" alt="公安备案" width="12" height="12"> 赣公网安备36092202000251号
+
+extra_javascript:
+  - 'baidu-tongji.js'
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mofeng-git/One-KVM
+  generator: false
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - mkdocs-video:
+      video_controls: True
+      video_autoplay: false
+      is_video: True
+  - glightbox
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: zh
+          name: 简体中文
+          build: true
+          default: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            "One-KVM Rust": "One-KVM Rust"
+            "One-KVM Python": "One-KVM Python"
+            "开始": "Start"
+            "STUN/TURN 服务": "STUN/TURN Service"
+            "介绍": "Introduction"
+            "写在前面": "Read First"
+            "Docker 部署": "Docker Deployment"
+            "Docker 安装": "Docker Install"
+            "DEB 软件包安装": "DEB Package Install"
+            "飞牛 NAS 安装": "FnNAS Install"
+            "已适配硬件安装": "Supported Hardware Installations"
+            "玩客云": "OneCloud"
+            "玩客云 Pro": "OneCloud Pro"
+            "OEC TURBO 盒子": "OEC TURBO Box"
+            "私家云二代": "CumeBox 2"
+            "香橙派 Zero": "Orange Pi Zero"
+            "S905l3a 盒子": "S905l3a Box"
+            "虚拟机部署": "Virtual Machine Deployment"
+            "群晖 NAS": "Synology NAS"
+            "群晖 NAS（停止维护）": "Synology NAS (EOL)"
+            "我家云盒子": "ChainedBox"
+            "章鱼星球": "Octopus Planet"
+            "章鱼星球（安卓-硬件编码）": "Octopus Planet (Android - HW Encode)"
+            "章鱼星球（安卓-硬件编码，停止维护）": "Octopus Planet (Android - HW Encode, EOL)"
+            "龙芯久久派": "Loongson 2K0300"
+            "龙芯久久派（停止维护）": "Loongson 2K0300 (EOL)"
+            "常见问题": "FAQ"
+            "赞助计划和感谢": "Sponsorship & Thanks"
+            "感谢": "Thanks"
+            "网络": "Network"
+            "互联网访问": "Internet Access"
+            "端口转发": "Port Forwarding"
+            "Frp 端口映射": "FRP Port Mapping"
+            "Tailscale 异地组网": "Tailscale Mesh"
+            "Cloudflared 隧道": "Cloudflared Tunnel"
+            "GOSTC 内网穿透": "GOSTC NAT Traversal"
+            "SSL 加密连接": "SSL Encrypted Connection"
+            "音视频": "Audio & Video"
+            "H.264 音频": "H.264 Audio"
+            "视频录制": "Video Recording"
+            "外围设备": "Peripherals"
+            "键盘和鼠标": "Keyboard and Mouse"
+            "鼠标模式": "Mouse Modes"
+            "鼠标抖动器": "Mouse Jiggler"
+            "大容量存储驱动器": "Mass Storage Device"
+            "USB 以太网": "USB Ethernet"
+            "USB 串口": "USB Serial"
+            "动态 USB 配置": "Dynamic USB Configuration"
+            "ATX 电源控制": "ATX Power Control"
+            "玩客云 GPIO": "OneCloud GPIO"
+            "USB 继电器": "USB Relay"
+            "高级用法": "Advanced Usage"
+            "外观主题": "Appearance Themes"
+            "VNC 连接": "VNC Connection"
+            "KVM 一控多": "KVM Switch"
+            "WOL 网络唤醒": "Wake-on-LAN (WOL)"
+            "Webterm 网页终端": "Webterm Web Terminal"
+            "网页终端": "Web Terminal"
+            "功能使用": "Feature Usage"
+            "EasyTier 异地组网": "EasyTier Mesh"
+            "RustDesk 远程控制": "RustDesk Remote Control"
+            "USB 动态配置": "Dynamic USB Configuration"
+            "2FA 双重身份验证": "2FA Two-Factor Authentication"
+            "周边套件与开发": "Accessories & Development"
+            "周边套件": "Accessories"
+            "HTTP API": "HTTP API"
+            "构建 One-KVM 系统": "Build One-KVM OS"
+            "知识库": "Knowledge Base"
+            "用户界面": "UI"
+            "引导页": "Onboarding"
+            "KVM 控制台": "KVM Console"
+            "设置页面": "Settings"
+            "其他": "Other"
+            "开发指南": "Development Guide"
+            "更新日志": "Changelog"
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      strict: false
+      timezone: Asia/Shanghai
+      type: date
+      locale: zh
+    
+
+nav:
+  - "One-KVM Rust":
+      - "开始":
+          - "介绍": index.md
+          - "Docker 安装": getting-started/docker-install.md
+          - "DEB 软件包安装": getting-started/deb-install.md
+          - "飞牛 NAS 安装": getting-started/fnnas-install.md
+          - "常见问题": getting-started/faq.md
+      - "用户界面":
+          - "引导页": ui/onboarding.md
+          - "KVM 控制台": ui/console.md
+          - "设置页面": ui/settings.md
+      - "功能使用":
+          - "网页终端": feature_usage/web_terminal.md
+          - "GOSTC 内网穿透": feature_usage/gostc_tunnel.md
+          - "EasyTier 异地组网": feature_usage/easytier_mesh.md
+          - "RustDesk 远程控制": feature_usage/rustdesk_remote.md
+          - "USB 动态配置": feature_usage/usb_dynamic.md
+      - "其他":
+          - "开发指南": other/development.md
+          - "更新日志": other/changelog.md
+          - "赞助计划和感谢": other/thanks.md
+
+  - "One-KVM Python":
+      - "开始":
+          - "介绍": python/index.md
+          - "写在前面": python/prepare.md
+          - "Docker 部署": python/start_install/docker_install.md
+          - "已适配硬件安装":
+              - "玩客云": python/start_install/onecloud_install.md
+              - "玩客云 Pro": python/start_install/onecloud-pro_install.md
+              #- "X86 主机安装": x86_install.md
+              - "OEC TURBO 盒子": python/start_install/oec-turbo_install.md
+              - "私家云二代": python/start_install/cumebox2_install.md
+              - "香橙派 Zero": python/start_install/orangepizero_install.md
+              - "S905l3a 盒子": python/start_install/s905l3a_install.md
+              - "虚拟机部署": python/start_install/virtualmachine_install.md
+              - "群晖 NAS（停止维护）": python/start_install/synology_install.md
+              - "我家云盒子": python/start_install/chainedbox_install.md
+              - "章鱼星球": python/start_install/octopus-flanet_install.md
+              - "章鱼星球（安卓-硬件编码，停止维护）": python/start_install/octopus-flanet_andriod_install.md
+              - "龙芯久久派（停止维护）": python/start_install/2k0300_install.md
+              #- "玩客云套装（停止维护）": start_install/onecloud_guide.md
+          - "常见问题": python/start_install/faq.md
+          - "赞助计划和感谢": python/thanks.md
+
+      - "网络":
+          - "互联网访问":
+              - "端口转发": python/network/port_forwarding.md
+              - "STUN/TURN 服务": python/network/stun.md
+              - "Frp 端口映射": python/network/frp.md
+              - "Tailscale 异地组网": python/network/tailscale.md
+              - "Cloudflared 隧道": python/network/cloudflared.md
+              - "GOSTC 内网穿透": python/network/gostc.md
+          #- "WIFI 连接": network/wifi.md
+          - "SSL 加密连接": python/network/ssl.md
+
+      - "音视频":
+          - "H.264 / WebRTC": python/audio_and_video/h264.md
+          - "H.264 音频": python/audio_and_video/audio.md
+          - "视频录制": python/audio_and_video/video_record.md
+
+      - "外围设备":
+          - "键盘和鼠标":
+              - "鼠标模式": python/attached_device/mouse.md
+              - "鼠标抖动器": python/attached_device/mouse_jiggler.md
+              - "CH9329 HID": python/attached_device/ch9329_hid.md
+              # "蓝牙 HID": attached_device/bluetooth_hid.md
+          - "大容量存储驱动器": python/attached_device/msd.md
+          - "USB 以太网": python/attached_device/usb_ethernet.md
+          - "USB 串口": python/attached_device/usb_serial.md
+          - "动态 USB 配置": python/attached_device/usb_dynamic.md
+          - "ATX 电源控制":
+              - "玩客云 GPIO": python/attached_device/onecloud_atx.md
+              #- "GPIO 通用配置": attached_device/gpio.md
+              - "USB 继电器": python/attached_device/usb_relay.md
+              #- "USB 转 GPIO 配置": attached_device/usb2gpio.md
+
+      - "高级用法":
+          #- "启动时配置": advanced_using/on_start_config.md
+          - "外观主题": python/advanced_using/appearances.md
+          - "VNC 连接": python/advanced_using/vnc.md
+          - "KVM 一控多": python/advanced_using/kvm_switch.md
+          - "WOL 网络唤醒": python/advanced_using/wol.md
+          - "Webterm 网页终端": python/advanced_using/webterm.md
+          #- "身份认证": auth.md
+          - "2FA 双重身份验证": python/advanced_using/2fa.md
+          #- "IPMI 和 Redfish 集成": advanced_using/ipmi.md
+          #- "HDMI 环出": advanced_using/loop_out.md
+
+      - "周边套件与开发":
+          - "周边套件": python/development/parts_library.md
+          - "HTTP API": python/development/api.md
+          - "构建 One-KVM 系统": python/development/building_os.md
+          - "知识库": python/development/develop.md

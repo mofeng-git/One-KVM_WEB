@@ -1,0 +1,1 @@
+### IPMI 和 Redfish 集成
