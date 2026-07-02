@@ -105,6 +105,6 @@ LinFeng Cloud offers premium network routes in China and abroad, high-frequency 
 
 - **[Beita Network](https://my.beita.cc/?ref=github_onekvm)** — sponsors this project's server
 
-  <img height="128" alt="BTBT" src="https://github.com/user-attachments/assets/c442d5f5-d72f-4a07-b9f4-400a6a0c3f1e" />
+  <img height="128" alt="BTBT" src="../img/btbt.png" />
 
   Remote desktops, consumer GPU servers, and dedicated physical servers with fully automated online delivery.

@@ -106,6 +106,6 @@ One-KVM Rust 是一个 Rust 编写的轻量级 IP-KVM 解决方案，可通过�
 
 - **[贝塔网络](https://my.beita.cc/?ref=github_onekvm)** - 赞助了本项目服务器
 
-  <img height="128" alt="BTBT" src="https://github.com/user-attachments/assets/c442d5f5-d72f-4a07-b9f4-400a6a0c3f1e" />
+  <img height="128" alt="BTBT" src="../img/btbt.png" />
 
   远程电脑、消费级GPU服务器、独服物理机，全自动在线交付。
