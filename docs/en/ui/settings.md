@@ -32,6 +32,13 @@ Configure web listen ports, HTTPS/HTTP, listen addresses, and TLS certificates.
 
 Pick the capture device, format, resolution, and frame rate, and set the WebRTC encoder backend plus STUN/TURN.
 
+The public STUN/TURN service config does not require a password. It is hidden by default and displayed locally in your browser after you click the button.
+
+!!! warning "Usage Notice"
+    The public STUN/TURN services are provided for free with no guarantee of availability, stability, latency, or service quality. Do not abuse them, generate excessive traffic, attack services, occupy resources in bulk, or use them for illegal activity.
+
+<button type="button" class="md-button md-button--primary" data-public-config="webrtc">View WebRTC STUN/TURN public service config</button>
+
 ![settings-2026-01-03-22-37-25](../../zh/ui/images/settings-2026-01-03-22-37-25.png)
 
 ### HID Settings

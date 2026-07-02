@@ -102,3 +102,9 @@ This project is supported by the following sponsors:
 ![LinFeng Cloud](https://docs.one-kvm.cn/img/36076FEFF0898A80EBD5756D28F4076C.png)
 
 LinFeng Cloud offers premium network routes in China and abroad, high-frequency game servers, and high-bandwidth servers.
+
+- **[Beita Network](https://my.beita.cc/?ref=github_onekvm)** — sponsors this project's server
+
+  <img height="128" alt="BTBT" src="https://github.com/user-attachments/assets/c442d5f5-d72f-4a07-b9f4-400a6a0c3f1e" />
+
+  Remote desktops, consumer GPU servers, and dedicated physical servers with fully automated online delivery.

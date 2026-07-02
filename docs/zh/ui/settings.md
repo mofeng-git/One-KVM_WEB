@@ -32,6 +32,13 @@
 
 选择视频采集设备、格式、分辨率与帧率，并设置 WebRTC 编码后端及 STUN/TURN。
 
+公共 STUN/TURN 服务配置无需密码，默认折叠隐藏，点击按钮后在浏览器本地展示。
+
+!!! warning "使用须知"
+    公共 STUN/TURN 服务免费提供，不承诺可用性、稳定性、延迟或服务质量。请勿滥用、刷流量、攻击、批量占用资源或用于违法违规用途。
+
+<button type="button" class="md-button md-button--primary" data-public-config="webrtc">查看 WebRTC STUN/TURN 公共服务配置</button>
+
 ![settings-2026-01-03-22-37-25](images/settings-2026-01-03-22-37-25.png)
 
 ### HID 设置

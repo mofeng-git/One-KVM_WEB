@@ -16,6 +16,15 @@ If you want to self-host a RustDesk relay server, you can quickly deploy the `ru
 !!! tip "Default Ports"
     If ports are omitted, One-KVM uses `21116` for rendezvous and `21117` for relay.
 
+## Public Server Config
+
+The public server config does not require a password. It is hidden by default and displayed locally in your browser after you click the button.
+
+!!! warning "Usage Notice"
+    The public servers are provided for free with no guarantee of availability, stability, latency, or service quality. Do not abuse them, generate excessive traffic, attack services, occupy resources in bulk, or use them for illegal activity.
+
+<button type="button" class="md-button md-button--primary" data-public-config="rustdesk">View RustDesk server config</button>
+
 ![rustdesk_remote-2026-01-28-00-19-25](../../zh/feature_usage/images/rustdesk_remote-2026-01-28-00-19-25.png)
 
 ## Setup Steps

@@ -111,17 +111,28 @@ echo "device" > /sys/devices/platform/soc/*/usb_role/*/role
 | 变量名 | 默认值 | 说明 |
 |--------|--------|------|
 | `TZ` | `UTC` | 时区设置 |
-| `HTTP_PORT` | `8080` | HTTP 端口 |
-| `HTTPS_PORT` | `8443` | HTTPS 端口 |
-| `ENABLE_HTTPS`	| `false`	| 是否启用 HTTPS 服务（值：true/false） |
-| `DATA_DIR` | `/etc/one-kvm` | 数据目录 |
+| `DATA_DIR` | `/etc/one-kvm` | 数据目录，入口脚本会传给 `one-kvm -d`；优先级高于 `ONE_KVM_DATA_DIR` |
+| `ONE_KVM_DATA_DIR` | `/etc/one-kvm` | 数据目录兼容变量，仅在 `DATA_DIR` 未设置时使用 |
+| `BIND_ADDRESS` | 未设置 | Web 服务监听地址，设置后传给 `one-kvm -a` |
+| `HTTP_PORT` | 配置文件默认值 | HTTP 端口，设置后传给 `one-kvm -p` |
+| `HTTPS_PORT` | 配置文件默认值 | HTTPS 端口，设置后传给 `one-kvm --https-port` |
+| `ENABLE_HTTPS` | `false` | 是否启用 HTTPS 服务（值：true/false） |
 | `VERBOSE` | `0` | 日志详细程度：1（-v）、2（-vv）、3（-vvv），数值越大日志越详细 |
+| `RUST_LOG` | 未设置 | Rust 日志过滤器，设置后会覆盖 `VERBOSE` 生成的默认日志等级 |
+| `ONE_KVM_FFMPEG_LOG` | `error` | FFmpeg 日志等级，可填 `error`、`warn`、`info`、`debug`、`trace` 等 |
+| `ONE_KVM_WEBRTC_MDNS_MODE` | `query_only` | WebRTC mDNS 模式：`disabled`、`query_only`、`query_and_gather` |
+| `ONE_KVM_UPDATE_BASE_URL` | `https://update.one-kvm.cn` | 在线升级服务地址 |
+| `OPENAI_API_KEY` | 未设置 | Computer Use Agent 的 OpenAI API Key，优先级高于网页配置 |
+| `ONE_KVM_OPENAI_BASE_URL` | 网页配置默认值 | Computer Use Agent 的 OpenAI 接口地址，优先级高于网页配置 |
+| `ONE_KVM_V4L2M2M_ALLOW` | 未设置 | 晶晨平台默认跳过 V4L2 M2M 探测；设置为非空且不为 `0` 时允许探测 |
+| `LIBVA_DRIVER_NAME` | 自动探测 | 手动指定 VA-API 驱动，例如 `iHD` 或 `i965` |
+| `LIBVA_DEVICE` | 自动扫描 | 指定 VA-API 探测使用的 DRM render 节点，例如 `/dev/dri/renderD128` |
 
 **说明**
 
 - 启用 HTTPS 时，无需额外挂载证书文件，系统使用默认自签名证书。
 - `--privileged=true` 和 `-v /dev:/dev` `-v /sys:/sys` 是硬件访问必需的配置，目前不可省略。后面会支持细化目录和权限。
 - 建议保留 `-v ./one-kvm-data:/etc/one-kvm` 挂载，用于持久化配置和运行数据。
-- `--net=host` 模式确保端口映射直接生效，无需额外配置 `-p` 参数映射端口。
+- `--net=host` 模式确保端口映射直接生效，无需额外配置 `-p` 参数映射端口。未设置 `HTTP_PORT` / `HTTPS_PORT` 时，端口以网页配置保存的值为准。
 
 [继续阅读：用户界面 :material-arrow-right:](../ui/onboarding.md){ .md-button }

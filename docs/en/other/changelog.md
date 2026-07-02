@@ -2,12 +2,56 @@ Changelog
 
 (If you have new feature requests or bug reports, reach out via GitHub Issues or the QQ group.)
 
+**v0.2.3**
+
+- Fixed CH9329 health-check and switching errors
+- Fixed deb package dependencies for Debian 13 installation compatibility
+- Corrected the iConfiguration descriptor string
+- Added the frp remote access extension
+- Added Linux absolute mouse compatibility mode
+- Added CH9329 descriptor settings
+- Added initial VNC support
+- Added initial Computer Use Agent support
+- Refined the frontend UI
+- Added build acceleration support for China network environments
+
+**v0.2.2**
+
+- Fixed Amlogic video device probing to avoid crashes caused by kernel defects
+- Fixed RustDesk mouse/keyboard input issues and improved relay server inference
+- Fixed RTSP and RustDesk extension start/stop issues
+- Improved the online upgrade experience
+- Updated several parameter descriptions
+- Added initial Android platform support for rooted devices
+
+**v0.2.1**
+
+- Fixed settings page scrolling and HID relay detection
+- Fixed OTG reconcile being triggered accidentally when saving CH9329 configuration
+- Fixed the MSD status card i18n key
+- Fixed OTG endpoint budget calculation and validation
+- Improved menu-based loading and error prompts on the Settings page
+- Added Redfish service support
+- Added initial Windows runtime support
+
+**v0.2.0**
+
+- Fixed WebRTC connection failures after configuration changes
+- Fixed intermittent audio stutter in some scenarios
+- Improved RK628D CSI capture adaptation
+- Improved parts of the web UI styling
+- Added automatic recovery for lost audio/video devices
+- Added USB device reset support
+- Added clearer error toast messages
+- Refactored responses to synchronous requests for a more natural interaction flow
+- Removed redundant code and comments
+
 **v0.1.9**
 
-- Fixed image list scrollbar behavior (#238)
-- Improved RTSP compatibility with VLC media player (#237)
-- Fixed ATX serial relay shared device not working (#233)
-- Fixed IPv6 URL concatenation on the settings page (#241)
+- Fixed image list scrollbar behavior
+- Improved RTSP compatibility with VLC media player
+- Fixed ATX serial relay shared device not working
+- Fixed IPv6 URL concatenation on the settings page
 - Improved CSI capture adaptation
 - Improved audio capture
 - Improved mobile UI

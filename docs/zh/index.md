@@ -103,3 +103,9 @@ One-KVM Rust 是一个 Rust 编写的轻量级 IP-KVM 解决方案，可通过�
 ![林枫云](https://docs.one-kvm.cn/img/36076FEFF0898A80EBD5756D28F4076C.png)
 
 林枫云主营国内外地域的精品线路业务服务器、高主频游戏服务器和大带宽服务器。
+
+- **[贝塔网络](https://my.beita.cc/?ref=github_onekvm)** - 赞助了本项目服务器
+
+  <img height="128" alt="BTBT" src="https://github.com/user-attachments/assets/c442d5f5-d72f-4a07-b9f4-400a6a0c3f1e" />
+
+  远程电脑、消费级GPU服务器、独服物理机，全自动在线交付。

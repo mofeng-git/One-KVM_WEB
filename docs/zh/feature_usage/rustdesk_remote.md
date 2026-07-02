@@ -16,6 +16,15 @@ One-KVM 内置 RustDesk 被控端，可通过 RustDesk 客户端远程连接设�
 !!! tip "端口默认值"
     若未填写端口，系统会自动补齐：ID 服务器 `21116`，中继服务器 `21117`。
 
+## 公共服务器配置
+
+公共服务器配置无需密码，默认折叠隐藏，点击按钮后在浏览器本地展示。
+
+!!! warning "使用须知"
+    公共服务器免费提供，不承诺可用性、稳定性、延迟或服务质量。请勿滥用、刷流量、攻击、批量占用资源或用于违法违规用途。
+
+<button type="button" class="md-button md-button--primary" data-public-config="rustdesk">查看 RustDesk 服务器配置</button>
+
 ![rustdesk_remote-2026-01-28-00-19-25](images/rustdesk_remote-2026-01-28-00-19-25.png)
 
 ## 配置步骤

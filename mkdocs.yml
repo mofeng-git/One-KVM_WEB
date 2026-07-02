@@ -78,8 +78,12 @@ repo_name: mofeng-git/One-KVM
 
 copyright: Copyright &copy; 2023 - 2026 SilentWind<br> ICP 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备2025068931号-1</a> &emsp; <img src="/img/beian.png" alt="公安备案" width="12" height="12"> 赣公网安备36092202000251号
 
+extra_css:
+  - 'stylesheets/rustdesk-config-modal.css'
+
 extra_javascript:
   - 'baidu-tongji.js'
+  - 'javascripts/rustdesk-config-modal.js'
 
 extra:
   social:
@@ -167,9 +171,13 @@ plugins:
             "Webterm 网页终端": "Webterm Web Terminal"
             "网页终端": "Web Terminal"
             "功能使用": "Feature Usage"
+            "FRP 内网穿透": "FRP NAT Traversal"
+            "RTSP 视频流": "RTSP Streaming"
             "EasyTier 异地组网": "EasyTier Mesh"
             "RustDesk 远程控制": "RustDesk Remote Control"
+            "VNC 远程": "VNC Remote"
             "USB 动态配置": "Dynamic USB Configuration"
+            "CUA AI 操作": "CUA AI Operation"
             "2FA 双重身份验证": "2FA Two-Factor Authentication"
             "周边套件与开发": "Accessories & Development"
             "周边套件": "Accessories"
@@ -207,9 +215,13 @@ nav:
       - "功能使用":
           - "网页终端": feature_usage/web_terminal.md
           - "GOSTC 内网穿透": feature_usage/gostc_tunnel.md
+          - "FRP 内网穿透": feature_usage/frp_tunnel.md
           - "EasyTier 异地组网": feature_usage/easytier_mesh.md
           - "RustDesk 远程控制": feature_usage/rustdesk_remote.md
+          - "VNC 远程": feature_usage/vnc_remote.md
+          - "RTSP 视频流": feature_usage/rtsp_stream.md
           - "USB 动态配置": feature_usage/usb_dynamic.md
+          - "CUA AI 操作": feature_usage/computer_use_agent.md
       - "其他":
           - "开发指南": other/development.md
           - "更新日志": other/changelog.md

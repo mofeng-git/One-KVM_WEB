@@ -132,11 +132,22 @@ echo "device" > /sys/devices/platform/soc/*/usb_role/*/role
 | Variable | Default | Description |
 |--------|--------|------|
 | `TZ` | `UTC` | Time zone |
-| `HTTP_PORT` | `8080` | HTTP port |
-| `HTTPS_PORT` | `8443` | HTTPS port |
+| `DATA_DIR` | `/etc/one-kvm` | Data directory passed to `one-kvm -d`; higher priority than `ONE_KVM_DATA_DIR` |
+| `ONE_KVM_DATA_DIR` | `/etc/one-kvm` | Backward-compatible data directory variable, used only when `DATA_DIR` is unset |
+| `BIND_ADDRESS` | unset | Web service bind address, passed to `one-kvm -a` when set |
+| `HTTP_PORT` | config default | HTTP port, passed to `one-kvm -p` when set |
+| `HTTPS_PORT` | config default | HTTPS port, passed to `one-kvm --https-port` when set |
 | `ENABLE_HTTPS` | `false` | Enable HTTPS service (`true`/`false`) |
-| `DATA_DIR` | `/etc/one-kvm` | Data directory |
 | `VERBOSE` | `0` | Log verbosity: 1 (`-v`), 2 (`-vv`), 3 (`-vvv`). Higher is more verbose |
+| `RUST_LOG` | unset | Rust log filter. When set, it overrides the default level generated from `VERBOSE` |
+| `ONE_KVM_FFMPEG_LOG` | `error` | FFmpeg log level, such as `error`, `warn`, `info`, `debug`, or `trace` |
+| `ONE_KVM_WEBRTC_MDNS_MODE` | `query_only` | WebRTC mDNS mode: `disabled`, `query_only`, or `query_and_gather` |
+| `ONE_KVM_UPDATE_BASE_URL` | `https://update.one-kvm.cn` | Online upgrade service base URL |
+| `OPENAI_API_KEY` | unset | OpenAI API key for Computer Use Agent; higher priority than the web UI configuration |
+| `ONE_KVM_OPENAI_BASE_URL` | web UI default | OpenAI endpoint for Computer Use Agent; higher priority than the web UI configuration |
+| `ONE_KVM_V4L2M2M_ALLOW` | unset | Amlogic platforms skip V4L2 M2M probing by default; non-empty and not `0` allows probing |
+| `LIBVA_DRIVER_NAME` | auto-detect | Manually select the VA-API driver, such as `iHD` or `i965` |
+| `LIBVA_DEVICE` | auto-scan | DRM render node used for VA-API probing, such as `/dev/dri/renderD128` |
 
 **Notes**
 
@@ -145,6 +156,8 @@ echo "device" > /sys/devices/platform/soc/*/usb_role/*/role
 - `--privileged=true` and `-v /dev:/dev` `-v /sys:/sys` are currently required for hardware access
   and cannot be omitted. More granular directory and permission controls may be supported later.
 - Keep the `-v ./one-kvm-data:/etc/one-kvm` mount to persist configuration and runtime data.
-- `--net=host` ensures ports are exposed directly, so no extra `-p` port mapping is required.
+- `--net=host` ensures ports are exposed directly, so no extra `-p` port mapping is required. If
+  `HTTP_PORT` / `HTTPS_PORT` are unset, the ports come from the values saved in the web UI
+  configuration.
 
 [Next: User Interface :material-arrow-right:](../ui/onboarding.md){ .md-button }

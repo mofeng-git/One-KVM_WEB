@@ -6,9 +6,7 @@ sponsorship plan on a trial basis.
 **What paid sponsors receive:**
 
 1. Access to all paid images
-2. Access to the author's self-hosted cloud service endpoints (currently WebRTC TURN and RustDesk
-   relay services)
-3. Public acknowledgement (docs/GitHub)
+2. Public acknowledgement (docs/GitHub)
 
 **To become a sponsor:**
 
