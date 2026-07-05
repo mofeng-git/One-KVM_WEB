@@ -118,6 +118,8 @@ plugins:
             "STUN/TURN 服务": "STUN/TURN Service"
             "介绍": "Introduction"
             "写在前面": "Read First"
+            "整合包": "Integrated Images"
+            "玩客云整合包": "OneCloud Integrated Image"
             "Docker 部署": "Docker Deployment"
             "Docker 安装": "Docker Install"
             "DEB 软件包安装": "DEB Package Install"
@@ -222,6 +224,8 @@ nav:
           - "RTSP 视频流": feature_usage/rtsp_stream.md
           - "USB 动态配置": feature_usage/usb_dynamic.md
           - "CUA AI 操作": feature_usage/computer_use_agent.md
+      - "整合包":
+          - "玩客云": integration/onecloud.md
       - "其他":
           - "开发指南": other/development.md
           - "更新日志": other/changelog.md
