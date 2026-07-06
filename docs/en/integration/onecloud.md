@@ -1,4 +1,4 @@
-Docker deployment and DEB deployment are already available, and both are easier to use. If you choose the integrated image deployment method, you need to [sponsor](../python/thanks.md) the author and contact the author to obtain it.
+Docker deployment and DEB deployment are already available, and both are easier to use. If you choose the integrated image deployment method, you need to [sponsor](../other/thanks.md) the author and contact the author to obtain it.
 
 ## Hardware Preparation
 
