@@ -70,13 +70,11 @@ One-KVM Rust 是一个 Rust 编写的轻量级 IP-KVM 解决方案，可通过�
 
 ## 文件下载
 
-重庆大学开源软件镜像站下载：[重庆大学开源软件镜像站](https://mirrors.cqu.edu.cn/)（网页右侧点击获取下载链接 --> 选择常用软件 One-KVM --> 下载安装包）
-
-免登录下载地址 1：[http://sd1.files.one-kvm.cn/](http://sd1.files.one-kvm.cn/)（由群友赞助，支持直链，接入 EdgeOne CDN）
-
-免登录下载地址 2：[https://pan.huang1111.cn/s/mxkx3T1](https://pan.huang1111.cn/s/mxkx3T1) （由 Huang1111公益计划 赞助）
+免登录下载网盘：[https://pan.huang1111.cn/s/mxkx3T1](https://pan.huang1111.cn/s/mxkx3T1) （由 Huang1111公益计划 赞助）
 
 百度网盘：[https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj](https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj)
+
+GitHub Releases: [https://github.com/mofeng-git/One-KVM/releases](https://github.com/mofeng-git/One-KVM/releases)
 
 ## 赞助方式
 
@@ -88,10 +86,6 @@ One-KVM Rust 是一个 Rust 编写的轻量级 IP-KVM 解决方案，可通过�
 
 本项目得到以下赞助商的支持：
 
-**镜像下载服务：**
-
-- **[重庆大学开源软件镜像站](https://mirrors.cqu.edu.cn/)** - 提供镜像站下载服务
-
 **文件存储服务：**
 
 - **[Huang1111公益计划](https://pan.huang1111.cn/s/mxkx3T1)** - 提供免登录下载服务
@@ -100,12 +94,12 @@ One-KVM Rust 是一个 Rust 编写的轻量级 IP-KVM 解决方案，可通过�
 
 - **[林枫云](https://www.dkdun.cn)** - 赞助了本项目服务器
 
-![林枫云](https://docs.one-kvm.cn/img/36076FEFF0898A80EBD5756D28F4076C.png)
+<img style="height:128px;width:auto;" alt="林枫云" src="../img/36076FEFF0898A80EBD5756D28F4076C.png" />
 
 林枫云主营国内外地域的精品线路业务服务器、高主频游戏服务器和大带宽服务器。
 
 - **[贝塔网络](https://my.beita.cc/?ref=github_onekvm)** - 赞助了本项目服务器
 
-  <img height="128" alt="BTBT" src="../img/btbt.png" />
+  <img style="height:128px;width:auto;" alt="BTBT" src="../img/btbt.png" />
 
   远程电脑、消费级GPU服务器、独服物理机，全自动在线交付。

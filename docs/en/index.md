@@ -56,7 +56,7 @@ One-KVM Rust is a lightweight IP-KVM solution written in Rust, enabling BIOS-lev
 
 [https://gostc.mofeng.run](https://gostc.mofeng.run)
 
-**Bug Reports, Discussion, and Free Technical Support**
+**Bug Reports, Discussion, and Technical Support**
 
 - GitHub Issues: [https://github.com/mofeng-git/One-KVM/issues](https://github.com/mofeng-git/One-KVM/issues)
 - QQ Group: 569514148
@@ -69,13 +69,11 @@ The author does not currently sell prebuilt hardware kits due to limited time. I
 
 ## Downloads
 
-CQU Open Source Mirror: [CQU Open Source Mirror](https://mirrors.cqu.edu.cn/) (click "Get Download Links" on the right side of the page → select One-KVM under "Common Software" → download the package).
-
-Login-free download 1: [http://sd1.files.one-kvm.cn/](http://sd1.files.one-kvm.cn/) (sponsored by community members; direct links, EdgeOne CDN).
-
-Login-free download 2: [https://pan.huang1111.cn/s/mxkx3T1](https://pan.huang1111.cn/s/mxkx3T1) (sponsored by the Huang1111 public-welfare program).
+Login-free download: [https://pan.huang1111.cn/s/mxkx3T1](https://pan.huang1111.cn/s/mxkx3T1) (sponsored by the Huang1111 public-welfare program)
 
 Baidu Netdisk: [https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj](https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj)
+
+GitHub Releases: [https://github.com/mofeng-git/One-KVM/releases](https://github.com/mofeng-git/One-KVM/releases)
 
 ## Sponsorship
 
@@ -87,11 +85,7 @@ If One-KVM helps you, consider supporting the project so development and mainten
 
 This project is supported by the following sponsors:
 
-**Mirror download service**
-
-- **[CQU Open Source Mirror](https://mirrors.cqu.edu.cn/)** — provides mirror download hosting
-
-**File storage service**
+**File storage service:**
 
 - **[Huang1111 Public Welfare](https://pan.huang1111.cn/s/mxkx3T1)** — provides login-free download hosting
 
@@ -99,12 +93,12 @@ This project is supported by the following sponsors:
 
 - **[LinFeng Cloud](https://www.dkdun.cn)** — sponsors this project's server
 
-![LinFeng Cloud](https://docs.one-kvm.cn/img/36076FEFF0898A80EBD5756D28F4076C.png)
+<img style="height:128px;width:auto;" alt="LinFeng Cloud" src="../img/36076FEFF0898A80EBD5756D28F4076C.png" />
 
 LinFeng Cloud offers premium network routes in China and abroad, high-frequency game servers, and high-bandwidth servers.
 
 - **[Beita Network](https://my.beita.cc/?ref=github_onekvm)** — sponsors this project's server
 
-  <img height="128" alt="BTBT" src="../img/btbt.png" />
+  <img style="height:128px;width:auto;" alt="BTBT" src="../img/btbt.png" />
 
   Remote desktops, consumer GPU servers, and dedicated physical servers with fully automated online delivery.

@@ -62,7 +62,7 @@ This method works for both old and new OneCloud versions, using GPIOs reserved b
 
 ![Wiring 1](../../img/1717947165712-59.jpeg)
 ![Wiring 2](../../img/1717947165712-60.jpeg)
-![Wiring position](../../img/1717947165712-62.png)
+![Wiring position](../../img/1717946862304-33.png)
 
 ### Optocoupler Isolation
 

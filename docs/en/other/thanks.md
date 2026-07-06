@@ -30,121 +30,131 @@ If One-KVM helps you, consider supporting the project so development and mainten
 <details>
 <summary><strong>Click to view acknowledgements</strong></summary>
 
-- Haolong's Embedded Electronics Journey<br>
+- 浩龙的电子嵌入式之路<br>
 
 - Tsuki<br>
 
 - H_xiaoming<br>
 
-- 0 Lanlan 0<br>
+- 0蓝蓝0<br>
 
 - fairybl<br>
 
 - Will<br>
 
-- Haolong's Embedded Electronics Journey<br>
+- 浩龙的电子嵌入式之路<br>
 
-- Zi.Zhi<br>
+- 自.知<br>
 
-- Watching the Game in Silence<br>
+- 观棋不语٩ ི۶<br>
 
-- Afdian User_a57a4<br>
+- 爱发电用户_a57a4<br>
 
-- Afdian User_2c769<br>
+- 爱发电用户_2c769<br>
 
-- Frost Sequence<br>
+- 霜序<br>
 
-- Faraway (Xianyu username: Xiaoyuan Tech Shop)<br>
+- 远方（闲鱼用户名：小远技术店铺）<br>
 
-- Afdian User_399fc<br>
+- 爱发电用户_399fc<br>
 
-- Feifei no<br>
+- 斐斐の<br>
 
-- Afdian User_09451<br>
+- 爱发电用户_09451<br>
 
-- Super High-School Level Rusty Fish<br>
+- 超高校级的錆鱼<br>
 
-- Afdian User_08cff<br>
+- 爱发电用户_08cff<br>
 
 - guoke<br>
 
 - mgt<br>
 
-- Jiang Ze Ming<br>
+- 姜沢掵<br>
 
 - ui_beam<br>
 
-- Afdian User_c0dd7<br>
+- 爱发电用户_c0dd7<br>
 
-- Afdian User_dnjK<br>
+- 爱发电用户_dnjK<br>
 
-- Ninja Chubby Pig<br>
+- 忍者胖猪<br>
 
-- Eternal Wish<br>
+- 永遠の願い<br>
 
-- Afdian User_GBrF<br>
+- 爱发电用户_GBrF<br>
 
-- Afdian User_fd65c<br>
+- 爱发电用户_fd65c<br>
 
-- Afdian User_vhNa<br>
+- 爱发电用户_vhNa<br>
 
-- Afdian User_Xu6S<br>
+- 爱发电用户_Xu6S<br>
 
 - moss<br>
 
 - woshididi<br>
 
-- Afdian User_a0fd1<br>
+- 爱发电用户_a0fd1<br>
 
-- Afdian User_f6bH<br>
+- 爱发电用户_f6bH<br>
 
-- Coder<br>
+- 码农<br>
 
-- Afdian User_6639f<br>
+- 爱发电用户_6639f<br>
 
 - jeron<br>
 
-- Afdian User_CN7y<br>
+- 爱发电用户_CN7y<br>
 
-- Afdian User_Up6w<br>
+- 爱发电用户_Up6w<br>
 
-- Afdian User_e3202<br>
+- 爱发电用户_e3202<br>
 
-- Single Line Narration<br>
+- 一语念白<br>
 
-- Cloudside<br>
+- 云边<br>
 
-- Afdian User_5a711<br>
+- 爱发电用户_5a711<br>
 
-- Afdian User_9a706<br>
+- 爱发电用户_9a706<br>
 
 - T0m9ir1SUKI<br>
 
-- Afdian User_56d52<br>
+- 爱发电用户_56d52<br>
 
-- Afdian User_3N6F<br>
+- 爱发电用户_3N6F<br>
 
 - DUSK<br>
 
-- Drifting<br>
+- 飘零<br>
 
 - .<br>
 
-- Rice Too Thin<br>
+- 饭太稀<br>
 
-- Scallion<br>
-
-- MaxZ<br>
-
-- Afdian User_c5f33<br>
-
-- Afdian User_09386<br>
-
-- Afdian User_JT6c<br>
+- 葱<br>
 
 - MaxZ<br>
 
-- Afdian User_d3d9c<br>
+- 爱发电用户_c5f33<br>
+
+- 爱发电用户_09386<br>
+
+- 爱发电用户_JT6c<br>
+
+- MaxZ<br>
+
+- 爱发电用户_d3d9c<br>
+
+- 爱发电用户_97b41<br>
+
+- 偶然<br>
+
+- 爱发电用户_dba45<br>
+
+- 爱发电用户_d4f8b<br>
+
+- 故人。<br>
 
 - ......<br>
 
