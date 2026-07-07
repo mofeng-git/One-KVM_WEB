@@ -69,6 +69,8 @@ The author does not currently sell prebuilt hardware kits due to limited time. I
 
 ## Downloads
 
+Henan Education and Research Network Mirror: [http://mirrors.ha.edu.cn/github-release/mofeng-git/One-KVM/](http://mirrors.ha.edu.cn/github-release/mofeng-git/One-KVM/)
+
 Login-free download: [https://pan.huang1111.cn/s/mxkx3T1](https://pan.huang1111.cn/s/mxkx3T1) (sponsored by the Huang1111 public-welfare program)
 
 Baidu Netdisk: [https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj](https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj)

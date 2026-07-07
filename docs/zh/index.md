@@ -70,6 +70,8 @@ One-KVM Rust 是一个 Rust 编写的轻量级 IP-KVM 解决方案，可通过�
 
 ## 文件下载
 
+河南教育科研网镜像站：[http://mirrors.ha.edu.cn/github-release/mofeng-git/One-KVM/](http://mirrors.ha.edu.cn/github-release/mofeng-git/One-KVM/)
+
 免登录下载网盘：[https://pan.huang1111.cn/s/mxkx3T1](https://pan.huang1111.cn/s/mxkx3T1) （由 Huang1111公益计划 赞助）
 
 百度网盘：[https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj](https://pan.baidu.com/s/166-2Y8PBF4SbHXFkGmFJYg?pwd=o9aj)
