@@ -54,6 +54,40 @@ SSH is enabled by default on Armbian. The initial username and password are root
 
 This CPU has 6 USB OTG endpoints, so it can emulate USB devices with a total of 6 virtual endpoints.
 
+### ATX Power Management Configuration
+
+This section provides an ATX configuration for OneCloud. Both software settings and hardware wiring must be completed before use.
+
+#### Software
+
+Enter the following GPIO pin data on the settings page and save.
+
+![ATX GPIO software settings](../../img/onecloud_atx_gpio_settings.png)
+
+#### Hardware
+
+**Power actions**:
+
+Connect the OneCloud power-on pin to PWR SW+ on the motherboard 9-pin header, and connect the GND pin to PWR SW-.
+
+Connect the OneCloud reset pin to RESET+ on the motherboard 9-pin header, and connect the GND pin to RESET-.
+
+**Power status**:
+
+An optocoupler isolation module is required. An optocoupler module is preferred over a relay module.
+
+Connect POWER LED+ and POWER LED- from the motherboard 9-pin header to the positive and negative input terminals of the optocoupler module respectively (polarity matters). Connect the GND and OUT output terminals of the optocoupler module to the power status LED pad and VCC pad on the OneCloud board respectively (polarity does not matter).
+
+Connect HDD LED+ and HDD LED- from the motherboard 9-pin header to the positive and negative input terminals of the optocoupler module respectively (polarity matters). Connect the GND and OUT output terminals of the optocoupler module to the HDD status LED pad and VCC pad on the OneCloud board respectively (polarity does not matter).
+
+![OneCloud GPIO pinout](../../img/onecloud_gpio_pinout.png)
+
+![Optocoupler isolation module](../../img/optocoupler_module.png)
+
+#### Result
+
+![ATX power management web UI](../../img/onecloud_atx_webui.png)
+
 ## Performance Test Report
 
 - Run ID: `20260705-201140-9f9676`
