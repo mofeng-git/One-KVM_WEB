@@ -47,7 +47,7 @@ The public server config does not require a password. It is hidden by default an
     If the controlled machine runs Linux or Android, set the RustDesk keyboard mode to legacy/traditional to get correct input.
     ![rustdesk_remote-2026-01-31-01-20-14](../../zh/feature_usage/images/rustdesk_remote-2026-01-31-01-20-14.png)
 
-Audio streaming is supported (requires an audio capture device), along with video format switching and video quality adjustment.
+Audio streaming (with an audio capture device configured in advance) and video quality adjustment are supported, but switching video encoding formats is not.
 
 | | |
 | --- | --- |

@@ -1,4 +1,6 @@
-Docker deployment and DEB deployment are already available, and both are easier to use. If you choose the integrated image deployment method, you need to [sponsor](../other/thanks.md) the author and contact the author to obtain it.
+# OneCloud
+
+Docker and DEB package deployments are available and relatively easy to set up. To use the integrated image, [sponsor](../other/thanks.md) the author and contact them to obtain it.
 
 ## Hardware Preparation
 
@@ -21,6 +23,8 @@ If you need to flash again, you do not need to short the pads again. Hold the re
 
 ## Usage Notes
 
+After the first boot, the system has approximately 6 GB of available storage.
+
 **Hardware connections**
 
 1. Plug the USB HDMI capture card into the USB port near the Ethernet jack on the OneCloud host, and connect the capture card to the target machine's HDMI output with an HDMI cable.
@@ -38,21 +42,32 @@ If you need to flash again, you do not need to short the pads again. Hold the re
     Some low-power devices may be back-powered through the USB OTG port from the KVM device when main power is not connected. This can put the device into an abnormal state, and it may still fail to boot normally even after main power is connected later.
 
     **Unless you clearly understand the consequences, use the protections above to keep devices safe.**
+![OneCloud hardware connections](../../img/image-20240609231232943.png)
 
+**HDMI terminal**
 
+The HDMI terminal displays the device IP address and software version.
 
-![image-20240609231232943](../../img/image-20240609231232943.png)
+![OneCloud HDMI terminal](../../zh/integration/images/onecloud-hdmi-terminal.png)
 
 **SSH remote login**
 
-SSH is enabled by default on Armbian. The initial username and password are root/1234. Change the default password as soon as possible to improve security.
+SSH is enabled by default on Armbian. The initial username and password are `root` / `1234`. Change the default password as soon as possible.
 
 !!! warning "System upgrade warning"
     Do not use `apt upgrade` to upgrade the kernel and device tree. This may cause system problems and make OTG unavailable.
 
-**USB endpoint count**
+**Changing the MAC address**
 
-This CPU has 6 USB OTG endpoints, so it can emulate USB devices with a total of 6 virtual endpoints.
+The current image persists the network interface MAC address in `/etc/one-kvm-image/eth0.mac`. Sign in over SSH and run:
+
+```bash
+mkdir -p /etc/one-kvm-image
+echo '02:11:22:33:44:55' | tee /etc/one-kvm-image/eth0.mac
+reboot
+```
+
+To use a different MAC address, replace `02:11:22:33:44:55` in the example.
 
 ### ATX Power Management Configuration
 
@@ -91,31 +106,31 @@ Connect HDD LED+ and HDD LED- from the motherboard 9-pin header to the positive 
 ## Performance Test Report
 
 - Run ID: `20260705-201140-9f9676`
-- Test device: OneCloud onecloud
-- Video device: /dev/video0: 1080p@30fps mjpeg, 1080p@5fps yuyv
+- Test device: OneCloud (`onecloud`)
+- Video device: `/dev/video0` (1080p@50fps MJPEG, 1080p@10fps YUYV)
 - HID device: OTG
-- Network latency: p50=12.7ms, p95=20.9ms, max=21.8ms
+- HTTP latency: p50=2.8ms, p95=3.1ms, max=3.2ms
 
 ### Video Performance
 
 | Video input parameters    | Test frame rate | Latency statistics (median p50 / 95th percentile p95 / maximum max) |
 | ------------------------- | --------------- | -------------------------------------------------------------------- |
-| 1080p@30fps mjpeg-->mjpeg | 28fps           | p50=101.3ms, p95=111.1ms, max=111.4ms                                |
-| 1080p@30fps mjpeg-->h264  | 15fps           | p50=474.0ms, p95=486.9ms, max=488.0ms                                |
-| 1080p@30fps mjpeg-->h265  | 5.2fps          | Failed                                                               |
-| 1080p@5fps yuyv-->mjpeg   | 4.8fps          | p50=686.9ms, p95=701.0ms, max=703.9ms                                |
-| 1080p@5fps yuyv-->h264    | 5fps            | p50=1156.0ms, p95=1210.0ms, max=1223.1ms                             |
-| 1080p@5fps yuyv-->h265    | 1.5fps          | Failed                                                               |
+| 1080p@50fps MJPEG → MJPEG | 49.9fps         | p50=71.6ms, p95=80.9ms, max=83.0ms                                   |
+| 1080p@50fps MJPEG → H.264 | 14.8fps         | p50=422.9ms, p95=439.3ms, max=442.3ms                                |
+| 1080p@50fps MJPEG → H.265 | 4.6fps          | p50=1791.8ms, p95=2341.0ms, max=2442.7ms                             |
+| 1080p@10fps YUYV → MJPEG  | 10fps           | p50=383.7ms, p95=415.7ms, max=423.1ms                                |
+| 1080p@10fps YUYV → H.264  | 9.9fps          | p50=670.4ms, p95=710.8ms, max=712.0ms                                |
+| 1080p@10fps YUYV → H.265  | 1.7fps          | Failed                                                               |
 
 ### HID Performance
 
 | Input method | Latency statistics (median p50 / 95th percentile p95 / maximum max) |
 | ------------ | -------------------------------------------------------------------- |
-| OTG          | p50=2.8ms, p95=3.0ms, max=3.1ms                                      |
+| OTG          | p50=5.7ms, p95=5.9ms, max=5.9ms                                      |
 
 ### MSD Performance
 
 | Operation | Data       |
 | --------- | ---------- |
-| Write     | 11.38MiB/s |
-| Read      | 14.64MiB/s |
+| Write     | 11.38 MiB/s |
+| Read      | 14.64 MiB/s |

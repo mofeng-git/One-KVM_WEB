@@ -226,6 +226,7 @@ nav:
           - "CUA AI 操作": feature_usage/computer_use_agent.md
       - "整合包":
           - "玩客云": integration/onecloud.md
+          - "玩客云 Pro": integration/onecloud-pro.md
           - "虚拟机": integration/virtualmachine.md
       - "其他":
           - "开发指南": other/development.md

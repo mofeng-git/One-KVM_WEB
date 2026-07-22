@@ -21,6 +21,8 @@ If One-KVM helps you, consider supporting the project so development and mainten
 
 [Powering the Project](https://afdian.com/a/silentwind){ .md-button }
 
+If you sponsored via WeChat or Alipay and need related support, such as access to an integrated image, contact the author via QQ at `3463289142`.
+
 **WeChat / Alipay**
 
 ![WeChat and Alipay combined payment QR code](../../zh/other/images/微信支付宝二合一收款码.jpg)
