@@ -69,6 +69,19 @@ reboot
 
 To use a different MAC address, replace `02:11:22:33:44:55` in the example.
 
+**USB function combinations**
+
+| Combination | Result |
+| --- | --- |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys | Passed |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys + MSD | Passed |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys + MSD + NCM/ECM | Unsupported |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys + RNDIS | Unsupported |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys + MSD + RNDIS | Unsupported |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + RNDIS | Passed |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + MSD + RNDIS | Unsupported |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + MSD + NCM/ECM | Passed |
+
 ### ATX Power Management Configuration
 
 This section provides an ATX configuration for OneCloud. Both software settings and hardware wiring must be completed before use.

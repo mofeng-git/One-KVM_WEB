@@ -1,3 +1,5 @@
+OneCloud Pro uses an S912 octa-core CPU with 2 GB of RAM and 8 GB of internal storage. It provides one Gigabit Ethernet port, two USB 2.0 ports, a TF card slot, and HDMI output.
+
 Docker and DEB package deployments are available and relatively easy to set up. To use the integrated image, [sponsor](../other/thanks.md) the author and contact them to obtain it.
 
 ## Integrated Image Deployment
@@ -56,6 +58,19 @@ reboot
 ```
 
 To use a different MAC address, replace `02:11:22:33:44:55` in the example.
+
+**USB function combinations**
+
+| Combination | Result |
+| --- | --- |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys | Passed |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys + MSD | Passed |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys + MSD + NCM/ECM | Unsupported |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys + RNDIS | Unsupported |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + multimedia keys + MSD + RNDIS | Unsupported |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + RNDIS | Passed |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + MSD + RNDIS | Unsupported |
+| Keyboard (including status LEDs) + relative mouse + absolute mouse + MSD + NCM/ECM | Passed |
 
 ## Performance Test Report
 

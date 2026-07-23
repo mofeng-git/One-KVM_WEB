@@ -127,6 +127,7 @@ plugins:
             "已适配硬件安装": "Supported Hardware Installations"
             "玩客云": "OneCloud"
             "玩客云 Pro": "OneCloud Pro"
+            "OEC/OECT": "OEC/OECT"
             "OEC TURBO 盒子": "OEC TURBO Box"
             "私家云二代": "CumeBox 2"
             "香橙派 Zero": "Orange Pi Zero"
@@ -227,6 +228,7 @@ nav:
       - "整合包":
           - "玩客云": integration/onecloud.md
           - "玩客云 Pro": integration/onecloud-pro.md
+          - "OEC/OECT": integration/oec-turbo.md
           - "虚拟机": integration/virtualmachine.md
       - "其他":
           - "开发指南": other/development.md
