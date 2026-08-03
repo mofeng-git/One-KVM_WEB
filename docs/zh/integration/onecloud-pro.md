@@ -2,6 +2,23 @@
 
 已有 Docker 和 DEB 软件包两种部署方式，两者操作较为简单。若选择整合包部署方式，需要[赞助](../other/thanks.md)作者并联系作者获取镜像。
 
+## 整合包介绍
+
+玩客云 Pro 最新整合包名称如下，。
+
+- One-KVM-RUST_by-SilentWind_Onecloud-Pro_v0.2.6_260803-da20d8b.img.xz
+- One-KVM-RUST_by-SilentWind_Onecloud-Pro-Hwcodec_v0.2.6_260803-da20d8b.img.xz
+
+优势：
+
+- 两者都应用了 PiKVM MSD 内核补丁，支持大于 2.2G 的 ISO 挂载和虚拟媒体设备名称自定义；
+- 前者基于 ophub 系统，Linux 内核版本为 6.12.x；后者基于 khadas vim2 系统移植，Linux 内核版本为 4.9.x,支持晶晨硬件编解码。
+
+后者整合包支持硬件编解码，可使用晶晨硬件编码器进行 AMLENC H.264/H.265 视频编码。两者安装方式无差异，可根据需要自行选择。
+
+![AMLENC 硬件编码测试](images/onecloud-pro-amlenc-encoding-test.png)
+![硬件编解码设备](images/onecloud-pro-hwcodec-devices.png)
+
 ## 整合包部署
 
 1. **准备 SD 卡启动介质**：将 One-KVM 整合包写入 SD 卡，再将 SD 卡插入玩客云 Pro 的卡槽。
@@ -73,6 +90,8 @@ reboot
 | 键盘（含状态灯） + 相对鼠标 + 绝对鼠标 + MSD + NCM/ECM | 通过 |
 
 ## 性能测试报告
+
+测试用整合包： One-KVM-RUST_by-SilentWind_Onecloud-Pro_v0.2.5_260722-da20d8b.img.xz 
 
 - 运行编号：`20260722-222014-7f19dd`
 - 测试设备：玩客云 Pro（onecloud-pro）

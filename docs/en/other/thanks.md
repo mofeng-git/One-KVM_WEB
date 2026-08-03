@@ -6,7 +6,8 @@ sponsorship plan on a trial basis.
 **What paid sponsors receive:**
 
 1. Access to all paid images
-2. Public acknowledgement (docs/GitHub)
+2. Additional technical support
+3. Public acknowledgement (docs/GitHub)
 
 **To become a sponsor:**
 
@@ -167,6 +168,32 @@ If you sponsored via WeChat or Alipay and need related support, such as access t
 - 爱发电用户_96f28<br>
 
 - 孤星赏月<br>
+
+- t316161070<br>
+
+- 爱发电用户_f5gW<br>
+
+- 爱发电用户_5fb5c<br>
+
+- 爱发电用户_86d54<br>
+
+- 爱发电用户_maRx<br>
+
+- nb<br>
+
+- 爱发电用户_0aa4a<br>
+
+- 爱发电用户_f75a7<br>
+
+- 爱发电用户_b4646<br>
+
+- n1k0<br>
+
+- Yeskf<br>
+
+- 魔力回旋彪<br>
+
+- 泡面<br>
 
 - ......<br>
 

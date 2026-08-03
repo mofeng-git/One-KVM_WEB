@@ -2,6 +2,32 @@
 
 （如有新需求或问题反馈可通过 Github Issue 或 QQ 群进行交流）
 
+**v0.2.6**
+
+- 新增 Amlogic S912/GXM AMLENC H.264/H.265 硬件编码支持（需特定内核）
+- 新增浏览器麦克风到 OTG UAC USB Gadget 的音频透传支持
+- 新增 OTG HID 远程唤醒和 Flash/CD-ROM MSD 设备名称配置（需内核应用 PiKVM 补丁）
+- EasyTier 新增快速配置与完整 TOML 配置模式，并兼容旧版配置
+- 控制台新增视频画面等比例缩放控制
+- 虚拟媒体镜像上传新增百分比进度显示
+- 完善 RK3588 HDMI RX 信号检测、设备状态展示与断信号自动恢复 #244 
+- 优化 V4L2 视频采集及管线生命周期，改善无信号、黑屏和重连问题
+- 统一虚拟媒体与 Web API 错误处理，完善 MSD、Ventoy 和 Redfish 错误反馈
+- OTG 网卡桥接改由 NetworkManager 生成配置 UUID，并补充容器运行依赖
+- 优化设置页、初始化页、下拉框、粘贴区域和状态指示样式。
+- 修复 OTG Gadget 重建后 HID 后端未重载导致键鼠失效的问题
+- 修复初始化阶段未完整应用 USB 运行时配置导致 MSD 功能遗漏的问题
+- 修复 MSD ISO/FLASH 挂载识别、文件名过长及错误提示问题
+- 修复 Linux RK RISP 视频设备识别问题 #286
+- 修复视频模式切换时设备未释放导致 EBUSY 及过期 WebRTC 重连问题。
+- 修复 RustDesk UDP 注册状态误判及连续超时后状态未降级的问题
+- 升级临时目录改为 /tmp，避免升级文件遗留 #280
+- 修复设置页页眉回弹和状态颜色辨识度问题 #281
+- 修复 Windows 构建及 Windows 音频设备函数可见性问题。
+- 优化 Debian、Docker 和 Windows Cargo 构建缓存并固定 cross 工具版本
+- 前端构建改用 npm install，并删除 web/package-lock.json
+- 完善自动化测试套件及测试报告格式
+
 **v0.2.5**
 
 - 修复扩展服务开启和自启动状态错误

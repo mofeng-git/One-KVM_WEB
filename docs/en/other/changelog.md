@@ -2,6 +2,32 @@ Changelog
 
 (If you have new feature requests or bug reports, reach out via GitHub Issues or the QQ group.)
 
+**v0.2.6**
+
+- Added AMLENC H.264/H.265 hardware encoding support for Amlogic S912/GXM (requires a specific kernel)
+- Added audio passthrough from the browser microphone to the OTG UAC USB Gadget
+- Added OTG HID remote wakeup and Flash/CD-ROM MSD device-name configuration (requires the PiKVM kernel patch)
+- Added Quick Configuration and Full TOML Configuration modes for EasyTier, with compatibility for the legacy configuration
+- Added proportional video scaling controls to the Console
+- Added percentage progress display when uploading virtual media images
+- Improved RK3588 HDMI RX signal detection, device status display, and automatic recovery after signal loss (#244)
+- Optimized the V4L2 video capture and pipeline lifecycle to improve no-signal, black-screen, and reconnection handling
+- Unified virtual media and Web API error handling, improving MSD, Ventoy, and Redfish error feedback
+- Changed OTG network bridging to use NetworkManager-generated configuration UUIDs and added container runtime dependencies
+- Improved the styling of the Settings page, onboarding page, dropdowns, paste areas, and status indicators
+- Fixed the HID backend not being reloaded after rebuilding the OTG Gadget, which caused keyboard and mouse input to stop working
+- Fixed MSD functionality being omitted when USB runtime configuration was not fully applied during initialization
+- Fixed MSD ISO/FLASH mount detection, overly long filenames, and error messages
+- Fixed Linux RK RISP video device detection (#286)
+- Fixed EBUSY errors caused by devices not being released during video mode switching and stale WebRTC reconnections
+- Fixed RustDesk UDP registration status detection and status degradation after consecutive timeouts
+- Changed the temporary upgrade directory to `/tmp` to avoid leaving upgrade files behind (#280)
+- Fixed header bounce on the Settings page and improved status color distinguishability (#281)
+- Fixed Windows builds and Windows audio device function visibility
+- Optimized Debian, Docker, and Windows Cargo build caching and pinned the cross tool version
+- Switched frontend builds to `npm install` and removed `web/package-lock.json`
+- Improved the automated test suite and test report format
+
 **v0.2.3**
 
 - Fixed CH9329 health-check and switching errors

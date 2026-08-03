@@ -1,10 +1,17 @@
-# 玩客云
-
 已有 Docker 和 DEB 软件包两种部署方式，两者操作较为简单。若选择整合包部署方式，需要[赞助](../other/thanks.md)作者并联系作者获取镜像。
 
-## 硬件准备
+## 整合包介绍
 
-玩客云主机、USB HDMI 采集卡、普通 USB 双公线
+玩客云最新整合包名称如下：
+
+- One-KVM-RUST_by-SilentWind_Onecloud_v0.2.6_260803-da20d8b.burn.img.xz
+
+优势：
+
+- 应用了 PiKVM MSD 内核补丁，支持大于 2.2G 的 ISO 挂载和虚拟媒体设备名称自定义；
+- Linux 内核版本为 6.12.x，对启动参数进行特别调优，运行更稳定。
+
+相较于老旧的 5.9 内核，最新 6.12.x 内核镜像的各 OTG 功能模块更加完善，切换OTG功能时不会触发内核模块崩溃。
 
 ## 整合包部署
 
@@ -118,6 +125,8 @@ reboot
 ![ATX 电源管理网页界面](../../img/onecloud_atx_webui.png)
 
 ## 性能测试报告
+
+测试用整合包： One-KVM-RUST_by-SilentWind_Onecloud_v0.2.5_260722-da20d8b.img.xz 
 
 - 运行编号：`20260705-201140-9f9676`
 - 测试设备：玩客云（onecloud）

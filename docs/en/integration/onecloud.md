@@ -1,10 +1,17 @@
-# OneCloud
-
 Docker and DEB package deployments are available and relatively easy to set up. To use the integrated image, [sponsor](../other/thanks.md) the author and contact them to obtain it.
 
-## Hardware Preparation
+## Integrated Image Overview
 
-OneCloud host, USB HDMI capture card, standard USB male-to-male cable
+The latest integrated image is:
+
+- `One-KVM-RUST_by-SilentWind_Onecloud_v0.2.6_260803-da20d8b.burn.img.xz`
+
+Advantages:
+
+- Includes the PiKVM MSD kernel patch, supporting ISO images larger than 2.2 GB and custom virtual media device names.
+- Uses a Linux 6.12.x kernel with specially tuned boot parameters for improved stability.
+
+Compared with the older 5.9 kernel, the latest 6.12.x kernel image provides more complete OTG function modules and avoids kernel module crashes when switching OTG functions.
 
 ## Integrated Image Deployment
 
@@ -117,6 +124,8 @@ Connect HDD LED+ and HDD LED- from the motherboard 9-pin header to the positive 
 ![ATX power management web UI](../../img/onecloud_atx_webui.png)
 
 ## Performance Test Report
+
+Test image: `One-KVM-RUST_by-SilentWind_Onecloud_v0.2.5_260722-da20d8b.img.xz`
 
 - Run ID: `20260705-201140-9f9676`
 - Test device: OneCloud (`onecloud`)

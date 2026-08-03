@@ -1,5 +1,3 @@
-# Getting Started
-
 Docker deployment and DEB package deployment are already available and are easier to use. If you choose the integrated image deployment method, you need to [sponsor](../other/thanks.md) the author and contact the author to obtain it.
 
 ## Preparation

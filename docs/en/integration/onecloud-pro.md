@@ -2,6 +2,23 @@ OneCloud Pro uses an S912 octa-core CPU with 2 GB of RAM and 8 GB of internal st
 
 Docker and DEB package deployments are available and relatively easy to set up. To use the integrated image, [sponsor](../other/thanks.md) the author and contact them to obtain it.
 
+## Integrated Image Overview
+
+The latest integrated image names for OneCloud Pro are:
+
+- `One-KVM-RUST_by-SilentWind_Onecloud-Pro_v0.2.6_260803-da20d8b.img.xz`
+- `One-KVM-RUST_by-SilentWind_Onecloud-Pro-Hwcodec_v0.2.6_260803-da20d8b.img.xz`
+
+Advantages:
+
+- Both images include the PiKVM MSD kernel patch, supporting ISO images larger than 2.2 GB and custom virtual media device names.
+- The former is based on the ophub system with a Linux 6.12.x kernel; the latter is ported from the Khadas VIM2 system with a Linux 4.9.x kernel and supports Amlogic hardware codecs.
+
+The latter integrated image supports hardware codecs and can use Amlogic hardware encoders for AMLENC H.264/H.265 video encoding. The installation process is the same for both images, so choose according to your needs.
+
+![AMLENC hardware encoding test](../../zh/integration/images/onecloud-pro-amlenc-encoding-test.png)
+![Hardware codec devices](../../zh/integration/images/onecloud-pro-hwcodec-devices.png)
+
 ## Integrated Image Deployment
 
 1. **Prepare the SD card**: Write the One-KVM integrated image to an SD card, then insert the card into the OneCloud Pro card slot.
@@ -73,6 +90,8 @@ To use a different MAC address, replace `02:11:22:33:44:55` in the example.
 | Keyboard (including status LEDs) + relative mouse + absolute mouse + MSD + NCM/ECM | Passed |
 
 ## Performance Test Report
+
+Test image: `One-KVM-RUST_by-SilentWind_Onecloud-Pro_v0.2.5_260722-da20d8b.img.xz`
 
 - Run ID: `20260722-222014-7f19dd`
 - Test device: OneCloud Pro (`onecloud-pro`)
