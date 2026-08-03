@@ -4,9 +4,20 @@ The OEC TURBO uses an RK3566 CPU with 4 GB of RAM and 8 GB of internal storage. 
 
 Docker and DEB package deployments are available and relatively easy to set up. To use the integrated image, [sponsor](../other/thanks.md) the author and contact them to obtain it.
 
-## One-KVM
+## Integrated Image Overview
 
-### Integrated Image Deployment
+The latest integrated image for OEC/OECT is:
+
+- `One-KVM-RUST_by-SilentWind_OEC-Turbo_v0.2.6_260803-da20d8b.img.xz`
+
+Advantages:
+
+- Includes the PiKVM MSD kernel patch, supporting ISO images larger than 2.2 GB and custom virtual media device names.
+- Based on an ophub image with a Linux 6.1.x kernel, supporting RKMPP and RKNPU.
+
+The image can only be flashed onto original locked OEC/OECT devices. Do not flash it onto other standard RK3566 devices, or the device may be bricked and fail to boot.
+
+## Integrated Image Deployment
 
 **File preparation**
 
@@ -45,6 +56,8 @@ If a newer flashing tool reports that the system exceeds the flash size, select 
 ![RKDevTool flashing progress](../../img/image-20251001082500000.png)
 
 After flashing is complete, disconnect the USB Type-C cable and connect the 12 V DC power supply to start the system.
+
+For subsequent reflashing, shorting the resistor is not required. Hold the RESET button while connecting the device to a computer via USB. RKDevTool will show it as a Loader device. You do not need to flash the loader at `0xCCCCCCCC` (uncheck it); flash only the firmware section at `0x00000000`.
 
 ## Usage Notes
 
@@ -87,6 +100,8 @@ SSH is enabled by default on Armbian. The initial username and password are `roo
 | Keyboard (including status LEDs) + relative mouse + absolute mouse + MSD + NCM/ECM | Passed |
 
 ## Performance Test Report
+
+Test image: `One-KVM-RUST_by-SilentWind_OEC-Turbo_v0.2.5_260723-da20d8b.img.xz`
 
 - Run ID: `20260723-114600-087e44`
 - Test device: OECT (`oec-turbo`)

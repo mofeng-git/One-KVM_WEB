@@ -1,12 +1,21 @@
-## 硬件介绍
-
 OEC TURBO 采用了 RK3566 CPU，搭配了 4G 内存和 8G 的内部储存空间，它配备了一个千兆网络接口千兆网卡，一个 Typec 口和一个 USB 3.0 接口，机器内置一个 SATA 硬盘位。优势是其 VPU 驱动是开放的， One-KVM 为此硬件适配了 H264/H265 硬件编码，能获得更好的视频体验。
 
 已有 Docker 和 DEB 软件包两种部署方式，两者操作较为简单。若选择整合包部署方式，需要[赞助](../other/thanks.md)作者并联系作者获取镜像。
 
-## One-VKM
+## 整合包介绍
 
-### 整合包部署
+OEC/OECT最新整合包名称如下：
+
+- One-KVM-RUST_by-SilentWind_OEC-Turbo_v0.2.6_260803-da20d8b.img.xz
+
+优势：
+
+- 应用了 PiKVM MSD 内核补丁，支持大于 2.2G 的 ISO 挂载和虚拟媒体设备名称自定义；
+- 基于 ophub 镜像，Linux 内核版本为 6.1.x，支持 RKMPP 、RKNPU。
+
+仅支持刷入 OEC/OECT 原版（有锁）设备，请勿刷入其他普通 RK3566 设备，否则将导致设备变砖无法启动。
+
+## 整合包部署
 
 **文件准备**
 
@@ -46,6 +55,7 @@ OEC TURBO 采用了 RK3566 CPU，搭配了 4G 内存和 8G 的内部储存空间
 
 系统刷入完成之后拔掉 Typec线，插入 DC 12V 电源线，就可以开始使用了。
 
+若后续需要再次刷机，不需要短接了, 按住 RESET 孔然后USB连电脑就行, RKDevTool 里面会显示为 Loader 设备, 此时不需要刷 0xCCCCCCCC 的 loader (取消勾选即可), 只需要刷后面的 0x00000000 的固件部分。
 
 ## 使用说明
 
@@ -74,6 +84,8 @@ Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。
 !!! warning "警告"
     不建议使用 `apt upgrade` 升级内核和设备树，可能会出现系统异常，OTG 功能无法使用。
 
+```
+
 **USB 功能组合**
 
 | 组合 | 结果 |
@@ -88,6 +100,8 @@ Armbian 系统默认开启 SSH，SSH 初始用户密码为 root/1234。
 | 键盘（含状态灯） + 相对鼠标 + 绝对鼠标 + MSD + NCM/ECM | 通过 |
 
 ## 性能测试报告
+
+测试用整合包： One-KVM-RUST_by-SilentWind_OEC-Turbo_v0.2.5_260723-da20d8b.img.xz
 
 - 运行编号：`20260723-114600-087e44`
 - 测试设备：OECT（oec-turbo）

@@ -29,6 +29,8 @@ The following screenshot shows the `armbian-install` process:
 
 ![OneCloud Pro armbian-install process](../../zh/integration/images/onecloud-pro-armbian-install.jpg)
 
+If you need to reflash the device later, write the new image to an SD card. After inserting the card and powering on the device, it will prioritize booting the system from the SD card.
+
 ## Usage Notes
 
 After the first boot, the system has approximately 4.6 GB of available storage.

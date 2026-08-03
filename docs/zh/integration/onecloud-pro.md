@@ -29,6 +29,8 @@
 
 ![玩客云 Pro armbian-install 安装过程](images/onecloud-pro-armbian-install.jpg)
 
+若后续需要再次刷机，可以将新镜像写入SD卡，插入后上电会优先启动SD卡上的系统。
+
 ## 使用说明
 
 系统首次启动后，约有 4.6 GB 可用存储空间。
