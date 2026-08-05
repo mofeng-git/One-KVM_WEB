@@ -1,10 +1,10 @@
-玩客云 Pro 采用了 S912 八核 CPU，搭配 2GB 内存和 8GB 内部储存空间。它配备了一个千兆网络接口、2个 USB 2.0接口，并提供 TF 卡槽和 HDMI 输出。
+玩客云 Pro /章鱼星球采用了 S912 八核 CPU，搭配 2GB 内存和 8GB 内部储存空间。它配备了一个千兆网络接口、2个 USB 2.0接口，并提供 TF 卡槽和 HDMI 输出。
 
 已有 Docker 和 DEB 软件包两种部署方式，两者操作较为简单。若选择整合包部署方式，需要[赞助](../other/thanks.md)作者并联系作者获取镜像。
 
 ## 整合包介绍
 
-玩客云 Pro 最新整合包名称如下，。
+玩客云 Pro /章鱼星球最新整合包名称如下（玩客云 Pro 和章鱼星球使用同样的整合包镜像）：
 
 - One-KVM-RUST_by-SilentWind_Onecloud-Pro_v0.2.6_260803-da20d8b.img.xz
 - One-KVM-RUST_by-SilentWind_Onecloud-Pro-Hwcodec_v0.2.6_260803-da20d8b.img.xz
@@ -14,6 +14,8 @@
 - 两者都应用了 PiKVM MSD 内核补丁，支持大于 2.2G 的 ISO 挂载和虚拟媒体设备名称自定义；
 - 前者基于 ophub 系统，Linux 内核版本为 6.12.x；后者基于 khadas vim2 系统移植，Linux 内核版本为 4.9.x,支持晶晨硬件编解码。
 
+前者整合包在玩客云 Pro 和章鱼星球上都有 HDMI 显示；后者整合包只在玩客云 Pro 有 HDMI 显示，在章鱼星球上无 HDMI 显示。
+
 后者整合包支持硬件编解码，可使用晶晨硬件编码器进行 AMLENC H.264/H.265 视频编码。两者安装方式无差异，可根据需要自行选择。
 
 ![AMLENC 硬件编码测试](images/onecloud-pro-amlenc-encoding-test.png)
@@ -21,19 +23,28 @@
 
 ## 整合包部署
 
+### 玩客云 Pro
+
 1. **准备 SD 卡启动介质**：将 One-KVM 整合包写入 SD 卡，再将 SD 卡插入玩客云 Pro 的卡槽。
 2. **从 SD 卡引导**：在原厂系统下首次刷机时，先按住 Reset 按钮再接通电源；看到玩客云 Logo 消失后，松开 Reset 按钮。之后如需再次刷机，接通电源即可自动启动 SD 卡中的系统。
-3. **将系统安装至 eMMC**：SD 卡中的系统成功启动后，通过 One-KVM 网页终端或 SSH 登录终端，执行 `armbian-install`。选择与主板版本对应的型号：V1.1 主板选择 `201`，V1.2 主板选择 `213`。
+3. **将系统安装至 eMMC**：SD 卡中的系统成功启动后，通过HDMI、串口或 SSH 登录终端，执行 `armbian-install`。选择与主板版本对应的型号：V1.1 主板选择 `201`，V1.2 主板选择 `213`。
 
 下图为 `armbian-install` 安装过程：
 
 ![玩客云 Pro armbian-install 安装过程](images/onecloud-pro-armbian-install.jpg)
 
+### 章鱼星球
+
+1. **线刷底包**：将章鱼星球底包（位置：工具/章鱼星球底包_by-SilentWind.burn.img）通过 Amlogic USB Burning Tool 软件刷入。
+2. **准备 SD 卡启动介质**：将 One-KVM 整合包写入 SD 卡，再将 SD 卡插入章鱼请求的卡槽。
+3. **从 SD 卡引导**：刷入底包之后，接通电源将自动启动 SD 卡中的系统。
+4. **将系统安装至 eMMC**：SD 卡中的系统成功启动后，通过HDMI、串口或 SSH 登录终端，执行 `armbian-install`。选择与主板版本对应的型号：原版主板选择 `201`，山寨版主板选择 `202`。
+
 若后续需要再次刷机，可以将新镜像写入SD卡，插入后上电会优先启动SD卡上的系统。
 
 ## 使用说明
 
-系统首次启动后，约有 4.6 GB 可用存储空间。
+系统首次启动后，约有 4.5 GB 可用存储空间。
 
 **硬件连接**
 

@@ -30,7 +30,7 @@ If you need to flash again, you do not need to short the pads again. Hold the re
 
 ## Usage Notes
 
-After the first boot, the system has approximately 6 GB of available storage.
+After the first boot, the system has approximately 5.9 GB of available storage.
 
 **Hardware connections**
 

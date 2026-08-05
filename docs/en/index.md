@@ -50,12 +50,6 @@ One-KVM Rust is a lightweight IP-KVM solution written in Rust, enabling BIOS-lev
 
 ## Support
 
-**Free NAT Traversal Service**
-
-[GOSTC tunneling guide](feature_usage/gostc_tunnel.md)
-
-[https://gostc.mofeng.run](https://gostc.mofeng.run)
-
 **Bug Reports, Discussion, and Technical Support**
 
 - GitHub Issues: [https://github.com/mofeng-git/One-KVM/issues](https://github.com/mofeng-git/One-KVM/issues)

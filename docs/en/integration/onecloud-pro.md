@@ -1,10 +1,10 @@
-OneCloud Pro uses an S912 octa-core CPU with 2 GB of RAM and 8 GB of internal storage. It provides one Gigabit Ethernet port, two USB 2.0 ports, a TF card slot, and HDMI output.
+OneCloud Pro / Octopus Planet uses an S912 octa-core CPU with 2 GB of RAM and 8 GB of internal storage. It provides one Gigabit Ethernet port, two USB 2.0 ports, a TF card slot, and HDMI output.
 
 Docker and DEB package deployments are available and relatively easy to set up. To use the integrated image, [sponsor](../other/thanks.md) the author and contact them to obtain it.
 
 ## Integrated Image Overview
 
-The latest integrated image names for OneCloud Pro are:
+The latest integrated image names for OneCloud Pro / Octopus Planet are:
 
 - `One-KVM-RUST_by-SilentWind_Onecloud-Pro_v0.2.6_260803-da20d8b.img.xz`
 - `One-KVM-RUST_by-SilentWind_Onecloud-Pro-Hwcodec_v0.2.6_260803-da20d8b.img.xz`
@@ -14,6 +14,8 @@ Advantages:
 - Both images include the PiKVM MSD kernel patch, supporting ISO images larger than 2.2 GB and custom virtual media device names.
 - The former is based on the ophub system with a Linux 6.12.x kernel; the latter is ported from the Khadas VIM2 system with a Linux 4.9.x kernel and supports Amlogic hardware codecs.
 
+The former integrated image provides HDMI output on both OneCloud Pro and Octopus Planet. The latter provides HDMI output only on OneCloud Pro, not on Octopus Planet.
+
 The latter integrated image supports hardware codecs and can use Amlogic hardware encoders for AMLENC H.264/H.265 video encoding. The installation process is the same for both images, so choose according to your needs.
 
 ![AMLENC hardware encoding test](../../zh/integration/images/onecloud-pro-amlenc-encoding-test.png)
@@ -21,19 +23,28 @@ The latter integrated image supports hardware codecs and can use Amlogic hardwar
 
 ## Integrated Image Deployment
 
+### OneCloud Pro
+
 1. **Prepare the SD card**: Write the One-KVM integrated image to an SD card, then insert the card into the OneCloud Pro card slot.
 2. **Boot from the SD card**: When flashing from the factory system for the first time, hold the Reset button and connect power. Release Reset when the OneCloud logo disappears. For subsequent flashes, simply connect power to boot the system from the SD card automatically.
-3. **Install the system to eMMC**: After the system boots successfully from the SD card, open the One-KVM web terminal or sign in over SSH and run `armbian-install`. Select the model that matches the board revision: `201` for V1.1 or `213` for V1.2.
+3. **Install the system to eMMC**: After the system boots successfully from the SD card, sign in through HDMI, the serial console, or SSH and run `armbian-install`. Select the model that matches the board revision: `201` for V1.1 or `213` for V1.2.
 
 The following screenshot shows the `armbian-install` process:
 
 ![OneCloud Pro armbian-install process](../../zh/integration/images/onecloud-pro-armbian-install.jpg)
 
+### Octopus Planet
+
+1. **Flash the base image**: Flash the Octopus Planet base image (`Tools/章鱼星球底包_by-SilentWind.burn.img`) using Amlogic USB Burning Tool.
+2. **Prepare the SD card**: Write the One-KVM integrated image to an SD card, then insert the card into the Octopus Planet card slot.
+3. **Boot from the SD card**: After flashing the base image, connect power and the system will automatically boot from the SD card.
+4. **Install the system to eMMC**: After the system boots successfully from the SD card, sign in through HDMI, the serial console, or SSH and run `armbian-install`. Select `201` for an original board or `202` for a clone board.
+
 If you need to reflash the device later, write the new image to an SD card. After inserting the card and powering on the device, it will prioritize booting the system from the SD card.
 
 ## Usage Notes
 
-After the first boot, the system has approximately 4.6 GB of available storage.
+After the first boot, the system has approximately 4.5 GB of available storage.
 
 **Hardware connections**
 

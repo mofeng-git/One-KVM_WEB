@@ -126,7 +126,7 @@ plugins:
             "飞牛 NAS 安装": "FnNAS Install"
             "已适配硬件安装": "Supported Hardware Installations"
             "玩客云": "OneCloud"
-            "玩客云 Pro": "OneCloud Pro"
+            "玩客云 Pro /章鱼星球": "OneCloud Pro / Octopus Planet"
             "OEC/OECT": "OEC/OECT"
             "OEC TURBO 盒子": "OEC TURBO Box"
             "私家云二代": "CumeBox 2"
@@ -227,7 +227,7 @@ nav:
           - "CUA AI 操作": feature_usage/computer_use_agent.md
       - "整合包":
           - "玩客云": integration/onecloud.md
-          - "玩客云 Pro": integration/onecloud-pro.md
+          - "玩客云 Pro /章鱼星球": integration/onecloud-pro.md
           - "OEC/OECT": integration/oec-turbo.md
           - "虚拟机": integration/virtualmachine.md
       - "其他":

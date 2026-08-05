@@ -51,12 +51,6 @@ One-KVM Rust 是一个 Rust 编写的轻量级 IP-KVM 解决方案，可通过�
 
 ## 技术支持
 
-**免费内网穿透服务**
-
-[GOSTC 内网穿透文档](feature_usage/gostc_tunnel.md)
-
-[https://gostc.mofeng.run](https://gostc.mofeng.run)
-
 **BUG 反馈、使用交流和技术支持**
 
 - Github Issue：[https://github.com/mofeng-git/One-KVM/issues](https://github.com/mofeng-git/One-KVM/issues)

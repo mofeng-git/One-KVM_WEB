@@ -26,6 +26,7 @@ GOSTC is an FRP-based NAT traversal service. One-KVM includes a built-in client 
 4. Click **Save**, then **Start**
 
     ![gostc_tunnel-2026-01-28-00-25-54](../../zh/feature_usage/images/gostc_tunnel-2026-01-28-00-25-54.png)
+    The connection key is the client key, not the node key.
     ![gostc_tunnel-2026-01-28-00-26-55](../../zh/feature_usage/images/gostc_tunnel-2026-01-28-00-26-55.png)
     ![gostc_tunnel-2026-01-28-00-28-12](../../zh/feature_usage/images/gostc_tunnel-2026-01-28-00-28-12.png)
 

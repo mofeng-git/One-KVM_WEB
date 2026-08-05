@@ -26,6 +26,7 @@ GOSTC 是基于 FRP 的内网穿透服务，One-KVM 内置客户端，可通过�
 4. 点击 **保存**，再点击 **启动**
 
     ![gostc_tunnel-2026-01-28-00-25-54](images/gostc_tunnel-2026-01-28-00-25-54.png)
+    连接密钥是客户端密钥，不是节点密钥。
     ![gostc_tunnel-2026-01-28-00-26-55](images/gostc_tunnel-2026-01-28-00-26-55.png)
     ![gostc_tunnel-2026-01-28-00-28-12](images/gostc_tunnel-2026-01-28-00-28-12.png)
 
