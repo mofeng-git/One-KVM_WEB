@@ -111,9 +111,9 @@ Connect the OneCloud reset pin to RESET+ on the motherboard 9-pin header, and co
 
 An optocoupler isolation module is required. An optocoupler module is preferred over a relay module.
 
-Connect POWER LED+ and POWER LED- from the motherboard 9-pin header to the positive and negative input terminals of the optocoupler module respectively (polarity matters). Connect the GND and OUT output terminals of the optocoupler module to the power status LED pad and VCC pad on the OneCloud board respectively (polarity does not matter).
+Connect POWER LED+ and POWER LED- from the motherboard 9-pin header to the positive and negative input terminals of the optocoupler module respectively (polarity matters). Connect the GND and OUT output terminals of the optocoupler module to the power status LED pad and GND pad on the OneCloud board respectively (polarity does not matter).
 
-Connect HDD LED+ and HDD LED- from the motherboard 9-pin header to the positive and negative input terminals of the optocoupler module respectively (polarity matters). Connect the GND and OUT output terminals of the optocoupler module to the HDD status LED pad and VCC pad on the OneCloud board respectively (polarity does not matter).
+Connect HDD LED+ and HDD LED- from the motherboard 9-pin header to the positive and negative input terminals of the optocoupler module respectively (polarity matters). Connect the GND and OUT output terminals of the optocoupler module to the HDD status LED pad and GND pad on the OneCloud board respectively (polarity does not matter).
 
 ![OneCloud GPIO pinout](../../img/onecloud_gpio_pinout.png)
 
