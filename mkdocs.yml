@@ -118,7 +118,6 @@ plugins:
             "STUN/TURN 服务": "STUN/TURN Service"
             "介绍": "Introduction"
             "写在前面": "Read First"
-            "整合包": "Integrated Images"
             "虚拟机": "Virtual Machine"
             "Docker 部署": "Docker Deployment"
             "Docker 安装": "Docker Install"
@@ -126,6 +125,7 @@ plugins:
             "飞牛 NAS 安装": "FnNAS Install"
             "已适配硬件安装": "Supported Hardware Installations"
             "玩客云": "OneCloud"
+            "玩客云 Pro": "OneCloud Pro"
             "玩客云 Pro /章鱼星球": "OneCloud Pro / Octopus Planet"
             "OEC/OECT": "OEC/OECT"
             "OEC TURBO 盒子": "OEC TURBO Box"
@@ -174,6 +174,13 @@ plugins:
             "Webterm 网页终端": "Webterm Web Terminal"
             "网页终端": "Web Terminal"
             "功能使用": "Feature Usage"
+            "第三方接入": "Third-Party Integration"
+            "远程访问": "Remote Access"
+            "网络连接": "Network Connection"
+            "媒体与 AI": "Media & AI"
+            "USB 外设": "USB Peripherals"
+            "已适配硬件整合包": "Supported Hardware Integrated Images"
+            "斐讯 N1": "Phicomm N1"
             "FRP 内网穿透": "FRP NAT Traversal"
             "RTSP 视频流": "RTSP Streaming"
             "EasyTier 异地组网": "EasyTier Mesh"
@@ -216,19 +223,23 @@ nav:
           - "KVM 控制台": ui/console.md
           - "设置页面": ui/settings.md
       - "功能使用":
-          - "网页终端": feature_usage/web_terminal.md
-          - "GOSTC 内网穿透": feature_usage/gostc_tunnel.md
-          - "FRP 内网穿透": feature_usage/frp_tunnel.md
-          - "EasyTier 异地组网": feature_usage/easytier_mesh.md
-          - "RustDesk 远程控制": feature_usage/rustdesk_remote.md
-          - "VNC 远程": feature_usage/vnc_remote.md
-          - "RTSP 视频流": feature_usage/rtsp_stream.md
-          - "USB 动态配置": feature_usage/usb_dynamic.md
-          - "CUA AI 操作": feature_usage/computer_use_agent.md
-      - "整合包":
+          - "第三方接入":
+              - "网页终端": feature_usage/web_terminal.md
+              - "RustDesk 远程控制": feature_usage/rustdesk_remote.md
+              - "RTSP 视频流": feature_usage/rtsp_stream.md
+              - "VNC 远程": feature_usage/vnc_remote.md
+          - "远程访问":
+              - "GOSTC 内网穿透": feature_usage/gostc_tunnel.md
+              - "FRP 内网穿透": feature_usage/frp_tunnel.md
+              - "EasyTier 异地组网": feature_usage/easytier_mesh.md
+          - "其他":
+              - "CUA AI 操作": feature_usage/computer_use_agent.md
+              - "USB 动态配置": feature_usage/usb_dynamic.md
+      - "已适配硬件整合包":
           - "玩客云": integration/onecloud.md
           - "玩客云 Pro /章鱼星球": integration/onecloud-pro.md
           - "OEC/OECT": integration/oec-turbo.md
+          - "斐讯 N1": integration/n1.md
           - "虚拟机": integration/virtualmachine.md
       - "其他":
           - "开发指南": other/development.md
@@ -256,7 +267,6 @@ nav:
               - "龙芯久久派（停止维护）": python/start_install/2k0300_install.md
               #- "玩客云套装（停止维护）": start_install/onecloud_guide.md
           - "常见问题": python/start_install/faq.md
-          - "赞助计划和感谢": python/thanks.md
 
       - "网络":
           - "互联网访问":
@@ -266,8 +276,8 @@ nav:
               - "Tailscale 异地组网": python/network/tailscale.md
               - "Cloudflared 隧道": python/network/cloudflared.md
               - "GOSTC 内网穿透": python/network/gostc.md
+              - "SSL 加密连接": python/network/ssl.md
           #- "WIFI 连接": network/wifi.md
-          - "SSL 加密连接": python/network/ssl.md
 
       - "音视频":
           - "H.264 / WebRTC": python/audio_and_video/h264.md
@@ -280,10 +290,11 @@ nav:
               - "鼠标抖动器": python/attached_device/mouse_jiggler.md
               - "CH9329 HID": python/attached_device/ch9329_hid.md
               # "蓝牙 HID": attached_device/bluetooth_hid.md
-          - "大容量存储驱动器": python/attached_device/msd.md
-          - "USB 以太网": python/attached_device/usb_ethernet.md
-          - "USB 串口": python/attached_device/usb_serial.md
-          - "动态 USB 配置": python/attached_device/usb_dynamic.md
+          - "USB 外设":
+              - "大容量存储驱动器": python/attached_device/msd.md
+              - "USB 以太网": python/attached_device/usb_ethernet.md
+              - "USB 串口": python/attached_device/usb_serial.md
+              - "动态 USB 配置": python/attached_device/usb_dynamic.md
           - "ATX 电源控制":
               - "玩客云 GPIO": python/attached_device/onecloud_atx.md
               #- "GPIO 通用配置": attached_device/gpio.md
@@ -307,3 +318,6 @@ nav:
           - "HTTP API": python/development/api.md
           - "构建 One-KVM 系统": python/development/building_os.md
           - "知识库": python/development/develop.md
+
+      - "其他":
+          - "赞助计划和感谢": python/thanks.md
