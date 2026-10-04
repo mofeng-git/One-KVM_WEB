@@ -57,12 +57,64 @@ The HDMI terminal displays the device IP address and software version.
 
 ![OneCloud HDMI terminal](../../zh/integration/images/onecloud-hdmi-terminal.png)
 
+### Resolution and display troubleshooting
+
+The OneCloud's HDMI output relies on **HPD (hot-plug detection) and EDID negotiation**, which is **unreliable**
+on the S805: when no display is plugged in, the driver considers there to be "no display", does not set up a CRTC,
+and consequently there is no `/dev/fb0`, so the HDMI terminal cannot display anything.
+
+!!! tip "Correct approach: let EDID negotiate automatically"
+    After plugging in a display, let the driver negotiate the resolution through EDID. In testing, plugging in a
+    1080p display produced a correct **1920×1080** output with no `video=` boot parameter needed at all.
+
+!!! warning "Do not force a resolution manually"
+    A common "optimization" is to add a boot parameter that forces a mode, for example:
+    ```
+    video=HDMI-A-1:1920x1080@60e
+    ```
+    On the OneCloud this **backfires**: the kernel recomputes the pixel clock using the CVT formula and gets
+    **172.78 MHz**, whereas the CEA standard clock for 1080p60 is **148.5 MHz**. The mismatch makes the kernel
+    report:
+    ```
+    [drm] User-defined mode not supported
+    ```
+    and it **falls back to 1024×768**, which is worse than auto-negotiation.
+
+**Troubleshooting quick reference**:
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| No `/dev/fb0`, HDMI terminal shows nothing | No display plugged in, HPD not triggered | Plug in the display before booting; or check the HPD pin |
+| Stuck at 1024×768 | A `video=` override was set manually | Remove the `video=HDMI-A-1:...` parameter and use EDID auto-negotiation |
+| Garbled / wrong colors on the terminal | bpp or stride does not match reality | Confirm the framebuffer is 24bpp (BGR; see the "extension" section below) |
+
+!!! note "Scope"
+    The above applies only to resolution negotiation on the **OneCloud HDMI output side**. It is unrelated to the
+    resolution of the video stream captured by One-KVM from the target machine via the capture card.
+
 **SSH remote login**
 
 SSH is enabled by default on Armbian. The initial username and password are `root` / `1234`. Change the default password as soon as possible.
 
 !!! warning "System upgrade warning"
     Do not use `apt upgrade` to upgrade the kernel and device tree. This may cause system problems and make OTG unavailable.
+
+??? info "If you really must upgrade the kernel / system"
+    Upgrading the kernel and device tree via `apt upgrade` is **not recommended** (see the warning above). If you
+    have a concrete reason to upgrade, the following notes come from a tested, working path (**at your own risk**):
+
+    - Tested upgrade path: Armbian `23.11.1` → `26.8.3` (userland), kernel `5.10.149` → `6.12.28`, **succeeded**.
+    - **Back up the DTB** (device tree binary) before upgrading. OTG-related configuration (such as `dr_mode`) lives
+      in the DTB; if OTG stops working after an upgrade, it is usually because the new DTB changed the OTG node.
+    - If USB OTG functions (keyboard/mouse/MSD) misbehave after the upgrade:
+        - Restore the backed-up old DTB to verify whether the DTB is the cause;
+        - or decompile the new DTB and check that the OTG node's `dr_mode` is still `peripheral`/`otg`.
+    - After upgrading, re-run the key items from the [Performance Test Report](#performance-test-report) to confirm
+      that H.264/HID latency has not regressed noticeably.
+
+    !!! danger "Rollback preparation"
+        Before upgrading, keep a flashable old image and the short-pad flashing method so you can fully roll back
+        if the system fails to boot.
 
 **Changing the MAC address**
 
@@ -156,3 +208,73 @@ Test image: `One-KVM-RUST_by-SilentWind_Onecloud_v0.2.5_260722-da20d8b.img.xz`
 | --------- | ---------- |
 | Write     | 11.38 MiB/s |
 | Read      | 14.64 MiB/s |
+
+## Extension: HDMI status panel
+
+!!! note "Note"
+    The following is an **operating-system-level extension** for the OneCloud that uses the HDMI output to show
+    custom status information. It is **not a built-in One-KVM feature** and does not affect One-KVM's KVM video
+    stream (the video stream comes from the capture card and is unrelated to this). It is intended for tinkerers
+    who want to make use of the OneCloud's front panel / HDMI port.
+
+### Idea
+
+The OneCloud's HDMI output corresponds to a framebuffer (typically `/dev/fb0`). If you `write` an image to
+`/dev/fb0` in the correct pixel format, the HDMI side displays that image. You can use this to render One-KVM
+runtime status (IP, bitrate, uptime, etc.) as a "status panel".
+
+### Key point: the pixel layout is BGR
+
+The OneCloud framebuffer uses **BGR** memory layout at 24bpp (not the usual RGB). Be careful when using Pillow:
+
+```python
+from PIL import Image
+
+# img: an image matching the framebuffer resolution (e.g. 1920x1080)
+# Read it as BGR directly to avoid per-pixel conversion
+raw = img.convert("RGB")
+# split / merge converts in the C layer, orders of magnitude faster than a Python per-pixel loop
+b, g, r = raw.split()
+fb_img = Image.merge("RGB", (b, g, r))   # adjust channel order to match what you actually need
+data = fb_img.tobytes()
+
+with open("/dev/fb0", "wb") as fb:
+    fb.write(data)
+```
+
+### Performance pitfall: do not loop per pixel
+
+!!! warning "Performance trap"
+    A common mistake is a double Python `for` loop converting RGB→BGR pixel by pixel:
+    ```python
+    # ❌ Wrong: a 1920x1080 per-pixel conversion eats about 38% of one core
+    for y in range(h):
+        for x in range(w):
+            r, g, b = px[x, y]
+            px[x, y] = (b, g, r)
+    ```
+    At 1920×1080 this consumes about **38% of one core**, a clear burden for the OneCloud.
+
+    **Correct approach**: use Pillow's `split()` / `merge()` / `tobytes()` to process in bulk **in the C layer**;
+    measured usage drops to **0~10%**:
+
+    ```python
+    # ✅ Correct: bulk conversion in the C layer
+    r, g, b = img.split()
+    bgr = Image.merge("RGB", (b, g, r))
+    bgr.tobytes()
+    ```
+
+### Tip: negative BMP height
+
+If you use a `.bmp` file as an intermediate format, you can use a **negative height** in the BMP header so the
+pixels are stored **top-to-bottom** in framebuffer row order, skipping the vertical flip:
+
+```python
+# Set the BMP header height field to a negative value so the image is stored top-down
+# When saving with PIL: flip the y axis first, or construct a negative-height header directly
+```
+
+!!! tip "Relationship to One-KVM"
+    This "status panel" displays your custom image and does **not** affect One-KVM's KVM video stream captured from
+    the target machine via the capture card. The two are completely independent data paths.

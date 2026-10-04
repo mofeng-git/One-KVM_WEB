@@ -184,6 +184,7 @@ plugins:
             "FRP 内网穿透": "FRP NAT Traversal"
             "RTSP 视频流": "RTSP Streaming"
             "EasyTier 异地组网": "EasyTier Mesh"
+            "TLS 性能优化": "TLS Performance Tuning"
             "RustDesk 远程控制": "RustDesk Remote Control"
             "VNC 远程": "VNC Remote"
             "USB 动态配置": "Dynamic USB Configuration"
@@ -232,6 +233,7 @@ nav:
               - "GOSTC 内网穿透": feature_usage/gostc_tunnel.md
               - "FRP 内网穿透": feature_usage/frp_tunnel.md
               - "EasyTier 异地组网": feature_usage/easytier_mesh.md
+              - "TLS 性能优化": feature_usage/tls_performance.md
           - "其他":
               - "CUA AI 操作": feature_usage/computer_use_agent.md
               - "USB 动态配置": feature_usage/usb_dynamic.md

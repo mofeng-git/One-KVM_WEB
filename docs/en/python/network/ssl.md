@@ -25,3 +25,11 @@ sudo systemctl restart kvmd-nginx
 
 !!! tip "Other certificate providers"
     The steps are similar for other providers. Ensure the certificate and key are renamed correctly and placed in the right directory.
+
+---
+
+!!! tip "Performance tuning for devices without AES hardware acceleration"
+    If your device has no AES hardware acceleration (e.g. OneCloud / Cortex-A5), the TLS cipher suite choice has a
+    large impact on CPU usage. Prefer **ChaCha20-Poly1305** and see the Rust edition's
+    [TLS Performance Tuning](../../feature_usage/tls_performance.md) article — testing shows it cuts TLS encryption
+    overhead by about 3~4×.

@@ -25,3 +25,10 @@ sudo systemctl restart kvmd-nginx
 
 !!! tip "其他证书提供商"
     如果您使用其他证书提供商，操作步骤类似，主要确保证书和私钥文件重命名正确并放置在正确的目录即可。
+
+---
+
+!!! tip "无 AES 硬件加速设备的性能优化"
+    如果你的设备没有 AES 硬件加速（如玩客云 OneCloud / Cortex-A5），TLS 套件选择对 CPU 开销影响很大。
+    推荐优先使用 **ChaCha20-Poly1305**，并参考 Rust 版的
+    [TLS 性能优化](../../feature_usage/tls_performance.md) 一文，实测可降低约 3~4 倍 TLS 加密开销。
